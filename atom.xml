@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wukong&#39;s Blog</title>
+  <subtitle>悟空的Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="hhttps://wukong1995.github.io/"/>
+  <updated>2017-08-27T12:59:41.000Z</updated>
+  <id>hhttps://wukong1995.github.io/</id>
+  
+  <author>
+    <name>Wang peipei</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本周总结-2</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/26/week5-2/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/26/week5-2/</id>
+    <published>2017-08-26T09:27:09.000Z</published>
+    <updated>2017-08-27T12:59:41.000Z</updated>
+    
+    <summary type="html">
+    
+      代码中的bug
+    
+    </summary>
+    
+      <category term="随笔" scheme="hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="hhttps://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本周总结-1</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/26/week5-1/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/26/week5-1/</id>
+    <published>2017-08-26T08:29:03.000Z</published>
+    <updated>2017-08-27T12:59:30.000Z</updated>
+    
+    <summary type="html">
+    
+      编程语言
+    
+    </summary>
+    
+      <category term="随笔" scheme="hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="hhttps://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本周总结</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/20/week4/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/20/week4/</id>
+    <published>2017-08-20T14:51:38.000Z</published>
+    <updated>2017-08-27T12:59:20.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;只想睡觉...&lt;/code&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="随笔" scheme="hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="hhttps://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在npm上发布自己的包</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/17/npm-package/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/17/npm-package/</id>
+    <published>2017-08-17T13:29:49.000Z</published>
+    <updated>2017-08-27T13:08:59.000Z</updated>
+    
+    <summary type="html">
+    
+      你也可以在npm上发布自己的包
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="hhttps://wukong1995.github.io/categories/Nodejs/"/>
+    
+    
+      <category term="node" scheme="hhttps://wukong1995.github.io/tags/node/"/>
+    
+      <category term="npm" scheme="hhttps://wukong1995.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES7 Decorator</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/13/ES7-decorator/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/13/ES7-decorator/</id>
+    <published>2017-08-13T04:09:44.000Z</published>
+    <updated>2017-08-27T12:56:29.000Z</updated>
+    
+    <summary type="html">
+    
+      es7中的装饰器呀
+    
+    </summary>
+    
+      <category term="javascript" scheme="hhttps://wukong1995.github.io/categories/javascript/"/>
+    
+    
+      <category term="es7" scheme="hhttps://wukong1995.github.io/tags/es7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本周总结</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/13/week3/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/13/week3/</id>
+    <published>2017-08-13T02:50:14.000Z</published>
+    <updated>2017-08-27T12:59:08.000Z</updated>
+    
+    <summary type="html">
+    
+      ruby &amp; 装饰器 &amp; css
+    
+    </summary>
+    
+      <category term="随笔" scheme="hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="hhttps://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本周总结</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/05/week2/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/05/week2/</id>
+    <published>2017-08-05T06:52:41.000Z</published>
+    <updated>2017-08-27T12:58:53.000Z</updated>
+    
+    <summary type="html">
+    
+      看这个星期是不是收获多多
+    
+    </summary>
+    
+      <category term="随笔" scheme="hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="hhttps://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>豆瓣评分前250部电影数据爬取</title>
+    <link href="hhttps://wukong1995.github.io/2017/08/02/douban/"/>
+    <id>hhttps://wukong1995.github.io/2017/08/02/douban/</id>
+    <published>2017-08-02T13:32:58.000Z</published>
+    <updated>2017-08-27T12:56:12.000Z</updated>
+    
+    <summary type="html">
+    
+      使用nodejs爬取数据
+    
+    </summary>
+    
+      <category term="代码" scheme="hhttps://wukong1995.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
+    
+    
+      <category term="node" scheme="hhttps://wukong1995.github.io/tags/node/"/>
+    
+      <category term="爬虫" scheme="hhttps://wukong1995.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>本周总结</title>
+    <link href="hhttps://wukong1995.github.io/2017/07/28/week1/"/>
+    <id>hhttps://wukong1995.github.io/2017/07/28/week1/</id>
+    <published>2017-07-28T14:56:52.000Z</published>
+    <updated>2017-08-27T12:58:42.000Z</updated>
+    
+    <summary type="html">
+    
+      看这个星期是不是收获多多
+    
+    </summary>
+    
+      <category term="随笔" scheme="hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="hhttps://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Array的reduce方法</title>
+    <link href="hhttps://wukong1995.github.io/2017/07/28/reduce/"/>
+    <id>hhttps://wukong1995.github.io/2017/07/28/reduce/</id>
+    <published>2017-07-28T14:21:28.000Z</published>
+    <updated>2017-08-27T12:57:52.000Z</updated>
+    
+    <summary type="html">
+    
+      reduce是一个很优雅的方法
+    
+    </summary>
+    
+      <category term="javascript" scheme="hhttps://wukong1995.github.io/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="hhttps://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用relay和apollo的感觉</title>
+    <link href="hhttps://wukong1995.github.io/2017/07/23/relay-apollo/"/>
+    <id>hhttps://wukong1995.github.io/2017/07/23/relay-apollo/</id>
+    <published>2017-07-23T12:40:35.000Z</published>
+    <updated>2017-08-27T12:58:06.000Z</updated>
+    
+    <summary type="html">
+    
+      这个主要是叙述relay和Apollo
+    
+    </summary>
+    
+      <category term="graphql" scheme="hhttps://wukong1995.github.io/categories/graphql/"/>
+    
+    
+      <category term="angularjs" scheme="hhttps://wukong1995.github.io/tags/angularjs/"/>
+    
+      <category term="graphql" scheme="hhttps://wukong1995.github.io/tags/graphql/"/>
+    
+      <category term="react" scheme="hhttps://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用git的那些年</title>
+    <link href="hhttps://wukong1995.github.io/2017/07/22/git/"/>
+    <id>hhttps://wukong1995.github.io/2017/07/22/git/</id>
+    <published>2017-07-22T14:38:02.000Z</published>
+    <updated>2017-08-27T13:09:08.000Z</updated>
+    
+    <summary type="html">
+    
+      这个主要是分享使用git的那些事
+    
+    </summary>
+    
+      <category term="Git" scheme="hhttps://wukong1995.github.io/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="hhttps://wukong1995.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>react-relay的探索历程</title>
+    <link href="hhttps://wukong1995.github.io/2017/07/22/react-relay/"/>
+    <id>hhttps://wukong1995.github.io/2017/07/22/react-relay/</id>
+    <published>2017-07-22T14:19:06.000Z</published>
+    <updated>2017-08-27T12:57:38.000Z</updated>
+    
+    <summary type="html">
+    
+      这个主要是叙述学习relay的探索过程
+    
+    </summary>
+    
+      <category term="graphql" scheme="hhttps://wukong1995.github.io/categories/graphql/"/>
+    
+    
+      <category term="graphql" scheme="hhttps://wukong1995.github.io/tags/graphql/"/>
+    
+      <category term="react" scheme="hhttps://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微信公众号搭建</title>
+    <link href="hhttps://wukong1995.github.io/2017/03/29/wechatPHP/"/>
+    <id>hhttps://wukong1995.github.io/2017/03/29/wechatPHP/</id>
+    <published>2017-03-29T10:22:28.000Z</published>
+    <updated>2017-08-27T12:58:28.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;使用apache+php5.4n&lt;br&gt;1、打开apache配置文件httpd.conf&lt;br&gt;      搜索httpd-vhosts.conf，打开这一行的注释&lt;br&gt;2、打开apache所在目录下的，conf/extra/httpd-vhost.conf&lt;br&gt;  增
+    
+    </summary>
+    
+      <category term="PHP" scheme="hhttps://wukong1995.github.io/categories/PHP/"/>
+    
+    
+      <category term="微信公众号" scheme="hhttps://wukong1995.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
+    
+      <category term="php" scheme="hhttps://wukong1995.github.io/tags/php/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dataTable插件的使用</title>
+    <link href="hhttps://wukong1995.github.io/2017/03/26/dataTable/"/>
+    <id>hhttps://wukong1995.github.io/2017/03/26/dataTable/</id>
+    <published>2017-03-26T10:24:25.000Z</published>
+    <updated>2017-08-27T12:55:57.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;偶然发现一个叫 dataTable  的组件，觉得很好用，于是研究了一番，下面是代码&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1
+    
+    </summary>
+    
+      <category term="前端" scheme="hhttps://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="jQuery" scheme="hhttps://wukong1995.github.io/tags/jQuery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>moment格式化时间</title>
+    <link href="hhttps://wukong1995.github.io/2016/12/11/moment/"/>
+    <id>hhttps://wukong1995.github.io/2016/12/11/moment/</id>
+    <published>2016-12-11T10:30:42.000Z</published>
+    <updated>2017-08-27T12:57:06.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先，好久没有来多博客了&lt;/p&gt;
+&lt;p&gt;今天在学习MongoDB时，需要格式化时间，上网查了一下，nodejs中的moment模块可以格式化时间。&lt;br&gt;首先，mongodb中有一个字段是Date类型需要一个默认值，就是当前时间，可以使用以下代码来格式化时间&lt;/p&gt;
+&lt;fi
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="hhttps://wukong1995.github.io/categories/Nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="hhttps://wukong1995.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs中使用mongoose保存数据</title>
+    <link href="hhttps://wukong1995.github.io/2016/12/11/useMongoDB/"/>
+    <id>hhttps://wukong1995.github.io/2016/12/11/useMongoDB/</id>
+    <published>2016-12-11T10:27:31.000Z</published>
+    <updated>2017-08-27T12:58:18.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近在学习mongdb&lt;/p&gt;
+&lt;p&gt;以下是使用mongoose模块来保存数据&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/
+    
+    </summary>
+    
+      <category term="数据库" scheme="hhttps://wukong1995.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="nodejs" scheme="hhttps://wukong1995.github.io/tags/nodejs/"/>
+    
+      <category term="MongoDB" scheme="hhttps://wukong1995.github.io/tags/MongoDB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>angularjs中的$interpolate服务</title>
+    <link href="hhttps://wukong1995.github.io/2016/09/17/ngInterpolate/"/>
+    <id>hhttps://wukong1995.github.io/2016/09/17/ngInterpolate/</id>
+    <published>2016-09-17T10:34:31.000Z</published>
+    <updated>2017-08-27T12:57:17.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;$interpolate服务返回一个函数，用来在特定的上下文中运算表达式。&lt;br&gt;示例：&lt;br&gt;html代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=
+    
+    </summary>
+    
+      <category term="前端" scheme="hhttps://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="angularjs" scheme="hhttps://wukong1995.github.io/tags/angularjs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Java实现扑克牌洗牌</title>
+    <link href="hhttps://wukong1995.github.io/2016/07/20/java1/"/>
+    <id>hhttps://wukong1995.github.io/2016/07/20/java1/</id>
+    <published>2016-07-20T10:38:05.000Z</published>
+    <updated>2017-08-27T12:56:56.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Java已经忘了差不多了，最近又需要重新捡起Java。&lt;br&gt;对于一副扑克牌共有54张，扑克牌洗牌就是将这54张牌没有规律的输出出来，&lt;br&gt;用ArrayList实现，本质是54个数的随机输出，穿了身衣服，输出出来就好看多了&lt;/p&gt;
+&lt;figure class=&quot;highl
+    
+    </summary>
+    
+      <category term="Java" scheme="hhttps://wukong1995.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="hhttps://wukong1995.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>css中margin的巧妙使用</title>
+    <link href="hhttps://wukong1995.github.io/2016/07/16/css-margin/"/>
+    <id>hhttps://wukong1995.github.io/2016/07/16/css-margin/</id>
+    <published>2016-07-16T10:40:38.000Z</published>
+    <updated>2017-08-27T12:55:43.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在慕课上看了张大神又一力作，整理了一下&lt;br&gt;margin的巧妙使用：&lt;br&gt;1、margin实现自适应的宽高比为2：1的矩形&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="hhttps://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="hhttps://wukong1995.github.io/tags/css/"/>
+    
+  </entry>
+  
+</feed>
