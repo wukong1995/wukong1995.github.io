@@ -141,7 +141,7 @@
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         
         
             <style>
@@ -291,7 +291,8 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -499,8 +500,10 @@
 <p>我的目的是最少要显示cuurent周围的四个number，按照这个想法写出来，当cuurent为1时，只会显示123三个number，而我的预期是现实12345这五个number😔调整一下做法，将上面的3-5合并，<code>left</code>和<code>right</code>表示<code>current-2</code>和<code>current+2</code>，在<code>left&lt;0</code>时候，将<code>right</code>加上<code>left</code>的相反数，<code>right&gt;total</code>同理<br>最后，我还是找了一个插件用在项目中，👉插件的名字是：react-paginate，css部分需要你自己去写…</p>
 <h3 id="react-and-jquery"><a href="#react-and-jquery" class="headerlink" title="react and jquery"></a>react and jquery</h3><p>目前有一个container的组件，它的子组件是list和detail，list的子组件是item，点击item，detail组件会显示，显示效果是通过增加删除类名实现的。想着组件传值比较麻烦，于是就在方法里面直接使用jq早啊道元素控制。大哥告诉我，这个解决办法是不推荐的。👉正确的做法是使用state。通过改变state的值，进而改变元素的class。</p>
 <h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>还记得之前的一个面试问题：视频有最热视频、点赞最多视频、其他视频，每次去服务器要十个数据…由于用户使用量很多，每次去数据库查询，访问量太大。这样的话，👉可以使用redis去做缓存，这样取数据库可以直接取缓存中取，设置一个时间去更新redis即可。<br>现在又一个需求，是记录每天用户登录网站的数量。👉方法一：给用户表增加一个最后登录时间的列，每天定时执行程序，统计一下最后登录时间是昨天的用户数量。这个方法中，选择什么时候去执行程序很重要，要不然就会有漏网之鱼。👉方法二：最粗暴的办法是，在redis中创建一个字段，它是一个数组，每次知道用户登录的时候，就将用户的id<code>push</code>进数组，每天用户的登录的数量，直接通过数组的长度就可以得到。这个方法的缺点就是：用户的<code>id</code>字段也是一串很长的字符串，数组会特别大。👉方法三：在redis中创建一个字段，它是一个字符串，默认是长度是用户的数量的0，若用户登录，就将对应的位置为1。在这三个方法中，第三个方法是最优方法。<br>还有一个可以做缓存的数据库叫memcache，它和redis的区别就是，redis可以持久化。</p>
-<h3 id="插件js-base64"><a href="#插件js-base64" class="headerlink" title="插件js-base64"></a>插件js-base64</h3><p><code>Graphql</code>中自带的分页，after字段是base64的字符串。前端传值就需要将数字转化成base64位的字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import &#123; Base64 &#125; from &apos;js-base64&apos;;</div><div class="line">const cursor = Base64.encode(number);</div></pre></td></tr></table></figure></p>
-<p>最后说句题外话，任何炒作都不能改变一个东西没落的事实，与其去炒作，还不如用脑子把东西做的更好。</p>
+<h3 id="插件js-base64"><a href="#插件js-base64" class="headerlink" title="插件js-base64"></a>插件js-base64</h3><p><code>Graphql</code>中自带的分页，after字段是base64的字符串。前端传值就需要将数字转化成base64位的字符串。</p>
+<pre><code>import { Base64 } from &#39;js-base64&#39;;
+const cursor = Base64.encode(number);
+</code></pre><p>最后说句题外话，任何炒作都不能改变一个东西没落的事实，与其去炒作，还不如用脑子把东西做的更好。</p>
 
     
 

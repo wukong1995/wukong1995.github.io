@@ -141,7 +141,7 @@
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         
         
             <style>
@@ -291,7 +291,8 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -487,9 +488,51 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>Java已经忘了差不多了，最近又需要重新捡起Java。<br>对于一副扑克牌共有54张，扑克牌洗牌就是将这54张牌没有规律的输出出来，<br>用ArrayList实现，本质是54个数的随机输出，穿了身衣服，输出出来就好看多了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Poker</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">poker</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;  </div><div class="line">        String str = <span class="string">""</span>;  </div><div class="line">        String[] huase = &#123;<span class="string">"红桃"</span>,<span class="string">"黑桃"</span>,<span class="string">"梅花"</span>,<span class="string">"方块"</span>&#125;;  </div><div class="line">        String[] number = &#123;<span class="string">"A"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span>,<span class="string">"J"</span>,<span class="string">"Q"</span>,<span class="string">"K"</span>&#125;;  </div><div class="line">        <span class="keyword">if</span>(num/<span class="number">4</span> &gt; <span class="number">12</span>) &#123;  </div><div class="line">            <span class="keyword">if</span>(num%<span class="number">4</span> == <span class="number">0</span>) &#123;  </div><div class="line">                str += <span class="string">"小鬼"</span>;  </div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(num%<span class="number">4</span> == <span class="number">1</span>) &#123;  </div><div class="line">                str += <span class="string">"大鬼"</span>;  </div><div class="line">            &#125;  </div><div class="line">        &#125; <span class="keyword">else</span> &#123;  </div><div class="line">            str += huase[num%<span class="number">4</span>] + number[num/<span class="number">4</span>] ;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">return</span> str;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Client &#123;  </div><div class="line">  </div><div class="line">    public static void main(String[] args) &#123;  </div><div class="line">        // 定义变量  </div><div class="line">        ArrayList list = new ArrayList();  </div><div class="line">        Random random = new Random();  </div><div class="line">        Poker poker = new Poker();  </div><div class="line">        int i = 0;  </div><div class="line">          </div><div class="line">        // 向数组中增加数字  </div><div class="line">        for(i=0;i&lt;54;i++) &#123;  </div><div class="line">            list.add(poker.poker(i));  </div><div class="line">        &#125;  </div><div class="line">          </div><div class="line">        // 随机输出数组中的每个数字  </div><div class="line">        int length = list.size();  </div><div class="line">        for(i=0;i&lt;length;i++) &#123;  </div><div class="line">            //随机生成数组下标  </div><div class="line">            int num = random.nextInt(list.size());  </div><div class="line">            //取出数字  </div><div class="line">            System.out.println(list.get(num));  </div><div class="line">            //将数字从数组中移除  </div><div class="line">            list.remove(num);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>看起来舒服多了</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Poker</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">public</span> <span class="token keyword">static</span> String <span class="token function">poker</span><span class="token punctuation">(</span><span class="token keyword">int</span> num<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        String str <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>  
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> huase <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"红桃"</span><span class="token punctuation">,</span><span class="token string">"黑桃"</span><span class="token punctuation">,</span><span class="token string">"梅花"</span><span class="token punctuation">,</span><span class="token string">"方块"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  
+        String<span class="token punctuation">[</span><span class="token punctuation">]</span> number <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"4"</span><span class="token punctuation">,</span><span class="token string">"5"</span><span class="token punctuation">,</span><span class="token string">"6"</span><span class="token punctuation">,</span><span class="token string">"7"</span><span class="token punctuation">,</span><span class="token string">"8"</span><span class="token punctuation">,</span><span class="token string">"9"</span><span class="token punctuation">,</span><span class="token string">"10"</span><span class="token punctuation">,</span><span class="token string">"J"</span><span class="token punctuation">,</span><span class="token string">"Q"</span><span class="token punctuation">,</span><span class="token string">"K"</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  
+        <span class="token keyword">if</span><span class="token punctuation">(</span>num<span class="token operator">/</span><span class="token number">4</span> <span class="token operator">></span> <span class="token number">12</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">if</span><span class="token punctuation">(</span>num<span class="token operator">%</span><span class="token number">4</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                str <span class="token operator">+=</span> <span class="token string">"小鬼"</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>num<span class="token operator">%</span><span class="token number">4</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                str <span class="token operator">+=</span> <span class="token string">"大鬼"</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>  
+            str <span class="token operator">+=</span> huase<span class="token punctuation">[</span>num<span class="token operator">%</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">+</span> number<span class="token punctuation">[</span>num<span class="token operator">/</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token keyword">return</span> str<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>public class Client {  
+
+    public static void main(String[] args) {  
+        // 定义变量  
+        ArrayList list = new ArrayList();  
+        Random random = new Random();  
+        Poker poker = new Poker();  
+        int i = 0;  
+
+        // 向数组中增加数字  
+        for(i=0;i&lt;54;i++) {  
+            list.add(poker.poker(i));  
+        }  
+
+        // 随机输出数组中的每个数字  
+        int length = list.size();  
+        for(i=0;i&lt;length;i++) {  
+            //随机生成数组下标  
+            int num = random.nextInt(list.size());  
+            //取出数字  
+            System.out.println(list.get(num));  
+            //将数字从数组中移除  
+            list.remove(num);  
+        }  
+    }  
+}
+</code></pre><p>看起来舒服多了</p>
 
     
 

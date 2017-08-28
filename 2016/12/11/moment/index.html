@@ -141,7 +141,7 @@
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         
         
             <style>
@@ -291,7 +291,8 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -488,13 +489,17 @@
     
         <p>首先，好久没有来多博客了</p>
 <p>今天在学习MongoDB时，需要格式化时间，上网查了一下，nodejs中的moment模块可以格式化时间。<br>首先，mongodb中有一个字段是Date类型需要一个默认值，就是当前时间，可以使用以下代码来格式化时间</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">moment().format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">moment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>使用以下代码也是可以的</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">moment(<span class="built_in">Date</span>.now()).format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token function">moment</span><span class="token punctuation">(</span>Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>目前只使用这两个方法，以后再来补充<br>——————————————————分割线———————————-<br>在存入<a href="http://lib.csdn.net/base/mysql" target="_blank" rel="external">数据库</a>时，我已经格式化日期了，取出来发现是没有格式的数据，很纳闷，不知道原因，找到了解决办法。<br>express我是用的jade模板，<br>在app.js中加入</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.locals.moment = <span class="built_in">require</span>(<span class="string">'moment'</span>)</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript">app<span class="token punctuation">.</span>locals<span class="token punctuation">.</span>moment <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'moment'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>在jade中读取日期数据使用</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#&#123;moment(friend.createTime).format('YYYY-MM-DD HH:mm:ss')&#125;</div></pre></td></tr></table></figure>
+<pre class="line-numbers language-javascript"><code class="language-javascript">#<span class="token punctuation">{</span><span class="token function">moment</span><span class="token punctuation">(</span>friend<span class="token punctuation">.</span>createTime<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span><span class="token string">'YYYY-MM-DD HH:mm:ss'</span><span class="token punctuation">)</span><span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>取出来的日期是格式化的</p>
 
     

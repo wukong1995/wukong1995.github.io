@@ -141,7 +141,7 @@
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         
         
             <style>
@@ -291,7 +291,8 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -487,13 +488,18 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>上周没写总结…</p>
-<h3 id="if条件什么时候为false"><a href="#if条件什么时候为false" class="headerlink" title="if条件什么时候为false"></a>if条件什么时候为false</h3><p>因为react共用组件，但是传过来的值的结构不同，于是使用||来进行判断选择，于是写了以下代码放心的提上去了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const count = node.count || node.usage_count || node.total_count</div></pre></td></tr></table></figure></p>
-<p>发现报total_count是undefined，这个我仔细看了代码没找出来哪错了，于是把生产环境的数据库拿下来，开始调试…最后发现因为<code>usage_count</code>的值为零的时候，会继续往后执行，因为<code>node.usage_count</code>值为0，js会认为是false…<br>我的原意是为undefined的时候，会继续向后执行。使用js很随便，但是忘记了随便的副作用。于是我只能用if…else…去判断undefined了<br>👉当if语句中的变量为false，0，NaN，空字符串，null，undefined时，判断结果为假;</p>
+<h3 id="if条件什么时候为false"><a href="#if条件什么时候为false" class="headerlink" title="if条件什么时候为false"></a>if条件什么时候为false</h3><p>因为react共用组件，但是传过来的值的结构不同，于是使用||来进行判断选择，于是写了以下代码放心的提上去了</p>
+<pre><code>const count = node.count || node.usage_count || node.total_count
+</code></pre><p>发现报total_count是undefined，这个我仔细看了代码没找出来哪错了，于是把生产环境的数据库拿下来，开始调试…最后发现因为<code>usage_count</code>的值为零的时候，会继续往后执行，因为<code>node.usage_count</code>值为0，js会认为是false…<br>我的原意是为undefined的时候，会继续向后执行。使用js很随便，但是忘记了随便的副作用。于是我只能用if…else…去判断undefined了<br>👉当if语句中的变量为false，0，NaN，空字符串，null，undefined时，判断结果为假;</p>
 <h3 id="图片是使用背景图还是img标签"><a href="#图片是使用背景图还是img标签" class="headerlink" title="图片是使用背景图还是img标签"></a>图片是使用背景图还是img标签</h3><p>一般来说，我的习惯是图片一般使用img标签插入页面。<br>但是，假如一个网站有中文英文两个版本，通过类名的切换而不是跳转页面可以实现中英文的切换，这个时候，就不要img标签，而是背景图的形式插入图片，这样做的好处是：图片是在css设置的，我可以为元素设置不同的类名进而切换图片</p>
 <h3 id="BEM不应该嵌套太深"><a href="#BEM不应该嵌套太深" class="headerlink" title="BEM不应该嵌套太深"></a>BEM不应该嵌套太深</h3><p>BEM命名的方式，一般是一个block里面包含element,所以我是一个block一层来的。大哥告诉我这样是不对的，划分block没有错，但是在命名不冲突的情况下，block中的element的类名没有必要一定按照block的类名开头。</p>
 <h3 id="一定要选好元素"><a href="#一定要选好元素" class="headerlink" title="一定要选好元素"></a>一定要选好元素</h3><p>之前做tab切换的时候，咋改都没达到想要的效果。看了大哥的代码，才发现自己选错元素了。应该选择section的父元素而不是每个section…写代码之前没有经过严密的思考，遇到错误时，思想受到了限制，导致没想到正确的方向去…</p>
-<h3 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h3><p>css3中的calc这个计算属性超级好用，但是有一点需要注意<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">height</span>: <span class="selector-tag">calc</span>(100%<span class="selector-tag">-75px</span>);</div></pre></td></tr></table></figure></p>
-<p>以上代码不起作用，让人摸不着头脑，经过查询之后，需要注意的是<code>-</code>号两边要有空格<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">height</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 75<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h3><p>css3中的calc这个计算属性超级好用，但是有一点需要注意</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">100%</span>-<span class="token number">75</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>以上代码不起作用，让人摸不着头脑，经过查询之后，需要注意的是<code>-</code>号两边要有空格</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token property">height</span><span class="token punctuation">:</span> <span class="token function">calc</span><span class="token punctuation">(</span><span class="token number">100%</span> - <span class="token number">75</span>px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="display-flex-兼容性"><a href="#display-flex-兼容性" class="headerlink" title="display:flex;兼容性"></a>display:flex;兼容性</h3><p>网站要兼容到IE9，而flex是从ie10兼容的。找hack但是没有只对IE9起作用的hack…唉，使用<code>\9</code>的hack，它也在IE10下起作用<br>对于IE9的兼容，我一般使用<code>display: table;</code>和<code>display: table-cell;</code>。此时你在设置子元素的margin是不起作用的，此时你想要的效果这两个css属性可以达到你的需求<code>border-collapse: separate;</code>、<code>border-spacing: 5rem</code>。</p>
 
     

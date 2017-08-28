@@ -141,7 +141,7 @@
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         
         
             <style>
@@ -291,7 +291,8 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -495,9 +496,51 @@
 </ol>
 <h3 id="es7中的装饰器"><a href="#es7中的装饰器" class="headerlink" title="es7中的装饰器"></a>es7中的装饰器</h3><p>es7新增的decorator 属性，它借鉴自 Python，在 Python 里，decorator 实际上是一个 wrapper，它作用于一个目标函数，对这个目标函数做一些额外的操作，然后返回一个新的函数。</p>
 <h4 id="装饰property"><a href="#装饰property" class="headerlink" title="装饰property"></a>装饰property</h4><p>ES2016装饰器是一个返回函数的表达式，可以将target，name和property描述符作为参数。你可以通过在装饰器前加一个“@”字符来应用它，并将其放置在您想要装饰的顶部。可以为类或属性定义装饰器。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</div><div class="line">    meow() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> say meow`</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 如果给meow方法加上可读属性</span></div><div class="line"><span class="comment">// 定义一个装饰器</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readonly</span> (<span class="params">target, name, descriptor</span>) </span>&#123;</div><div class="line">    descriptor.writeable = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> descriptor;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</div><div class="line">    @readonly</div><div class="line">    meow() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> say meow`</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 此时你尝试修改meow，就会报错</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// 在这里推荐一个module： core-decorators</span></div></pre></td></tr></table></figure>
-<h4 id="装饰class"><a href="#装饰class" class="headerlink" title="装饰class"></a>装饰class</h4><p>在这种情况下，装饰器将使用目标target的构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hero</span>(<span class="params">target</span>) </span>&#123;</div><div class="line">    target.isHero = <span class="literal">true</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">@hero</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHero</span> </span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(MyHero.isHero); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
-<p>还可以进一步扩展，为装饰功能提供参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hero</span>(<span class="params">isHero</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</div><div class="line">        target.isHero = isHero;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 你可以写成ES6的形式</span></div><div class="line"><span class="comment">// const hero = isHero =&gt; target =&gt; target.isHero = isHero;</span></div><div class="line">@hero(<span class="literal">false</span>)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHero</span> </span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(MyHero.isHero); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token punctuation">{</span>
+    <span class="token function">meow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> say meow`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 如果给meow方法加上可读属性</span>
+<span class="token comment" spellcheck="true">// 定义一个装饰器</span>
+<span class="token keyword">function</span> readonly <span class="token punctuation">(</span>target<span class="token punctuation">,</span> name<span class="token punctuation">,</span> descriptor<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    descriptor<span class="token punctuation">.</span>writeable <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> descriptor<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Cat</span> <span class="token punctuation">{</span>
+    @readonly
+    <span class="token function">meow</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> say meow`</span></span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 此时你尝试修改meow，就会报错</span>
+<span class="token comment" spellcheck="true">//</span>
+<span class="token comment" spellcheck="true">// 在这里推荐一个module： core-decorators</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="装饰class"><a href="#装饰class" class="headerlink" title="装饰class"></a>装饰class</h4><p>在这种情况下，装饰器将使用目标target的构造函数。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">hero</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    target<span class="token punctuation">.</span>isHero <span class="token operator">=</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span>
+
+@hero
+<span class="token keyword">class</span> <span class="token class-name">MyHero</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>MyHero<span class="token punctuation">.</span>isHero<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>还可以进一步扩展，为装饰功能提供参数。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">hero</span><span class="token punctuation">(</span>isHero<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>target<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        target<span class="token punctuation">.</span>isHero <span class="token operator">=</span> isHero<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">// 你可以写成ES6的形式</span>
+<span class="token comment" spellcheck="true">// const hero = isHero => target => target.isHero = isHero;</span>
+@<span class="token function">hero</span><span class="token punctuation">(</span><span class="token boolean">false</span><span class="token punctuation">)</span>
+<span class="token keyword">class</span> <span class="token class-name">MyHero</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>MyHero<span class="token punctuation">.</span>isHero<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841" target="_blank" rel="external">参考链接</a></p>
 
     

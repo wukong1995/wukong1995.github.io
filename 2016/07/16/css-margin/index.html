@@ -141,7 +141,7 @@
     <!-- Import CSS & jQuery -->
     
         <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
-        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?oCSEO3ST+aEypEwttTDI9g==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
         
         
             <style>
@@ -291,7 +291,8 @@
 
     <!-- Custom Head -->
     
-</head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
     
@@ -487,9 +488,25 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p>今天在慕课上看了张大神又一力作，整理了一下<br>margin的巧妙使用：<br>1、margin实现自适应的宽高比为2：1的矩形</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;container&quot;&gt;  </div><div class="line">    &lt;div class=&quot;box&quot;&gt;  </div><div class="line">       &lt;div&gt;&lt;/div&gt;  </div><div class="line">    &lt;/div&gt;  </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">  #container &#123;  </div><div class="line">    width: 400px;  </div><div class="line">    height: 250px;  </div><div class="line">  &#125;  </div><div class="line">  .box &#123;  </div><div class="line">    background-color: olive;  </div><div class="line">    overflow: hidden;  </div><div class="line">  &#125;  </div><div class="line">  .box &gt; div &#123;  </div><div class="line">    margin: 50%;  </div><div class="line">  &#125;  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://upload-images.jianshu.io/upload_images/7018384-24ac7fb1fccbcec6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><img src="http://upload-images.jianshu.io/upload_images/7018384-70156a9605e570a9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><img src="http://upload-images.jianshu.io/upload_images/7018384-92ecf8c007214a71?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<pre><code>&lt;div id=&quot;container&quot;&gt;  
+    &lt;div class=&quot;box&quot;&gt;  
+       &lt;div&gt;&lt;/div&gt;  
+    &lt;/div&gt;  
+&lt;/div&gt;
+</code></pre><pre><code>&lt;style type=&quot;text/css&quot;&gt;  
+  #container {  
+    width: 400px;  
+    height: 250px;  
+  }  
+  .box {  
+    background-color: olive;  
+    overflow: hidden;  
+  }  
+  .box &gt; div {  
+    margin: 50%;  
+  }  
+&lt;/style&gt;
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/7018384-24ac7fb1fccbcec6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><img src="http://upload-images.jianshu.io/upload_images/7018384-70156a9605e570a9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><img src="http://upload-images.jianshu.io/upload_images/7018384-92ecf8c007214a71?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 
     
 
