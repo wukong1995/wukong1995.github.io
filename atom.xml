@@ -92,9 +92,9 @@
       <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
     
     
-      <category term="node" scheme="https://wukong1995.github.io/tags/node/"/>
-    
       <category term="npm" scheme="https://wukong1995.github.io/tags/npm/"/>
+    
+      <category term="node" scheme="https://wukong1995.github.io/tags/node/"/>
     
   </entry>
   
@@ -238,9 +238,9 @@
     
       <category term="angularjs" scheme="https://wukong1995.github.io/tags/angularjs/"/>
     
-      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
-    
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
     
   </entry>
   
@@ -280,9 +280,9 @@
       <category term="graphql" scheme="https://wukong1995.github.io/categories/graphql/"/>
     
     
-      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
-    
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
     
   </entry>
   
