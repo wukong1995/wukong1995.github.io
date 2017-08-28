@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>hhttps://wukong1995.github.io</loc>
+        <loc>https://wukong1995.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/26/week5-1/</loc>
+        <loc>https://wukong1995.github.io/2017/08/26/week5-1/</loc>
         <lastmod>2017-08-27T14:17:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -15,7 +15,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/26/week5-2/</loc>
+        <loc>https://wukong1995.github.io/2017/08/26/week5-2/</loc>
         <lastmod>2017-08-27T13:54:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -23,7 +23,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/20/week4/</loc>
+        <loc>https://wukong1995.github.io/2017/08/20/week4/</loc>
         <lastmod>2017-08-27T13:54:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -31,7 +31,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/13/week3/</loc>
+        <loc>https://wukong1995.github.io/2017/08/13/week3/</loc>
         <lastmod>2017-08-27T13:54:36.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -39,7 +39,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/05/week2/</loc>
+        <loc>https://wukong1995.github.io/2017/08/05/week2/</loc>
         <lastmod>2017-08-27T13:54:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -47,7 +47,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/07/28/week1/</loc>
+        <loc>https://wukong1995.github.io/2017/07/28/week1/</loc>
         <lastmod>2017-08-27T13:54:23.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -55,7 +55,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/03/29/wechatPHP/</loc>
+        <loc>https://wukong1995.github.io/2017/03/29/wechatPHP/</loc>
         <lastmod>2017-08-27T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -63,7 +63,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2016/12/11/useMongoDB/</loc>
+        <loc>https://wukong1995.github.io/2016/12/11/useMongoDB/</loc>
         <lastmod>2017-08-27T13:53:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -71,7 +71,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/07/23/relay-apollo/</loc>
+        <loc>https://wukong1995.github.io/2017/07/23/relay-apollo/</loc>
         <lastmod>2017-08-27T13:53:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -79,7 +79,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/07/22/react-relay/</loc>
+        <loc>https://wukong1995.github.io/2017/07/22/react-relay/</loc>
         <lastmod>2017-08-27T13:53:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -87,7 +87,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/17/npm-package/</loc>
+        <loc>https://wukong1995.github.io/2017/08/17/npm-package/</loc>
         <lastmod>2017-08-27T13:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -95,7 +95,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2016/09/17/ngInterpolate/</loc>
+        <loc>https://wukong1995.github.io/2016/09/17/ngInterpolate/</loc>
         <lastmod>2017-08-27T13:53:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -103,7 +103,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2016/12/11/moment/</loc>
+        <loc>https://wukong1995.github.io/2016/12/11/moment/</loc>
         <lastmod>2017-08-27T13:53:24.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -111,7 +111,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2016/07/20/java1/</loc>
+        <loc>https://wukong1995.github.io/2016/07/20/java1/</loc>
         <lastmod>2017-08-27T13:53:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -119,7 +119,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/07/22/git/</loc>
+        <loc>https://wukong1995.github.io/2017/07/22/git/</loc>
         <lastmod>2017-08-27T13:53:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -127,7 +127,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/13/ES7-decorator/</loc>
+        <loc>https://wukong1995.github.io/2017/08/13/ES7-decorator/</loc>
         <lastmod>2017-08-27T13:53:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -135,7 +135,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/08/02/douban/</loc>
+        <loc>https://wukong1995.github.io/2017/08/02/douban/</loc>
         <lastmod>2017-08-27T13:52:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -143,7 +143,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/03/26/dataTable/</loc>
+        <loc>https://wukong1995.github.io/2017/03/26/dataTable/</loc>
         <lastmod>2017-08-27T13:52:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -151,7 +151,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2016/07/16/css-margin/</loc>
+        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
         <lastmod>2017-08-27T13:51:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -159,7 +159,7 @@
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/2017/07/28/reduce/</loc>
+        <loc>https://wukong1995.github.io/2017/07/28/reduce/</loc>
         <lastmod>2017-08-27T12:57:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

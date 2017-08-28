@@ -1,76 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>hhttps://wukong1995.github.io</loc>
+        <loc>https://wukong1995.github.io</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
+        <loc>https://wukong1995.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
         <lastmod>2017-08-27T13:52:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/javascript/</loc>
+        <loc>https://wukong1995.github.io/categories/javascript/</loc>
         <lastmod>2017-08-27T13:53:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/Git/</loc>
+        <loc>https://wukong1995.github.io/categories/Git/</loc>
         <lastmod>2017-08-27T13:53:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/Java/</loc>
+        <loc>https://wukong1995.github.io/categories/Java/</loc>
         <lastmod>2017-08-27T13:53:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+        <loc>https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2017-08-27T13:53:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/Nodejs/</loc>
+        <loc>https://wukong1995.github.io/categories/Nodejs/</loc>
         <lastmod>2017-08-27T13:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/graphql/</loc>
+        <loc>https://wukong1995.github.io/categories/graphql/</loc>
         <lastmod>2017-08-27T13:53:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <loc>https://wukong1995.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
         <lastmod>2017-08-27T13:53:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/PHP/</loc>
+        <loc>https://wukong1995.github.io/categories/PHP/</loc>
         <lastmod>2017-08-27T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>hhttps://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
+        <loc>https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
         <lastmod>2017-08-27T14:17:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

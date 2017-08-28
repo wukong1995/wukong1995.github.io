@@ -1,230 +1,557 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[week5-2]]></title>
-    <url>%2F2017%2F08%2F26%2Fweek5-2%2F</url>
-    <content type="text"><![CDATA[上周没写总结… if条件什么时候为false因为react共用组件，但是传过来的值的结构不同，于是使用||来进行判断选择，于是写了以下代码放心的提上去了1const count = node.count || node.usage_count || node.total_count 发现报total_count是undefined，这个我仔细看了代码没找出来哪错了，于是把生产环境的数据库拿下来，开始调试…最后发现因为usage_count的值为零的时候，会继续往后执行，因为node.usage_count值为0，js会认为是false…我的原意是为undefined的时候，会继续向后执行。使用js很随便，但是忘记了随便的副作用。于是我只能用if…else…去判断undefined了👉当if语句中的变量为false，0，NaN，空字符串，null，undefined时，判断结果为假; 图片是使用背景图还是img标签一般来说，我的习惯是图片一般使用img标签插入页面。但是，假如一个网站有中文英文两个版本，通过类名的切换而不是跳转页面可以实现中英文的切换，这个时候，就不要img标签，而是背景图的形式插入图片，这样做的好处是：图片是在css设置的，我可以为元素设置不同的类名进而切换图片 BEM不应该嵌套太深BEM命名的方式，一般是一个block里面包含element,所以我是一个block一层来的。大哥告诉我这样是不对的，划分block没有错，但是在命名不冲突的情况下，block中的element的类名没有必要一定按照block的类名开头。 一定要选好元素之前做tab切换的时候，咋改都没达到想要的效果。看了大哥的代码，才发现自己选错元素了。应该选择section的父元素而不是每个section…写代码之前没有经过严密的思考，遇到错误时，思想受到了限制，导致没想到正确的方向去… calccss3中的calc这个计算属性超级好用，但是有一点需要注意1height: calc(100%-75px); 以上代码不起作用，让人摸不着头脑，经过查询之后，需要注意的是-号两边要有空格1height: calc(100% - 75px); display:flex;兼容性网站要兼容到IE9，而flex是从ie10兼容的。找hack但是没有只对IE9起作用的hack…唉，使用\9的hack，它也在IE10下起作用对于IE9的兼容，我一般使用display: table;和display: table-cell;。此时你在设置子元素的margin是不起作用的，此时你想要的效果这两个css属性可以达到你的需求border-collapse: separate;、border-spacing: 5rem。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[week5-1]]></title>
-    <url>%2F2017%2F08%2F26%2Fweek5-1%2F</url>
-    <content type="text"><![CDATA[说在前面的话最初对待语言的看法：相比语言更重要的是由编程思想，语言只是一种工具。所以对于只停留在Syntax阶段，没有去深究语言的内在。之前在学习C++的时候，老师也讲过一些内存方面…例如一段很简单的代码，在C++中会造成死循环…代码片段我还是没找到…在学编译原理的时候，也学过词法分析、语法树等等…但是总是来说对于语言还是又一个模糊的概念近期在coursera看一门课程，收获很大。刚开始看视频，因为自己的英语能力薄弱，刚开始看的时候，恨不得每句话都Google tanslate一遍，看多了就习惯了，因为大部分的术语你已经知道意思了，所以能知道大概的意思。Google翻译的意思，因为不知道术语所以翻译出来也很奇特。目前是以ML为例讲解的 variable binding变量的绑定主要包括两个环境：静态环境记录了变量的类型；动态环境记录了变量的值123val x = 34(* static env : x : int *)(* dynamic env : x -&gt; 34 *) rules to expressions它共有三个部分：语法检查、类型检查和评估规则123456789101112131415Syntax: if el then e2 else e3 where if, then, and else are keywords and e1, e2, and e3 are subespressionsType-checking: first el must have bool type e2 and e3 can hav any type(let`s call it t), but they must have the same type t the type of the entire expression is also tEvalustion rules: first evalustion el to a value call it v1 if it`s true, evaluate e2 and that result is the whole expression`s result else, evaluate e3 and that result is the whole expression`s result shadowing当你重复声明相同的变量时，之前声明的值就会被覆盖，当你在REPL中看它的值的时候，就会变成hidden value，所以不建议重复声明变量12val x = 34val x = 45 (* this is not assiginment statement *) 递归ML语言没有for循环，所以在对于list类型的数据，会尝试使用递归去解决问题，但是小心哦，不恰当的使用递归，会使运行次数呈指数式增长。下面是求list中的最大值，可以简单粗暴的理解成求数组中的最大值12345678fun bad_max(numbers: int list) = if null numbers then 0 else if null tl numbers then hd numbers else if hd numbers &gt; bad_max(tl numbers) then hd numbers else bad_max(tl numbers) 上面代码逻辑清晰，通俗易懂，但是使用的时候，假如数组中的数是从大到小排列时，程序运行速度很快；相反，数组中的数若是从小到大排列，当数组是[1,…30]时，你就会发现有延迟…讲师用了一张图给你讲解 优化的方法是：你可以将bad_max(tl numbers)的值赋予一个变量，这样，每次程序运行时bad_max(tl numbers)只会执行一遍。这里使用了let...in...end，在这个课程中，作者也讲解了作用域的问题，例如子作用域的值回覆盖父作用域的值… 关键字每门语言都会提供关键字来提高代码的可读性，在适当的地方记得使用 调试错误调试错误时，一定要有耐心…]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[week4]]></title>
-    <url>%2F2017%2F08%2F20%2Fweek4%2F</url>
-    <content type="text"><![CDATA[只想睡觉...]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[npm-package]]></title>
-    <url>%2F2017%2F08%2F17%2Fnpm-package%2F</url>
-    <content type="text"><![CDATA[写包的初衷项目中很多地方用到相同的代码段，做其他项目的时候，也会用到这个功能，于是，大哥让我写一个包，供目前以及以后的项目使用 提供的功能在机器之心这个页面，上面的nav会根据滚动条的位置进而改变active状态，同时，点击nav中的每个链接，页面也会滚动到相应的section。这个功能很常见。目前，包提供的两种形式： 使用锚链接：你通过点击nav中的链接，通过锚点来使页面滚动到相应的section；同时，滚动条的位置改变时，会更改页面的hash，nav的active也会改变。 使用点击事件：你通过点击nav中的链接，通过获得元素的data-index来确定相应的section，所以你必须为nav中的item添加data-index属性；同时，滚动条的位置改变时，nav的active也会改变。 项目的地址点击这去仓库具体的参数请查看readme 项目发布的过程 新建一个文件夹，npm init来填写包的信息 编写代码 完成代码编写，若你使用ES6或者ES7的语法，需要使用babel转换一下 npm login npm publish 到这你的包发布成功，若更新包，记得要改package.json中的version 遇到的坑 完成代码编写后，直接发布了，使用的时候报错：import那报错；我以为是因为没有因为代码压缩，于是进行了代码的压缩，发现并没有什么软用；因为项目使用webpack打包，就想是不是因为没有打包，于是就开始了打包，结果项目还是报错。边上网边查，我还以为是代码写错了…；最后，看了其他包的样子，发现是使用babel打包的，解决了这个大问题。 若你安装不上一个包，报错说是因为名字重复了：不是文件夹的名字和包的名字重复了，而是你的项目的package.json中的name和包的名字重复了… 自己坑自己，代码变量拼写错误，最近老是犯这个错误😔 终结～]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>npm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ES7-decorator]]></title>
-    <url>%2F2017%2F08%2F13%2FES7-decorator%2F</url>
-    <content type="text"><![CDATA[装饰模式对于装饰模式，现在还剩下鸡腿堡+香菜+辣椒的记忆。这个是装饰模式的一个例子：有一个汉堡的抽象构件，鸡腿堡是具体构件，香菜和辣椒都是具体的装饰角色。现在我想计算鸡腿堡+香菜+辣椒的价格 针对的问题你想要动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。不改变接口的前提下，增强所考虑的类的性能。何时使用： 需要扩展一个类的功能，或给一个类增加附加责任。 需要动态的给一个对象增加功能，这些功能可以再动态地撤销。 需要增加一些基本功能的排列组合而产生的非常大量的功能，从而使继承变得不现实。 es7中的装饰器es7新增的decorator 属性，它借鉴自 Python，在 Python 里，decorator 实际上是一个 wrapper，它作用于一个目标函数，对这个目标函数做一些额外的操作，然后返回一个新的函数。 装饰propertyES2016装饰器是一个返回函数的表达式，可以将target，name和property描述符作为参数。你可以通过在装饰器前加一个“@”字符来应用它，并将其放置在您想要装饰的顶部。可以为类或属性定义装饰器。 1234567891011121314151617181920212223class Cat &#123; meow() &#123; return `$&#123;this.name&#125; say meow`; &#125;&#125;// 如果给meow方法加上可读属性// 定义一个装饰器function readonly (target, name, descriptor) &#123; descriptor.writeable = false; return descriptor;&#125;class Cat &#123; @readonly meow() &#123; return `$&#123;this.name&#125; say meow`; &#125;&#125;// 此时你尝试修改meow，就会报错//// 在这里推荐一个module： core-decorators 装饰class在这种情况下，装饰器将使用目标target的构造函数。1234567function hero(target) &#123; target.isHero = true&#125;@heroclass MyHero &#123;&#125;console.log(MyHero.isHero); // true 还可以进一步扩展，为装饰功能提供参数。12345678910function hero(isHero) &#123; return function(target) &#123; target.isHero = isHero; &#125;&#125;// 你可以写成ES6的形式// const hero = isHero =&gt; target =&gt; target.isHero = isHero;@hero(false)class MyHero &#123;&#125;console.log(MyHero.isHero); // false 参考参考链接]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>es7</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[week3]]></title>
-    <url>%2F2017%2F08%2F13%2Fweek3%2F</url>
-    <content type="text"><![CDATA[❓psd转html首先你拿到设计图应该做什么？我的做法是浏览一下整个页面，找出每个模块的共同点。之后开始搭建html，再写css，最后写js。昨天拿到设计图，按照这样的模式去做。可是在最后添加icon时犯了难，因为在icon库里面没有找到合适的，就想着在psd中直接导出icon，可是这时候去看psd的时候，发现整个模块是一个图层，这个时候犯了难，我不知道设计者这样做的意图？再接着我将整个模块作为一个png导出，直接放在页面上，我感觉这样做是不对的，最后的方法是将需要的图标裁剪出来，多个图标但在一个png中。这次给我一个提示：你拿到设计图第一件事是需要干什么？浏览页面的时候，是不是需要将每个模块的所在的图层全都要过一遍以及注意事项… ❓一个带有渐变颜色的圆形边框首先为了使div带有渐变颜色的边框，于是设置它的border-image是一个渐变颜色，虽然边框是渐变的了，当时它没有圆角，即使再改变它的border-radius也不会有作用。👉我在stackoverflow上找到了解决方法点击这里。但是这种实现还是有个缺点，就是div必须设置一个背景色，进而来掩盖它的after伪元素的背景色。但是我想要的效果是它的背景色是透明的，没有找到好的解决办法，就找了一个和背景色相近的颜色去代替😔。这个偷懒的方法，期待完美的解决方案… ❓css画出文件夹📁的轮廓这个问题最难的部分是画出文件夹📁上方那个弧度，没有什么好的办法，就是用两个元素的border-radius连接而成，理所当然的，画出的轮廓有些奇怪…因为border-radius越大，边框的弧度久越大，可见的border宽度会越来越窄，所以会有一种不圆滑的感觉。感觉我的想法有些奇怪… 如何做出宽高成比例的div父容器设置width和padding，padding设置百分比，padding设置百分比之后和width相关。子容器飘在父容器上width和height等于父容器即可。 ❓es7装饰器大哥说：没有什么是包不能解决的。查看了代码是使用了装饰器。 js中的offsetTop和jq中的offset()、position()使用起来还是不等同的，具体的得去查看源码… rails on ruby在查询的时候，能进行include的就不要在jbuilder里面再去查询一遍。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[week2]]></title>
-    <url>%2F2017%2F08%2F05%2Fweek2%2F</url>
-    <content type="text"><![CDATA[分页插件写分页插件，我开始的想法是： 判断是否显示“上一页” 判断是否显示“第一页” 判断是否显示“…”、”current-2”、”current-1” 判断是否显示 current页面 判断是否显示”current+1”、”current+2”、“…” 判断是否显示“最后一页” 判断是否显示“最后一页” 我的目的是最少要显示cuurent周围的四个number，按照这个想法写出来，当cuurent为1时，只会显示123三个number，而我的预期是现实12345这五个number😔调整一下做法，将上面的3-5合并，left和right表示current-2和current+2，在left&lt;0时候，将right加上left的相反数，right&gt;total同理最后，我还是找了一个插件用在项目中，👉插件的名字是：react-paginate，css部分需要你自己去写… react and jquery目前有一个container的组件，它的子组件是list和detail，list的子组件是item，点击item，detail组件会显示，显示效果是通过增加删除类名实现的。想着组件传值比较麻烦，于是就在方法里面直接使用jq早啊道元素控制。大哥告诉我，这个解决办法是不推荐的。👉正确的做法是使用state。通过改变state的值，进而改变元素的class。 redis还记得之前的一个面试问题：视频有最热视频、点赞最多视频、其他视频，每次去服务器要十个数据…由于用户使用量很多，每次去数据库查询，访问量太大。这样的话，👉可以使用redis去做缓存，这样取数据库可以直接取缓存中取，设置一个时间去更新redis即可。现在又一个需求，是记录每天用户登录网站的数量。👉方法一：给用户表增加一个最后登录时间的列，每天定时执行程序，统计一下最后登录时间是昨天的用户数量。这个方法中，选择什么时候去执行程序很重要，要不然就会有漏网之鱼。👉方法二：最粗暴的办法是，在redis中创建一个字段，它是一个数组，每次知道用户登录的时候，就将用户的idpush进数组，每天用户的登录的数量，直接通过数组的长度就可以得到。这个方法的缺点就是：用户的id字段也是一串很长的字符串，数组会特别大。👉方法三：在redis中创建一个字段，它是一个字符串，默认是长度是用户的数量的0，若用户登录，就将对应的位置为1。在这三个方法中，第三个方法是最优方法。还有一个可以做缓存的数据库叫memcache，它和redis的区别就是，redis可以持久化。 插件js-base64Graphql中自带的分页，after字段是base64的字符串。前端传值就需要将数字转化成base64位的字符串。12import &#123; Base64 &#125; from &apos;js-base64&apos;;const cursor = Base64.encode(number); 最后说句题外话，任何炒作都不能改变一个东西没落的事实，与其去炒作，还不如用脑子把东西做的更好。]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[douban]]></title>
-    <url>%2F2017%2F08%2F02%2Fdouban%2F</url>
-    <content type="text"><![CDATA[在千里码刷题的时候看到了这个题目题目要求是爬取豆瓣评分最高的250部电影的总分… 分析爬数据，首先是实用http模块去爬取全部的HTML然后使用cheerio去得到HTML中自己想要的数据最后每页得到的总分相加 题目中的坑1、因为豆瓣是https开头，使用https模块，具体的方法没看，使用还是按照http模块来的2、如果按照正常的逻辑去写代码，最后得到的总分是0，因为https抓取数据是异步进行的3、使用promise来进行处理，首先需要等到25页的数据全部抓取完毕，再进行计算总分，这时候想到了promise.all这个方法。4、第一次尝试将使用promise，我在getData中直接将resolve(res)，等到下面使用的时候，res又是一个异步执行，这下尴尬😅了，于是调整顺序，在res执行end事件的时候再resolve5、js中浮点类型计算的坑，我直接暴力的*10，最后在／10 代码爬评分时，顺便把电影名也爬下来了，我准备把没看的都补上😄 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566const https = require('https')const cheerio = require('cheerio')let sumScore = 0let allMovie = []function filterMovie(html) &#123; let $ = cheerio.load(html) let movieList = $('.grid_view li') let total = 0 let movies = [] movieList.each(function(index, item) &#123; let score = $(item).find('.bd .rating_num').text() let movieName = $(item).find('.hd a').text().replace(/\s+/g,"") movies.push(&#123; name: movieName, score &#125;) total += Number(score) * 10 &#125;) return &#123; total, movies &#125;&#125;function getData(url) &#123; return new Promise(function(resolve, reject) &#123; https .get(url, function(res) &#123; let html = '' res .on('data', function(data) &#123; html += data &#125;) .on('end', function() &#123; resolve(filterMovie(html)) &#125;) &#125;) .on('error', function(err) &#123; reject(err) &#125;) &#125;)&#125;let funcArr = []for(let i = 0; i &lt;= 225; i=i + 25) &#123; let url = `https://movie.douban.com/top250?start=$&#123;i&#125;` funcArr.push(getData(url))&#125;Promise .all(funcArr) .then(res =&gt; &#123; res.forEach(list =&gt; &#123; const &#123; total, movies &#125; = list sumScore += total allMovie = allMovie.concat(movies) &#125;) console.log("总分：" + sumScore / 10) allMovie.forEach(movie =&gt; &#123; const &#123; name, score &#125; = movie; console.log("评分：" + score + "，影片名：" + name) &#125;) &#125;) .catch(err =&gt; &#123; console.log(err) console.log("出错了") &#125;) 如果你有更好的想法，欢迎交流👏]]></content>
-      <categories>
-        <category>代码</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[work1]]></title>
-    <url>%2F2017%2F07%2F28%2Fweek1%2F</url>
-    <content type="text"><![CDATA[收获一turbolinks是一款将网站变成spa的一个插件，看到文档的的某些地方和ionic有些许相似之处，于是就将之前做webApp的疑问提了出来：打开页面刚开始进的页面是主页还是登录页？经过讨论后，👉是主页；为App添加一个拦截器，对于用户登录后才能使用的页面，进入时，首先在拦截器中判断有无用户登录…另外，两者之间还有相同的一点：都会提前缓存页面。之前做app的时候，添加了拦截器，因为app首先打开进入主页（这时候开始缓存和主页相关的页面），判断用户未登录，会重定向到用户登录页，这时候就会发生页面的闪烁，关于这个问题我没有查😶，我很暴力的加了一个spash….另外，关于支付宝账单页，数据是如何传递，数据格式如何设计，尝试去爬数据也没看到数据长什么样子的😑，于是目前的想到的方法是，👉后端每次去数据库取count条数据，在按照日期分组后，传到前端；前端的处理方式是：判断得到的第一个月数据与本地现有的最后一个月的数据时候是同年同月，如果是就concat第一个月的数据，剩下的数据直接push。 收获二在将加载更多全都迁移至react的过程中，我在大哥的基础上，比这葫芦画瓢，完成了页面的重构…但是现在有一个问题是：假如全用react去渲染，那么爬虫就爬不到数据，于是采用的方式是：render的时候，会在页面上先渲染一部分数据，剩下的就交给react来做；但是apollo目前提供的解决方案是：假如你将数据渲染到页面上时，会先查找cache中有没有数据，如果有就将数据渲染到页面上；否则发出网络请求。这意味着，只要我将插件渲染到页面上，就会发出网络请求，这一条网络请求是不需要的。因为用户可能不会浏览很多数据，于是想到的办法是：👉等用户去点击加载更多的时候，再去发送网络请求。查找apollo的文档，能想到的办法是：👉预先向cache中写去空数据，这样渲染时，在cache中找到数据，就不发送请求了，但是我不知如何写入数据😖，这是一个预留问题😞很忧伤的一个问题…待续… 收获三知道了reduce这个优雅的方法，promise也提供了这个方法…. 收获四在还原原型图时，更多的时间应该花费在如何设计HTML的结构上，再接下来再写css，最后再写js。这次做的时候，本来是设计好了还能符合要求的HTML结构，结果在写css的时候，发现现在的HTML不能达到预期，于是开始设计调整HTML，幸亏样式使用scss写的😉…还有一个，我看到排排站的元素，首先想到的不是ul&gt;li，而是直接用a标签去尝试解决… 收获五再看文档的时候，看到了一个新的名词：Vanilla JS；用Google translate翻译了叫奶味js😀，于是就去查它到底是何方神圣，原来它的另一个名字叫做javascript😅 收获六因为sublimen并没有完整配置，push上去的代码就跑不过测试。这次找到了eslint检测js的package,叫做SublimeLinter-contrib-eslingt，代码不通过有红色标识…]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-      <tags>
-        <tag>总结</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Array的reduce方法]]></title>
-    <url>%2F2017%2F07%2F28%2Freduce%2F</url>
-    <content type="text"><![CDATA[初识第一次听说Array的reduce方法是在面试的时候这次看到大哥写的一个函数，里面用了reduce，哇，真的好优雅。因为代码的重复片段太多，我尝试去封装一个通用函数，没有成功。于是大哥出动了。目的是这样的：我可能需要data.user.article的值，或者需要data.article的值，或者需要data.categories.article的值，于是封装一个方法每次取到article的值。123// 封装一个函数reg，参数为belongto，传递的参数分别是：['user'] [] [categories]// 函数内部的主要代码是return belongto.reduce((p,c) =&gt; p[c], data).article reduce文档Syntax1arr.reduce(callback[, initialValue]) 参数callback有四个参数：分别是accumulator(它是callback上一次返回的值或者是initialValue，前提是initialValue存在)、currentValue(正在使用的值)、currentIndex(正在使用的值在数组中的索引)、array(这个是循环的数组)；initialValue：用作第一次调用回调的初始值，如果不提供此参数，则第一次调用回调的初始值是数组的第一个元素。为了保证安全，最好提供这个值 tip: 当数组为空时，若提供initialValue，则最后的返回值是initialValue，否则，报错； 当数组不为空时，若提供initialValue，则循环从index为0开始；否则循环从index为1开始，accumulator此时为index为0的值。 返回值回调函数的最后的返回值 用法求数组元素的总和（告别for循环）12var sum = [0, 1, 2, 3].reduce((a, b) =&gt; a + b, 0);// sum is 6 连接数组12[[0, 1], [2, 3], [4, 5]].reduce((a, b) =&gt; a.concat(b), []);// result is [0, 1, 2, 3, 4, 5] 相同元素在数组中出现几次12345678910111213var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];var countedNames = names.reduce( (allNames, name) =&gt; &#123; if (name in allNames) &#123; allNames[name]++; &#125; else &#123; allNames[name] = 1; &#125; return allNames;&#125;, &#123;&#125;);// countedNames is:// &#123; 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 &#125;]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
-      <tags>
-        <tag>javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[relay-apollo]]></title>
-    <url>%2F2017%2F07%2F23%2Frelay-apollo%2F</url>
-    <content type="text"><![CDATA[使用relay的感受初次接触relay，感觉上很臃肿，因为必须为每个组件设置container；若query层级嵌套很深，为了组件化，就必须将每一个react的component全部分开，在项目中，我写了六个组件，那么每个组件都需要container，写起来感觉满满的恶意。 使用Apollo再次接触Apollo，看了文档，感觉和relay大同小异，与relay的不同是：无需为每个component设置container，最后写一个query就ok👌了。query也可以由多个fragment组成。另外，apollo也为angularjs提供了解决方案，有点想不明白🤔，angularjs本身就是双向数据绑定，为什么要对它提供解决方案…另外，Apollo虽然自身内部集成了redux，假如你的项目中使用了redux，你可以使用redux而不用Apollo内部的redux。 relay 因为container的存在，数据划分的比较严密，你只能在当前的container访问fragment中的的属性，不能访问父或子fragment的属性。而apollo直接使用的是请求得到的Object…Apollo也可以和项目原有的redux相结合使用，relay不可以…待续…这次写的很匆忙，假如有不正确的地方，请指正，谢谢😊。]]></content>
-      <categories>
-        <category>graphql</category>
-      </categories>
-      <tags>
-        <tag>angularjs</tag>
-        <tag>graphql</tag>
-        <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[git]]></title>
-    <url>%2F2017%2F07%2F22%2Fgit%2F</url>
-    <content type="text"><![CDATA[使用git想要去合并两个commit今天好不容易完成了工作，睡觉的时候突然想到还有些小瑕疵，就想改正。但是改动范围很小，不好意思在commit一次，于是就想将两次commit合并在一起，但是我没有将最新的commit推送到远程分支，就直接合并了两个commit成了一个新的commit，在推送到远程时，也没有先进行pull的动作（👉每次push之前一定要进行pull的动作），导致远程commit和我合并的commit发生冲突，最后还需要手动merge。看了一下提交记录，吓坏了，本来我想合并commit，预计的commit只会在之前的基础上多一次commit，但是现在多了三次commit，这下坏了。于是，上网查询，试了好几种办法。找到了一个很合适的办法12git reset HEAD^ --hard //彻底回退到上次提交git push origin 分支名 -f // 强制推送到远程 这样操作以后，我的问题解决了（假如你有更好的方法，请在下方留言）。 待续…]]></content>
-      <categories>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[react-relay]]></title>
-    <url>%2F2017%2F07%2F22%2Freact-relay%2F</url>
-    <content type="text"><![CDATA[上次写感想还是2014的时候，那个时候是老师布置的作业（尴尬)队长看到GraphQL很好，于是先拿一个功能来试手😊。前端要使用GraphQL，最简单的方法是使用ajax发送query字符串。这个方法，若query嵌套层级太深，会导致query很长，长的让人接受不了；再者，假如数据变化，需要你手动的去改变DOM。项目中使用了react，于是队长给推荐了react-relay来配合GraphQL。首先给的时间是看GraphQL和react-relay的文档，先瞄一眼relay的文档，感觉是层层嵌套，就先去看GraphQL的文档，relay的文档没有看完…😶 第一天开始在队长的鼓励下开始写relay，到了relay的官网上，看到有一个Demo，就把代码给copy下来，再根据文档理解了代码的意思，就开始尝试着写代码。写代码的过程有点别扭，刚开始接触，会犯一些错误。但是又不知道错误发生的原因，于是就开始google解决。也想吐槽一下文档，文档上说，fragment的name建议是fileName_propsName，于是为了名字短点，就全部改了，结果编译的时候，告诉我是must be。😢代码终于不报错了，但是需要一个schema的文件。我想手写schema太繁琐了，也是去查有没有自动生成schema的插件，但是很遗憾，我找到都是配合node使用的（假如你有好的插件，请推荐给我，谢谢）。找啊找，找啊找，也没找到合适的，最终是队长上网找了一个工具生成的🤗。schema的问题解决。schema的存在是为了映射fragment的type。这个时候，大哥过来问问我怎么样了，我告诉他，虽然安装了react-relay，可是文档上的方法不存在，我就很暴力的改了源码，将方法暴露出来。他告诉我relay现在有两个版本：classic和modern，modern是最新的。我弱弱的问一句，咱们用哪个版本，他说当然是最新的。我的内心在哭泣😭。既然只是版本的迭代，思想肯定没有太大的变化，于是打起精神来看文档。👉这里是我太心急了，直接看了Demo，就ctrl+f去直接搜方法了，没有整体的先浏览一下文档，要不然也不会有这个不可预料的情况。 第二天边看文档，边改我的代码。👉刚开始报错是“没有配置babel或者graphql写错了”，假如你的babel配置是按照文档来的，那最有可能的就是你的fragment或者query写错了。最简单的query可以正常的渲染出来了，因为是query中需要有参数，所以开始看如何使用参数。在查资料的时候，这个链接给了我很大的帮助。但是在这个过程中，下面的错误伴随了我十个小时，我一直在尝试解决这个错误，于是上网查啊查 查啊查 查啊查也没找到答案 第三天大哥说他写出来了，我看了他的代码，对比我的代码，唯一的不同是，我将edges和node要写在不同的fragment中。我尝试在正确的代码上改成我设计的fragment，功能就报错了。我意识到，需要将edges和node写在同一个fragment中。👉出现这个错误的原因是，我已经封装好的fragment，出现这个错误，我全部的心思都放在了index.js，没有检查我封装好的组件。假如再来一次，我也会被困在这个error上出不来。之后因为还有一个加载更多的动作，于是我开始完成这个功能，在这个过程中，我学会了react父子组件如何传递消息。 测试功能完成好了。但是在进行测试的时候，再看network时，加载更多这个按钮是通过first这个参数来进行请求数据，first的意思就是取前first数据，后端限制first只能取到50，即使可以取到1000，但是在网络上传输1000条数据，也是一笔庞大的负担。relay也提供了分页的container，但是没有研究出来是怎样使用的。于是relay需要更换….所以，没有一个很好的方式来解决这个问题。👉队长又给推荐了Apollo，接下来要去看Apollo了待续…]]></content>
-      <categories>
-        <category>graphql</category>
-      </categories>
-      <tags>
-        <tag>graphql</tag>
-        <tag>react</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[wechatPHP]]></title>
-    <url>%2F2017%2F03%2F29%2FwechatPHP%2F</url>
-    <content type="text"><![CDATA[使用apache+php5.4n1、打开apache配置文件httpd.conf 搜索httpd-vhosts.conf，打开这一行的注释2、打开apache所在目录下的，conf/extra/httpd-vhost.conf 增加以下代码，保存12345678910&lt;VirtualHost *:80&gt; DocumentRoot &quot;D:\WWW\car-xxxx\car&quot; ServerName www.car-zones.com &lt;/VirtualHost&gt; &lt;Directory &quot;D:\WWW\car-xxxx\car&quot;&gt; Options Indexes FollowSymLinks Includes ExecCGI AllowOverride All Order allow,deny Allow from all &lt;/Directory&gt; 3、重启apache4、打开c:/windows/system32/drivers/etc/hots最后一行加入：www.car-xxxx.com5、访问 www.car-xxxx.com6、完成配置 第一次学习，记录一下]]></content>
-      <categories>
-        <category>PHP</category>
-      </categories>
-      <tags>
-        <tag>微信公众号</tag>
-        <tag>php</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[dataTable]]></title>
-    <url>%2F2017%2F03%2F26%2FdataTable%2F</url>
-    <content type="text"><![CDATA[偶然发现一个叫 dataTable 的组件，觉得很好用，于是研究了一番，下面是代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121122123124125126127128129130131132133134135136137var lang = &#123; "sProcessing": "处理中...", "sLengthMenu": "每页 _MENU_ 项", "sZeroRecords": "没有匹配结果", "sInfo": "当前显示第 _START_ 至 _END_ 项，共 _TOTAL_ 项。", "sInfoEmpty": "当前显示第 0 至 0 项，共 0 项", "sInfoFiltered": "(由 _MAX_ 项结果过滤)", "sInfoPostFix": "", "sSearch": "搜索:", "sUrl": "", "sEmptyTable": "表中数据为空", "sLoadingRecords": "载入中...", "sInfoThousands": ",", "oPaginate": &#123; "sFirst": "首页", "sPrevious": "上页", "sNext": "下页", "sLast": "末页", "sJump": "跳转" &#125;, "oAria": &#123; "sSortAscending": ": 以升序排列此列", "sSortDescending": ": 以降序排列此列" &#125; &#125;; var table = $("#sample").dataTable(&#123; language:lang, //提示信息 autoWidth: false, //禁用自动调整列宽 processing: true, //隐藏加载提示,自行处理 serverSide: true, //启用服务器端分页 searching: true, //禁用原生搜索 search: &#123; "search": "" &#125;, ordering:false, renderer: "bootstrap", //渲染样式：Bootstrap和jquery-ui lengthChange: false, pageLength:15, rowId: '_id', pagingType: "simple_numbers", //分页样式：simple,simple_numbers,full,full_numbers columnDefs: [&#123; "targets": 'nosort', //列的样式名 "orderable": false //包含上样式名‘nosort’的禁止排序 &#125;], ajax: function (data, callback, settings) &#123; //封装请求参数 var param = &#123;&#125;; param.keyword = data.search.value; param.limit = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候 param.start = data.start;//开始的记录序号 param.page = (data.start / data.length)+1;//当前页码 //console.log(param); //ajax请求数据 $.ajax(&#123; type: "POST", url: "/payment/result", cache: false, //禁用缓存 data: param, //传入组装的参数 dataType: "json", success: function (result) &#123; //封装返回数据 var returnData = &#123;&#125;; returnData.draw = data.draw;//这里直接自行返回了draw计数器,应该由后台返回 returnData.recordsTotal = result.totalCount;//返回数据全部记录 returnData.recordsFiltered = result.totalCount;//后台不实现过滤功能，每次查询均视作全部结果 returnData.data = result.payment;//返回的数据列表 //调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染 //此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕 callback(returnData); &#125; &#125;); &#125;, //列表表头字段 columns: [ &#123; className: "center", orderable : false, bSortable : false, data : "_id", render : function(data, type, row, meta) &#123; var content = '&lt;label class="position-relative"&gt;'; content += '&lt;input type="checkbox" class="ace" value="' + data + '" /&gt;'; content += '&lt;span class="lbl"&gt;&lt;/span&gt;'; content += '&lt;/label&gt;'; return content; &#125; &#125;, &#123; "data": "type", render:function(date,type,full) &#123; var content = null; if(date == 1) &#123; content = '收入'; &#125; else &#123; content = '支出'; &#125; return content; &#125; &#125;, &#123; "data": "name" &#125;, &#123; "data": "price" &#125;, &#123; "data": "product_type" &#125;, &#123; "data": "meta.createAt", render:function(date,type,full) &#123; return date.slice(0,10); &#125; &#125;, &#123; bSortable : false, visible : true, data : "_id", render : function(data, type, full) &#123; var content = '&lt;div class="hidden-sm hidden-xs action-buttons"&gt;'+ '&lt;a href="/payment/detail/' + data + '" class="blue"&gt;'+ '&lt;i class="ace-icon fa fa-search-plus bigger-130"&gt;&lt;/i&gt;'+ ' &lt;/a&gt;'+ '&lt;a href="javascript:void(0);" data-id="' + data + '" class="delete_btn red"&gt;'+ '&lt;i class="ace-icon fa fa-trash-o bigger-130"&gt;&lt;/i&gt;'+ '&lt;/a&gt;'+ '&lt;/div&gt;'+ '&lt;div class="hidden-md hidden-lg"&gt;'+ ' &lt;div class="inline position-relative"&gt;'+ ' &lt;button data-toggle="dropdown" data-position="auto" class="btn btn-minier btn-yellow dropdown-toggle"&gt;&lt;i class="ace-icon fa fa-caret-down icon-only bigger-120"&gt;&lt;/i&gt;&lt;/button&gt;'+ '&lt;ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close"&gt;'+ ' &lt;li&gt;&lt;a href="/payment/detail/' + data + '" data-rel="tooltip" title="" data-original-title="View" class="tooltip-info"&gt;&lt;span class="blue"&gt;&lt;i class="ace-icon fa fa-search-plus bigger-120"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;'+ '&lt;li&gt;&lt;a data-rel="tooltip" title="" data-original-title="Delete" data-id="' + data + '" class="delete_btn tooltip-error"&gt;&lt;span class="red"&gt;&lt;i class="ace-icon fa fa-trash-o bigger-120"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;'+ '&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;'; return content; &#125; &#125; ] &#125;).api(); //此处需调用api()方法,否则返回的是JQuery对象而不是DataTables的API对象 &#125;);]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>jQuery</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[moment]]></title>
-    <url>%2F2016%2F12%2F11%2Fmoment%2F</url>
-    <content type="text"><![CDATA[首先，好久没有来多博客了 今天在学习MongoDB时，需要格式化时间，上网查了一下，nodejs中的moment模块可以格式化时间。首先，mongodb中有一个字段是Date类型需要一个默认值，就是当前时间，可以使用以下代码来格式化时间 1moment().format('YYYY-MM-DD HH:mm:ss') 使用以下代码也是可以的 1moment(Date.now()).format('YYYY-MM-DD HH:mm:ss') 目前只使用这两个方法，以后再来补充——————————————————分割线———————————-在存入数据库时，我已经格式化日期了，取出来发现是没有格式的数据，很纳闷，不知道原因，找到了解决办法。express我是用的jade模板，在app.js中加入 1app.locals.moment = require('moment') 在jade中读取日期数据使用 1#&#123;moment(friend.createTime).format('YYYY-MM-DD HH:mm:ss')&#125; 取出来的日期是格式化的]]></content>
-      <categories>
-        <category>Nodejs</category>
-      </categories>
-      <tags>
-        <tag>nodejs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[useMongoDB]]></title>
-    <url>%2F2016%2F12%2F11%2FuseMongoDB%2F</url>
-    <content type="text"><![CDATA[最近在学习mongdb 以下是使用mongoose模块来保存数据 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647var mongoose = require('mongoose'); var moment = require('moment'); // 连接字符串格式为mongodb://主机/数据库名 mongoose.connect('mongodb://localhost/test'); var db = mongoose.connection; //输出连接日志 db.on('error', function callback() &#123; console.log("Connection error"); &#125;); db.once('open', function callback() &#123; console.log("Mongo working!"); &#125;); // 创建schema var Schema = mongoose.Schema; var userSchema = new Schema(&#123; name: String, age: Number, createTime: &#123; type: Date, default: moment().format('YYYY-MM-DD HH:mm:ss') &#125;, updateTime: &#123; type: Date, default: moment().format('YYYY-MM-DD HH:mm:ss') &#125;, telphone: String &#125;); // 构建model var User = mongoose.model('User', userSchema); //构建model实例 var userData = new User(&#123; name: 'root', age: 21, telphone: '18766560229' &#125;); // 保存数据 userData.save(function(err) &#123; if (err) &#123; console.log(err) &#125; else &#123; console.log('Save success'); &#125; &#125;) 还有，输出信息有以下信息：(node:7780) DeprecationWarning: Mongoose: mpromise (mongoose’s default promise library) is deprecated, plug in your own promise library instead: http://mongoosejs.com/docs/promises.html也不不知道是什么意思，需要补充]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-      <tags>
-        <tag>nodejs</tag>
-        <tag>MongoDB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[ngInterpolate]]></title>
-    <url>%2F2016%2F09%2F17%2FngInterpolate%2F</url>
-    <content type="text"><![CDATA[$interpolate服务返回一个函数，用来在特定的上下文中运算表达式。示例：html代码： 12345&lt;div ng-controller="myController"&gt; &lt;input ng-model="to" type="email" placeholder="email" /&gt; &lt;textarea ng-model="emailBody"&gt;&lt;/textarea&gt; &lt;pre&gt;&#123;&#123;previewText&#125;&#125;&lt;/pre&gt; &lt;/div&gt; js代码：1234567891011angular.module('myApp', []) .controller('myController',['$scope','$interpolate', function($scope,$interpolate) &#123; $scope.$watch('emailBody',function(body) &#123; if(body) &#123; var template = $interpolate(body); $scope.previewText = template(&#123;to:$scope.to&#125;) &#125; &#125;) &#125; ]) 使用：在输入框中输入你的email地址，在文本框中输入，previewText中的值即为to的值]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>angularjs</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[java1]]></title>
-    <url>%2F2016%2F07%2F20%2Fjava1%2F</url>
-    <content type="text"><![CDATA[Java已经忘了差不多了，最近又需要重新捡起Java。对于一副扑克牌共有54张，扑克牌洗牌就是将这54张牌没有规律的输出出来，用ArrayList实现，本质是54个数的随机输出，穿了身衣服，输出出来就好看多了 1234567891011121314151617public class Poker &#123; public static String poker(int num) &#123; String str = ""; String[] huase = &#123;"红桃","黑桃","梅花","方块"&#125;; String[] number = &#123;"A","2","3","4","5","6","7","8","9","10","J","Q","K"&#125;; if(num/4 &gt; 12) &#123; if(num%4 == 0) &#123; str += "小鬼"; &#125; else if(num%4 == 1) &#123; str += "大鬼"; &#125; &#125; else &#123; str += huase[num%4] + number[num/4] ; &#125; return str; &#125; &#125; 1234567891011121314151617181920212223242526public class Client &#123; public static void main(String[] args) &#123; // 定义变量 ArrayList list = new ArrayList(); Random random = new Random(); Poker poker = new Poker(); int i = 0; // 向数组中增加数字 for(i=0;i&lt;54;i++) &#123; list.add(poker.poker(i)); &#125; // 随机输出数组中的每个数字 int length = list.size(); for(i=0;i&lt;length;i++) &#123; //随机生成数组下标 int num = random.nextInt(list.size()); //取出数字 System.out.println(list.get(num)); //将数字从数组中移除 list.remove(num); &#125; &#125; &#125; 看起来舒服多了]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[css-margin]]></title>
-    <url>%2F2016%2F07%2F16%2Fcss-margin%2F</url>
-    <content type="text"><![CDATA[今天在慕课上看了张大神又一力作，整理了一下margin的巧妙使用：1、margin实现自适应的宽高比为2：1的矩形 12345&lt;div id=&quot;container&quot;&gt; &lt;div class=&quot;box&quot;&gt; &lt;div&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; 12345678910111213&lt;style type=&quot;text/css&quot;&gt; #container &#123; width: 400px; height: 250px; &#125; .box &#123; background-color: olive; overflow: hidden; &#125; .box &gt; div &#123; margin: 50%; &#125; &lt;/style&gt;]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>css</tag>
-      </tags>
-  </entry>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[week5-2]]></title>
+      <url>/2017/08/26/week5-2/</url>
+      <content type="html"><![CDATA[<p>上周没写总结…</p>
+<h3 id="if条件什么时候为false"><a href="#if条件什么时候为false" class="headerlink" title="if条件什么时候为false"></a>if条件什么时候为false</h3><p>因为react共用组件，但是传过来的值的结构不同，于是使用||来进行判断选择，于是写了以下代码放心的提上去了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">const count = node.count || node.usage_count || node.total_count</div></pre></td></tr></table></figure></p>
+<p>发现报total_count是undefined，这个我仔细看了代码没找出来哪错了，于是把生产环境的数据库拿下来，开始调试…最后发现因为<code>usage_count</code>的值为零的时候，会继续往后执行，因为<code>node.usage_count</code>值为0，js会认为是false…<br>我的原意是为undefined的时候，会继续向后执行。使用js很随便，但是忘记了随便的副作用。于是我只能用if…else…去判断undefined了<br>👉当if语句中的变量为false，0，NaN，空字符串，null，undefined时，判断结果为假;</p>
+<h3 id="图片是使用背景图还是img标签"><a href="#图片是使用背景图还是img标签" class="headerlink" title="图片是使用背景图还是img标签"></a>图片是使用背景图还是img标签</h3><p>一般来说，我的习惯是图片一般使用img标签插入页面。<br>但是，假如一个网站有中文英文两个版本，通过类名的切换而不是跳转页面可以实现中英文的切换，这个时候，就不要img标签，而是背景图的形式插入图片，这样做的好处是：图片是在css设置的，我可以为元素设置不同的类名进而切换图片</p>
+<h3 id="BEM不应该嵌套太深"><a href="#BEM不应该嵌套太深" class="headerlink" title="BEM不应该嵌套太深"></a>BEM不应该嵌套太深</h3><p>BEM命名的方式，一般是一个block里面包含element,所以我是一个block一层来的。大哥告诉我这样是不对的，划分block没有错，但是在命名不冲突的情况下，block中的element的类名没有必要一定按照block的类名开头。</p>
+<h3 id="一定要选好元素"><a href="#一定要选好元素" class="headerlink" title="一定要选好元素"></a>一定要选好元素</h3><p>之前做tab切换的时候，咋改都没达到想要的效果。看了大哥的代码，才发现自己选错元素了。应该选择section的父元素而不是每个section…写代码之前没有经过严密的思考，遇到错误时，思想受到了限制，导致没想到正确的方向去…</p>
+<h3 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h3><p>css3中的calc这个计算属性超级好用，但是有一点需要注意<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">height</span>: <span class="selector-tag">calc</span>(100%<span class="selector-tag">-75px</span>);</div></pre></td></tr></table></figure></p>
+<p>以上代码不起作用，让人摸不着头脑，经过查询之后，需要注意的是<code>-</code>号两边要有空格<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">height</span>: <span class="selector-tag">calc</span>(100% <span class="selector-tag">-</span> 75<span class="selector-tag">px</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="display-flex-兼容性"><a href="#display-flex-兼容性" class="headerlink" title="display:flex;兼容性"></a>display:flex;兼容性</h3><p>网站要兼容到IE9，而flex是从ie10兼容的。找hack但是没有只对IE9起作用的hack…唉，使用<code>\9</code>的hack，它也在IE10下起作用<br>对于IE9的兼容，我一般使用<code>display: table;</code>和<code>display: table-cell;</code>。此时你在设置子元素的margin是不起作用的，此时你想要的效果这两个css属性可以达到你的需求<code>border-collapse: separate;</code>、<code>border-spacing: 5rem</code>。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[week5-1]]></title>
+      <url>/2017/08/26/week5-1/</url>
+      <content type="html"><![CDATA[<h3 id="说在前面的话"><a href="#说在前面的话" class="headerlink" title="说在前面的话"></a>说在前面的话</h3><p>最初对待语言的看法：相比语言更重要的是由编程思想，语言只是一种工具。所以对于只停留在Syntax阶段，没有去深究语言的内在。<br>之前在学习C++的时候，老师也讲过一些内存方面…例如一段很简单的代码，在C++中会造成死循环…代码片段我还是没找到…<br>在学编译原理的时候，也学过词法分析、语法树等等…但是总是来说对于语言还是又一个模糊的概念<br>近期在coursera看一门课程，收获很大。刚开始看视频，因为自己的英语能力薄弱，刚开始看的时候，恨不得每句话都Google tanslate一遍，看多了就习惯了，因为大部分的术语你已经知道意思了，所以能知道大概的意思。Google翻译的意思，因为不知道术语所以翻译出来也很奇特。目前是以ML为例讲解的</p>
+<h3 id="variable-binding"><a href="#variable-binding" class="headerlink" title="variable binding"></a>variable binding</h3><p>变量的绑定主要包括两个环境：静态环境记录了变量的类型；动态环境记录了变量的值<br><figure class="highlight ml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> x = <span class="number">34</span></div><div class="line"><span class="comment">(* static env : x : int *)</span></div><div class="line"><span class="comment">(* dynamic env : x -&gt; 34 *)</span></div></pre></td></tr></table></figure></p>
+<h3 id="rules-to-expressions"><a href="#rules-to-expressions" class="headerlink" title="rules to expressions"></a>rules to expressions</h3><p>它共有三个部分：语法检查、类型检查和评估规则<br><figure class="highlight ml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="type">Syntax</span>:</div><div class="line">  <span class="keyword">if</span> el <span class="keyword">then</span> e2 <span class="keyword">else</span> e3</div><div class="line">  <span class="keyword">where</span> <span class="keyword">if</span>, <span class="keyword">then</span>, <span class="keyword">and</span> <span class="keyword">else</span> are keywords <span class="keyword">and</span></div><div class="line">  e1, e2, <span class="keyword">and</span> e3 are subespressions</div><div class="line"></div><div class="line"><span class="type">Type</span>-checking:</div><div class="line">  first el must have <span class="built_in">bool</span> <span class="keyword">type</span></div><div class="line">  e2 <span class="keyword">and</span> e3 can hav any <span class="keyword">type</span>(<span class="keyword">let</span>`s call it t), but they</div><div class="line">  must have the same <span class="keyword">type</span> t</div><div class="line">  the <span class="keyword">type</span> <span class="keyword">of</span> the entire expression is also t</div><div class="line"></div><div class="line"><span class="type">Evalustion</span> rules:</div><div class="line">  first evalustion el to a value call it v1</div><div class="line">  <span class="keyword">if</span> it`s <span class="literal">true</span>, evaluate e2 <span class="keyword">and</span> that result is the whole expression`s result</div><div class="line">  <span class="keyword">else</span>, evaluate e3 <span class="keyword">and</span> that result is the whole expression`s result</div></pre></td></tr></table></figure></p>
+<h3 id="shadowing"><a href="#shadowing" class="headerlink" title="shadowing"></a>shadowing</h3><p>当你重复声明相同的变量时，之前声明的值就会被覆盖，当你在REPL中看它的值的时候，就会变成hidden value，所以不建议重复声明变量<br><figure class="highlight ml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">val</span> x = <span class="number">34</span></div><div class="line"><span class="keyword">val</span> x = <span class="number">45</span>    <span class="comment">(* this is not assiginment statement *)</span></div></pre></td></tr></table></figure></p>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>ML语言没有for循环，所以在对于list类型的数据，会尝试使用递归去解决问题，但是小心哦，不恰当的使用递归，会使运行次数呈指数式增长。<br>下面是求list中的最大值，可以简单粗暴的理解成求数组中的最大值<br><figure class="highlight ml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">fun</span> bad_max(numbers: <span class="built_in">int</span> <span class="built_in">list</span>) =</div><div class="line">  <span class="keyword">if</span> null numbers</div><div class="line">  <span class="keyword">then</span> <span class="number">0</span></div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> null tl numbers</div><div class="line">  <span class="keyword">then</span> hd numbers</div><div class="line">  <span class="keyword">else</span> <span class="keyword">if</span> hd numbers &gt; bad_max(tl numbers)</div><div class="line">  <span class="keyword">then</span> hd numbers</div><div class="line">  <span class="keyword">else</span> bad_max(tl numbers)</div></pre></td></tr></table></figure></p>
+<p>上面代码逻辑清晰，通俗易懂，但是使用的时候，假如数组中的数是从大到小排列时，程序运行速度很快；相反，数组中的数若是从小到大排列，当数组是[1,…30]时，你就会发现有延迟…讲师用了一张图给你讲解<br><img src="http://res.cloudinary.com/dwudaridr/image/upload/v1503738949/WX20170825-142135_2x_oq3vsb.png" alt=""></p>
+<p>优化的方法是：你可以将<code>bad_max(tl numbers)</code>的值赋予一个变量，这样，每次程序运行时<code>bad_max(tl numbers)</code>只会执行一遍。这里使用了<code>let...in...end</code>，在这个课程中，作者也讲解了作用域的问题，例如子作用域的值回覆盖父作用域的值…</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>每门语言都会提供关键字来提高代码的可读性，在适当的地方记得使用</p>
+<h3 id="调试错误"><a href="#调试错误" class="headerlink" title="调试错误"></a>调试错误</h3><p>调试错误时，一定要有耐心…</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[week4]]></title>
+      <url>/2017/08/20/week4/</url>
+      <content type="html"><![CDATA[<p><code>只想睡觉...</code></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[npm-package]]></title>
+      <url>/2017/08/17/npm-package/</url>
+      <content type="html"><![CDATA[<h3 id="写包的初衷"><a href="#写包的初衷" class="headerlink" title="写包的初衷"></a>写包的初衷</h3><p>项目中很多地方用到相同的代码段，做其他项目的时候，也会用到这个功能，于是，大哥让我写一个包，供目前以及以后的项目使用</p>
+<h3 id="提供的功能"><a href="#提供的功能" class="headerlink" title="提供的功能"></a>提供的功能</h3><p>在<a href="https://gmis.jiqizhixin.com/" target="_blank" rel="external">机器之心</a>这个页面，上面的nav会根据滚动条的位置进而改变active状态，同时，点击nav中的每个链接，页面也会滚动到相应的section。这个功能很常见。<br>目前，包提供的两种形式：</p>
+<ol>
+<li>使用锚链接：你通过点击nav中的链接，通过锚点来使页面滚动到相应的section；同时，滚动条的位置改变时，会更改页面的hash，nav的active也会改变。</li>
+<li>使用点击事件：你通过点击nav中的链接，通过获得元素的data-index来确定相应的section，所以你必须为nav中的item添加data-index属性；同时，滚动条的位置改变时，nav的active也会改变。</li>
+</ol>
+<h3 id="项目的地址"><a href="#项目的地址" class="headerlink" title="项目的地址"></a>项目的地址</h3><p><a href="https://github.com/wukong1995/nav-slide" target="_blank" rel="external">点击这去仓库</a><br>具体的参数请查看readme</p>
+<h3 id="项目发布的过程"><a href="#项目发布的过程" class="headerlink" title="项目发布的过程"></a>项目发布的过程</h3><ol>
+<li>新建一个文件夹，<code>npm init</code>来填写包的信息</li>
+<li>编写代码</li>
+<li>完成代码编写，若你使用ES6或者ES7的语法，需要使用babel转换一下</li>
+<li><code>npm login</code></li>
+<li><code>npm publish</code></li>
+<li>到这你的包发布成功，若更新包，记得要改package.json中的version</li>
+</ol>
+<h3 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h3><ol>
+<li>完成代码编写后，直接发布了，使用的时候报错：import那报错；我以为是因为没有因为代码压缩，于是进行了代码的压缩，发现并没有什么软用；因为项目使用webpack打包，就想是不是因为没有打包，于是就开始了打包，结果项目还是报错。边上网边查，我还以为是代码写错了…；最后，看了其他包的样子，发现是使用babel打包的，解决了这个大问题。</li>
+<li>若你安装不上一个包，报错说是因为名字重复了：不是文件夹的名字和包的名字重复了，而是你的项目的package.json中的name和包的名字重复了…</li>
+<li>自己坑自己，代码变量拼写错误，最近老是犯这个错误😔</li>
+</ol>
+<p>终结～</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Nodejs </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> node </tag>
+            
+            <tag> npm </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ES7-decorator]]></title>
+      <url>/2017/08/13/ES7-decorator/</url>
+      <content type="html"><![CDATA[<h3 id="装饰模式"><a href="#装饰模式" class="headerlink" title="装饰模式"></a>装饰模式</h3><p>对于装饰模式，现在还剩下鸡腿堡+香菜+辣椒的记忆。<br>这个是装饰模式的一个例子：有一个<code>汉堡</code>的抽象构件，<code>鸡腿堡</code>是具体构件，<code>香菜</code>和<code>辣椒</code>都是具体的装饰角色。现在我想计算鸡腿堡+香菜+辣椒的价格</p>
+<h4 id="针对的问题"><a href="#针对的问题" class="headerlink" title="针对的问题"></a>针对的问题</h4><p>你想要动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。不改变接口的前提下，增强所考虑的类的性能。<br>何时使用：</p>
+<ol>
+<li>需要扩展一个类的功能，或给一个类增加附加责任。</li>
+<li>需要动态的给一个对象增加功能，这些功能可以再动态地撤销。</li>
+<li>需要增加一些基本功能的排列组合而产生的非常大量的功能，从而使继承变得不现实。</li>
+</ol>
+<h3 id="es7中的装饰器"><a href="#es7中的装饰器" class="headerlink" title="es7中的装饰器"></a>es7中的装饰器</h3><p>es7新增的decorator 属性，它借鉴自 Python，在 Python 里，decorator 实际上是一个 wrapper，它作用于一个目标函数，对这个目标函数做一些额外的操作，然后返回一个新的函数。</p>
+<h4 id="装饰property"><a href="#装饰property" class="headerlink" title="装饰property"></a>装饰property</h4><p>ES2016装饰器是一个返回函数的表达式，可以将target，name和property描述符作为参数。你可以通过在装饰器前加一个“@”字符来应用它，并将其放置在您想要装饰的顶部。可以为类或属性定义装饰器。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</div><div class="line">    meow() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> say meow`</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 如果给meow方法加上可读属性</span></div><div class="line"><span class="comment">// 定义一个装饰器</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">readonly</span> (<span class="params">target, name, descriptor</span>) </span>&#123;</div><div class="line">    descriptor.writeable = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">return</span> descriptor;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</div><div class="line">    @readonly</div><div class="line">    meow() &#123;</div><div class="line">        <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> say meow`</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 此时你尝试修改meow，就会报错</span></div><div class="line"><span class="comment">//</span></div><div class="line"><span class="comment">// 在这里推荐一个module： core-decorators</span></div></pre></td></tr></table></figure>
+<h4 id="装饰class"><a href="#装饰class" class="headerlink" title="装饰class"></a>装饰class</h4><p>在这种情况下，装饰器将使用目标target的构造函数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hero</span>(<span class="params">target</span>) </span>&#123;</div><div class="line">    target.isHero = <span class="literal">true</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">@hero</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHero</span> </span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(MyHero.isHero); <span class="comment">// true</span></div></pre></td></tr></table></figure></p>
+<p>还可以进一步扩展，为装饰功能提供参数。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">hero</span>(<span class="params">isHero</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">target</span>) </span>&#123;</div><div class="line">        target.isHero = isHero;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 你可以写成ES6的形式</span></div><div class="line"><span class="comment">// const hero = isHero =&gt; target =&gt; target.isHero = isHero;</span></div><div class="line">@hero(<span class="literal">false</span>)</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyHero</span> </span>&#123;&#125;</div><div class="line"><span class="built_in">console</span>.log(MyHero.isHero); <span class="comment">// false</span></div></pre></td></tr></table></figure></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841" target="_blank" rel="external">参考链接</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> javascript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> es7 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[week3]]></title>
+      <url>/2017/08/13/week3/</url>
+      <content type="html"><![CDATA[<h3 id="❓psd转html"><a href="#❓psd转html" class="headerlink" title="❓psd转html"></a>❓psd转html</h3><p>首先你拿到设计图应该做什么？我的做法是浏览一下整个页面，找出每个模块的共同点。之后开始搭建html，再写css，最后写js。昨天拿到设计图，按照这样的模式去做。可是在最后添加icon时犯了难，因为在icon库里面没有找到合适的，就想着在psd中直接导出icon，可是这时候去看psd的时候，发现整个模块是一个图层，这个时候犯了难，我不知道设计者这样做的意图？再接着我将整个模块作为一个png导出，直接放在页面上，我感觉这样做是不对的，最后的方法是将需要的图标裁剪出来，多个图标但在一个png中。<br>这次给我一个提示：你拿到设计图第一件事是需要干什么？浏览页面的时候，是不是需要将每个模块的所在的图层全都要过一遍以及注意事项…</p>
+<h3 id="❓一个带有渐变颜色的圆形边框"><a href="#❓一个带有渐变颜色的圆形边框" class="headerlink" title="❓一个带有渐变颜色的圆形边框"></a>❓一个带有渐变颜色的圆形边框</h3><p>首先为了使div带有渐变颜色的边框，于是设置它的border-image是一个渐变颜色，虽然边框是渐变的了，当时它没有圆角，即使再改变它的border-radius也不会有作用。👉我在stackoverflow上找到了解决方法<a href="https://stackoverflow.com/questions/5706963/possible-to-use-border-radius-together-with-a-border-image-which-has-a-gradient" target="_blank" rel="external">点击这里</a>。但是这种实现还是有个缺点，就是div必须设置一个背景色，进而来掩盖它的after伪元素的背景色。但是我想要的效果是它的背景色是透明的，没有找到好的解决办法，就找了一个和背景色相近的颜色去代替😔。这个偷懒的方法，期待完美的解决方案…</p>
+<h3 id="❓css画出文件夹📁的轮廓"><a href="#❓css画出文件夹📁的轮廓" class="headerlink" title="❓css画出文件夹📁的轮廓"></a>❓css画出文件夹📁的轮廓</h3><p>这个问题最难的部分是画出文件夹📁上方那个弧度，没有什么好的办法，就是用两个元素的<code>border-radius</code>连接而成，理所当然的，画出的轮廓有些奇怪…因为<code>border-radius</code>越大，边框的弧度久越大，可见的border宽度会越来越窄，所以会有一种不圆滑的感觉。感觉我的想法有些奇怪…</p>
+<h3 id="如何做出宽高成比例的div"><a href="#如何做出宽高成比例的div" class="headerlink" title="如何做出宽高成比例的div"></a>如何做出宽高成比例的div</h3><p>父容器设置<code>width</code>和<code>padding</code>，padding设置百分比，padding设置百分比之后和width相关。子容器飘在父容器上width和height等于父容器即可。</p>
+<h3 id="❓es7装饰器"><a href="#❓es7装饰器" class="headerlink" title="❓es7装饰器"></a>❓es7装饰器</h3><p>大哥说：没有什么是包不能解决的。查看了代码是使用了装饰器。</p>
+<h3 id="js中的offsetTop和jq中的offset-、position"><a href="#js中的offsetTop和jq中的offset-、position" class="headerlink" title="js中的offsetTop和jq中的offset()、position()"></a>js中的offsetTop和jq中的offset()、position()</h3><p>使用起来还是不等同的，具体的得去查看源码…</p>
+<h3 id="rails-on-ruby"><a href="#rails-on-ruby" class="headerlink" title="rails on ruby"></a>rails on ruby</h3><p>在查询的时候，能进行include的就不要在jbuilder里面再去查询一遍。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[week2]]></title>
+      <url>/2017/08/05/week2/</url>
+      <content type="html"><![CDATA[<h3 id="分页插件"><a href="#分页插件" class="headerlink" title="分页插件"></a>分页插件</h3><p>写分页插件，我开始的想法是：</p>
+<ol>
+<li>判断是否显示“上一页”</li>
+<li>判断是否显示“第一页”</li>
+<li>判断是否显示“…”、”current-2”、”current-1”</li>
+<li>判断是否显示 current页面</li>
+<li>判断是否显示”current+1”、”current+2”、“…”</li>
+<li>判断是否显示“最后一页”</li>
+<li>判断是否显示“最后一页”</li>
+</ol>
+<p>我的目的是最少要显示cuurent周围的四个number，按照这个想法写出来，当cuurent为1时，只会显示123三个number，而我的预期是现实12345这五个number😔调整一下做法，将上面的3-5合并，<code>left</code>和<code>right</code>表示<code>current-2</code>和<code>current+2</code>，在<code>left&lt;0</code>时候，将<code>right</code>加上<code>left</code>的相反数，<code>right&gt;total</code>同理<br>最后，我还是找了一个插件用在项目中，👉插件的名字是：react-paginate，css部分需要你自己去写…</p>
+<h3 id="react-and-jquery"><a href="#react-and-jquery" class="headerlink" title="react and jquery"></a>react and jquery</h3><p>目前有一个container的组件，它的子组件是list和detail，list的子组件是item，点击item，detail组件会显示，显示效果是通过增加删除类名实现的。想着组件传值比较麻烦，于是就在方法里面直接使用jq早啊道元素控制。大哥告诉我，这个解决办法是不推荐的。👉正确的做法是使用state。通过改变state的值，进而改变元素的class。</p>
+<h3 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h3><p>还记得之前的一个面试问题：视频有最热视频、点赞最多视频、其他视频，每次去服务器要十个数据…由于用户使用量很多，每次去数据库查询，访问量太大。这样的话，👉可以使用redis去做缓存，这样取数据库可以直接取缓存中取，设置一个时间去更新redis即可。<br>现在又一个需求，是记录每天用户登录网站的数量。👉方法一：给用户表增加一个最后登录时间的列，每天定时执行程序，统计一下最后登录时间是昨天的用户数量。这个方法中，选择什么时候去执行程序很重要，要不然就会有漏网之鱼。👉方法二：最粗暴的办法是，在redis中创建一个字段，它是一个数组，每次知道用户登录的时候，就将用户的id<code>push</code>进数组，每天用户的登录的数量，直接通过数组的长度就可以得到。这个方法的缺点就是：用户的<code>id</code>字段也是一串很长的字符串，数组会特别大。👉方法三：在redis中创建一个字段，它是一个字符串，默认是长度是用户的数量的0，若用户登录，就将对应的位置为1。在这三个方法中，第三个方法是最优方法。<br>还有一个可以做缓存的数据库叫memcache，它和redis的区别就是，redis可以持久化。</p>
+<h3 id="插件js-base64"><a href="#插件js-base64" class="headerlink" title="插件js-base64"></a>插件js-base64</h3><p><code>Graphql</code>中自带的分页，after字段是base64的字符串。前端传值就需要将数字转化成base64位的字符串。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">import &#123; Base64 &#125; from &apos;js-base64&apos;;</div><div class="line">const cursor = Base64.encode(number);</div></pre></td></tr></table></figure></p>
+<p>最后说句题外话，任何炒作都不能改变一个东西没落的事实，与其去炒作，还不如用脑子把东西做的更好。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[douban]]></title>
+      <url>/2017/08/02/douban/</url>
+      <content type="html"><![CDATA[<h3 id="在千里码刷题的时候看到了这个题目"><a href="#在千里码刷题的时候看到了这个题目" class="headerlink" title="在千里码刷题的时候看到了这个题目"></a>在千里码刷题的时候看到了这个题目</h3><p>题目要求是爬取豆瓣评分最高的250部电影的总分…</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>爬数据，首先是实用http模块去爬取全部的HTML<br>然后使用cheerio去得到HTML中自己想要的数据<br>最后每页得到的总分相加</p>
+<h3 id="题目中的坑"><a href="#题目中的坑" class="headerlink" title="题目中的坑"></a>题目中的坑</h3><p>1、因为豆瓣是https开头，使用https模块，具体的方法没看，使用还是按照http模块来的<br>2、如果按照正常的逻辑去写代码，最后得到的总分是0，因为https抓取数据是异步进行的<br>3、使用promise来进行处理，首先需要等到25页的数据全部抓取完毕，再进行计算总分，这时候想到了promise.all这个方法。<br>4、第一次尝试将使用promise，我在getData中直接将resolve(res)，等到下面使用的时候，res又是一个异步执行，这下尴尬😅了，于是调整顺序，在res执行end事件的时候再resolve<br>5、js中浮点类型计算的坑，我直接暴力的*10，最后在／10</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>爬评分时，顺便把电影名也爬下来了，我准备把没看的都补上😄</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> https = <span class="built_in">require</span>(<span class="string">'https'</span>)</div><div class="line"><span class="keyword">const</span> cheerio = <span class="built_in">require</span>(<span class="string">'cheerio'</span>)</div><div class="line"><span class="keyword">let</span> sumScore = <span class="number">0</span></div><div class="line"><span class="keyword">let</span> allMovie = []</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filterMovie</span>(<span class="params">html</span>) </span>&#123;</div><div class="line">  <span class="keyword">let</span> $ = cheerio.load(html)</div><div class="line">  <span class="keyword">let</span> movieList = $(<span class="string">'.grid_view li'</span>)</div><div class="line">  <span class="keyword">let</span> total = <span class="number">0</span></div><div class="line">  <span class="keyword">let</span> movies = []</div><div class="line"></div><div class="line">  movieList.each(<span class="function"><span class="keyword">function</span>(<span class="params">index, item</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> score = $(item).find(<span class="string">'.bd .rating_num'</span>).text()</div><div class="line">    <span class="keyword">let</span> movieName = $(item).find(<span class="string">'.hd a'</span>).text().replace(<span class="regexp">/\s+/g</span>,<span class="string">""</span>)</div><div class="line">    movies.push(&#123;</div><div class="line">      name: movieName,</div><div class="line">      score</div><div class="line">    &#125;)</div><div class="line">    total += <span class="built_in">Number</span>(score) * <span class="number">10</span></div><div class="line">  &#125;)</div><div class="line">  <span class="keyword">return</span> &#123; total, movies &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params">url</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    https</div><div class="line">      .get(url, <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</div><div class="line">        <span class="keyword">let</span> html = <span class="string">''</span></div><div class="line">        res</div><div class="line">          .on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">            html += data</div><div class="line">          &#125;)</div><div class="line">          .on(<span class="string">'end'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            resolve(filterMovie(html))</div><div class="line">          &#125;)</div><div class="line">      &#125;)</div><div class="line">      .on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">        reject(err)</div><div class="line">      &#125;)</div><div class="line">  &#125;)</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> funcArr = []</div><div class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= <span class="number">225</span>; i=i + <span class="number">25</span>) &#123;</div><div class="line">  <span class="keyword">let</span> url = <span class="string">`https://movie.douban.com/top250?start=<span class="subst">$&#123;i&#125;</span>`</span></div><div class="line">  funcArr.push(getData(url))</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">Promise</span></div><div class="line">  .all(funcArr)</div><div class="line">  .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</div><div class="line">    res.forEach(<span class="function"><span class="params">list</span> =&gt;</span>  &#123;</div><div class="line">      <span class="keyword">const</span> &#123; total, movies &#125; = list</div><div class="line">      sumScore += total</div><div class="line">      allMovie = allMovie.concat(movies)</div><div class="line">    &#125;)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"总分："</span> + sumScore / <span class="number">10</span>)</div><div class="line">    allMovie.forEach(<span class="function"><span class="params">movie</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">const</span> &#123; name, score &#125; = movie;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">"评分："</span> + score + <span class="string">"，影片名："</span> + name)</div><div class="line">    &#125;)</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(err)</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"出错了"</span>)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<p>如果你有更好的想法，欢迎交流👏</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 代码 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> node </tag>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[work1]]></title>
+      <url>/2017/07/28/week1/</url>
+      <content type="html"><![CDATA[<h3 id="收获一"><a href="#收获一" class="headerlink" title="收获一"></a>收获一</h3><p>turbolinks是一款将网站变成spa的一个插件，看到文档的的某些地方和ionic有些许相似之处，于是就将之前做webApp的疑问提了出来：打开页面刚开始进的页面是主页还是登录页？经过讨论后，👉是主页；为App添加一个拦截器，对于用户登录后才能使用的页面，进入时，首先在拦截器中判断有无用户登录…另外，两者之间还有相同的一点：都会提前缓存页面。之前做app的时候，添加了拦截器，因为app首先打开进入主页（这时候开始缓存和主页相关的页面），判断用户未登录，会重定向到用户登录页，这时候就会发生页面的闪烁，关于这个问题我没有查😶，我很暴力的加了一个spash….<br>另外，关于支付宝账单页，数据是如何传递，数据格式如何设计，尝试去爬数据也没看到数据长什么样子的😑，于是目前的想到的方法是，👉后端每次去数据库取count条数据，在按照日期分组后，传到前端；前端的处理方式是：判断得到的第一个月数据与本地现有的最后一个月的数据时候是同年同月，如果是就concat第一个月的数据，剩下的数据直接push。</p>
+<h3 id="收获二"><a href="#收获二" class="headerlink" title="收获二"></a>收获二</h3><p>在将加载更多全都迁移至react的过程中，我在大哥的基础上，比这葫芦画瓢，完成了页面的重构…但是现在有一个问题是：假如全用react去渲染，那么爬虫就爬不到数据，于是采用的方式是：render的时候，会在页面上先渲染一部分数据，剩下的就交给react来做；但是apollo目前提供的解决方案是：假如你将数据渲染到页面上时，会先查找cache中有没有数据，如果有就将数据渲染到页面上；否则发出网络请求。这意味着，只要我将插件渲染到页面上，就会发出网络请求，这一条网络请求是不需要的。因为用户可能不会浏览很多数据，于是想到的办法是：👉等用户去点击加载更多的时候，再去发送网络请求。查找apollo的文档，能想到的办法是：👉预先向cache中写去空数据，这样渲染时，在cache中找到数据，就不发送请求了，但是我不知如何写入数据😖，这是一个预留问题😞很忧伤的一个问题…待续…</p>
+<h3 id="收获三"><a href="#收获三" class="headerlink" title="收获三"></a>收获三</h3><p>知道了reduce这个优雅的方法，promise也提供了这个方法….</p>
+<h3 id="收获四"><a href="#收获四" class="headerlink" title="收获四"></a>收获四</h3><p>在还原原型图时，更多的时间应该花费在如何设计HTML的结构上，再接下来再写css，最后再写js。这次做的时候，本来是设计好了还能符合要求的HTML结构，结果在写css的时候，发现现在的HTML不能达到预期，于是开始设计调整HTML，幸亏样式使用scss写的😉…还有一个，我看到排排站的元素，首先想到的不是ul&gt;li，而是直接用a标签去尝试解决…</p>
+<h3 id="收获五"><a href="#收获五" class="headerlink" title="收获五"></a>收获五</h3><p>再看文档的时候，看到了一个新的名词：Vanilla JS；用Google translate翻译了叫奶味js😀，于是就去查它到底是何方神圣，原来它的另一个名字叫做javascript😅</p>
+<h3 id="收获六"><a href="#收获六" class="headerlink" title="收获六"></a>收获六</h3><p>因为sublimen并没有完整配置，push上去的代码就跑不过测试。这次找到了eslint检测js的package,叫做SublimeLinter-contrib-eslingt，代码不通过有红色标识…</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 总结 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Array的reduce方法]]></title>
+      <url>/2017/07/28/reduce/</url>
+      <content type="html"><![CDATA[<h3 id="初识"><a href="#初识" class="headerlink" title="初识"></a>初识</h3><p>第一次听说Array的reduce方法是在面试的时候<br>这次看到大哥写的一个函数，里面用了reduce，哇，真的好优雅。因为代码的重复片段太多，我尝试去封装一个通用函数，没有成功。于是大哥出动了。<br>目的是这样的：我可能需要data.user.article的值，或者需要data.article的值，或者需要data.categories.article的值，于是封装一个方法每次取到article的值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 封装一个函数reg，参数为belongto，传递的参数分别是：['user'] [] [categories]</span></div><div class="line"><span class="comment">// 函数内部的主要代码是</span></div><div class="line"><span class="keyword">return</span> belongto.reduce(<span class="function">(<span class="params">p,c</span>) =&gt;</span> p[c], data).article</div></pre></td></tr></table></figure></p>
+<h3 id="reduce文档"><a href="#reduce文档" class="headerlink" title="reduce文档"></a>reduce文档</h3><h4 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr.reduce(callback[, initialValue])</div></pre></td></tr></table></figure>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><p>callback有四个参数：分别是accumulator(它是callback上一次返回的值或者是initialValue，前提是initialValue存在)、currentValue(正在使用的值)、currentIndex(正在使用的值在数组中的索引)、array(这个是循环的数组)；<br>initialValue：用作第一次调用回调的初始值，如果不提供此参数，则第一次调用回调的初始值是数组的第一个元素。为了保证安全，最好提供这个值</p>
+<p>tip: 当数组为空时，若提供initialValue，则最后的返回值是initialValue，否则，报错；<br>     当数组不为空时，若提供initialValue，则循环从index为0开始；否则循环从index为1开始，accumulator此时为index为0的值。</p>
+<h4 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h4><p>回调函数的最后的返回值</p>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>求数组元素的总和（告别for循环）<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> sum = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>].reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a + b, <span class="number">0</span>);</div><div class="line"><span class="comment">// sum is 6</span></div></pre></td></tr></table></figure></p>
+<p>连接数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[[<span class="number">0</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>]].reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.concat(b), []);</div><div class="line"><span class="comment">// result is [0, 1, 2, 3, 4, 5]</span></div></pre></td></tr></table></figure></p>
+<p>相同元素在数组中出现几次<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> names = [<span class="string">'Alice'</span>, <span class="string">'Bob'</span>, <span class="string">'Tiff'</span>, <span class="string">'Bruce'</span>, <span class="string">'Alice'</span>];</div><div class="line"></div><div class="line"><span class="keyword">var</span> countedNames = names.reduce( <span class="function">(<span class="params">allNames, name</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (name <span class="keyword">in</span> allNames) &#123;</div><div class="line">    allNames[name]++;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">else</span> &#123;</div><div class="line">    allNames[name] = <span class="number">1</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> allNames;</div><div class="line">&#125;, &#123;&#125;);</div><div class="line"><span class="comment">// countedNames is:</span></div><div class="line"><span class="comment">// &#123; 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 &#125;</span></div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> javascript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[relay-apollo]]></title>
+      <url>/2017/07/23/relay-apollo/</url>
+      <content type="html"><![CDATA[<h3 id="使用relay的感受"><a href="#使用relay的感受" class="headerlink" title="使用relay的感受"></a>使用relay的感受</h3><p>初次接触relay，感觉上很臃肿，因为必须为每个组件设置container；若query层级嵌套很深，为了组件化，就必须将每一个react的component全部分开，在项目中，我写了六个组件，那么每个组件都需要container，写起来感觉满满的恶意。</p>
+<h3 id="使用Apollo"><a href="#使用Apollo" class="headerlink" title="使用Apollo"></a>使用Apollo</h3><p>再次接触Apollo，看了文档，感觉和relay大同小异，与relay的不同是：无需为每个component设置container，最后写一个query就ok👌了。query也可以由多个fragment组成。另外，apollo也为angularjs提供了解决方案，有点想不明白🤔，angularjs本身就是双向数据绑定，为什么要对它提供解决方案…另外，Apollo虽然自身内部集成了redux，假如你的项目中使用了redux，你可以使用redux而不用Apollo内部的redux。</p>
+<p>relay 因为container的存在，数据划分的比较严密，你只能在当前的container访问fragment中的的属性，不能访问父或子fragment的属性。而apollo直接使用的是请求得到的Object…<br>Apollo也可以和项目原有的redux相结合使用，relay不可以…<br>待续…<br>这次写的很匆忙，假如有不正确的地方，请指正，谢谢😊。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> graphql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> angularjs </tag>
+            
+            <tag> graphql </tag>
+            
+            <tag> react </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[git]]></title>
+      <url>/2017/07/22/git/</url>
+      <content type="html"><![CDATA[<h3 id="使用git想要去合并两个commit"><a href="#使用git想要去合并两个commit" class="headerlink" title="使用git想要去合并两个commit"></a>使用git想要去合并两个commit</h3><p>今天好不容易完成了工作，睡觉的时候突然想到还有些小瑕疵，就想改正。但是改动范围很小，不好意思在commit一次，于是就想将两次commit合并在一起，但是我没有将最新的commit推送到远程分支，就直接合并了两个commit成了一个新的commit，在推送到远程时，也没有先进行pull的动作（👉每次push之前一定要进行pull的动作），导致远程commit和我合并的commit发生冲突，最后还需要手动merge。看了一下提交记录，吓坏了，本来我想合并commit，预计的commit只会在之前的基础上多一次commit，但是现在多了三次commit，这下坏了。<br>于是，上网查询，试了好几种办法。找到了一个很合适的办法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git  reset HEAD^ --hard    //彻底回退到上次提交</div><div class="line">git push origin 分支名 -f   // 强制推送到远程</div></pre></td></tr></table></figure></p>
+<p>这样操作以后，我的问题解决了（假如你有更好的方法，请在下方留言）。</p>
+<p>待续…</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Git </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[react-relay]]></title>
+      <url>/2017/07/22/react-relay/</url>
+      <content type="html"><![CDATA[<p>上次写感想还是2014的时候，那个时候是老师布置的作业（尴尬)<br>队长看到GraphQL很好，于是先拿一个功能来试手😊。<br>前端要使用GraphQL，最简单的方法是使用ajax发送query字符串。这个方法，若query嵌套层级太深，会导致query很长，长的让人接受不了；再者，假如数据变化，需要你手动的去改变DOM。项目中使用了react，于是队长给推荐了react-relay来配合GraphQL。<br>首先给的时间是看GraphQL和react-relay的文档，先瞄一眼relay的文档，感觉是层层嵌套，就先去看GraphQL的文档，relay的文档没有看完…😶</p>
+<h3 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h3><p>开始在队长的鼓励下开始写relay，到了relay的官网上，看到有一个Demo，就把代码给copy下来，再根据文档理解了代码的意思，就开始尝试着写代码。写代码的过程有点别扭，刚开始接触，会犯一些错误。但是又不知道错误发生的原因，于是就开始google解决。也想吐槽一下文档，文档上说，fragment的name建议是fileName_propsName，于是为了名字短点，就全部改了，结果编译的时候，告诉我是must be。😢<br>代码终于不报错了，但是需要一个schema的文件。我想手写schema太繁琐了，也是去查有没有自动生成schema的插件，但是很遗憾，我找到都是配合node使用的（假如你有好的插件，请推荐给我，谢谢）。找啊找，找啊找，也没找到合适的，最终是队长上网找了一个工具生成的🤗。schema的问题解决。schema的存在是为了映射fragment的type。<br>这个时候，大哥过来问问我怎么样了，我告诉他，虽然安装了react-relay，可是文档上的方法不存在，我就很暴力的改了源码，将方法暴露出来。他告诉我relay现在有两个版本：classic和modern，modern是最新的。我弱弱的问一句，咱们用哪个版本，他说当然是最新的。我的内心在哭泣😭。既然只是版本的迭代，思想肯定没有太大的变化，于是打起精神来看文档。👉这里是我太心急了，直接看了Demo，就ctrl+f去直接搜方法了，没有整体的先浏览一下文档，要不然也不会有这个不可预料的情况。</p>
+<h3 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h3><p>边看文档，边改我的代码。👉刚开始报错是“没有配置babel或者graphql写错了”，假如你的babel配置是按照文档来的，那最有可能的就是你的fragment或者query写错了。最简单的query可以正常的渲染出来了，因为是query中需要有参数，所以开始看如何使用参数。在查资料的时候，<a href="https://github.com/facebook/relay/issues/1700" target="_blank" rel="external">这个链接</a>给了我很大的帮助。但是在这个过程中，下面的错误伴随了我十个小时，我一直在尝试解决这个错误，于是上网查啊查 查啊查 查啊查<br><img src="http://upload-images.jianshu.io/upload_images/7018384-1d20f70b1bae001a?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>也没找到答案</p>
+<h3 id="第三天"><a href="#第三天" class="headerlink" title="第三天"></a>第三天</h3><p>大哥说他写出来了，我看了他的代码，对比我的代码，唯一的不同是，我将edges和node要写在不同的fragment中。我尝试在正确的代码上改成我设计的fragment，功能就报错了。我意识到，需要将edges和node写在同一个fragment中。👉出现这个错误的原因是，我已经封装好的fragment，出现这个错误，我全部的心思都放在了index.js，没有检查我封装好的组件。假如再来一次，我也会被困在这个error上出不来。之后因为还有一个加载更多的动作，于是我开始完成这个功能，在这个过程中，我学会了react父子组件如何传递消息。</p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>功能完成好了。但是在进行测试的时候，再看network时，加载更多这个按钮是通过first这个参数来进行请求数据，first的意思就是取前first数据，后端限制first只能取到50，即使可以取到1000，但是在网络上传输1000条数据，也是一笔庞大的负担。relay也提供了分页的container，但是没有研究出来是怎样使用的。于是relay需要更换….所以，没有一个很好的方式来解决这个问题。👉队长又给推荐了Apollo，接下来要去看Apollo了<br>待续…</p>
+]]></content>
+      
+        <categories>
+            
+            <category> graphql </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> graphql </tag>
+            
+            <tag> react </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[wechatPHP]]></title>
+      <url>/2017/03/29/wechatPHP/</url>
+      <content type="html"><![CDATA[<p>使用apache+php5.4n<br>1、打开apache配置文件httpd.conf<br>      搜索httpd-vhosts.conf，打开这一行的注释<br>2、打开apache所在目录下的，conf/extra/httpd-vhost.conf<br>  增加以下代码，保存<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;VirtualHost *:80&gt;  </div><div class="line"> DocumentRoot &quot;D:\WWW\car-xxxx\car&quot;  </div><div class="line"> ServerName www.car-zones.com  </div><div class="line">&lt;/VirtualHost&gt;  </div><div class="line">&lt;Directory &quot;D:\WWW\car-xxxx\car&quot;&gt;  </div><div class="line">    Options Indexes FollowSymLinks Includes ExecCGI  </div><div class="line">    AllowOverride All  </div><div class="line">    Order allow,deny  </div><div class="line">    Allow from all  </div><div class="line">&lt;/Directory&gt;</div></pre></td></tr></table></figure></p>
+<p>3、重启apache<br>4、打开c:/windows/system32/drivers/etc/hots<br>最后一行加入：www.car-xxxx.com<br>5、访问 www.car-xxxx.com<br>6、完成配置</p>
+<p>第一次学习，记录一下</p>
+]]></content>
+      
+        <categories>
+            
+            <category> PHP </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 微信公众号 </tag>
+            
+            <tag> php </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[dataTable]]></title>
+      <url>/2017/03/26/dataTable/</url>
+      <content type="html"><![CDATA[<p>偶然发现一个叫 dataTable  的组件，觉得很好用，于是研究了一番，下面是代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> lang = &#123;  </div><div class="line">  <span class="string">"sProcessing"</span>: <span class="string">"处理中..."</span>,  </div><div class="line">  <span class="string">"sLengthMenu"</span>: <span class="string">"每页 _MENU_ 项"</span>,  </div><div class="line">  <span class="string">"sZeroRecords"</span>: <span class="string">"没有匹配结果"</span>,  </div><div class="line">  <span class="string">"sInfo"</span>: <span class="string">"当前显示第 _START_ 至 _END_ 项，共 _TOTAL_ 项。"</span>,  </div><div class="line">  <span class="string">"sInfoEmpty"</span>: <span class="string">"当前显示第 0 至 0 项，共 0 项"</span>,  </div><div class="line">  <span class="string">"sInfoFiltered"</span>: <span class="string">"(由 _MAX_ 项结果过滤)"</span>,  </div><div class="line">  <span class="string">"sInfoPostFix"</span>: <span class="string">""</span>,  </div><div class="line">  <span class="string">"sSearch"</span>: <span class="string">"搜索:"</span>,  </div><div class="line">  <span class="string">"sUrl"</span>: <span class="string">""</span>,  </div><div class="line">  <span class="string">"sEmptyTable"</span>: <span class="string">"表中数据为空"</span>,  </div><div class="line">  <span class="string">"sLoadingRecords"</span>: <span class="string">"载入中..."</span>,  </div><div class="line">  <span class="string">"sInfoThousands"</span>: <span class="string">","</span>,  </div><div class="line">  <span class="string">"oPaginate"</span>: &#123;  </div><div class="line">    <span class="string">"sFirst"</span>: <span class="string">"首页"</span>,  </div><div class="line">    <span class="string">"sPrevious"</span>: <span class="string">"上页"</span>,  </div><div class="line">    <span class="string">"sNext"</span>: <span class="string">"下页"</span>,  </div><div class="line">    <span class="string">"sLast"</span>: <span class="string">"末页"</span>,  </div><div class="line">    <span class="string">"sJump"</span>: <span class="string">"跳转"</span>  </div><div class="line">  &#125;,  </div><div class="line"> <span class="string">"oAria"</span>: &#123;  </div><div class="line">    <span class="string">"sSortAscending"</span>: <span class="string">": 以升序排列此列"</span>,  </div><div class="line">    <span class="string">"sSortDescending"</span>: <span class="string">": 以降序排列此列"</span>  </div><div class="line">  &#125;  </div><div class="line">&#125;;  </div><div class="line"></div><div class="line"><span class="keyword">var</span> table = $(<span class="string">"#sample"</span>).dataTable(&#123;  </div><div class="line">  language:lang,  <span class="comment">//提示信息  </span></div><div class="line">  autoWidth: <span class="literal">false</span>,  <span class="comment">//禁用自动调整列宽  </span></div><div class="line">  processing: <span class="literal">true</span>,  <span class="comment">//隐藏加载提示,自行处理  </span></div><div class="line">  serverSide: <span class="literal">true</span>,  <span class="comment">//启用服务器端分页  </span></div><div class="line">  searching: <span class="literal">true</span>,  <span class="comment">//禁用原生搜索  </span></div><div class="line">  search: &#123;  </div><div class="line">    <span class="string">"search"</span>: <span class="string">""</span>  </div><div class="line">  &#125;,  </div><div class="line">  ordering:<span class="literal">false</span>,  </div><div class="line">  renderer: <span class="string">"bootstrap"</span>,  <span class="comment">//渲染样式：Bootstrap和jquery-ui  </span></div><div class="line">  lengthChange: <span class="literal">false</span>,  </div><div class="line">  pageLength:<span class="number">15</span>,  </div><div class="line">  rowId: <span class="string">'_id'</span>,  </div><div class="line">  pagingType: <span class="string">"simple_numbers"</span>,  <span class="comment">//分页样式：simple,simple_numbers,full,full_numbers  </span></div><div class="line">  columnDefs: [&#123;  </div><div class="line">    <span class="string">"targets"</span>: <span class="string">'nosort'</span>,  <span class="comment">//列的样式名  </span></div><div class="line">    <span class="string">"orderable"</span>: <span class="literal">false</span>    <span class="comment">//包含上样式名‘nosort’的禁止排序  </span></div><div class="line">  &#125;],  </div><div class="line">  ajax: <span class="function"><span class="keyword">function</span> (<span class="params">data, callback, settings</span>) </span>&#123;  </div><div class="line">    <span class="comment">//封装请求参数  </span></div><div class="line">    <span class="keyword">var</span> param = &#123;&#125;;  </div><div class="line">    param.keyword = data.search.value;  </div><div class="line">    param.limit = data.length;<span class="comment">//页面显示记录条数，在页面显示每页显示多少项的时候  </span></div><div class="line">    param.start = data.start;<span class="comment">//开始的记录序号  </span></div><div class="line">    param.page = (data.start / data.length)+<span class="number">1</span>;<span class="comment">//当前页码  </span></div><div class="line">    <span class="comment">//console.log(param);  </span></div><div class="line">    <span class="comment">//ajax请求数据  </span></div><div class="line">    $.ajax(&#123;  </div><div class="line">      type: <span class="string">"POST"</span>,  </div><div class="line">      url: <span class="string">"/payment/result"</span>,  </div><div class="line">      cache: <span class="literal">false</span>,  <span class="comment">//禁用缓存  </span></div><div class="line">      data: param,  <span class="comment">//传入组装的参数  </span></div><div class="line">      dataType: <span class="string">"json"</span>,  </div><div class="line">      success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;  </div><div class="line">      </div><div class="line">        <span class="comment">//封装返回数据  </span></div><div class="line">        <span class="keyword">var</span> returnData = &#123;&#125;;  </div><div class="line">        returnData.draw = data.draw;<span class="comment">//这里直接自行返回了draw计数器,应该由后台返回  </span></div><div class="line">        returnData.recordsTotal = result.totalCount;<span class="comment">//返回数据全部记录  </span></div><div class="line">        returnData.recordsFiltered = result.totalCount;<span class="comment">//后台不实现过滤功能，每次查询均视作全部结果  </span></div><div class="line">        returnData.data = result.payment;<span class="comment">//返回的数据列表  </span></div><div class="line">        <span class="comment">//调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染  </span></div><div class="line">        <span class="comment">//此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕  </span></div><div class="line">        callback(returnData);  </div><div class="line">      &#125;  </div><div class="line">    &#125;);  </div><div class="line">  &#125;,  </div><div class="line">  <span class="comment">//列表表头字段  </span></div><div class="line">  columns: [   </div><div class="line">    &#123;    </div><div class="line">      className: <span class="string">"center"</span>,    </div><div class="line">      orderable : <span class="literal">false</span>,    </div><div class="line">      bSortable : <span class="literal">false</span>,    </div><div class="line">      data : <span class="string">"_id"</span>,    </div><div class="line">      render : <span class="function"><span class="keyword">function</span>(<span class="params">data, type, row, meta</span>) </span>&#123;    </div><div class="line">        <span class="keyword">var</span> content = <span class="string">'&lt;label class="position-relative"&gt;'</span>;    </div><div class="line">        content += <span class="string">'&lt;input type="checkbox" class="ace" value="'</span> + data + <span class="string">'" /&gt;'</span>;    </div><div class="line">        content += <span class="string">'&lt;span class="lbl"&gt;&lt;/span&gt;'</span>;    </div><div class="line">        content += <span class="string">'&lt;/label&gt;'</span>;    </div><div class="line">        <span class="keyword">return</span> content;    </div><div class="line">      &#125;       </div><div class="line">    &#125;,    </div><div class="line">    &#123;   </div><div class="line">      <span class="string">"data"</span>: <span class="string">"type"</span>,  </div><div class="line">      render:<span class="function"><span class="keyword">function</span>(<span class="params">date,type,full</span>) </span>&#123;  </div><div class="line">        <span class="keyword">var</span> content = <span class="literal">null</span>;  </div><div class="line">        <span class="keyword">if</span>(date == <span class="number">1</span>) &#123;  </div><div class="line">          content = <span class="string">'收入'</span>;  </div><div class="line">        &#125; <span class="keyword">else</span> &#123;  </div><div class="line">          content = <span class="string">'支出'</span>;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">return</span> content;  </div><div class="line">      &#125;  </div><div class="line">    &#125;,  </div><div class="line">    &#123; <span class="string">"data"</span>: <span class="string">"name"</span> &#125;,  </div><div class="line">    &#123; <span class="string">"data"</span>: <span class="string">"price"</span> &#125;,  </div><div class="line">    &#123; <span class="string">"data"</span>: <span class="string">"product_type"</span> &#125;,  </div><div class="line">    &#123; <span class="string">"data"</span>: <span class="string">"meta.createAt"</span>,  </div><div class="line">      render:<span class="function"><span class="keyword">function</span>(<span class="params">date,type,full</span>) </span>&#123;  </div><div class="line">      <span class="keyword">return</span> date.slice(<span class="number">0</span>,<span class="number">10</span>);  </div><div class="line">      &#125;  </div><div class="line">    &#125;,  </div><div class="line">    &#123;   </div><div class="line">      bSortable : <span class="literal">false</span>,    </div><div class="line">      visible : <span class="literal">true</span>,   </div><div class="line">      data : <span class="string">"_id"</span>,       </div><div class="line">      render : <span class="function"><span class="keyword">function</span>(<span class="params">data, type, full</span>) </span>&#123;    </div><div class="line">        <span class="keyword">var</span> content = <span class="string">'&lt;div class="hidden-sm hidden-xs action-buttons"&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;a href="/payment/detail/'</span> + data + <span class="string">'" class="blue"&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;i class="ace-icon fa fa-search-plus bigger-130"&gt;&lt;/i&gt;'</span>+  </div><div class="line">        <span class="string">' &lt;/a&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;a href="javascript:void(0);" data-id="'</span> + data + <span class="string">'" class="delete_btn red"&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;i class="ace-icon fa fa-trash-o bigger-130"&gt;&lt;/i&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;/a&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;/div&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;div class="hidden-md hidden-lg"&gt;'</span>+  </div><div class="line">        <span class="string">'  &lt;div class="inline position-relative"&gt;'</span>+  </div><div class="line">        <span class="string">'    &lt;button data-toggle="dropdown" data-position="auto" class="btn btn-minier btn-yellow dropdown-toggle"&gt;&lt;i class="ace-icon fa fa-caret-down icon-only bigger-120"&gt;&lt;/i&gt;&lt;/button&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close"&gt;'</span>+  </div><div class="line">        <span class="string">' &lt;li&gt;&lt;a href="/payment/detail/'</span> + data + <span class="string">'" data-rel="tooltip" title="" data-original-title="View" class="tooltip-info"&gt;&lt;span class="blue"&gt;&lt;i class="ace-icon fa fa-search-plus bigger-120"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;li&gt;&lt;a data-rel="tooltip" title="" data-original-title="Delete" data-id="'</span> + data + <span class="string">'" class="delete_btn tooltip-error"&gt;&lt;span class="red"&gt;&lt;i class="ace-icon fa fa-trash-o bigger-120"&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;'</span>+  </div><div class="line">        <span class="string">'&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;'</span>;  </div><div class="line"></div><div class="line">        <span class="keyword">return</span> content;    </div><div class="line">      &#125;     </div><div class="line">    &#125;   </div><div class="line">  ]  </div><div class="line">  &#125;).api();  </div><div class="line">  <span class="comment">//此处需调用api()方法,否则返回的是JQuery对象而不是DataTables的API对象  </span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> jQuery </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[moment]]></title>
+      <url>/2016/12/11/moment/</url>
+      <content type="html"><![CDATA[<p>首先，好久没有来多博客了</p>
+<p>今天在学习MongoDB时，需要格式化时间，上网查了一下，nodejs中的moment模块可以格式化时间。<br>首先，mongodb中有一个字段是Date类型需要一个默认值，就是当前时间，可以使用以下代码来格式化时间</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">moment().format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)</div></pre></td></tr></table></figure>
+<p>使用以下代码也是可以的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">moment(<span class="built_in">Date</span>.now()).format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)</div></pre></td></tr></table></figure>
+<p>目前只使用这两个方法，以后再来补充<br>——————————————————分割线———————————-<br>在存入<a href="http://lib.csdn.net/base/mysql" target="_blank" rel="external">数据库</a>时，我已经格式化日期了，取出来发现是没有格式的数据，很纳闷，不知道原因，找到了解决办法。<br>express我是用的jade模板，<br>在app.js中加入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">app.locals.moment = <span class="built_in">require</span>(<span class="string">'moment'</span>)</div></pre></td></tr></table></figure>
+<p>在jade中读取日期数据使用</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#&#123;moment(friend.createTime).format('YYYY-MM-DD HH:mm:ss')&#125;</div></pre></td></tr></table></figure>
+<p>取出来的日期是格式化的</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Nodejs </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[useMongoDB]]></title>
+      <url>/2016/12/11/useMongoDB/</url>
+      <content type="html"><![CDATA[<p>最近在学习mongdb</p>
+<p>以下是使用mongoose模块来保存数据</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> mongoose = <span class="built_in">require</span>(<span class="string">'mongoose'</span>);  </div><div class="line"><span class="keyword">var</span> moment = <span class="built_in">require</span>(<span class="string">'moment'</span>);  </div><div class="line">  </div><div class="line"><span class="comment">// 连接字符串格式为mongodb://主机/数据库名  </span></div><div class="line">mongoose.connect(<span class="string">'mongodb://localhost/test'</span>);  </div><div class="line"><span class="keyword">var</span> db = mongoose.connection;  </div><div class="line"><span class="comment">//输出连接日志  </span></div><div class="line">db.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Connection error"</span>);  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line">db.once(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params"></span>) </span>&#123;  </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Mongo working!"</span>);  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line"><span class="comment">// 创建schema  </span></div><div class="line"><span class="keyword">var</span> Schema = mongoose.Schema;  </div><div class="line"><span class="keyword">var</span> userSchema = <span class="keyword">new</span> Schema(&#123;  </div><div class="line">    name: <span class="built_in">String</span>,  </div><div class="line">    age: <span class="built_in">Number</span>,  </div><div class="line">    createTime: &#123;  </div><div class="line">        type: <span class="built_in">Date</span>,  </div><div class="line">        <span class="keyword">default</span>: moment().format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)  </div><div class="line">    &#125;,  </div><div class="line">    updateTime: &#123;  </div><div class="line">        type: <span class="built_in">Date</span>,  </div><div class="line">        <span class="keyword">default</span>: moment().format(<span class="string">'YYYY-MM-DD HH:mm:ss'</span>)  </div><div class="line">    &#125;,  </div><div class="line">    telphone: <span class="built_in">String</span>  </div><div class="line">&#125;);  </div><div class="line"><span class="comment">// 构建model  </span></div><div class="line"><span class="keyword">var</span> User = mongoose.model(<span class="string">'User'</span>, userSchema);  </div><div class="line"><span class="comment">//构建model实例  </span></div><div class="line"><span class="keyword">var</span> userData = <span class="keyword">new</span> User(&#123;  </div><div class="line">    name: <span class="string">'root'</span>,  </div><div class="line">    age: <span class="number">21</span>,  </div><div class="line">    telphone: <span class="string">'18766560229'</span>  </div><div class="line">&#125;);  </div><div class="line">  </div><div class="line"><span class="comment">// 保存数据  </span></div><div class="line">userData.save(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;  </div><div class="line">    <span class="keyword">if</span> (err) &#123;  </div><div class="line">        <span class="built_in">console</span>.log(err)  </div><div class="line">    &#125; <span class="keyword">else</span> &#123;  </div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Save success'</span>);  </div><div class="line">    &#125;  </div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>还有，输出信息有以下信息：<br>(node:7780) DeprecationWarning: Mongoose: mpromise (mongoose’s default promise library) is deprecated, plug in your own promise library instead: <a href="http://mongoosejs.com/docs/promises.html" target="_blank" rel="external">http://mongoosejs.com/docs/promises.html</a><br>也不不知道是什么意思，需要补充</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 数据库 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> nodejs </tag>
+            
+            <tag> MongoDB </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ngInterpolate]]></title>
+      <url>/2016/09/17/ngInterpolate/</url>
+      <content type="html"><![CDATA[<p>$interpolate服务返回一个函数，用来在特定的上下文中运算表达式。<br>示例：<br>html代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">"myController"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">"to"</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"email"</span> /&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">ng-model</span>=<span class="string">"emailBody"</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">pre</span>&gt;</span>&#123;&#123;previewText&#125;&#125;<span class="tag">&lt;/<span class="name">pre</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>js代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'myApp'</span>, [])  </div><div class="line">  .controller(<span class="string">'myController'</span>,[<span class="string">'$scope'</span>,<span class="string">'$interpolate'</span>,  </div><div class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">$scope,$interpolate</span>) </span>&#123;  </div><div class="line">      $scope.$watch(<span class="string">'emailBody'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">body</span>) </span>&#123;  </div><div class="line">        <span class="keyword">if</span>(body) &#123;  </div><div class="line">          <span class="keyword">var</span> template = $interpolate(body);  </div><div class="line">          $scope.previewText = template(&#123;<span class="attr">to</span>:$scope.to&#125;)  </div><div class="line">        &#125;  </div><div class="line">      &#125;)  </div><div class="line">    &#125;  </div><div class="line">  ])</div></pre></td></tr></table></figure></p>
+<p>使用：在输入框中输入你的email地址，在文本框中输入，previewText中的值即为to的值</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> angularjs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[java1]]></title>
+      <url>/2016/07/20/java1/</url>
+      <content type="html"><![CDATA[<p>Java已经忘了差不多了，最近又需要重新捡起Java。<br>对于一副扑克牌共有54张，扑克牌洗牌就是将这54张牌没有规律的输出出来，<br>用ArrayList实现，本质是54个数的随机输出，穿了身衣服，输出出来就好看多了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Poker</span> </span>&#123;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">poker</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;  </div><div class="line">        String str = <span class="string">""</span>;  </div><div class="line">        String[] huase = &#123;<span class="string">"红桃"</span>,<span class="string">"黑桃"</span>,<span class="string">"梅花"</span>,<span class="string">"方块"</span>&#125;;  </div><div class="line">        String[] number = &#123;<span class="string">"A"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>,<span class="string">"6"</span>,<span class="string">"7"</span>,<span class="string">"8"</span>,<span class="string">"9"</span>,<span class="string">"10"</span>,<span class="string">"J"</span>,<span class="string">"Q"</span>,<span class="string">"K"</span>&#125;;  </div><div class="line">        <span class="keyword">if</span>(num/<span class="number">4</span> &gt; <span class="number">12</span>) &#123;  </div><div class="line">            <span class="keyword">if</span>(num%<span class="number">4</span> == <span class="number">0</span>) &#123;  </div><div class="line">                str += <span class="string">"小鬼"</span>;  </div><div class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(num%<span class="number">4</span> == <span class="number">1</span>) &#123;  </div><div class="line">                str += <span class="string">"大鬼"</span>;  </div><div class="line">            &#125;  </div><div class="line">        &#125; <span class="keyword">else</span> &#123;  </div><div class="line">            str += huase[num%<span class="number">4</span>] + number[num/<span class="number">4</span>] ;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">return</span> str;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">public class Client &#123;  </div><div class="line">  </div><div class="line">    public static void main(String[] args) &#123;  </div><div class="line">        // 定义变量  </div><div class="line">        ArrayList list = new ArrayList();  </div><div class="line">        Random random = new Random();  </div><div class="line">        Poker poker = new Poker();  </div><div class="line">        int i = 0;  </div><div class="line">          </div><div class="line">        // 向数组中增加数字  </div><div class="line">        for(i=0;i&lt;54;i++) &#123;  </div><div class="line">            list.add(poker.poker(i));  </div><div class="line">        &#125;  </div><div class="line">          </div><div class="line">        // 随机输出数组中的每个数字  </div><div class="line">        int length = list.size();  </div><div class="line">        for(i=0;i&lt;length;i++) &#123;  </div><div class="line">            //随机生成数组下标  </div><div class="line">            int num = random.nextInt(list.size());  </div><div class="line">            //取出数字  </div><div class="line">            System.out.println(list.get(num));  </div><div class="line">            //将数字从数组中移除  </div><div class="line">            list.remove(num);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>看起来舒服多了</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Java </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[css-margin]]></title>
+      <url>/2016/07/16/css-margin/</url>
+      <content type="html"><![CDATA[<p>今天在慕课上看了张大神又一力作，整理了一下<br>margin的巧妙使用：<br>1、margin实现自适应的宽高比为2：1的矩形</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;container&quot;&gt;  </div><div class="line">    &lt;div class=&quot;box&quot;&gt;  </div><div class="line">       &lt;div&gt;&lt;/div&gt;  </div><div class="line">    &lt;/div&gt;  </div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;style type=&quot;text/css&quot;&gt;  </div><div class="line">  #container &#123;  </div><div class="line">    width: 400px;  </div><div class="line">    height: 250px;  </div><div class="line">  &#125;  </div><div class="line">  .box &#123;  </div><div class="line">    background-color: olive;  </div><div class="line">    overflow: hidden;  </div><div class="line">  &#125;  </div><div class="line">  .box &gt; div &#123;  </div><div class="line">    margin: 50%;  </div><div class="line">  &#125;  </div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/7018384-24ac7fb1fccbcec6?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><img src="http://upload-images.jianshu.io/upload_images/7018384-70156a9605e570a9?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><img src="http://upload-images.jianshu.io/upload_images/7018384-92ecf8c007214a71?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 前端 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+        
+    </entry>
+    
+  
+  
 </search>
