@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2017-09-02T16:49:38.000Z</updated>
+  <updated>2017-09-03T03:17:57.000Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>week6</title>
+    <link href="https://wukong1995.github.io/2017/09/03/week6/"/>
+    <id>https://wukong1995.github.io/2017/09/03/week6/</id>
+    <published>2017-09-03T01:05:56.000Z</published>
+    <updated>2017-09-03T03:17:57.000Z</updated>
+    
+    <summary type="html">
+    
+      url上添加query-跳转页面和无需跳转页面
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>coursera-3</title>
@@ -37,11 +57,11 @@
   </entry>
   
   <entry>
-    <title>week5-2</title>
-    <link href="https://wukong1995.github.io/2017/08/26/week5-2/"/>
-    <id>https://wukong1995.github.io/2017/08/26/week5-2/</id>
+    <title>week5</title>
+    <link href="https://wukong1995.github.io/2017/08/26/week5/"/>
+    <id>https://wukong1995.github.io/2017/08/26/week5/</id>
     <published>2017-08-26T09:27:09.000Z</published>
-    <updated>2017-08-27T13:54:57.000Z</updated>
+    <updated>2017-09-03T01:07:33.000Z</updated>
     
     <summary type="html">
     
@@ -58,10 +78,10 @@
   
   <entry>
     <title>week5-1</title>
-    <link href="https://wukong1995.github.io/2017/08/26/week5-1/"/>
-    <id>https://wukong1995.github.io/2017/08/26/week5-1/</id>
+    <link href="https://wukong1995.github.io/2017/08/26/coursera-2/"/>
+    <id>https://wukong1995.github.io/2017/08/26/coursera-2/</id>
     <published>2017-08-26T08:29:03.000Z</published>
-    <updated>2017-08-27T14:17:30.000Z</updated>
+    <updated>2017-09-03T01:07:15.000Z</updated>
     
     <summary type="html">
     
@@ -69,10 +89,10 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="编程语言" scheme="https://wukong1995.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
     
-      <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+      <category term="编程语言" scheme="https://wukong1995.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
@@ -414,27 +434,6 @@
     
     
       <category term="angularjs" scheme="https://wukong1995.github.io/tags/angularjs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java1</title>
-    <link href="https://wukong1995.github.io/2016/07/20/java1/"/>
-    <id>https://wukong1995.github.io/2016/07/20/java1/</id>
-    <published>2016-07-20T10:38:05.000Z</published>
-    <updated>2017-08-27T13:53:17.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Java已经忘了差不多了，最近又需要重新捡起Java。&lt;br&gt;对于一副扑克牌共有54张，扑克牌洗牌就是将这54张牌没有规律的输出出来，&lt;br&gt;用ArrayList实现，本质是54个数的随机输出，穿了身衣服，输出出来就好看多了&lt;/p&gt;
-&lt;pre class=&quot;line-num
-    
-    </summary>
-    
-      <category term="Java" scheme="https://wukong1995.github.io/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://wukong1995.github.io/tags/Java/"/>
     
   </entry>
   

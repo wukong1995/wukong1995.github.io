@@ -12,7 +12,7 @@
     
     <title>
         
-            标签 | 
+            week6 | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Wang peipei">
-    <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="description" itemprop="description" content="url上添加query-跳转页面和无需跳转页面">
+    <meta name="keywords" content="blog,javascript">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签 | Wukong&#39;s Blog">
+    <meta property="og:title" content="week6 | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:description" content="url上添加query-跳转页面和无需跳转页面">
+    <meta property="og:article:tag" content="javascript"> 
 
+    
+        <meta property="article:published_time" content="9月 03, 2017" />
+        <meta property="article:modified_time" content="9月 03, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签 | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="一只热爱编程的媛...">
+    <meta name="twitter:title" content="week6 | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="url上添加query-跳转页面和无需跳转页面">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/tags/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2017/09/03/week6/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Wang peipei",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "week6",
+    "url": "https://wukong1995.github.io/2017/09/03/week6/index.html",
+    "datePublished": "9月 03, 2017",
+    "dateModified": "9月 03, 2017",
+    "description": "url上添加query-跳转页面和无需跳转页面",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -282,60 +315,288 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#—–"><span class="post-toc-number">1.</span> <span class="post-toc-text">—–</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/Git/" style="font-size: 16px; color: #757575">Git</a> <a href="/tags/Java/" style="font-size: 16px; color: #757575">Java</a> <a href="/tags/MongoDB/" style="font-size: 16px; color: #757575">MongoDB</a> <a href="/tags/angularjs/" style="font-size: 25.5px; color: #4b4b4b">angularjs</a> <a href="/tags/css/" style="font-size: 16px; color: #757575">css</a> <a href="/tags/es7/" style="font-size: 16px; color: #757575">es7</a> <a href="/tags/graphql/" style="font-size: 25.5px; color: #4b4b4b">graphql</a> <a href="/tags/jQuery/" style="font-size: 16px; color: #757575">jQuery</a> <a href="/tags/javascript/" style="font-size: 25.5px; color: #4b4b4b">javascript</a> <a href="/tags/node/" style="font-size: 25.5px; color: #4b4b4b">node</a> <a href="/tags/nodejs/" style="font-size: 25.5px; color: #4b4b4b">nodejs</a> <a href="/tags/npm/" style="font-size: 16px; color: #757575">npm</a> <a href="/tags/php/" style="font-size: 16px; color: #757575">php</a> <a href="/tags/react/" style="font-size: 25.5px; color: #4b4b4b">react</a> <a href="/tags/微信公众号/" style="font-size: 16px; color: #757575">微信公众号</a> <a href="/tags/总结/" style="font-size: 35px; color: #212121">总结</a> <a href="/tags/爬虫/" style="font-size: 16px; color: #757575">爬虫</a> <a href="/tags/编程语言/" style="font-size: 25.5px; color: #4b4b4b">编程语言</a>
+        
+    
+            <p class="article-headline-p">
+                url上添加query
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Wang peipei</strong>
+        <span>9月 03, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3awXKDMAwE0Pz/T7fXHgpZybbCtI9TJqXgxwEpK7++/vTxwsPDw8PDw8PDexjvFR+/XOjH9/fnJ2de/Vd1bXh4eHgzvDev2tsbJ0u5QuafC2vDw8PDG+Tly0oKQLLc6l+jcoKHh4f3eF6+rPvXPR4eHt5/4yVFIrlLtSDh4eHhfZaX/OBPYoirM/NA4WNZCx4eHl7My4dM859H53t4eHh4Aa+8pWmhpV7ZpjC0pwwPDw8v4J0IGnobAnrbEfDw8PDmeetxQA+QxBbVqBcPDw9vkpeP8JMXehLjJo+jdz4eHh7eaV7e4N6/3PPGOg+Lm+0+Hh4e3iCvR4oCgri0VKOKZtaCh4eHt8zLx1e94lHdiJCQyjsj8PDw8Lbyeq3wSqu9Evgu1T08PDy8Tbx8fLUSAa+UlkKDjoeHh3eYl//sT9rZHjK/e9To4+Hh4Y3wdg2lkshg/cqFARgeHh7eMV61MFTb4upgLA9/j7TUeHh4eMsx7okwd9eBh4eHN8/bG0OsX3OlzODh4eHN8HpDpvwV3xtrVc/Ew8PDm+flgOqgqxphbLgyHh4e3iAvuUR+zvqDy4MSPDw8vE/xkttXo968QV9p0/Hw8PAmedUj35JVjWiTxx0VFTw8PLzDvN6Qvlc2qsvd1lLj4eHhHeAlxSAJWPNlVTclJNut8PDw8OZ5vRd04catdjm/Ph4eHt7zedUF7dqS9Sb+wMPDw3swr1oSqltUq203Hh4e3jxvpRW+jxjKQ6zWkAwPDw9vkldti8ttbrANqxpAXH6Ph4eHd5j39w48PDw8PDw8PLwHHN+4PF3JOEs6/AAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/javascript/">javascript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=week6&url=https://wukong1995.github.io/2017/09/03/week6/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=week6&url=https://wukong1995.github.io/2017/09/03/week6/index.html&via=Wang peipei" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>举一个栗子🌰：在分页时，你通常会看到<code>url</code>上一般是<code>xxx?page=1</code><br>通常的做法是点击第几页直接跳转页面，是通过location进行的<br>现在的需求是：在跳转页面的时候，我既想要改变url，同时我只需要改变分页的数据，而不需要整个页面重绘。</p>
+<h4 id="—–"><a href="#—–" class="headerlink" title="—–"></a>—–</h4><p>很幸运<code>history</code>提供了这么一个方法<code>pushState</code>，它有三个参数：state object，title，以及一个可选的URL地址。第二个参数title:现在firefox和chrome已经忽略该参数</p>
+<pre class="line-numbers language-js"><code class="language-js">window<span class="token punctuation">.</span>history<span class="token punctuation">.</span><span class="token function">pushState</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span><span class="token string">'title'</span><span class="token punctuation">,</span><span class="token string">'?page=1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="external">pushState参考链接</a></p>
+
+    
+
+    
 </div>
 
 
-<script type="text/ls-javascript" id="page-tagcloud-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+                
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2017/09/03/week6/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2017/09/03/week6/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    console.log(disqus_config)
 </script>
 
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
 
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/09/03/coursera-3/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -538,6 +799,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 

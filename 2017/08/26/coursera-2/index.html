@@ -12,7 +12,7 @@
     
     <title>
         
-            标签 | 
+            week5-1 | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Wang peipei">
-    <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="description" itemprop="description" content="编程语言">
+    <meta name="keywords" content="blog,编程语言">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签 | Wukong&#39;s Blog">
+    <meta property="og:title" content="week5-1 | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:description" content="编程语言">
+    <meta property="og:article:tag" content="编程语言"> 
 
+    
+        <meta property="article:published_time" content="8月 26, 2017" />
+        <meta property="article:modified_time" content="9月 03, 2017" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签 | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="一只热爱编程的媛...">
+    <meta name="twitter:title" content="week5-1 | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="编程语言">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/tags/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2017/08/26/coursera-2/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Wang peipei",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "week5-1",
+    "url": "https://wukong1995.github.io/2017/08/26/coursera-2/index.html",
+    "datePublished": "8月 26, 2017",
+    "dateModified": "9月 03, 2017",
+    "description": "编程语言",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -282,60 +315,332 @@
 
                     <!-- Post TOC -->
 
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说在前面的话"><span class="post-toc-number">1.</span> <span class="post-toc-text">说在前面的话</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#variable-binding"><span class="post-toc-number">2.</span> <span class="post-toc-text">variable binding</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#rules-to-expressions"><span class="post-toc-number">3.</span> <span class="post-toc-text">rules to expressions</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#shadowing"><span class="post-toc-number">4.</span> <span class="post-toc-text">shadowing</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#递归"><span class="post-toc-number">5.</span> <span class="post-toc-text">递归</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关键字"><span class="post-toc-number">6.</span> <span class="post-toc-text">关键字</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调试错误"><span class="post-toc-number">7.</span> <span class="post-toc-text">调试错误</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
 
 <!-- Layouts -->
 
-    <!-- Tags Cloud -->
-    <style>
-    #bottom{
-        position: relative;
-    }
+    <!-- Post Module -->
+    <div class="material-post_container">
 
-    @media screen and (max-width: 480px) {
-        .material-tagscloud{
-            margin: 6em 2em 0;
-        }
-    }
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
 
-    .material-tagscloud a{
-        text-decoration:none;
-        padding: 1px 9px;
-        margin: 9px 1px;
-        line-height: 40px;
-        white-space: nowrap;
-        transition: .6s;
-        opacity: .85;
-    }
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-    .material-tagscloud a:hover{
-        transition: .6s;
-        opacity: 1;
-        background: #FAFAFA;
-        box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
-    }
-</style>
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
 
-<div class=" material-tagscloud">
-    <div class="material-post mdl-grid">
-        <a href="/tags/Git/" style="font-size: 16px; color: #757575">Git</a> <a href="/tags/Java/" style="font-size: 16px; color: #757575">Java</a> <a href="/tags/MongoDB/" style="font-size: 16px; color: #757575">MongoDB</a> <a href="/tags/angularjs/" style="font-size: 25.5px; color: #4b4b4b">angularjs</a> <a href="/tags/css/" style="font-size: 16px; color: #757575">css</a> <a href="/tags/es7/" style="font-size: 16px; color: #757575">es7</a> <a href="/tags/graphql/" style="font-size: 25.5px; color: #4b4b4b">graphql</a> <a href="/tags/jQuery/" style="font-size: 16px; color: #757575">jQuery</a> <a href="/tags/javascript/" style="font-size: 25.5px; color: #4b4b4b">javascript</a> <a href="/tags/node/" style="font-size: 25.5px; color: #4b4b4b">node</a> <a href="/tags/nodejs/" style="font-size: 25.5px; color: #4b4b4b">nodejs</a> <a href="/tags/npm/" style="font-size: 16px; color: #757575">npm</a> <a href="/tags/php/" style="font-size: 16px; color: #757575">php</a> <a href="/tags/react/" style="font-size: 25.5px; color: #4b4b4b">react</a> <a href="/tags/微信公众号/" style="font-size: 16px; color: #757575">微信公众号</a> <a href="/tags/总结/" style="font-size: 35px; color: #212121">总结</a> <a href="/tags/爬虫/" style="font-size: 16px; color: #757575">爬虫</a> <a href="/tags/编程语言/" style="font-size: 25.5px; color: #4b4b4b">编程语言</a>
+        
+    
+            <p class="article-headline-p">
+                coursera第三周
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
     </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Wang peipei</strong>
+        <span>8月 26, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWklEQVR42u3aQY6DMAwFUO5/6ZntSCPotxNchB6rqqWQl0Vs2T5+Xn0deHh4eHh4eHh4D+Md8XX6uD+/nt1/ds//79fXhoeHhzfD+3DUntxzvdAPi7h85sra8PDw8CZ5yZG98vrk6N8QTvDw8PAeyVtPu8+QeHh4eO/m9VLkajECDw8P78m8aqH2mn0dMO5I2fHw8PAmeXmTaf7zaH8PDw8PL+CVR5qKpYTecMC2oSs8PDy8G3i9Em2OrCbKG0rGeHh4eDfz8mN6VwGiuonJG/Hw8PDmefmykoQ7OcR7gScKLXh4eHg38/LW/srhfvd/8fDw8CZ5yWFdTmrjkaw88CTvxcPDw5vk9RaUN8yaQwDFjcbDw8Ob4eWl270BY6XgWwgMeHh4eDfz1kcBepuVlDwKQQsPDw9vnNdLZBN2rzBRbpXh4eHhjfN6V47J0+Vqio+Hh4c3w6s2wKoBoLdxvTIEHh4e3gwvSY7XC775Jq40zPDw8PBmeNVCQP6aamOses9S3MPDw8Nb4FUT312YaihKEno8PDy8SV71m95yV/5baMLh4eHhDfKSR+SBIR8v2Dy+gIeHh/cAXrU8sRIk8ucXJiPw8PDwtvJ6Tf1kQdW2WZ5kN4eu8PDw8Dbxei2uHJYXFJI0Okrr8fDw8EZ4e4NBL2XvjWrh4eHhfZeXHPG9ckM1de4NeOHh4eG9g1doXAVJ/PWW4eHh4T2Zt97sr7bWCkEIDw8Pb5CXFCPyEm1vNCEviODh4eF9l9cbdSq08zc11aIkHg8PD+9m3vsuPDw8PDw8PDy8B1y/lWyGkolEVyEAAAAASUVORK5CYII=">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/编程语言/">编程语言</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=week5-1&url=https://wukong1995.github.io/2017/08/26/coursera-2/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=week5-1&url=https://wukong1995.github.io/2017/08/26/coursera-2/index.html&via=Wang peipei" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h3 id="说在前面的话"><a href="#说在前面的话" class="headerlink" title="说在前面的话"></a>说在前面的话</h3><p>最初对待语言的看法：相比语言更重要的是由编程思想，语言只是一种工具。所以对于只停留在Syntax阶段，没有去深究语言的内在。<br>之前在学习C++的时候，老师也讲过一些内存方面…例如一段很简单的代码，在C++中会造成死循环…代码片段我还是没找到…<br>在学编译原理的时候，也学过词法分析、语法树等等…但是总是来说对于语言还是又一个模糊的概念<br>近期在coursera看一门课程，收获很大。刚开始看视频，因为自己的英语能力薄弱，刚开始看的时候，恨不得每句话都Google tanslate一遍，看多了就习惯了，因为大部分的术语你已经知道意思了，所以能知道大概的意思。Google翻译的意思，因为不知道术语所以翻译出来也很奇特。目前是以ML为例讲解的</p>
+<h3 id="variable-binding"><a href="#variable-binding" class="headerlink" title="variable binding"></a>variable binding</h3><p>变量的绑定主要包括两个环境：静态环境记录了变量的类型；动态环境记录了变量的值</p>
+<pre class="line-numbers language-ML"><code class="language-ML">val x = 34
+(* static env : x : int *)
+(* dynamic env : x -> 34 *)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="rules-to-expressions"><a href="#rules-to-expressions" class="headerlink" title="rules to expressions"></a>rules to expressions</h3><p>它共有三个部分：语法检查、类型检查和评估规则</p>
+<pre class="line-numbers language-ML"><code class="language-ML">Syntax:
+  if el then e2 else e3
+  where if, then, and else are keywords and
+  e1, e2, and e3 are subespressions
+
+Type-checking:
+  first el must have bool type
+  e2 and e3 can hav any type(let`s call it t), but they
+  must have the same type t
+  the type of the entire expression is also t
+
+Evalustion rules:
+  first evalustion el to a value call it v1
+  if it`s true, evaluate e2 and that result is the whole expression`s result
+  else, evaluate e3 and that result is the whole expression`s result
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="shadowing"><a href="#shadowing" class="headerlink" title="shadowing"></a>shadowing</h3><p>当你重复声明相同的变量时，之前声明的值就会被覆盖，当你在REPL中看它的值的时候，就会变成hidden value，所以不建议重复声明变量</p>
+<pre class="line-numbers language-ML"><code class="language-ML">val x = 34
+val x = 45    (* this is not assiginment statement *)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>ML语言没有for循环，所以在对于list类型的数据，会尝试使用递归去解决问题，但是小心哦，不恰当的使用递归，会使运行次数呈指数式增长。<br>下面是求list中的最大值，可以简单粗暴的理解成求数组中的最大值</p>
+<pre class="line-numbers language-ML"><code class="language-ML">fun bad_max(numbers: int list) =
+  if null numbers
+  then 0
+  else if null tl numbers
+  then hd numbers
+  else if hd numbers > bad_max(tl numbers)
+  then hd numbers
+  else bad_max(tl numbers)
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面代码逻辑清晰，通俗易懂，但是使用的时候，假如数组中的数是从大到小排列时，程序运行速度很快；相反，数组中的数若是从小到大排列，当数组是[1,…30]时，你就会发现有延迟…讲师用了一张图给你讲解<br><img src="http://res.cloudinary.com/dwudaridr/image/upload/v1503738949/WX20170825-142135_2x_oq3vsb.png" alt=""></p>
+<p>优化的方法是：你可以将<code>bad_max(tl numbers)</code>的值赋予一个变量，这样，每次程序运行时<code>bad_max(tl numbers)</code>只会执行一遍。这里使用了<code>let...in...end</code>，在这个课程中，作者也讲解了作用域的问题，例如子作用域的值回覆盖父作用域的值…</p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>每门语言都会提供关键字来提高代码的可读性，在适当的地方记得使用</p>
+<h3 id="调试错误"><a href="#调试错误" class="headerlink" title="调试错误"></a>调试错误</h3><p>调试错误时，一定要有耐心…</p>
+
+    
+
+    
 </div>
 
 
-<script type="text/ls-javascript" id="page-tagcloud-script">
-    var adjustFooter = function() {
-        if( ($('#bottom').offset().top + $('#bottom').outerHeight() ) < $(window).height() ) {
-            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
-            $('#bottom').css('bottom', '-' + footerBottom + 'px');
-        }
-    };
+                
 
-    $(document).ready(function() {
-        adjustFooter();
-    });
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2017/08/26/coursera-2/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2017/08/26/coursera-2/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    console.log(disqus_config)
 </script>
 
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+  	
 
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2017/08/26/week5/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/08/20/week4/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
 
 
 
@@ -538,6 +843,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
