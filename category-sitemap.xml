@@ -7,13 +7,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
-        <lastmod>2017-08-27T13:52:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/Git/</loc>
         <lastmod>2017-08-27T13:53:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -30,13 +23,6 @@
     <url>
         <loc>https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2017-08-27T13:53:31.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/categories/Nodejs/</loc>
-        <lastmod>2017-08-27T13:53:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -63,13 +49,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
-        <lastmod>2017-09-03T01:07:15.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
         <lastmod>2017-09-03T01:07:33.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,6 +58,34 @@
     <url>
         <loc>https://wukong1995.github.io/categories/javascript/</loc>
         <lastmod>2017-09-03T03:17:57.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/</loc>
+        <lastmod>2017-09-03T13:59:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/linux/</loc>
+        <lastmod>2017-09-13T13:50:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/Nodejs/</loc>
+        <lastmod>2017-09-13T13:54:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
+        <lastmod>2017-09-13T13:54:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
