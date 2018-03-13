@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2017-09-13T13:53:34.000Z</updated>
+  <updated>2017-11-15T08:21:26.000Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>get-module</title>
+    <link href="https://wukong1995.github.io/2017/11/15/get-module/"/>
+    <id>https://wukong1995.github.io/2017/11/15/get-module/</id>
+    <published>2017-11-15T08:08:22.000Z</published>
+    <updated>2017-11-15T08:21:26.000Z</updated>
+    
+    <summary type="html">
+    
+      发现的一些module
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
+    
+    
+      <category term="Nodejs" scheme="https://wukong1995.github.io/tags/Nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>project</title>
+    <link href="https://wukong1995.github.io/2017/11/06/project/"/>
+    <id>https://wukong1995.github.io/2017/11/06/project/</id>
+    <published>2017-11-06T02:19:58.000Z</published>
+    <updated>2017-11-06T02:47:24.000Z</updated>
+    
+    <summary type="html">
+    
+      好久没有写了
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>pm2</title>
@@ -173,9 +213,9 @@
       <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
     
     
-      <category term="npm" scheme="https://wukong1995.github.io/tags/npm/"/>
-    
       <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
+    
+      <category term="npm" scheme="https://wukong1995.github.io/tags/npm/"/>
     
   </entry>
   
@@ -255,9 +295,9 @@
       <category term="代码" scheme="https://wukong1995.github.io/categories/%E4%BB%A3%E7%A0%81/"/>
     
     
-      <category term="爬虫" scheme="https://wukong1995.github.io/tags/%E7%88%AC%E8%99%AB/"/>
-    
       <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
+    
+      <category term="爬虫" scheme="https://wukong1995.github.io/tags/%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -386,49 +426,6 @@
       <category term="微信公众号" scheme="https://wukong1995.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
     
       <category term="php" scheme="https://wukong1995.github.io/tags/php/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>dataTable</title>
-    <link href="https://wukong1995.github.io/2017/03/26/dataTable/"/>
-    <id>https://wukong1995.github.io/2017/03/26/dataTable/</id>
-    <published>2017-03-26T10:24:25.000Z</published>
-    <updated>2017-08-27T13:52:41.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;偶然发现一个叫 dataTable  的组件，觉得很好用，于是研究了一番，下面是代码&lt;/p&gt;
-&lt;pre class=&quot;line-numbers language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span clas
-    
-    </summary>
-    
-      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="jQuery" scheme="https://wukong1995.github.io/tags/jQuery/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>moment</title>
-    <link href="https://wukong1995.github.io/2016/12/11/moment/"/>
-    <id>https://wukong1995.github.io/2016/12/11/moment/</id>
-    <published>2016-12-11T10:30:42.000Z</published>
-    <updated>2017-08-27T13:53:24.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;首先，好久没有来多博客了&lt;/p&gt;
-&lt;p&gt;今天在学习MongoDB时，需要格式化时间，上网查了一下，nodejs中的moment模块可以格式化时间。&lt;br&gt;首先，mongodb中有一个字段是Date类型需要一个默认值，就是当前时间，可以使用以下代码来格式化时间&lt;/p&gt;
-&lt;pr
-    
-    </summary>
-    
-      <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
-    
-    
-      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
     
   </entry>
   

@@ -79,13 +79,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/</loc>
-        <lastmod>2017-09-03T01:07:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/javascript/</loc>
         <lastmod>2017-09-03T03:17:57.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,6 +107,13 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/tags/nodejs/</loc>
+        <lastmod>2017-09-13T13:54:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2017-09-13T13:54:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -121,8 +121,15 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/nodejs/</loc>
-        <lastmod>2017-09-13T13:54:41.000Z</lastmod>
+        <loc>https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/</loc>
+        <lastmod>2017-11-06T02:47:24.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/Nodejs/</loc>
+        <lastmod>2017-11-15T08:21:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
