@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Wang peipei">
-    <meta name="description" itemprop="description" content="发现的一些module">
+    <meta name="description" itemprop="description" content="自动发送邮件：nodemailer">
     <meta name="keywords" content="blog,Nodejs">
 
     <!-- Site Verification -->
@@ -69,17 +69,17 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="get-module | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="发现的一些module">
+    <meta property="og:description" content="自动发送邮件：nodemailer">
     <meta property="og:article:tag" content="Nodejs"> 
 
     
         <meta property="article:published_time" content="11月 15, 2017" />
-        <meta property="article:modified_time" content="11月 15, 2017" />
+        <meta property="article:modified_time" content="3月 13, 2018" />
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="get-module | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="发现的一些module">
+    <meta name="twitter:description" content="自动发送邮件：nodemailer">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
@@ -115,8 +115,8 @@
     "headline": "get-module",
     "url": "https://wukong1995.github.io/2017/11/15/get-module/index.html",
     "datePublished": "11月 15, 2017",
-    "dateModified": "11月 15, 2017",
-    "description": "发现的一些module",
+    "dateModified": "3月 13, 2018",
+    "description": "自动发送邮件：nodemailer",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://wukong1995.github.io"
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                好用的module
+                使用node自动发送邮件
             </p>
         </div>
 
@@ -488,20 +488,74 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h4 id="发送邮件-nodemailer"><a href="#发送邮件-nodemailer" class="headerlink" title="发送邮件: nodemailer"></a>发送邮件: <a href="https://github.com/nodemailer/nodemailer" target="_blank" rel="external">nodemailer</a></h4><ol>
-<li>基本代码，使用之前请确保邮箱开启SMTP<br>```<br>const nodemailer = require(‘nodemailer’);</li>
+<li>基本代码，使用之前请确保邮箱开启SMTP</li>
 </ol>
-<p>nodemailer.createTestAccount(() =&gt; {<br>  const config = {<br>    host: ‘smtp.163.com’,<br>    port: 465,<br>    secure: true, // true for 465, false for other ports<br>    auth: {<br>      user: ‘xxxx@163.com’, // generated ethereal user<br>      pass: ‘xxx’  // generated ethereal password<br>    }<br>  };</p>
-<p>  const transporter = nodemailer.createTransport(config);</p>
-<p>  // setup email data with unicode symbols<br>  const mailOptions = {<br>    from: ‘“Fred Foo 👻” <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#120;&#120;&#x78;&#x40;&#49;&#54;&#x33;&#46;&#99;&#x6f;&#109;">&#120;&#120;&#x78;&#x40;&#49;&#54;&#x33;&#46;&#99;&#x6f;&#109;</a>‘, // sender address<br>    to: ‘xxxx@gmail.com’, // list of receivers<br>    subject: ‘Hello ✔’, // Subject line<br>    text: ‘Hello world?’, // plain text body<br>    html: ‘<b>Hello world?</b>‘ // html body<br>  };</p>
-<p>  // send mail with defined transport object<br>  transporter.sendMail(mailOptions, (error, info) =&gt; {<br>    if (error) {<br>      return console.log(error);<br>    }</p>
-<pre><code>console.log(&#39;Message sent: %s&#39;, info.messageId);
-</code></pre><p>  });<br>});</p>
-<pre><code>2. 若使用SSL, 在config中添加
-</code></pre><p>secureConnection: true, // use SSL</p>
-<pre><code>3.添加附件, 在mailOptions添加
-</code></pre><p>attachments: [<br>  {<br>    filename: ‘文档.txt’, // 不会乱码<br>    content: ‘哈哈哈’<br>  },<br>  {<br>    filename: ‘2.txt’,<br>    content: ‘heool word’<br>  }<br>]</p>
-<pre><code>4. 添加图片, 在mailOptions添加
-</code></pre><p>attachments: [<br>  {<br>    filename: ‘文档.txt’,<br>    content: ‘哈哈哈’<br>  },<br>  {<br>    filename: ‘01.png’,   // image<br>    path: ‘./flow.png’,   // 图片路径<br>    cid: ‘00000001’<br>  }<br>]<br>```</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> nodemailer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'nodemailer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+nodemailer<span class="token punctuation">.</span><span class="token function">createTestAccount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
+    host<span class="token punctuation">:</span> <span class="token string">'smtp.163.com'</span><span class="token punctuation">,</span>
+    port<span class="token punctuation">:</span> <span class="token number">465</span><span class="token punctuation">,</span>
+    secure<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// true for 465, false for other ports</span>
+    auth<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      user<span class="token punctuation">:</span> <span class="token string">'xxxx@163.com'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// generated ethereal user</span>
+      pass<span class="token punctuation">:</span> <span class="token string">'xxx'</span>  <span class="token comment" spellcheck="true">// generated ethereal password</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> transporter <span class="token operator">=</span> nodemailer<span class="token punctuation">.</span><span class="token function">createTransport</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// setup email data with unicode symbols</span>
+  <span class="token keyword">const</span> mailOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token keyword">from</span><span class="token punctuation">:</span> <span class="token string">'"Fred Foo 👻" &lt;xxx@163.com>'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// sender address</span>
+    to<span class="token punctuation">:</span> <span class="token string">'xxxx@gmail.com'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// list of receivers</span>
+    subject<span class="token punctuation">:</span> <span class="token string">'Hello ✔'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Subject line</span>
+    text<span class="token punctuation">:</span> <span class="token string">'Hello world?'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// plain text body</span>
+    html<span class="token punctuation">:</span> <span class="token string">'&lt;b>Hello world?&lt;/b>'</span> <span class="token comment" spellcheck="true">// html body</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// send mail with defined transport object</span>
+  transporter<span class="token punctuation">.</span><span class="token function">sendMail</span><span class="token punctuation">(</span>mailOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> info<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Message sent: %s'</span><span class="token punctuation">,</span> info<span class="token punctuation">.</span>messageId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>若使用SSL, 在config中添加</li>
+</ol>
+<pre class="line-numbers language-javascript"><code class="language-javascript">secureConnection<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// use SSL</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>3.添加附件, 在mailOptions添加</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">attachments<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'文档.txt'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 不会乱码</span>
+    content<span class="token punctuation">:</span> <span class="token string">'哈哈哈'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'2.txt'</span><span class="token punctuation">,</span>
+    content<span class="token punctuation">:</span> <span class="token string">'heool word'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol>
+<li>添加图片, 在mailOptions添加</li>
+</ol>
+<pre class="line-numbers language-javascript"><code class="language-javascript">attachments<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'文档.txt'</span><span class="token punctuation">,</span>
+    content<span class="token punctuation">:</span> <span class="token string">'哈哈哈'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'01.png'</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">// image</span>
+    path<span class="token punctuation">:</span> <span class="token string">'./flow.png'</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">// 图片路径</span>
+    cid<span class="token punctuation">:</span> <span class="token string">'00000001'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
     
 
@@ -588,6 +642,14 @@
             <!-- Post Prev & Next Nav -->
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
+    
+        <a href="/2018/03/13/jquery-plugin/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
     
 
     <!-- Section Spacer -->
@@ -685,7 +747,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -703,7 +765,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/PHP/">PHP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graphql/">graphql<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/linux/">linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程语言/">编程语言<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/PHP/">PHP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graphql/">graphql<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/jquery/">jquery<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/linux/">linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程语言/">编程语言<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -759,7 +821,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">26</span>
+                <span class="sidebar-badge">27</span>
             </a>
         </li>
         

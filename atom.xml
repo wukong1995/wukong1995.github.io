@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2017-11-15T08:21:26.000Z</updated>
+  <updated>2018-03-14T02:32:24.915Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,15 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jquery-plugin</title>
+    <link href="https://wukong1995.github.io/2018/03/13/jquery-plugin/"/>
+    <id>https://wukong1995.github.io/2018/03/13/jquery-plugin/</id>
+    <published>2018-03-13T11:11:53.000Z</published>
+    <updated>2018-03-14T02:32:24.915Z</updated>
+    
+    <summary type="html">
+    
+      在webpack环境下，安装jquery插件不能使用，假如安装了jquery-form插件，使用ajaxform方法，提示jquery对象没有这个方法
+    
+    </summary>
+    
+      <category term="jquery" scheme="https://wukong1995.github.io/categories/jquery/"/>
+    
+    
+      <category term="jquery" scheme="https://wukong1995.github.io/tags/jquery/"/>
+    
+      <category term="webpack" scheme="https://wukong1995.github.io/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
     <title>get-module</title>
     <link href="https://wukong1995.github.io/2017/11/15/get-module/"/>
     <id>https://wukong1995.github.io/2017/11/15/get-module/</id>
     <published>2017-11-15T08:08:22.000Z</published>
-    <updated>2017-11-15T08:21:26.000Z</updated>
+    <updated>2018-03-13T06:52:09.939Z</updated>
     
     <summary type="html">
     
-      发现的一些module
+      自动发送邮件：nodemailer
     
     </summary>
     
@@ -370,7 +392,7 @@
     <link href="https://wukong1995.github.io/2017/07/22/git/"/>
     <id>https://wukong1995.github.io/2017/07/22/git/</id>
     <published>2017-07-22T14:38:02.000Z</published>
-    <updated>2017-08-27T13:53:09.000Z</updated>
+    <updated>2018-03-13T11:13:20.615Z</updated>
     
     <summary type="html">
     
@@ -404,28 +426,6 @@
       <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
     
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>wechatPHP</title>
-    <link href="https://wukong1995.github.io/2017/03/29/wechatPHP/"/>
-    <id>https://wukong1995.github.io/2017/03/29/wechatPHP/</id>
-    <published>2017-03-29T10:22:28.000Z</published>
-    <updated>2017-08-27T13:54:09.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;使用apache+php5.4n&lt;br&gt;1、打开apache配置文件httpd.conf&lt;br&gt;      搜索httpd-vhosts.conf，打开这一行的注释&lt;br&gt;2、打开apache所在目录下的，conf/extra/httpd-vhost.conf&lt;br&gt;  增
-    
-    </summary>
-    
-      <category term="PHP" scheme="https://wukong1995.github.io/categories/PHP/"/>
-    
-    
-      <category term="微信公众号" scheme="https://wukong1995.github.io/tags/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7/"/>
-    
-      <category term="php" scheme="https://wukong1995.github.io/tags/php/"/>
     
   </entry>
   

@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/Git/</loc>
-        <lastmod>2017-08-27T13:53:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/Java/</loc>
         <lastmod>2017-08-27T13:53:17.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -129,7 +122,28 @@
 
     <url>
         <loc>https://wukong1995.github.io/tags/Nodejs/</loc>
-        <lastmod>2017-11-15T08:21:26.000Z</lastmod>
+        <lastmod>2018-03-13T06:52:09.939Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/Git/</loc>
+        <lastmod>2018-03-13T11:13:20.615Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/jquery/</loc>
+        <lastmod>2018-03-14T02:32:24.915Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/webpack/</loc>
+        <lastmod>2018-03-14T02:32:24.915Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

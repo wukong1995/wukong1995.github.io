@@ -7,8 +7,24 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/03/13/jquery-plugin/</loc>
+        <lastmod>2018-03-14T02:32:24.915Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/07/22/git/</loc>
+        <lastmod>2018-03-13T11:13:20.615Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2017/11/15/get-module/</loc>
-        <lastmod>2017-11-15T08:21:26.000Z</lastmod>
+        <lastmod>2018-03-13T06:52:09.939Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -169,14 +185,6 @@
     <url>
         <loc>https://wukong1995.github.io/2016/07/20/java1/</loc>
         <lastmod>2017-08-27T13:53:17.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/07/22/git/</loc>
-        <lastmod>2017-08-27T13:53:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

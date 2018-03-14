@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="7月 22, 2017" />
-        <meta property="article:modified_time" content="8月 27, 2017" />
+        <meta property="article:modified_time" content="3月 13, 2018" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "git",
     "url": "https://wukong1995.github.io/2017/07/22/git/index.html",
     "datePublished": "7月 22, 2017",
-    "dateModified": "8月 27, 2017",
+    "dateModified": "3月 13, 2018",
     "description": "这个主要是分享使用git的那些事",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -490,8 +490,9 @@
         <h3 id="使用git想要去合并两个commit"><a href="#使用git想要去合并两个commit" class="headerlink" title="使用git想要去合并两个commit"></a>使用git想要去合并两个commit</h3><p>今天好不容易完成了工作，睡觉的时候突然想到还有些小瑕疵，就想改正。但是改动范围很小，不好意思在commit一次，于是就想将两次commit合并在一起，但是我没有将最新的commit推送到远程分支，就直接合并了两个commit成了一个新的commit，在推送到远程时，也没有先进行pull的动作（👉每次push之前一定要进行pull的动作），导致远程commit和我合并的commit发生冲突，最后还需要手动merge。看了一下提交记录，吓坏了，本来我想合并commit，预计的commit只会在之前的基础上多一次commit，但是现在多了三次commit，这下坏了。<br>于是，上网查询，试了好几种办法。找到了一个很合适的办法</p>
 <pre><code>git  reset HEAD^ --hard    //彻底回退到上次提交
 git push origin 分支名 -f   // 强制推送到远程
-</code></pre><p>这样操作以后，我的问题解决了（假如你有更好的方法，请在下方留言）。</p>
+</code></pre><p>这样操作以后，我的问题解决了</p>
 <p>待续…</p>
+<p>-补充—<br>最好不要不要强行push😕</p>
 
     
 
@@ -683,7 +684,7 @@ git push origin 分支名 -f   // 强制推送到远程
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -701,7 +702,7 @@ git push origin 分支名 -f   // 强制推送到远程
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/PHP/">PHP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graphql/">graphql<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/linux/">linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程语言/">编程语言<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">6</span></a>
+                <a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/Nodejs/">Nodejs<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/PHP/">PHP<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graphql/">graphql<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/jquery/">jquery<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/linux/">linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/代码/">代码<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程语言/">编程语言<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">6</span></a>
             </ul>
         </li>
         
@@ -757,7 +758,7 @@ git push origin 分支名 -f   // 强制推送到远程
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">26</span>
+                <span class="sidebar-badge">27</span>
             </a>
         </li>
         
