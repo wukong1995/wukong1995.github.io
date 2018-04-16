@@ -12,7 +12,7 @@
     
     <title>
         
-            get-module | 
+            pdf | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Wang peipei">
-    <meta name="description" itemprop="description" content="自动发送邮件：nodemailer">
-    <meta name="keywords" content="blog,Nodejs">
+    <meta name="description" itemprop="description" content="在webpack中集成pdf.js">
+    <meta name="keywords" content="blog,nodejs">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,26 +67,26 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="get-module | Wukong&#39;s Blog">
+    <meta property="og:title" content="pdf | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="自动发送邮件：nodemailer">
-    <meta property="og:article:tag" content="Nodejs"> 
+    <meta property="og:description" content="在webpack中集成pdf.js">
+    <meta property="og:article:tag" content="nodejs"> 
 
     
-        <meta property="article:published_time" content="11月 15, 2017" />
-        <meta property="article:modified_time" content="3月 13, 2018" />
+        <meta property="article:published_time" content="4月 08, 2018" />
+        <meta property="article:modified_time" content="4月 16, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="get-module | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="自动发送邮件：nodemailer">
+    <meta name="twitter:title" content="pdf | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="在webpack中集成pdf.js">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/2017/11/15/get-module/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2018/04/08/pdf/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -112,11 +112,11 @@
         },
         "description": "如切如磋，如琢如磨"
     },
-    "headline": "get-module",
-    "url": "https://wukong1995.github.io/2017/11/15/get-module/index.html",
-    "datePublished": "11月 15, 2017",
-    "dateModified": "3月 13, 2018",
-    "description": "自动发送邮件：nodemailer",
+    "headline": "pdf",
+    "url": "https://wukong1995.github.io/2018/04/08/pdf/index.html",
+    "datePublished": "4月 08, 2018",
+    "dateModified": "4月 16, 2018",
+    "description": "在webpack中集成pdf.js",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://wukong1995.github.io"
@@ -340,7 +340,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#发送邮件-nodemailer"><span class="post-toc-number">1.</span> <span class="post-toc-text">发送邮件: nodemailer</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#html5中浏览pdf文件"><span class="post-toc-number">1.</span> <span class="post-toc-text">html5中浏览pdf文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插件pdf-js"><span class="post-toc-number"></span> <span class="post-toc-text">插件pdf.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#集成到webpack中"><span class="post-toc-number"></span> <span class="post-toc-text">集成到webpack中</span></a>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -378,7 +378,7 @@
         
     
             <p class="article-headline-p">
-                使用node自动发送邮件
+                使用pdf.js在页面中在线加载pdf文件
             </p>
         </div>
 
@@ -397,7 +397,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Wang peipei</strong>
-        <span>11月 15, 2017</span>
+        <span>4月 08, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -419,7 +419,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACa0lEQVR42u3aQW7DMAwEwPz/0+0Dgri7lKW6xfgUtA7k8UFkVnx9/evrhYeHh4eHh4eH9zDeK77ev/Xpc3L/9T1Lz4aHh4d3hPfDVnt5z/sy+Qv69N2VZ8PDw8M7ycuXTBZOHrctP9fPhoeHh/dXeO32vVIk8PDw8P46L0HmrfbjCgMeHh7eTWHE9TJ5892+mkNZCx4eHl7Myw+Zzn8+er6Hh4eHF/DqkaZ4E8+b5jwUroeu8PDw8Dbw8o24bbJnDfTsefDw8PCewMv/2wYQ+bfyFfHw8PBO8vIF8lB1vVQkpaj4xYCHh4e3mZc003c13+0YwTDGxcPDw9vAmx3hJ6RoK48LSRRq4OHh4R3htUHDepM9izaiCAMPDw9vMy9fchby5pFxUiTqwoCHh4e3mTf7+2zrbyOPokHHw8PDO85baaavy0YbTMyoeHh4eLt5K8FrPlDVHmXNWnw8PDy8k7y8SCSbfh71tgMKw6ErPDw8vFt5ySHWsLUNhgDaUCNq6/Hw8PA289qF8829PRhr71mqe3h4eHgLvGQgYBa/5gVjdgi3lFLj4eHhLfNmyyctePs62vC3/sWAh4eHdysvGSBYCSzaaCN/Njw8PLzf4uUH/HW0uhAWtxEJHh4e3m5ee+VHVvkQQFJ+kpEsPDw8vDO8le0+R668mjpQxsPDwzvCa4vBLJBtecOYAw8PD+8gb2WDbmPZWcEYDl3h4eHhPYbXFpL8FbTtOB4eHt7zebMSclc8sb2lxsPDw7s1jIiC1Jta8DwQwcPDwzvPm406rbTL+T3tIBceHh7ebt7/u/Dw8PDw8PDw8B5wfQOAW2ejSO9RnAAAAABJRU5ErkJggg==">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACZUlEQVR42u3aUW7CQAwFQO5/6fYAKOHZTkyEJl9VCc3OVsLmrV9/P3298PDw8PDw8PDwHsZ7xVf1Xe/3v7/36J7R2vDw8PBWeB8+ak8fnCzo6G8mG1FeGx4eHt4i72hZyT3nG3G+uGo5Od8CPDw8vOfz8vvz1hkPDw/vV3lXhQtJUcHDw8N7Ji/5wp/gz9lJoPC1rAUPDw8v5uWHTPs/r57v4eHh4QW88khTsKxei5yUgfLQFR4eHt4NvGpEm0cSvSGA3nrw8PDwNnm90KEcrQZt+nwT8fDw8HZ4vTCiSspb8177joeHh/ct3ujYaRDLRouefGPAw8PDu5SXBwTJ4ycRcFJIorAYDw8P72befGgg2ZRqs55Hw3h4eHj7vHwIoBez5o14te0+fAoeHh7eOq8XMfTi12pYXI5x8fDw8G7jVWOI6jhUrx3vUfHw8PC+xbvqUKo3hJr/Hg8PD2+flz+4t6zJsVZzyAAPDw9vhdf72p8UgEkxyLcVDw8Pb5PXC1sL0cD40Cs5WsPDw8Pb5FWb196QVrUIVe/Ew8PD2+flQe0khM3HsHJ8IWvBw8PDu4GXR6X54FS+ZdVoo1wY8PDw8G7m9YrHfOMmLTseHh7eDq965QUjaYWr5SSKKvDw8PBu5o0O6VsxbnWYoFxa8PDw8FZ41Q/3PFqtbk1+Px4eHt4TeNUP6KtCjerQ6od/Bh4eHt4jecmr1ZHW/EisHEbg4eHhPYbXGxeYxBOjMAIPDw/vBt780CsfIDhn91p2PDw8vE1eddSpVwCqI6rNaAMPDw/vZt7vXXh4eHh4eHh4eA+4/gEdN4aSZ/l5EQAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -432,7 +432,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Nodejs/">Nodejs</a>
+        <a class="post_tag-link" href="/tags/nodejs/">nodejs</a>
     </ul>
     
 
@@ -448,7 +448,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=get-module&url=https://wukong1995.github.io/2017/11/15/get-module/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=pdf&url=https://wukong1995.github.io/2018/04/08/pdf/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -457,7 +457,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=get-module&url=https://wukong1995.github.io/2017/11/15/get-module/index.html&via=Wang peipei" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=pdf&url=https://wukong1995.github.io/2018/04/08/pdf/index.html&via=Wang peipei" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -487,75 +487,60 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="发送邮件-nodemailer"><a href="#发送邮件-nodemailer" class="headerlink" title="发送邮件: nodemailer"></a>发送邮件: <a href="https://github.com/nodemailer/nodemailer" target="_blank" rel="external">nodemailer</a></h4><ol>
-<li>基本代码，使用之前请确保邮箱开启SMTP</li>
-</ol>
-<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> nodemailer <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'nodemailer'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-nodemailer<span class="token punctuation">.</span><span class="token function">createTestAccount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> config <span class="token operator">=</span> <span class="token punctuation">{</span>
-    host<span class="token punctuation">:</span> <span class="token string">'smtp.163.com'</span><span class="token punctuation">,</span>
-    port<span class="token punctuation">:</span> <span class="token number">465</span><span class="token punctuation">,</span>
-    secure<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// true for 465, false for other ports</span>
-    auth<span class="token punctuation">:</span> <span class="token punctuation">{</span>
-      user<span class="token punctuation">:</span> <span class="token string">'xxxx@163.com'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// generated ethereal user</span>
-      pass<span class="token punctuation">:</span> <span class="token string">'xxx'</span>  <span class="token comment" spellcheck="true">// generated ethereal password</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-  <span class="token keyword">const</span> transporter <span class="token operator">=</span> nodemailer<span class="token punctuation">.</span><span class="token function">createTransport</span><span class="token punctuation">(</span>config<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-  <span class="token comment" spellcheck="true">// setup email data with unicode symbols</span>
-  <span class="token keyword">const</span> mailOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token keyword">from</span><span class="token punctuation">:</span> <span class="token string">'"Fred Foo 👻" &lt;xxx@163.com>'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// sender address</span>
-    to<span class="token punctuation">:</span> <span class="token string">'xxxx@gmail.com'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// list of receivers</span>
-    subject<span class="token punctuation">:</span> <span class="token string">'Hello ✔'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// Subject line</span>
-    text<span class="token punctuation">:</span> <span class="token string">'Hello world?'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// plain text body</span>
-    html<span class="token punctuation">:</span> <span class="token string">'&lt;b>Hello world?&lt;/b>'</span> <span class="token comment" spellcheck="true">// html body</span>
-  <span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-  <span class="token comment" spellcheck="true">// send mail with defined transport object</span>
-  transporter<span class="token punctuation">.</span><span class="token function">sendMail</span><span class="token punctuation">(</span>mailOptions<span class="token punctuation">,</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> info<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Message sent: %s'</span><span class="token punctuation">,</span> info<span class="token punctuation">.</span>messageId<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol>
-<li>若使用SSL, 在config中添加</li>
-</ol>
-<pre class="line-numbers language-javascript"><code class="language-javascript">secureConnection<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// use SSL</span>
+        <p>在网页中浏览pdf文件，最简单的办法当然是插入iframe了</p>
+<h4 id="html5中浏览pdf文件"><a href="#html5中浏览pdf文件" class="headerlink" title="html5中浏览pdf文件"></a>html5中浏览pdf文件</h4><p>html5中有标签可以插入pdf,但是在每个浏览器上的表现形式不一样…</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>embed</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pdfFiles/interfaces.pdf<span class="token punctuation">"</span></span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>600<span class="token punctuation">"</span></span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>500<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pdf<span class="token punctuation">"</span></span> <span class="token attr-name">pluginspage</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.adobe.com/products/acrobat/readstep2.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>3.添加附件, 在mailOptions添加</p>
-<pre class="line-numbers language-javascript"><code class="language-javascript">attachments<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span>
-    filename<span class="token punctuation">:</span> <span class="token string">'文档.txt'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 不会乱码</span>
-    content<span class="token punctuation">:</span> <span class="token string">'哈哈哈'</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    filename<span class="token punctuation">:</span> <span class="token string">'2.txt'</span><span class="token punctuation">,</span>
-    content<span class="token punctuation">:</span> <span class="token string">'heool word'</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol>
-<li>添加图片, 在mailOptions添加</li>
-</ol>
-<pre class="line-numbers language-javascript"><code class="language-javascript">attachments<span class="token punctuation">:</span> <span class="token punctuation">[</span>
-  <span class="token punctuation">{</span>
-    filename<span class="token punctuation">:</span> <span class="token string">'文档.txt'</span><span class="token punctuation">,</span>
-    content<span class="token punctuation">:</span> <span class="token string">'哈哈哈'</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token punctuation">{</span>
-    filename<span class="token punctuation">:</span> <span class="token string">'01.png'</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">// image</span>
-    path<span class="token punctuation">:</span> <span class="token string">'./flow.png'</span><span class="token punctuation">,</span>   <span class="token comment" spellcheck="true">// 图片路径</span>
-    cid<span class="token punctuation">:</span> <span class="token string">'00000001'</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">]</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="插件pdf-js"><a href="#插件pdf-js" class="headerlink" title="插件pdf.js"></a>插件pdf.js</h3><p><a href="https://github.com/mozilla/pdf.js" target="_blank" rel="external">pdf.js</a>是一个浏览器兼容的插件，移动端也很使用，有一点：需要引入的包太大。为此，有人又做了一个包裹<a href="https://github.com/legalthings/pdf.js-viewer" target="_blank" rel="external">pdf.js-viewer</a>。这个npm是pdf.js的打包后的版本。在使用的过程中，你会发现样式不对，此时你可以将<code>pdf.js</code>中的<code>viewer.scss</code>，拷贝的你的开发目录，而不是引入<code>pdf.js-viewer</code>的css，里面的样式已经过时了。语言包引入后，页面就会翻译，不用做其他设置。</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./viewer-2.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>application/l10n<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>node_modules/pdf.js-viewer/locale/zh-CN/viewer.properties<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+    <span class="token selector">html, body </span><span class="token punctuation">{</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+      <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+      <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">body </span><span class="token punctuation">{</span>
+      <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector"><span class="token id">#pdfjs</span> </span><span class="token punctuation">{</span> <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token selector"><span class="token id">#viewBookmark</span>, <span class="token id">#secondaryToolbarToggle</span> </span><span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">pdfjs-wrapper </span><span class="token punctuation">{</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+      <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100%</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>pdfjs<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--#include virtual="node_modules/pdf.js-viewer/viewer.html" --></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>node_modules/pdf.js-viewer/pdf.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/javascript<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    $(function() {
+      // window.PDFJS.locale = 'zh-CN';
+      $('div#pdfjs').load('http://localhost:65534/viewer.html', function(res) {
+        window.PDFJS.webViewerLoad();
+        window.PDFViewerApplication.open('http://localhost:65534/sample-3pp.pdf');
+      });
+    });
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="集成到webpack中"><a href="#集成到webpack中" class="headerlink" title="集成到webpack中"></a>集成到webpack中</h3><p>测试开发可以正常使用，需要集成到webpack中。<br>由于文件都需要用webpack打包，于是按照平常一样，将文件引入，发现控制台报错。在调试过程中，我遇到5种左右的错误，影响最深刻的一点是：<code>document undefined</code>…也是很迷，调试过程中，发现<code>pdf.js</code>种的代码执行了两遍，第二次的时候就会出这个错误。仔细翻了翻源码，在<code>pdf.js</code>中，它需要引入<code>pdf.work.js</code>文件，webpack打包时，它根本就找不到这个文件，最后的结果是只在<code>windows</code>上挂载了关于<code>pdf</code>的两个对象…<br>最后的最后，直接在页面上引入<code>pdf.js</code>和<code>pdf.work.js</code>，由于文件过大，你按需进行加载就可以了。</p>
+<p>最后的最后，写了很长时间的<code>slim</code>模版，我忘了原生的标签怎么写了…导致我在引入语言包话费个很长时间…也是很迷…切莫忘本😊</p>
 
     
 
@@ -608,8 +593,8 @@ nodemailer<span class="token punctuation">.</span><span class="token function">c
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://wukong1995.github.io/2017/11/15/get-module/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://wukong1995.github.io/2017/11/15/get-module/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://wukong1995.github.io/2018/04/08/pdf/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2018/04/08/pdf/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -642,21 +627,13 @@ nodemailer<span class="token punctuation">.</span><span class="token function">c
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/03/13/jquery-plugin/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2017/11/06/project/" id="post_nav-older" class="next-content">
+        <a href="/2018/03/13/jquery-plugin/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">

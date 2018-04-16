@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-03-14T02:32:24.915Z</updated>
+  <updated>2018-04-16T12:06:41.266Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pdf</title>
+    <link href="https://wukong1995.github.io/2018/04/08/pdf/"/>
+    <id>https://wukong1995.github.io/2018/04/08/pdf/</id>
+    <published>2018-04-08T13:29:01.000Z</published>
+    <updated>2018-04-16T12:06:41.266Z</updated>
+    
+    <summary type="html">
+    
+      在webpack中集成pdf.js
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title>jquery-plugin</title>
@@ -404,28 +424,6 @@
     
     
       <category term="Git" scheme="https://wukong1995.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>react-relay</title>
-    <link href="https://wukong1995.github.io/2017/07/22/react-relay/"/>
-    <id>https://wukong1995.github.io/2017/07/22/react-relay/</id>
-    <published>2017-07-22T14:19:06.000Z</published>
-    <updated>2017-08-27T13:53:45.000Z</updated>
-    
-    <summary type="html">
-    
-      这个主要是叙述学习relay的探索过程
-    
-    </summary>
-    
-      <category term="graphql" scheme="https://wukong1995.github.io/categories/graphql/"/>
-    
-    
-      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
-    
-      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
     
   </entry>
   

@@ -100,13 +100,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/nodejs/</loc>
-        <lastmod>2017-09-13T13:54:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2017-09-13T13:54:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -144,6 +137,13 @@
     <url>
         <loc>https://wukong1995.github.io/tags/webpack/</loc>
         <lastmod>2018-03-14T02:32:24.915Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/nodejs/</loc>
+        <lastmod>2018-04-16T12:06:41.266Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
