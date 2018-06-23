@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-04-16T12:06:41.266Z</updated>
+  <updated>2018-06-23T06:15:41.654Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>refactor</title>
+    <link href="https://wukong1995.github.io/2018/06/23/refactor/"/>
+    <id>https://wukong1995.github.io/2018/06/23/refactor/</id>
+    <published>2018-06-23T05:45:30.000Z</published>
+    <updated>2018-06-23T06:15:41.654Z</updated>
+    
+    <summary type="html">
+    
+      这次的整理可以称得上重构吗
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>pdf</title>
@@ -401,29 +423,9 @@
     
       <category term="angularjs" scheme="https://wukong1995.github.io/tags/angularjs/"/>
     
-      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
-    
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
     
-  </entry>
-  
-  <entry>
-    <title>git</title>
-    <link href="https://wukong1995.github.io/2017/07/22/git/"/>
-    <id>https://wukong1995.github.io/2017/07/22/git/</id>
-    <published>2017-07-22T14:38:02.000Z</published>
-    <updated>2018-03-13T11:13:20.615Z</updated>
-    
-    <summary type="html">
-    
-      这个主要是分享使用git的那些事
-    
-    </summary>
-    
-      <category term="Git" scheme="https://wukong1995.github.io/categories/Git/"/>
-    
-    
-      <category term="Git" scheme="https://wukong1995.github.io/tags/Git/"/>
+      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
     
   </entry>
   

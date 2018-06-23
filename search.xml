@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title><![CDATA[refactor]]></title>
+      <url>/2018/06/23/refactor/</url>
+      <content type="html"><![CDATA[<h4 id="闲谈"><a href="#闲谈" class="headerlink" title="闲谈"></a>闲谈</h4><p>最近很大一部分工作是在进行重构工作，每次都需要提一个大pr，很是心累。<br>原本项目就是重写了一份，但是在架构方面还是没有做好。在开发过程中，没有进行总结，错过了重构的好机会，导致后期维护起来很累。编写代码的很大感觉，哎这一块我好像写过，copy过来。其实这就是一个重构的信号。<code>don&#39;t repeat yourself</code>.在开发过程中，我做了很多copy的工作，于是出来混总是要还的。现在重构起来就需要将凌乱的部分整合在一起。</p>
+<h4 id="css整理工作"><a href="#css整理工作" class="headerlink" title="css整理工作"></a>css整理工作</h4><p>最近的整理工作，主要是在整理css和js，现在想想也很是惊奇。<br>对于css的整理，是在前期没有很好的去总结组件的共同之处，导致css文件是一个增量的过程，而不是迭代的过程。意思到这点之后，我开始梳理和提取相同的地方。<br>css的整理要注意的是：词达意和语义化，这意味着别人一看到你的<code>class</code>就能大概猜出来它是个什么样的。</p>
+<h4 id="js整理工作"><a href="#js整理工作" class="headerlink" title="js整理工作"></a>js整理工作</h4><p>对于js的整理，很大一部分问题就自己否定自己。刚开始写的时候，我问自己：js可以拿redux里面的数据吗？我在没有查询的基础上给了一个自己否定的答案。嗯，不可以的话只能退而求其次了。现在有人告诉我可以，于是开始整理和重构。<br>看起来问题是出在我没有做好准备工作上面。</p>
+<h4 id="什么时候进行整理"><a href="#什么时候进行整理" class="headerlink" title="什么时候进行整理"></a>什么时候进行整理</h4><p>我不知道这次的整理是否可以称得上重构？但是这次的整理是我的整体思路更加清晰，架构也在渐渐明了之中。<br>在编写的过程，做好的时机是：这一块我之前写过类似的，这个时候，你就考虑把相同的地方抽出来作为一个单独的部分。<br>还有一个情况是你写着写着写不下去了，这个时候，就需要从头梳理一下思路，到底是哪出的问题。<br>或者是目前的代码已经不能满足新的需求时。</p>
+<h6 id="整理完一个item，感觉浑身清爽"><a href="#整理完一个item，感觉浑身清爽" class="headerlink" title="整理完一个item，感觉浑身清爽"></a>整理完一个item，感觉浑身清爽</h6><p>PS:作为一个前端来说，写出来的是直接和用户交流的产品，在开发过程中，我是在知道需求的基础上进行开发的，对于一个临时的功能，我可以写的简单一点，但是也需在明了的基础上进行，emmmm…反之，使用者已疯</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 随笔 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> css </tag>
+            
+            <tag> react </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[pdf]]></title>
       <url>/2018/04/08/pdf/</url>
       <content type="html"><![CDATA[<p>在网页中浏览pdf文件，最简单的办法当然是插入iframe了</p>
@@ -879,9 +906,9 @@ Promise
             
             <tag> angularjs </tag>
             
-            <tag> graphql </tag>
-            
             <tag> react </tag>
+            
+            <tag> graphql </tag>
             
         </tags>
         
@@ -932,9 +959,9 @@ git push origin 分支名 -f   // 强制推送到远程
         
         <tags>
             
-            <tag> graphql </tag>
-            
             <tag> react </tag>
+            
+            <tag> graphql </tag>
             
         </tags>
         
