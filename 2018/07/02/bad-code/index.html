@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: linux | 
+            bad-code | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Wang peipei">
-    <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="description" itemprop="description" content="是的，你没看错，如何写出烂代码">
+    <meta name="keywords" content="blog,随笔">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: linux | Wukong&#39;s Blog">
+    <meta property="og:title" content="bad-code | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:description" content="是的，你没看错，如何写出烂代码">
+    <meta property="og:article:tag" content="随笔"> 
 
+    
+        <meta property="article:published_time" content="7月 02, 2018" />
+        <meta property="article:modified_time" content="7月 02, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: linux | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="一只热爱编程的媛...">
+    <meta name="twitter:title" content="bad-code | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="是的，你没看错，如何写出烂代码">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/categories/linux/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2018/07/02/bad-code/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Wang peipei",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "bad-code",
+    "url": "https://wukong1995.github.io/2018/07/02/bad-code/index.html",
+    "datePublished": "7月 02, 2018",
+    "dateModified": "7月 02, 2018",
+    "description": "是的，你没看错，如何写出烂代码",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -280,97 +313,311 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#重构"><span class="post-toc-number">1.</span> <span class="post-toc-text">重构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#烂代码的由来"><span class="post-toc-number">2.</span> <span class="post-toc-text">烂代码的由来</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#词不达意"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">词不达意</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二随一变"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">二随一变</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#我就不改变参数的个数"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">我就不改变参数的个数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#来来来-我的麻花真好看"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">来来来 我的麻花真好看</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#repeat-yourself"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">repeat yourself</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#磨刀不误砍柴工"><span class="post-toc-number">3.</span> <span class="post-toc-text">磨刀不误砍柴工</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/13/linux-first/">得到一个linux服务器要做的事情</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            对待自己的服务器，想着反正也没人攻击，也就从来没在意过。前天得到了一个讯号：要好好对待服务器，第一步就是安全性， 你需要这么做
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/13/linux-first/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Wang peipei's avatar">
-            </div>
-            <div>
-                <strong>Wang peipei</strong>
-                <span>9月 13, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/linux/">linux</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                如何写出烂代码
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Wang peipei</strong>
+        <span>7月 02, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACXklEQVR42u3aQXLCQAwEQP7/6eQBVMhIWgtDtU+pAPa2D7uqkR4/X3098PDw8PDw8PDwbsZ7xNfzr/58QPDp853/ekp5bXh4eHgrvH+22oD3enH5K3gNjtaGh4eHt8hLtuzXm3J1ifnxUzhO8PDw8G7MSw6ABDx5rXh4eHifyKseHtUwAg8PD+/OvN62Xr1bL5hYylrw8PDwYl7eZNr/e7W/h4eHhxfwept4HkZM4uDmCvHw8PAu5uUbcW+koFocT9aDh4eHt8nrFdP5IZHcORnbasa4eHh4eEd5+baejwhMgowDUTIeHh7exbykkE0K6N5IwXxcFQ8PD+9dvDwmmIQUk4MneQV4eHh4+7xqO2qyredBQ3lwFg8PD2+FlxfW1Y2+2jDrxRl4eHh47+JNGvnVrT9/ffmAAh4eHt4mL9+ae6FDoX3VOqLw8PDwNnm9VlNeTPeOh+rRgoeHh7fJO3UAVBeRF/TJEAMeHh7efXij0ra16F7MgYeHh7fJqxa+kyGDSfyRPxEPDw/val5SFk+GBuZHSzUUxsPDw9vkJU2pSYBbfU1JcV8eHcDDw8M7yssPhvkiqoMChQMGDw8P7wa8UwFudeiq+XQ8PDy8i3nV61RbKwkvmq04PDw8vIt5vSZ9sqzqIEJSRkdHCx4eHt4Kr9f4n/+2MEoVfAcPDw9vn3cgQo0jg1NhBB4eHt6n8JJgIv9O9cWNGmB4eHh4N+Dld6j+Ng958fDw8N7Fy5tevSJ4VCjvxLh4eHh4FzTAkv/koW1SjifDBHh4eHibvO+78PDw8PDw8PDwbnD9AmbP9xOrjEhEAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/随笔/">随笔</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=bad-code&url=https://wukong1995.github.io/2018/07/02/bad-code/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=bad-code&url=https://wukong1995.github.io/2018/07/02/bad-code/index.html&via=Wang peipei" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <h4 id="重构"><a href="#重构" class="headerlink" title="重构"></a>重构</h4><p>当你发现现有的结构满足不了现有的功能，这是重构的信号。很遗憾，为了赶进度，当这些信号出现时，你没有放在第一位去考虑，随着增量的开发，再回头准备下手重构，有一种牵一发动全身的感觉。</p>
+<h4 id="烂代码的由来"><a href="#烂代码的由来" class="headerlink" title="烂代码的由来"></a>烂代码的由来</h4><h5 id="词不达意"><a href="#词不达意" class="headerlink" title="词不达意"></a>词不达意</h5><p>代码写出来的目的是给人看的，一般你写的代码都不会由你维护。<br>emmmm 随意的命名，给阅读代码的人带来巨大的负担。自己看两天的代码也会有一种雾里看花的感觉。</p>
+<h5 id="二随一变"><a href="#二随一变" class="headerlink" title="二随一变"></a>二随一变</h5><p>这个是在开发过程中，两个对象都随着一个对象变，又勤勤恳恳的写了两遍。这个时候，当发生一点变化，我要找到全部随变的代码，两个一块修改…改的手都累了，眼也花了</p>
+<h5 id="我就不改变参数的个数"><a href="#我就不改变参数的个数" class="headerlink" title="我就不改变参数的个数"></a>我就不改变参数的个数</h5><p>现有的函数不能满足最新的需求，哎呀，我得在往这个函数中传一个参数，emmm，好麻烦，试试能不能在现有的参数中得到我想要的参数，还可以，就这样吧。于是，开始循环，整个函数已经不堪重负了….满篇的if else</p>
+<h5 id="来来来-我的麻花真好看"><a href="#来来来-我的麻花真好看" class="headerlink" title="来来来 我的麻花真好看"></a>来来来 我的麻花真好看</h5><p>写了一个函数，哎呀，我这边需要和这个函数差不多的函数。哎呀，传一个标志，里面判断吧。这麻花不是一般的好看啊</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> getData <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>isAdd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isAdd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 共用代码</span>
+
+  <span class="token keyword">if</span><span class="token punctuation">(</span>isAdd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment" spellcheck="true">// 共用代码</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>isAdd<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">...</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="repeat-yourself"><a href="#repeat-yourself" class="headerlink" title="repeat yourself"></a>repeat yourself</h5><p>做spa的时候，五个页面都是一个list，于是我勤勤恳恳的写了五个list。这是在做ui的时候。在接数据的时候，我发现这几个页面的整体都是一样的，唯一不同的就是里面的item是不一样的，那我为什么还要写五遍呢？<br>其实开发的时候，就是ctrl+c和ctrl+v，那个时候还庆幸，因为把功能划分的十分清楚，我在每个页面map一遍，还挺简单的。沉浸在这种欢乐中，导致忘了这个repeat的操作。于是，动手写个一个生成list的function后，每个组件的代码两行就可以搞定了。</p>
+<h4 id="磨刀不误砍柴工"><a href="#磨刀不误砍柴工" class="headerlink" title="磨刀不误砍柴工"></a>磨刀不误砍柴工</h4><p>对待一个复杂的问题，首先要勾勒出它大概的轮廓，把能想到的全列上，以此先做出一个好的架构。<br>边写边想看是一个需要摒弃的习惯（对于我自己来说）。<br>这次新做的搜索，我先写好ui,在接数据之前，我能大概想到是什么个情况。于是我开始下手写了。<br>写着写着，我发现，嗯 导航需要条件，下面的list需要条件，右边的筛选也需要这个条件。筛选和list是属于一个组件中，我已经写到单独的list这一块了，有种写不下去的感觉，于是我开始将它们共用的数据全部放在父组件。这对于开发中的时间，是一个巨大的浪费，因为这意味着我之前的工作是白做的。这个时候，我开始拿起纸和笔，开始分析我应该怎么去规划…尽管我再分析的时候，把能预见的问题都想到了，但是在开发过程中还是遇到了未知的问题..写代码的仔细分析很重要….开发过程中的清晰头脑也很重要</p>
+<p>先写到这….</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+
+<div class="btn_click_load">
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2018/07/02/bad-code/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2018/07/02/bad-code/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/06/23/refactor/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

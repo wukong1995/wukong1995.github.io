@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-06-23T06:15:41.654Z</updated>
+  <updated>2018-07-02T12:38:17.089Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bad-code</title>
+    <link href="https://wukong1995.github.io/2018/07/02/bad-code/"/>
+    <id>https://wukong1995.github.io/2018/07/02/bad-code/</id>
+    <published>2018-07-02T12:08:19.000Z</published>
+    <updated>2018-07-02T12:38:17.089Z</updated>
+    
+    <summary type="html">
+    
+      是的，你没看错，如何写出烂代码
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://wukong1995.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>refactor</title>
@@ -31,9 +51,9 @@
       <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
-    
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
     
   </entry>
   
@@ -277,9 +297,9 @@
       <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
     
     
-      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
-    
       <category term="npm" scheme="https://wukong1995.github.io/tags/npm/"/>
+    
+      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
     
   </entry>
   
@@ -402,30 +422,6 @@
     
     
       <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>relay-apollo</title>
-    <link href="https://wukong1995.github.io/2017/07/23/relay-apollo/"/>
-    <id>https://wukong1995.github.io/2017/07/23/relay-apollo/</id>
-    <published>2017-07-23T12:40:35.000Z</published>
-    <updated>2017-08-27T13:53:52.000Z</updated>
-    
-    <summary type="html">
-    
-      这个主要是叙述relay和Apollo
-    
-    </summary>
-    
-      <category term="graphql" scheme="https://wukong1995.github.io/categories/graphql/"/>
-    
-    
-      <category term="angularjs" scheme="https://wukong1995.github.io/tags/angularjs/"/>
-    
-      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
-    
-      <category term="graphql" scheme="https://wukong1995.github.io/tags/graphql/"/>
     
   </entry>
   
