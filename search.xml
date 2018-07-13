@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[history-push-state]]></title>
+    <url>%2F2018%2F07%2F13%2Fhistory-push-state%2F</url>
+    <content type="text"><![CDATA[如何想要点击浏览器自带的前进 后退按钮 不刷新页面，可以通过改变history的state想了一下，写了一个小demo。 &lt;nav> &lt;a href="/home">主页&lt;/a> &lt;a href="/about">个人&lt;/a> &lt;a href="/test">测试&lt;/a> &lt;/nav> &lt;div id="content">&lt;/div> &lt;script> const baseHref = location.href; const baseUrl = '/test.html'; window.onload = () => { const links = document.querySelectorAll('a'); links.forEach(item => { item.addEventListener('click', (event) => { event.preventDefault(); const href = item.getAttribute('href'); history.pushState('', '', baseHref + href); setContentHtml(href); }); }); window.onpopstate = (event) => { // console.log(event); const currentPathname = event.target.location.pathname; const targetHref = currentPathname.split(baseUrl)[1]; setContentHtml(targetHref); } const setContentHtml = (content) => { document.getElementById('content').innerHTML = content; } // 接管路由 // 1. 得到baseUrl之后的href // 2. 根据href去render } &lt;/script> 假如你是直接打开html文件，使用history.pushState会出错，这时候你需要新开一个server。其中最主要的是，你要托管a链接的herf。其中在onpopstate中，我得到targetHref的方式，感觉有些蠢，目前还没想到好的方法。去看一下其他的框架可能会给我一个不一样的思路。飘过～]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>history&#39;</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[rails-access-origin]]></title>
+    <url>%2F2018%2F07%2F06%2Frails-access-origin%2F</url>
+    <content type="text"><![CDATA[gem 'rack-cors', :require => 'rack/cors' config.middleware.insert_before 0, Rack::Cors do allow do origins '*' resource '*', :headers => :any, :methods => [:get, :post, :options] end end]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[bad-code-2]]></title>
     <url>%2F2018%2F07%2F05%2Fbad-code-2%2F</url>
     <content type="text"><![CDATA[最近的烦恼最近真的超级苦恼。一直在进行新功能的开发，没时间做我之前想要重构的东西。在进行开发的时候，这个时候我已经很注意重构的信号，新功能的开发需要重构一些代码，秉承着一个pr只做一个功能，于是我需要切换分支，提pr，合并pr之后，再进行新功能的开发，这个事情真的非常痛苦。之前没有充分的经验和思考进行的开发，给现在的我带了巨大的痛苦。 启示（都是泪）1. 每个文件的入口文件应尽可能的保持干净不要因为函数小，就要往index中塞。index是入口文件，了解整个项目从这里开始，所以要保证，这里的代码做到最简洁明了，一眼看过去，就能有一概览的感觉。小函数感觉放在一个单独的文件中太不值当的，就把所有的小函数放在一个文件中。整理之后，我感觉非常清新。 2. 多处都用到的样式，这个时候就要考虑重命名了要不看了很疑惑，这个页面为什么有其他页面的style 3.实时抽取util组件划分要清楚，例如可以抽出来api.js、tool.js 4.函数复杂度尽可能的降低若真的找不到适合的解决方法，可以与身边的人分享一下，或许会得到更好的解决办法 5. 你连续copy一段代码以上，这个时候，你可以考虑写一个工具来生成相同的代码6. 需要lazy的地方，及时lazy7. 一个问题有两个不同的解决办法，各有利弊,选择代价最小的移动端和PC端共用一个相同的组件，这个我写一个组件，写两份样式。在这个情况下，假如你修改一下组件，这个时候，你就要同时修改两份样式。一般移动端展示的UI较少，用PC端的组件，会造成很多DOM的多余。所以这个时候，写两个组件更好一点。 8.对于react的看法要学会切小片片，尽可能的组件化，组件尽可能的小，职责尽可能明确。之前写两个wrapper有一段相同的代码，这个还可以接受，等我再写一个wrapper时，发现还需要那一段相同的代码，我受不了了，于是将一个组件拆成了三层。emmmm，组件小多么重要。]]></content>
@@ -30,8 +47,8 @@
         <category>随笔</category>
       </categories>
       <tags>
-        <tag>react</tag>
         <tag>css</tag>
+        <tag>react</tag>
       </tags>
   </entry>
   <entry>

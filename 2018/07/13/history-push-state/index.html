@@ -12,7 +12,7 @@
     
     <title>
         
-            分类: graphql | 
+            history-push-state | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Peipei Wong">
-    <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="description" itemprop="description" content="use history">
+    <meta name="keywords" content="blog,javascript,history'">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="分类: graphql | Wukong&#39;s Blog">
+    <meta property="og:title" content="history-push-state | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:description" content="use history">
+    <meta property="og:article:tag" content="javascript"> <meta property="og:article:tag" content="history&#39;"> 
 
+    
+        <meta property="article:published_time" content="7月 13, 2018" />
+        <meta property="article:modified_time" content="7月 13, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="分类: graphql | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="一只热爱编程的媛...">
+    <meta name="twitter:title" content="history-push-state | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="use history">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/categories/graphql/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2018/07/13/history-push-state/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Peipei Wong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "history-push-state",
+    "url": "https://wukong1995.github.io/2018/07/13/history-push-state/index.html",
+    "datePublished": "7月 13, 2018",
+    "dateModified": "7月 13, 2018",
+    "description": "use history",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -280,155 +313,327 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
     
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
 
-    <!-- Normal Post -->
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
     
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
         
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/07/23/relay-apollo/">使用relay和apollo的感觉</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/07/23/relay-apollo/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>7月 23, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/graphql/">graphql</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/07/22/react-relay/">react-relay的探索历程</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            上次写感想还是2014的时候，那个时候是老师布置的作业（尴尬)队长看到GraphQL很好，于是先拿一个功能来试手😊。前端要使用Gr...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/07/22/react-relay/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>7月 22, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/graphql/">graphql</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Peipei Wong</strong>
+        <span>7月 13, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC2klEQVR42u3aUXLbMAwEUN//0ukFYnkXVBqFfPzqtLLMx8yExQKvryPXCxsbGxsbGxsbG/uR7Fe8vnlR8K/Xz+dvePepfM/Y2NjYe7M//Op/8/XXz7zbxPXb2iNI9oyNjY19DrvdaI65vjLbJ9s9Y2NjY2OvP5OXDXkJhI2NjY299IpR4TErZrCxsbGx7w2V2mumDaSSz/5CloaNjY39eHZbKjzhz/+1v42NjY39YHa7rguGvPBoi5P1hY2Njb0rezayc28B0z45LI2wsbGxN2UnYdAsoM+/ZaXdW0RX2NjY2Aew8+BmdmSzwc22qVyHStjY2NhbsJNW6wy50qCdDfFEjV5sbGzs7dh5lJNHPCuBVP7+ItLCxsbG3pTdbuveAfd8KKctYIquCDY2NvYW7Hzg8rrMaKOi2XcNr1VsbGzsTdmzpmkR5SxfReuHjo2Njb03ez08+tBeXRj9WQm5sLGxsc9h5wFTMeZYRk7Jp/IDvW34EhsbG/uPsIdN09Hf5GHWbBxz2OjFxsbGPoC9Hui0b7irqYCNjY19GjsP4tvioQ2J8vHN4rixsbGxD2C34fvKoM+sAdAGVdjY2NinsZOSIG8Gz9oJs8usHr7ExsbG3pq93gCYXT8rjYTocLGxsbE3Zbfh+0ojtn1zHn5FIz7Y2NjYm7LbQCe/nGaYfD/1kBA2Njb21uwkVLrr+klKoPZwhxcYNjY29qbs2fjOXXHSSrD14erFxsbGPoydXEttybEeRbULGxsb+wR2u1YGcfLnZxfesNGLjY2N/cfZw8tgoR07G7tZP0RsbGzsvdnJpZWHR7Pm8awcyp/HxsbGPoHdXid5DJQc6EqoFBUz2NjY2NhlAdM2btvDbaMlbGxsbOzov/vBEeSbzi+nXytFsLGxsR/GXm+y5i3bWSPh+kf14+0BbGxs7Aez7yot2q0kzYN2NAcbGxv7NPY5CxsbGxsbGxsbG/sx6x+YlowWtWfncgAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/history/">history'</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/javascript/">javascript</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=history-push-state&url=https://wukong1995.github.io/2018/07/13/history-push-state/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=history-push-state&url=https://wukong1995.github.io/2018/07/13/history-push-state/index.html&via=Peipei Wong" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>如何想要点击浏览器自带的前进 后退按钮 不刷新页面，可以通过改变history的state<br>想了一下，写了一个小demo。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token operator">&lt;</span>nav<span class="token operator">></span>
+  <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"/home"</span><span class="token operator">></span>主页<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+  <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"/about"</span><span class="token operator">></span>个人<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+  <span class="token operator">&lt;</span>a href<span class="token operator">=</span><span class="token string">"/test"</span><span class="token operator">></span>测试<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>nav<span class="token operator">></span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"content"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+  <span class="token keyword">const</span> baseHref <span class="token operator">=</span> location<span class="token punctuation">.</span>href<span class="token punctuation">;</span>
+  <span class="token keyword">const</span> baseUrl <span class="token operator">=</span> <span class="token string">'/test.html'</span><span class="token punctuation">;</span>
+
+  window<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> links <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    links<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      item<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">const</span> href <span class="token operator">=</span> item<span class="token punctuation">.</span><span class="token function">getAttribute</span><span class="token punctuation">(</span><span class="token string">'href'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        history<span class="token punctuation">.</span><span class="token function">pushState</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">,</span> <span class="token string">''</span><span class="token punctuation">,</span> baseHref <span class="token operator">+</span> href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">setContentHtml</span><span class="token punctuation">(</span>href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    window<span class="token punctuation">.</span>onpopstate <span class="token operator">=</span> <span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// console.log(event);</span>
+      <span class="token keyword">const</span> currentPathname <span class="token operator">=</span> event<span class="token punctuation">.</span>target<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> targetHref <span class="token operator">=</span> currentPathname<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span>baseUrl<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token function">setContentHtml</span><span class="token punctuation">(</span>targetHref<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">const</span> setContentHtml <span class="token operator">=</span> <span class="token punctuation">(</span>content<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'content'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> content<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 接管路由</span>
+    <span class="token comment" spellcheck="true">// 1. 得到baseUrl之后的href</span>
+    <span class="token comment" spellcheck="true">// 2. 根据href去render</span>
+  <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>假如你是直接打开html文件，使用<code>history.pushState</code>会出错，这时候你需要新开一个server。<br>其中最主要的是，你要托管a链接的herf。<br>其中在<code>onpopstate</code>中，我得到<code>targetHref</code>的方式，感觉有些蠢，目前还没想到好的方法。<br>去看一下其他的框架可能会给我一个不一样的思路。<br>飘过～</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+
+<div class="btn_click_load">
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2018/07/13/history-push-state/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2018/07/13/history-push-state/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/06/rails-access-origin/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
