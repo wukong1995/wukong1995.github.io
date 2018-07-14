@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="7月 13, 2018" />
-        <meta property="article:modified_time" content="7月 13, 2018" />
+        <meta property="article:modified_time" content="7月 14, 2018" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "history-push-state",
     "url": "https://wukong1995.github.io/2018/07/13/history-push-state/index.html",
     "datePublished": "7月 13, 2018",
-    "dateModified": "7月 13, 2018",
+    "dateModified": "7月 14, 2018",
     "description": "use history",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -340,7 +340,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2018-07-14-更新"><span class="post-toc-number">1.</span> <span class="post-toc-text">2018-07-14 更新</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -529,6 +529,18 @@
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>假如你是直接打开html文件，使用<code>history.pushState</code>会出错，这时候你需要新开一个server。<br>其中最主要的是，你要托管a链接的herf。<br>其中在<code>onpopstate</code>中，我得到<code>targetHref</code>的方式，感觉有些蠢，目前还没想到好的方法。<br>去看一下其他的框架可能会给我一个不一样的思路。<br>飘过～</p>
+<h4 id="2018-07-14-更新"><a href="#2018-07-14-更新" class="headerlink" title="2018-07-14 更新"></a>2018-07-14 更新</h4><p>在history这个项目中得到的启示：<br><code>history.pushState</code>的第一个参数就是<code>onpopstate</code>事件中的<code>event.state</code><br>这样的话，我可以对现有的进行一些改进</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// first argumens is event state</span>
+<span class="token comment" spellcheck="true">// history.pushState('', '', baseHref + href);</span>
+history<span class="token punctuation">.</span><span class="token function">pushState</span><span class="token punctuation">(</span>href<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">,</span> baseHref <span class="token operator">+</span> href<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment" spellcheck="true">// ....</span>
+
+<span class="token comment" spellcheck="true">// const currentPathname = event.target.location.pathname;</span>
+<span class="token comment" spellcheck="true">// const targetHref = currentPathname.split(baseUrl)[1];</span>
+<span class="token keyword">const</span> targetHref <span class="token operator">=</span> event<span class="token punctuation">.</span>state<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样想一下，<code>event.state</code>里面可以存很多东西….</p>
 
     
 

@@ -142,22 +142,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/tags/react/</loc>
+        <lastmod>2018-07-14T04:25:25.922Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/tags/javascript/</loc>
-        <lastmod>2018-07-13T11:35:22.622Z</lastmod>
+        <lastmod>2018-07-14T04:40:08.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://wukong1995.github.io/tags/history/</loc>
-        <lastmod>2018-07-13T11:35:22.622Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/tags/react/</loc>
-        <lastmod>2018-07-14T04:25:25.922Z</lastmod>
+        <lastmod>2018-07-14T04:40:08.977Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
