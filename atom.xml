@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-07-13T11:35:22.622Z</updated>
+  <updated>2018-07-14T04:25:25.922Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>summary-work</title>
+    <link href="https://wukong1995.github.io/2018/07/14/summary-work/"/>
+    <id>https://wukong1995.github.io/2018/07/14/summary-work/</id>
+    <published>2018-07-14T03:34:28.000Z</published>
+    <updated>2018-07-14T04:25:25.922Z</updated>
+    
+    <summary type="html">
+    
+      化繁为简，什么才是简？
+    
+    </summary>
+    
+      <category term="总结" scheme="https://wukong1995.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>history-push-state</title>
@@ -391,26 +411,6 @@
     <summary type="html">
     
       ruby &amp; 装饰器 &amp; css
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>week2</title>
-    <link href="https://wukong1995.github.io/2017/08/05/week2/"/>
-    <id>https://wukong1995.github.io/2017/08/05/week2/</id>
-    <published>2017-08-05T06:52:41.000Z</published>
-    <updated>2017-08-27T13:54:30.000Z</updated>
-    
-    <summary type="html">
-    
-      看这个星期是不是收获多多
     
     </summary>
     
