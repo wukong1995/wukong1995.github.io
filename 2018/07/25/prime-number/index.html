@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2017/9 | 
+            prime-number | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Peipei Wong">
-    <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="description" itemprop="description" content="查找n以内的素数">
+    <meta name="keywords" content="blog,算法">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,29 +67,62 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2017/9 | Wukong&#39;s Blog">
+    <meta property="og:title" content="prime-number | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
-    <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:description" content="查找n以内的素数">
+    <meta property="og:article:tag" content="算法"> 
 
+    
+        <meta property="article:published_time" content="7月 25, 2018" />
+        <meta property="article:modified_time" content="7月 30, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2017/9 | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="一只热爱编程的媛...">
+    <meta name="twitter:title" content="prime-number | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="查找n以内的素数">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://wukong1995.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/archives/2017/09/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2018/07/25/prime-number/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Peipei Wong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "prime-number",
+    "url": "https://wukong1995.github.io/2018/07/25/prime-number/index.html",
+    "datePublished": "7月 25, 2018",
+    "dateModified": "7月 30, 2018",
+    "description": "查找n以内的素数",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -280,274 +313,316 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#最简单的方法"><span class="post-toc-number">1.</span> <span class="post-toc-text">最简单的方法</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/13/pm2/">node项目自动化部署</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            由来嘤嘤，看到
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/13/pm2/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>9月 13, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/Nodejs/">Nodejs</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/13/linux-first/">得到一个linux服务器要做的事情</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            对待自己的服务器，想着反正也没人攻击，也就从来没在意过。前天得到了一个讯号：要好好对待服务器，第一步就是安全性， 你需要这么做
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/13/linux-first/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>9月 13, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/linux/">linux</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/03/week6/">url上添加query</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            举一个栗子🌰：在分页时，你通常会看到url上一般是xxx?page=1通常的做法是点击...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/03/week6/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>9月 03, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/javascript/">javascript</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/09/03/coursera-3/">coursera第三周</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            淡淡的忧伤
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/09/03/coursera-3/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>9月 03, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/编程语言/">编程语言</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                查找素数：算法之美
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Peipei Wong</strong>
+        <span>7月 25, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0ElEQVR42u3aQW7DMAwEwPz/0+0DgrhL0m0NanwKGsfW6FBCXL6+jrxe2NjY2NjY2NjY2I9kv+Lr/f7r58z//hFQXDM2Njb2Cewf/vW/LSu/P1nuJ/D1c6prwMbGxj6Bfb2gT4B8m5LPyRY014yNjY2N3ToqXD85+S02NjY29l8WsHxxSXPq+u3Y2NjY2PMmUdIqqraoHtpLw8bGxn48uxr0PuHzP+Tb2NjY2I9kV6+kUOUHjF7Q21w5NjY29lJ2vpR8BLMaBlePQL33YmNjY29l5w336rKSJxRaQuPRTGxsbOzd7Pz4US17+Qb1goR8c7GxsbG3spO2e/UY0DtI9AZ6CoE0NjY29lJ2Xip69/dG83uxbjnoxcbGxl7BzodyesFAtV1VHeIvRBfY2NjYq9k5aXJnUszyGLgcLWNjY2MvZU8aQHnEmzeJ5itpnsCwsbGx17HzkCAZ6/mN6Ld8gMHGxsZeyr43GLhr1GYeNmNjY2Ofxq624PNgoBo/JGWpGWBgY2NjH8OuHhLuKkjJFvQOIdjY2NgnsPOWUF7YJjFDr5j98EZsbGzspexejFpd3KT1P/8WGxsb+wR2Xq562zRpWlXDYGxsbOzT2NUfTxpMebs/L4GFGAMbGxt7Kfs6sk1a89WQ4Pr+3sZFxxVsbGzs1ewqoLdlvVI0ubCxsbFPYyeRQD5SWV1c8t5JVICNjY29lZ03dHoN+upIUDVCzqNobGxs7K3sZBG94cu7hjJvK4fY2NjYB7DvbR5VN6i3iflxBRsbG3sru1cYkgPAvMhNIgdsbGzs09jzopW3pfKtzL9N7sfGxsY+gZ03aHpB7HXxqwbM1dEibGxsbOxeI2lytMiji9vybWxsbOzj2dWjwmSUMz/8YGNjY5/DzgdrJgWmV6iqG4eNjY19Gnsy1Nh7Wl7Y8mjh1/NtbGxs7Eeyz7mwsbGxsbGxsbGxH3N9A6Rs96qjMzOAAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/算法/">算法</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=prime-number&url=https://wukong1995.github.io/2018/07/25/prime-number/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=prime-number&url=https://wukong1995.github.io/2018/07/25/prime-number/index.html&via=Peipei Wong" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>给定一个数字n, 打印出n以内的所有素数。素数的定义非常简单，对于一个整数，除1和它本身外，再没有其他因数了，这个数就是素数。就是说，只除以1或者本身时余数为0，除以其他数所得的余数均不为0。</p>
+<h4 id="最简单的方法"><a href="#最简单的方法" class="headerlink" title="最简单的方法"></a>最简单的方法</h4><pre class="line-numbers language-haskell"><code class="language-haskell"><span class="token comment" spellcheck="true">-- 返回一个整数的所有因数</span>
+<span class="token hvariable">factors</span> <span class="token operator">::</span> <span class="token constant">Integral</span> <span class="token hvariable">a</span> <span class="token operator">=></span> <span class="token hvariable">a</span> <span class="token operator">-></span> <span class="token punctuation">[</span><span class="token hvariable">a</span><span class="token punctuation">]</span>
+<span class="token hvariable">factorsn</span><span class="token operator">=</span><span class="token punctuation">[</span> <span class="token hvariable">x</span> <span class="token operator">|</span> <span class="token hvariable">x</span> <span class="token operator">&lt;-</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token operator">..</span><span class="token hvariable">n</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token builtin">mod</span> <span class="token hvariable">n</span> <span class="token hvariable">x</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">]</span>
+
+<span class="token operator">></span> <span class="token hvariable">factors</span> <span class="token number">24</span> <span class="token comment" spellcheck="true">-- out: [1,2,3,4,6,8,12,24]</span>
+<span class="token comment" spellcheck="true">-- 检验一个数是否为素数的函数，只需检验它的因数是否只有1和他自己</span>
+<span class="token hvariable">isPrime</span> <span class="token operator">::</span> <span class="token constant">Integral</span> <span class="token hvariable">a</span> <span class="token operator">=></span> <span class="token hvariable">a</span> <span class="token operator">-></span> <span class="token constant">Bool</span>
+<span class="token hvariable">isPrime</span> <span class="token hvariable">n</span> <span class="token operator">=</span> <span class="token hvariable">factors</span> <span class="token hvariable">n</span> <span class="token operator">==</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token hvariable">n</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">-- 生成素数列表</span>
+<span class="token hvariable">primes</span> <span class="token operator">::</span> <span class="token constant">Integral</span> <span class="token hvariable">a</span> <span class="token operator">=></span> <span class="token hvariable">a</span> <span class="token operator">-></span> <span class="token punctuation">[</span><span class="token hvariable">a</span><span class="token punctuation">]</span>
+<span class="token hvariable">primes</span> <span class="token hvariable">n</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token hvariable">x</span> <span class="token operator">|</span> <span class="token hvariable">x</span><span class="token operator">&lt;-</span> <span class="token punctuation">[</span><span class="token number">1</span> <span class="token operator">..</span> <span class="token hvariable">n</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token hvariable">isPrime</span> <span class="token hvariable">x</span><span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>上面的方法效率很低，每次求因数的时候，要从1～n全都遍历一遍</p>
+<p>思考一下，可以简化一些过程</p>
+<ol>
+<li>除去2以外，所有的素数都必须为奇树</li>
+<li>素数必须是大于等于2的整数</li>
+<li>对于一个整数N，若它有一个因数为p1，必有另外一个因子p2，使得N=p1*p1，并 并且p1与p2 一 分布在N的两端或p1 =p2 = 根号下N;</li>
+<li>因为比2大的素数必须是奇数，所以它一 也不会有偶因数.</li>
+</ol>
+<p>所以，对2进行单独讨论，然后对于其他的数只需要用它去除以所有 3 ∼ 根号下n的所有奇 数，若余数全不为0，则这个数为素数。<br>这样，对于<code>isPrime</code>可以这样定义</p>
+<pre class="line-numbers language-haskell"><code class="language-haskell"><span class="token hvariable">isPrime</span>' <span class="token operator">::</span> <span class="token constant">Integral</span> <span class="token hvariable">a</span> <span class="token operator">=></span> <span class="token hvariable">a</span> <span class="token operator">-></span> <span class="token constant">Bool</span>
+<span class="token hvariable">isPrime</span>' <span class="token number">2</span> <span class="token operator">=</span> <span class="token constant">True</span>
+<span class="token hvariable">isPrime</span>' <span class="token hvariable">p</span> <span class="token operator">=</span> <span class="token hvariable">p</span> <span class="token operator">></span> <span class="token number">1</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token builtin">all</span> <span class="token punctuation">(</span><span class="token operator">\</span><span class="token hvariable">n</span> <span class="token operator">-></span> <span class="token hvariable">p</span> `<span class="token builtin">mod</span>` <span class="token hvariable">n</span><span class="token operator">/=</span><span class="token number">0</span> <span class="token punctuation">)</span> <span class="token operator">$</span> <span class="token builtin">takeWhile</span><span class="token punctuation">(</span><span class="token operator">\</span><span class="token hvariable">n</span> <span class="token operator">-></span> <span class="token hvariable">n</span><span class="token operator">*</span><span class="token hvariable">n</span> <span class="token operator">&lt;=</span> <span class="token hvariable">p</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token operator">..</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">-- 注： takeWhile (\n -> n*n &lt;= p) [3,5..]) 求出了 3 ∼ √N 的所有奇数数组成的列表</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除此之外还有一个方法叫做<code>埃拉托斯特尼筛法</code>。给 从2开始连续的一列数，2为素数。那 么，在2之后有2 为因数的数均不为素数，可以被筛 。下一个数为3，3之后的所有为3的倍数的数就全被筛 了，因为4为2的倍数，这在第一轮中已经被筛掉了，下一个是5，依次类推，假设列表是无穷的，那么按着这个方法可以遍历所有的素数。</p>
+<p>在看书时，阅读到这一块，就感觉真棒👍。填鸭式学习没有这样的思考过程，入门式的编程是以解决问题为主，未曾再进行思考。所以，入门加深入，会发现原来这个问题原来有如此优雅的方法。</p>
+<p>PS: 以上出自haskell函数式编程入门</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+
+<div class="btn_click_load">
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2018/07/25/prime-number/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2018/07/25/prime-number/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/07/14/summary-work/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
