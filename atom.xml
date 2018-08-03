@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-07-30T12:04:21.360Z</updated>
+  <updated>2018-08-03T16:03:58.845Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>code-optimization</title>
+    <link href="https://wukong1995.github.io/2018/08/03/code-optimization/"/>
+    <id>https://wukong1995.github.io/2018/08/03/code-optimization/</id>
+    <published>2018-08-03T14:55:26.000Z</published>
+    <updated>2018-08-03T16:03:58.845Z</updated>
+    
+    <summary type="html">
+    
+      优化代码时，心中需要有个度
+    
+    </summary>
+    
+      <category term="优化" scheme="https://wukong1995.github.io/categories/%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="优化" scheme="https://wukong1995.github.io/tags/%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>prime-number</title>
@@ -98,7 +118,7 @@
     <link href="https://wukong1995.github.io/2018/07/05/bad-code-2/"/>
     <id>https://wukong1995.github.io/2018/07/05/bad-code-2/</id>
     <published>2018-07-05T11:14:42.000Z</published>
-    <updated>2018-07-05T11:45:23.813Z</updated>
+    <updated>2018-08-03T15:12:03.429Z</updated>
     
     <summary type="html">
     
@@ -106,10 +126,10 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="优化" scheme="https://wukong1995.github.io/categories/%E4%BC%98%E5%8C%96/"/>
     
     
-      <category term="随笔" scheme="https://wukong1995.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="优化" scheme="https://wukong1995.github.io/tags/%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -118,7 +138,7 @@
     <link href="https://wukong1995.github.io/2018/07/02/bad-code/"/>
     <id>https://wukong1995.github.io/2018/07/02/bad-code/</id>
     <published>2018-07-02T12:08:19.000Z</published>
-    <updated>2018-07-02T12:38:17.089Z</updated>
+    <updated>2018-08-03T15:11:58.292Z</updated>
     
     <summary type="html">
     
@@ -126,10 +146,10 @@
     
     </summary>
     
-      <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="优化" scheme="https://wukong1995.github.io/categories/%E4%BC%98%E5%8C%96/"/>
     
     
-      <category term="随笔" scheme="https://wukong1995.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+      <category term="优化" scheme="https://wukong1995.github.io/tags/%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -149,9 +169,9 @@
       <category term="随笔" scheme="https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
-    
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
     
   </entry>
   
@@ -398,26 +418,6 @@
       <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
     
       <category term="npm" scheme="https://wukong1995.github.io/tags/npm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ES7-decorator</title>
-    <link href="https://wukong1995.github.io/2017/08/13/ES7-decorator/"/>
-    <id>https://wukong1995.github.io/2017/08/13/ES7-decorator/</id>
-    <published>2017-08-13T04:09:44.000Z</published>
-    <updated>2017-08-27T13:53:02.000Z</updated>
-    
-    <summary type="html">
-    
-      es7中的装饰器呀
-    
-    </summary>
-    
-      <category term="javascript" scheme="https://wukong1995.github.io/categories/javascript/"/>
-    
-    
-      <category term="es7" scheme="https://wukong1995.github.io/tags/es7/"/>
     
   </entry>
   

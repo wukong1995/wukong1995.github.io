@@ -135,13 +135,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-        <lastmod>2018-07-05T11:45:23.813Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/react/</loc>
         <lastmod>2018-07-14T04:25:25.922Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -165,6 +158,13 @@
     <url>
         <loc>https://wukong1995.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
         <lastmod>2018-07-30T12:04:21.360Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/%E4%BC%98%E5%8C%96/</loc>
+        <lastmod>2018-08-03T16:03:58.845Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
