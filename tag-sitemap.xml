@@ -156,13 +156,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/angularjs/</loc>
-        <lastmod>2018-08-05T14:10:31.617Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2018-08-08T06:26:32.276Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -170,15 +163,22 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/react/</loc>
+        <loc>https://wukong1995.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
         <lastmod>2018-08-11T15:06:56.575Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/%E7%BF%BB%E8%AF%91/</loc>
-        <lastmod>2018-08-11T15:06:56.575Z</lastmod>
+        <loc>https://wukong1995.github.io/tags/react/</loc>
+        <lastmod>2018-08-11T15:12:38.203Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/angularjs/</loc>
+        <lastmod>2018-08-11T15:12:38.203Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
