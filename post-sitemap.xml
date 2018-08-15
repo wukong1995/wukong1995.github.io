@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/08/15/websocket-push/</loc>
+        <lastmod>2018-08-15T11:49:23.682Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/13/angular-1-source-code/</loc>
+        <lastmod>2018-08-13T09:00:39.203Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/08/05/data-flow/</loc>
         <lastmod>2018-08-11T15:12:38.203Z</lastmod>
         <changefreq>weekly</changefreq>
