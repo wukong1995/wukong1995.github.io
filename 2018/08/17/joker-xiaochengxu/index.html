@@ -12,7 +12,7 @@
     
     <title>
         
-            归档: 2018/6 | 
+            joker-xiaochengxu | 
         
         Wukong&#39;s Blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Peipei Wong">
     <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="keywords" content="blog,小程序">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2018/6 | Wukong&#39;s Blog">
+    <meta property="og:title" content="joker-xiaochengxu | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
     <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:article:tag" content="小程序"> 
 
+    
+        <meta property="article:published_time" content="8月 17, 2018" />
+        <meta property="article:modified_time" content="8月 18, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="归档: 2018/6 | Wukong&#39;s Blog">
+    <meta name="twitter:title" content="joker-xiaochengxu | Wukong&#39;s Blog">
     <meta name="twitter:description" content="一只热爱编程的媛...">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/archives/2018/06/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Peipei Wong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "joker-xiaochengxu",
+    "url": "https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/index.html",
+    "datePublished": "8月 17, 2018",
+    "dateModified": "8月 18, 2018",
+    "description": "一只热爱编程的媛...",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -280,96 +313,319 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#textarea的padding问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">textarea的padding问题</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iphone的橡皮筋效果"><span class="post-toc-number">2.</span> <span class="post-toc-text">iphone的橡皮筋效果</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#iphone-X的安全边距"><span class="post-toc-number">3.</span> <span class="post-toc-text">iphone X的安全边距</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#input和textarea的选择"><span class="post-toc-number">4.</span> <span class="post-toc-text">input和textarea的选择</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#页面即有上拉加载又有下拉刷新"><span class="post-toc-number">5.</span> <span class="post-toc-text">页面即有上拉加载又有下拉刷新</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打开键盘是否推起页面"><span class="post-toc-number">6.</span> <span class="post-toc-text">打开键盘是否推起页面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#得到globalData中的值"><span class="post-toc-number">7.</span> <span class="post-toc-text">得到globalData中的值</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/23/refactor/">关于整理css和js</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            闲谈最近很大一部分...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/23/refactor/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>6月 23, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/随笔/">随笔</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                我经历了小程序的哪些坑
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Peipei Wong</strong>
+        <span>8月 17, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC10lEQVR42u3aUW7jMAwFwNz/0rsHKJw8ki7qUOOvInBsjQqUJZ9e/468XtjY2NjY2NjY2NiPZL/i6+r+y9cET/h5f/UJyZqxsbGxT2B/+NMfLOjnsq6e8P7Oq61JvvVhzdjY2NgHsHNGXsw+FJXi9k3WjI2NjY2dNBLJnXmBTO7HxsbGxr6LnZecpNnINwUbGxsbu1pgCuP4OB6obsofzNKwsbGxH8+uBr1P+PkP8m1sbGzsR7KrV3UpydPmx4OilWNjY2MvZU/C1CQYmI+f8nJ7QweGjY2N/YXs5NHz4LY3KkremIfE2NjY2LvZ1cORvzHc731e+GVgY2NjL2X34tikzchHRdWSmYfK2NjY2Cewq8heJJAPpHqDrWj4hY2Njb2UnbQWeeg72Ygc33wONjY29lJ2L1K94Sjk20/mbQw2Njb2aezfe+WkUcnXGR33wcbGxl7KTuLYPLhNitbkaM5kvIWNjY29lT0Z5U+GR9VAohcqY2NjY5/Gzg/NvG8SqpuY3zMJNrCxsbG3snNk3gZUNyUJcasFFRsbG/scdv6Cybd6w6BqG9NMRbCxsbG/nF34V35Q6pK2oTzuj9skbGxs7N3sanA7HxL1mo3eG7GxsbHPYedFZfLiSVHMw4zL1WJjY2MvZSdfu+tQTv60XmNzw1AJGxsb+2vZ8yOVvZZj0oqUh2LY2NjYS9m9hqFaAqubVd2m0VAJGxsbeyk7H+7nbUMvQkjWFm0rNjY29lJ2dXHzQLfZSLTWho2NjX0Cu9eW9MpbNaZNNmV0+BIbGxt7BXtSwPLxU95g5MEzNjY2NvZ8iFMdSFUP8eQFLCl42NjY2Cewk0dMisr8aE4vcsDGxsbG7kW8vTvzQKJa8LCxsbGxk1J0V5xQbVqiQAIbGxv7AHZvqDTZpnu/1WxFsLGxsVewJ4cvk+3Ix1X50Z9yCIGNjY29lH3OhY2NjY2NjY2Njf2Y6z+42HIUxzcsUAAAAABJRU5ErkJggg==">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/小程序/">小程序</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=joker-xiaochengxu&url=https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=joker-xiaochengxu&url=https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/index.html&via=Peipei Wong" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>在这个可爱的节日里，让我来说说，写小程序的坑～</p>
+<p>对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑…</p>
+<h4 id="textarea的padding问题"><a href="#textarea的padding问题" class="headerlink" title="textarea的padding问题"></a>textarea的padding问题</h4><p>为<code>textarea</code>设定了上下12rpx的内边距，在安卓机上十分完美，但是从测试那边反馈的结果是：框太高了…于是就去看看网上的讨论，在这吐槽一下，度娘真的是用中文都检索不出来结果…查了结果之后，发现textarea的内边距在安卓和iOS上的差别很大…我有以下方案：</p>
+<ol>
+<li>不使用<code>textarea</code>的内边距，外面套一层view，为view添加内边距。实践的结果是：不行。看到有答案说：<code>textarea</code>使用的原生组件，任何<code>padding</code>、<code>line-height</code>都对此不起作用</li>
+<li>为<code>view</code>设置<code>box-sizing: border-box</code>，这么一设置，<code>textarea</code>的<code>auto-height</code>都不起作用了，扎心…</li>
+<li>没办法了，我只能去区别手机系统了：<pre class="line-numbers language-js"><code class="language-js">wx<span class="token punctuation">.</span><span class="token function">getSystemInfo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+success<span class="token punctuation">:</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>model<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token string">'iPhone X'</span><span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>isIphoneX <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+ <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>platform <span class="token operator">===</span> <span class="token string">'ios'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">this</span><span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>isAndroid <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+view层通过判断<code>getApp().globalData.isAndroid</code>的值，如果为<code>true</code>，则加padding，否则，不加 padding。</li>
+</ol>
+<h4 id="iphone的橡皮筋效果"><a href="#iphone的橡皮筋效果" class="headerlink" title="iphone的橡皮筋效果"></a>iphone的橡皮筋效果</h4><p>如果你的页面有header、body、footer，header是白色，body是灰色，footer是白色，page本身是灰色，那么你在iphone上上拉页面，会看到灰中一块白，如何去调整，当然是遮盖再遮盖…这个效果，体验特别差…</p>
+<h4 id="iphone-X的安全边距"><a href="#iphone-X的安全边距" class="headerlink" title="iphone X的安全边距"></a>iphone X的安全边距</h4><p>找到的资料是安全边距是<code>68rpx</code>，这个时候，如果你有一个固定到下方的<code>footer</code>，和出现上面的问题，那么一定得好好想想如何去遮遮遮…</p>
+<h4 id="input和textarea的选择"><a href="#input和textarea的选择" class="headerlink" title="input和textarea的选择"></a>input和textarea的选择</h4><p><code>textarea</code>有一个<code>auto-height</code>的属性，可以自动根据内容去改变高度；但是<code>input</code>有手机键盘会有完成而不是回车的键，同时也会有一个点击完成键盘不收起的选项；总之你可以根据这两个特性去选择你需要的组件，加入需要<code>input</code>的属性，又需要<code>textarea</code>的属性，<code>input</code>是最好的选择…以我的经验来说</p>
+<h4 id="页面即有上拉加载又有下拉刷新"><a href="#页面即有上拉加载又有下拉刷新" class="headerlink" title="页面即有上拉加载又有下拉刷新"></a>页面即有上拉加载又有下拉刷新</h4><p>一定要选用<code>Page</code>的特性，而不是<code>scroll-view</code></p>
+<h4 id="打开键盘是否推起页面"><a href="#打开键盘是否推起页面" class="headerlink" title="打开键盘是否推起页面"></a>打开键盘是否推起页面</h4><p>先考虑不推起页面，再考虑推起页面…因为推起页面显得特别不自然….</p>
+<h4 id="得到globalData中的值"><a href="#得到globalData中的值" class="headerlink" title="得到globalData中的值"></a>得到globalData中的值</h4><p>如果你想以下面的格式来得到<code>globalData</code>的值，可能会出乎你的意料</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">Page</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    isIphoneX<span class="token punctuation">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>isIphoneX<span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 同步得到，可以得到正确的值</span>
+    isLogin<span class="token punctuation">:</span> app<span class="token punctuation">.</span>globalData<span class="token punctuation">.</span>isLogin<span class="token punctuation">,</span>     <span class="token comment" spellcheck="true">// 异步得到，得不到正确的值</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>没办法，我只能在<code>page</code>的<code>onload</code>中再重新赋值一次….</p>
+<p>8-17，先写到这…</p>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+
+<div class="btn_click_load">
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/08/15/websocket-push/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
