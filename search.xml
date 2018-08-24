@@ -3,6 +3,110 @@
   
     
     <entry>
+      <title><![CDATA[joker-xiaochengxu-3]]></title>
+      <url>/2018/08/24/joker-xiaochengxu-3/</url>
+      <content type="html"><![CDATA[<p>如何自定义导航栏？</p>
+<p>这个需求的来源是：我向朋友转发了小程序中的页面，对方打开后，左上角是没有返回按钮的，这时候，右上角有一个去主页的标志是很合适的…</p>
+<ol>
+<li><p>app.json中设置属性: navigationStyle<br>这意味着你的小程序是全屏显示的，title，还有左上角的路由状态需要自己去处理</p>
+</li>
+<li><p>每个设备的上面的statusbar的高度是不一样的，自制的导航栏的高度就是未知的，这个只能通过getSystemInfo去获得</p>
+</li>
+<li><p>需要对之前的fixed做一下处理，还是需要statusbar的值，设置margin-top</p>
+</li>
+</ol>
+<p>目前是这样的一个思路，暂时没发现其它的问题…</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[joker-xiaochengxu-2]]></title>
+      <url>/2018/08/24/joker-xiaochengxu-2/</url>
+      <content type="html"><![CDATA[<p>如何在小程序里面保存图片？</p>
+<h4 id="plan"><a href="#plan" class="headerlink" title="plan"></a>plan</h4><p>小程序可以将canvas保存成一张图片。现在主要的任务是将canvas中的内容画出来<br>web端有一个叫做html2canvas，对于小程序，暂时没有找到相似的工具库…只能自己来画了<br>目前，需要画出来的是：</p>
+<ol>
+<li>背景纹理</li>
+<li>title</li>
+<li>图片</li>
+</ol>
+<h4 id="progress"><a href="#progress" class="headerlink" title="progress"></a>progress</h4><h5 id="设置画布的大小"><a href="#设置画布的大小" class="headerlink" title="设置画布的大小"></a>设置画布的大小</h5><pre class="line-numbers language-javascript"><code class="language-javascript">ctx<span class="token punctuation">.</span><span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这里的遇到的问题，如何得到画布的高度…我先用html写出来结构，得到内容的高度，另一种方法是先去计算，emmm…这种方法还没想好思路</p>
+<h5 id="画背景纹理，每隔10画一条横线，竖线"><a href="#画背景纹理，每隔10画一条横线，竖线" class="headerlink" title="画背景纹理，每隔10画一条横线，竖线"></a>画背景纹理，每隔10画一条横线，竖线</h5><p>这个是重复画线的一个过程</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">drawLine<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>fromX<span class="token punctuation">,</span> fromY<span class="token punctuation">,</span> toX<span class="token punctuation">,</span> toY<span class="token punctuation">,</span> lineWidth <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">setLineWidth</span><span class="token punctuation">(</span>lineWidth<span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">moveTo</span><span class="token punctuation">(</span>fromX<span class="token punctuation">,</span> fromY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">lineTo</span><span class="token punctuation">(</span>toX<span class="token punctuation">,</span> toY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">stroke</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+<span class="token comment" spellcheck="true">// ....</span>
+<span class="token keyword">const</span> step <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> countX <span class="token operator">=</span> width <span class="token operator">/</span> step<span class="token punctuation">;</span>
+<span class="token keyword">const</span> countY <span class="token operator">=</span> height <span class="token operator">/</span> step<span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> countX<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">drawLine</span><span class="token punctuation">(</span>i <span class="token operator">*</span> step<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">*</span> step<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> countY<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">drawLine</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> i <span class="token operator">*</span> step<span class="token punctuation">,</span> width<span class="token punctuation">,</span> i <span class="token operator">*</span> step<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="title"><a href="#title" class="headerlink" title="title"></a>title</h5><p>涉及到文字换行，canvas不能主动对超出的文字做换行处理，处理的方法是拿到字符片段长度与最大宽度依次比较</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">const</span> arrText <span class="token operator">=</span> text<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> line <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> n <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> n <span class="token operator">&lt;</span> arrText<span class="token punctuation">.</span>length<span class="token punctuation">;</span> n<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> testLine <span class="token operator">=</span> line <span class="token operator">+</span> arrText<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> metrics <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">measureText</span><span class="token punctuation">(</span>testLine<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> testWidth <span class="token operator">=</span> metrics<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>testWidth <span class="token operator">></span> maxWidth <span class="token operator">&amp;&amp;</span> n <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 超出一行，打印</span>
+    ctx<span class="token punctuation">.</span><span class="token function">fillText</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    line <span class="token operator">=</span> arrText<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    y <span class="token operator">+</span><span class="token operator">=</span> lineHeight<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    line <span class="token operator">=</span> testLine<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ctx<span class="token punctuation">.</span><span class="token function">fillText</span><span class="token punctuation">(</span>line<span class="token punctuation">,</span> x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h5><p>这个涉及到居中显示</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 计算出图片的起始点即可</span>
+<span class="token comment" spellcheck="true">// use drawImage</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h4 id="过程中遇到的问题"><a href="#过程中遇到的问题" class="headerlink" title="过程中遇到的问题"></a>过程中遇到的问题</h4><p>canvas的层级过高，会遮盖view元素，解决办法是使用：croll-view<br>另一个问题是：croll-view设置border或者box-shadow不起作用，次而求之，再用一个croll-view假装边框吧….</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 小程序 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 小程序 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[joker-xiaochengxu]]></title>
       <url>/2018/08/17/joker-xiaochengxu/</url>
       <content type="html"><![CDATA[<p>在这个可爱的节日里，让我来说说，写小程序的坑～</p>
@@ -590,7 +694,8 @@ history<span class="token punctuation">.</span><span class="token function">push
     <entry>
       <title><![CDATA[rails-access-origin]]></title>
       <url>/2018/07/06/rails-access-origin/</url>
-      <content type="html"><![CDATA[<pre class="line-numbers language-ruby"><code class="language-ruby">gem <span class="token string">'rack-cors'</span><span class="token punctuation">,</span> <span class="token symbol">:require</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'rack/cors'</span>
+      <content type="html"><![CDATA[<p>记录一下，在rails里面如何设置access-origin….</p>
+<pre class="line-numbers language-ruby"><code class="language-ruby">gem <span class="token string">'rack-cors'</span><span class="token punctuation">,</span> <span class="token symbol">:require</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token string">'rack/cors'</span>
 
 
 config<span class="token punctuation">.</span>middleware<span class="token punctuation">.</span>insert_before <span class="token number">0</span><span class="token punctuation">,</span> <span class="token constant">Rack</span><span class="token punctuation">:</span><span class="token symbol">:Cors</span> <span class="token keyword">do</span>
@@ -602,6 +707,18 @@ config<span class="token punctuation">.</span>middleware<span class="token punct
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       
+        <categories>
+            
+            <category> rails </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> rails </tag>
+            
+        </tags>
         
     </entry>
     

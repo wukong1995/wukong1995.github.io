@@ -112,13 +112,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
-        <lastmod>2018-08-08T06:26:32.276Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/%E7%BF%BB%E8%AF%91/</loc>
         <lastmod>2018-08-11T15:06:56.575Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -140,8 +133,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+        <lastmod>2018-08-24T09:56:54.356Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/rails/</loc>
+        <lastmod>2018-08-24T09:59:02.580Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-        <lastmod>2018-08-17T16:00:44.761Z</lastmod>
+        <lastmod>2018-08-24T14:52:26.459Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

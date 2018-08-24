@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-08-17T16:00:44.761Z</updated>
+  <updated>2018-08-24T14:50:35.209Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>joker-xiaochengxu-3</title>
+    <link href="https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-3/"/>
+    <id>https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-3/</id>
+    <published>2018-08-24T09:55:36.000Z</published>
+    <updated>2018-08-24T14:50:35.209Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何自定义导航栏？&lt;/p&gt;
+&lt;p&gt;这个需求的来源是：我向朋友转发了小程序中的页面，对方打开后，左上角是没有返回按钮的，这时候，右上角有一个去主页的标志是很合适的…&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;app.json中设置属性: navigationStyle&lt;br&gt;这意味着你
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>joker-xiaochengxu-2</title>
+    <link href="https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-2/"/>
+    <id>https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-2/</id>
+    <published>2018-08-24T09:55:31.000Z</published>
+    <updated>2018-08-24T14:52:26.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何在小程序里面保存图片？&lt;/p&gt;
+&lt;h4 id=&quot;plan&quot;&gt;&lt;a href=&quot;#plan&quot; class=&quot;headerlink&quot; title=&quot;plan&quot;&gt;&lt;/a&gt;plan&lt;/h4&gt;&lt;p&gt;小程序可以将canvas保存成一张图片。现在主要的任务是将canvas中的内容画出
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>joker-xiaochengxu</title>
@@ -203,7 +247,7 @@
     <link href="https://wukong1995.github.io/2018/07/13/history-push-state/"/>
     <id>https://wukong1995.github.io/2018/07/13/history-push-state/</id>
     <published>2018-07-13T10:48:07.000Z</published>
-    <updated>2018-07-14T04:40:08.977Z</updated>
+    <updated>2018-08-24T09:56:54.356Z</updated>
     
     <summary type="html">
     
@@ -225,14 +269,18 @@
     <link href="https://wukong1995.github.io/2018/07/06/rails-access-origin/"/>
     <id>https://wukong1995.github.io/2018/07/06/rails-access-origin/</id>
     <published>2018-07-06T05:26:33.000Z</published>
-    <updated>2018-07-06T05:27:49.074Z</updated>
+    <updated>2018-08-24T09:59:02.580Z</updated>
     
     <summary type="html">
     
-      &lt;pre class=&quot;line-numbers language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;gem &lt;span class=&quot;token string&quot;&gt;&#39;rack-cors&#39;&lt;/span&gt;&lt;span class=&quot;token punc
+      在rails里面如何设置access-origin
     
     </summary>
     
+      <category term="rails" scheme="https://wukong1995.github.io/categories/rails/"/>
+    
+    
+      <category term="rails" scheme="https://wukong1995.github.io/tags/rails/"/>
     
   </entry>
   
@@ -377,46 +425,6 @@
     
     
       <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pm2</title>
-    <link href="https://wukong1995.github.io/2017/09/13/pm2/"/>
-    <id>https://wukong1995.github.io/2017/09/13/pm2/</id>
-    <published>2017-09-13T13:29:01.000Z</published>
-    <updated>2017-09-13T13:53:34.000Z</updated>
-    
-    <summary type="html">
-    
-      自动化部署node项目
-    
-    </summary>
-    
-      <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
-    
-    
-      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux-first</title>
-    <link href="https://wukong1995.github.io/2017/09/13/linux-first/"/>
-    <id>https://wukong1995.github.io/2017/09/13/linux-first/</id>
-    <published>2017-09-13T06:10:13.000Z</published>
-    <updated>2017-09-13T13:50:37.000Z</updated>
-    
-    <summary type="html">
-    
-      得到一个linux服务器首先要做的事
-    
-    </summary>
-    
-      <category term="linux" scheme="https://wukong1995.github.io/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="https://wukong1995.github.io/tags/linux/"/>
     
   </entry>
   
