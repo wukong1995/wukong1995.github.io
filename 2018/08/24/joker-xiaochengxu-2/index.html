@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="8月 24, 2018" />
-        <meta property="article:modified_time" content="8月 24, 2018" />
+        <meta property="article:modified_time" content="8月 27, 2018" />
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "joker-xiaochengxu-2",
     "url": "https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-2/index.html",
     "datePublished": "8月 24, 2018",
-    "dateModified": "8月 24, 2018",
+    "dateModified": "8月 27, 2018",
     "description": "一只热爱编程的媛...",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -496,7 +496,17 @@
 </ol>
 <h4 id="progress"><a href="#progress" class="headerlink" title="progress"></a>progress</h4><h5 id="设置画布的大小"><a href="#设置画布的大小" class="headerlink" title="设置画布的大小"></a>设置画布的大小</h5><pre class="line-numbers language-javascript"><code class="language-javascript">ctx<span class="token punctuation">.</span><span class="token function">rect</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> width<span class="token punctuation">,</span> height<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>这里的遇到的问题，如何得到画布的高度…我先用html写出来结构，得到内容的高度，另一种方法是先去计算，emmm…这种方法还没想好思路</p>
+<p>这里的遇到的问题，如何得到画布的高度…<del>我先用html写出来结构，得到内容的高度</del>，另一种方法是先去计算，emmm…这种方法还没想好思路</p>
+<p><strong>8-27更新</strong>：使用html的高度，和canvas画出来的排版不一样，不同的手机上的排版还不一样，最后导致的问题是在不同的手机上导出的图片要不是过短要不就是下面长出一截，最好还是一个一个元素的计算吧，确定每个元素的起点的y坐标</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript">heightInfo<span class="token punctuation">.</span>hrTop <span class="token operator">=</span> heightInfo<span class="token punctuation">.</span>xxxxxTop <span class="token operator">+</span> titleInfo<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token number">20</span><span class="token punctuation">;</span>
+heightInfo<span class="token punctuation">.</span>xxxxTop <span class="token operator">=</span> heightInfo<span class="token punctuation">.</span>hrTop <span class="token operator">+</span> <span class="token number">24</span><span class="token punctuation">;</span>
+heightInfo<span class="token punctuation">.</span>xxxTop <span class="token operator">=</span> heightInfo<span class="token punctuation">.</span>xxxxTop <span class="token operator">+</span> <span class="token number">14</span> <span class="token operator">+</span> <span class="token number">20</span><span class="token punctuation">;</span>
+heightInfo<span class="token punctuation">.</span>xxxxTop <span class="token operator">=</span> heightInfo<span class="token punctuation">.</span>xxxTop <span class="token operator">+</span> xxxInfo<span class="token punctuation">.</span>height <span class="token operator">+</span> <span class="token number">36</span><span class="token punctuation">;</span>
+heightInfo<span class="token punctuation">.</span>xxxxTop <span class="token operator">=</span> heightInfo<span class="token punctuation">.</span>xxxxTop <span class="token operator">+</span> <span class="token number">90</span> <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">;</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>height <span class="token operator">=</span> heightInfo<span class="token punctuation">.</span>xxxxTop <span class="token operator">+</span> <span class="token number">14</span> <span class="token operator">+</span> <span class="token number">30</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在这个过程中可以直接将多行字符串分割….还有一个将数字定义成常量</p>
+<hr>
 <h5 id="画背景纹理，每隔10画一条横线，竖线"><a href="#画背景纹理，每隔10画一条横线，竖线" class="headerlink" title="画背景纹理，每隔10画一条横线，竖线"></a>画背景纹理，每隔10画一条横线，竖线</h5><p>这个是重复画线的一个过程</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript">drawLine<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>fromX<span class="token punctuation">,</span> fromY<span class="token punctuation">,</span> toX<span class="token punctuation">,</span> toY<span class="token punctuation">,</span> lineWidth <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">this</span><span class="token punctuation">.</span>ctx<span class="token punctuation">.</span><span class="token function">beginPath</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
