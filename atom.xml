@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-08-25T17:21:04.526Z</updated>
+  <updated>2018-08-29T01:57:58.746Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>joker-weapp</title>
+    <link href="https://wukong1995.github.io/2018/08/28/joker-weapp-4/"/>
+    <id>https://wukong1995.github.io/2018/08/28/joker-weapp-4/</id>
+    <published>2018-08-28T14:33:32.000Z</published>
+    <updated>2018-08-29T01:57:58.746Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天遇到的一个问题是：在页面滚动过程中，可能会导致fixed的元素被遮盖住（偶尔），这个bug早在17年就被提及，但是到现在还没有修复…&lt;/p&gt;
+&lt;p&gt;键盘弹起对于页面有两个选择，是否推起页面，尴尬的是推起页面，页面会滑动；不推起页面，动态改变fixed的元素的bottom
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>mixed-talk-1</title>
@@ -42,8 +63,8 @@
   
   <entry>
     <title>joker-xiaochengxu-3</title>
-    <link href="https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-3/"/>
-    <id>https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-3/</id>
+    <link href="https://wukong1995.github.io/2018/08/24/joker-weapp-3/"/>
+    <id>https://wukong1995.github.io/2018/08/24/joker-weapp-3/</id>
     <published>2018-08-24T09:55:36.000Z</published>
     <updated>2018-08-24T14:56:47.931Z</updated>
     
@@ -65,8 +86,8 @@
   
   <entry>
     <title>joker-xiaochengxu-2</title>
-    <link href="https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-2/"/>
-    <id>https://wukong1995.github.io/2018/08/24/joker-xiaochengxu-2/</id>
+    <link href="https://wukong1995.github.io/2018/08/24/joker-weapp-2/"/>
+    <id>https://wukong1995.github.io/2018/08/24/joker-weapp-2/</id>
     <published>2018-08-24T09:55:31.000Z</published>
     <updated>2018-08-27T10:58:17.033Z</updated>
     
@@ -86,8 +107,8 @@
   
   <entry>
     <title>joker-xiaochengxu</title>
-    <link href="https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/"/>
-    <id>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</id>
+    <link href="https://wukong1995.github.io/2018/08/17/joker-weapp/"/>
+    <id>https://wukong1995.github.io/2018/08/17/joker-weapp/</id>
     <published>2018-08-17T15:28:20.000Z</published>
     <updated>2018-08-17T16:00:44.761Z</updated>
     
@@ -410,26 +431,6 @@
       <category term="jquery" scheme="https://wukong1995.github.io/tags/jquery/"/>
     
       <category term="webpack" scheme="https://wukong1995.github.io/tags/webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>get-module</title>
-    <link href="https://wukong1995.github.io/2017/11/15/get-module/"/>
-    <id>https://wukong1995.github.io/2017/11/15/get-module/</id>
-    <published>2017-11-15T08:08:22.000Z</published>
-    <updated>2018-03-13T06:52:09.939Z</updated>
-    
-    <summary type="html">
-    
-      自动发送邮件：nodemailer
-    
-    </summary>
-    
-      <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
-    
-    
-      <category term="Nodejs" scheme="https://wukong1995.github.io/tags/Nodejs/"/>
     
   </entry>
   
