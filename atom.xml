@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-08-29T01:57:58.746Z</updated>
+  <updated>2018-09-20T11:35:50.580Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>high-oreder-component-tip</title>
+    <link href="https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/"/>
+    <id>https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/</id>
+    <published>2018-09-20T11:17:42.000Z</published>
+    <updated>2018-09-20T11:35:50.580Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;question&quot;&gt;&lt;a href=&quot;#question&quot; class=&quot;headerlink&quot; title=&quot;question&quot;&gt;&lt;/a&gt;question&lt;/h4&gt;&lt;p&gt;今天遇到了一个问题：写了一个高阶组件，使用的时候竟然告诉我props is required
+    
+    </summary>
+    
+      <category term="react" scheme="https://wukong1995.github.io/categories/react/"/>
+    
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>joker-weapp</title>
@@ -409,28 +429,6 @@
     
     
       <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jquery-plugin</title>
-    <link href="https://wukong1995.github.io/2018/03/13/jquery-plugin/"/>
-    <id>https://wukong1995.github.io/2018/03/13/jquery-plugin/</id>
-    <published>2018-03-13T11:11:53.000Z</published>
-    <updated>2018-03-14T02:32:24.915Z</updated>
-    
-    <summary type="html">
-    
-      在webpack环境下，安装jquery插件不能使用，假如安装了jquery-form插件，使用ajaxform方法，提示jquery对象没有这个方法
-    
-    </summary>
-    
-      <category term="jquery" scheme="https://wukong1995.github.io/categories/jquery/"/>
-    
-    
-      <category term="jquery" scheme="https://wukong1995.github.io/tags/jquery/"/>
-    
-      <category term="webpack" scheme="https://wukong1995.github.io/tags/webpack/"/>
     
   </entry>
   

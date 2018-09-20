@@ -126,13 +126,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/react/</loc>
-        <lastmod>2018-08-15T11:49:23.682Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2018-08-24T09:56:54.356Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -156,6 +149,13 @@
     <url>
         <loc>https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
         <lastmod>2018-08-29T01:57:58.746Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/react/</loc>
+        <lastmod>2018-09-20T11:35:50.580Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
