@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</loc>
+        <lastmod>2018-09-27T11:29:38.816Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/25/immutable-data/</loc>
+        <lastmod>2018-09-25T11:46:59.671Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/</loc>
         <lastmod>2018-09-20T11:35:50.580Z</lastmod>
         <changefreq>weekly</changefreq>
