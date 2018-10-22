@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
-        <lastmod>2017-08-27T13:53:58.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/PHP/</loc>
         <lastmod>2017-08-27T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -156,6 +149,20 @@
     <url>
         <loc>https://wukong1995.github.io/categories/javascript/</loc>
         <lastmod>2018-09-27T11:29:38.816Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/typescript/</loc>
+        <lastmod>2018-10-22T11:29:27.035Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
+        <lastmod>2018-10-22T11:36:27.795Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

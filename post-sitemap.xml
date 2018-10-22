@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/10/22/two-select-change-one/</loc>
+        <lastmod>2018-10-22T11:36:27.795Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/22/stimulus-begin/</loc>
+        <lastmod>2018-10-22T11:29:27.035Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</loc>
         <lastmod>2018-09-27T11:29:38.816Z</lastmod>
         <changefreq>weekly</changefreq>

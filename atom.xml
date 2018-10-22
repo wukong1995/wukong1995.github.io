@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-09-27T11:29:38.816Z</updated>
+  <updated>2018-10-22T11:36:27.795Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>two-select-change-one</title>
+    <link href="https://wukong1995.github.io/2018/10/22/two-select-change-one/"/>
+    <id>https://wukong1995.github.io/2018/10/22/two-select-change-one/</id>
+    <published>2018-10-22T11:30:25.000Z</published>
+    <updated>2018-10-22T11:36:27.795Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天写了一个方法，被问到这两个查询能改成一个查询吗？&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-ruby&quot;&gt;&lt;code class=&quot;language-ruby&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt;
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://wukong1995.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="pg" scheme="https://wukong1995.github.io/tags/pg/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>stimulus-begin</title>
+    <link href="https://wukong1995.github.io/2018/10/22/stimulus-begin/"/>
+    <id>https://wukong1995.github.io/2018/10/22/stimulus-begin/</id>
+    <published>2018-10-22T10:32:13.000Z</published>
+    <updated>2018-10-22T11:29:27.035Z</updated>
+    
+    <summary type="html">
+    
+      stimulus初体验
+    
+    </summary>
+    
+      <category term="typescript" scheme="https://wukong1995.github.io/categories/typescript/"/>
+    
+    
+      <category term="typescript" scheme="https://wukong1995.github.io/tags/typescript/"/>
+    
+  </entry>
   
   <entry>
     <title>reference-equality-and-value-equality</title>
@@ -387,46 +428,6 @@
     
     
       <category term="rails" scheme="https://wukong1995.github.io/tags/rails/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bad-code-2</title>
-    <link href="https://wukong1995.github.io/2018/07/05/bad-code-2/"/>
-    <id>https://wukong1995.github.io/2018/07/05/bad-code-2/</id>
-    <published>2018-07-05T11:14:42.000Z</published>
-    <updated>2018-08-03T15:12:03.429Z</updated>
-    
-    <summary type="html">
-    
-      及时重构代码给我带来的启示
-    
-    </summary>
-    
-      <category term="优化" scheme="https://wukong1995.github.io/categories/%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="优化" scheme="https://wukong1995.github.io/tags/%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bad-code</title>
-    <link href="https://wukong1995.github.io/2018/07/02/bad-code/"/>
-    <id>https://wukong1995.github.io/2018/07/02/bad-code/</id>
-    <published>2018-07-02T12:08:19.000Z</published>
-    <updated>2018-08-03T15:11:58.292Z</updated>
-    
-    <summary type="html">
-    
-      是的，你没看错，如何写出烂代码
-    
-    </summary>
-    
-      <category term="优化" scheme="https://wukong1995.github.io/categories/%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="优化" scheme="https://wukong1995.github.io/tags/%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
