@@ -23,6 +23,14 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/10/14/whether-to-use-react/</loc>
+        <lastmod>2018-10-14T12:58:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</loc>
         <lastmod>2018-09-27T11:29:38.816Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -41,6 +49,30 @@
     <url>
         <loc>https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/</loc>
         <lastmod>2018-09-20T11:35:50.580Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/13/stateless-component-vs-pure-component/</loc>
+        <lastmod>2018-09-13T15:46:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/08/react-blog/</loc>
+        <lastmod>2018-09-08T15:41:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/01/weapp-tip/</loc>
+        <lastmod>2018-09-01T02:33:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -97,6 +129,14 @@
     <url>
         <loc>https://wukong1995.github.io/2018/08/17/joker-weapp/</loc>
         <lastmod>2018-08-17T16:00:44.761Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</loc>
+        <lastmod>2018-08-17T16:00:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

@@ -23,6 +23,19 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[whether-to-use-react]]></title>
+    <url>%2F2018%2F10%2F14%2Fwhether-to-use-react%2F</url>
+    <content type="text"><![CDATA[最近在重构项目中，发现了很多过度使用react的地方，现在想想原因是：1. 时间紧迫 2.被react的状态管理迷花了眼睛，总之是没磨好刀就砍柴了… 又一个左右布局三七分的页面，左边是一堆可以switch check的条件，右边的上部是checked的条件，中间是筛选结果列表，下部是分页。 使用react实现，总之要注意的是对状态的管理。但如果是使用jq实现，我仔细的想了一下，啊，左边和右边上部的数据的一致性可以通过元素选择器来保证，总之，使用jq，没有了一个全局状态，右边需要获得checked的条件，只能通过元素的不同来得到，假如选择的条件改变了，我需要先去获得选择的条件，然后再去改变右边的dom，我该如何去渲染dom，写一个函数，输入变量，输出为html string，咦，这不相当于react component嘛。 总之，使用react去实现是维护的一个全局状态变量，使用jq，是通过dom去得到状态变量…这是我对两种实现方式的认知….至于使用哪一个，还需要了解一下需求… PS：总之，离开了react，使用js不是一个困难的事情，磨刀呀…]]></content>
+      <categories>
+        <category>react</category>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+        <tag>杂谈</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[reference-equality-and-value-equality]]></title>
     <url>%2F2018%2F09%2F26%2Freference-equality-and-value-equality%2F</url>
     <content type="text"><![CDATA[在编程语言世界中通常有两种类型的相等： reference equality value equality 引入思考下面的代码： var x = 12, y = 12; var object = { x: 1, y: 2 }; var object2 = { x: 1, y: 2 }; 正如你看到的，object和object2有相同的值。如果你看一下object和object2中的每个键以及它们对应的值，它们是相同的。在object和object2中，x的值是1，y的值是2。 但是当你想要在你的程序中检查object和object2是否相等，你会发现：这两个对象是不一样的。 object == object2 // false object === object2 // false 这是为什么呢？ reference equalityObjects是灰常复杂的数据结构。它们可以有很多key，这些key可以执行不同的值。这些值也可以是objects，所以objects是可以嵌套的。 如果你考虑事物的相等行，事实上你需要考虑两件事情： 一个事物是否意味着与另一个事物相同？ 一个事物与其它东西完全一样？ 如果我从现实世界中举一个例子：想象一下你有一个红色的跑车，你的邻居也有和你的车一样的车，相同的颜色，相同的发动机，相同的牌子。如果陌生人经过你的家，他们会说：嘿，这些人有相同的车。 但是，你邻居的车不是你的。你不会坐上邻居车，认为这是你的，对吧，或者至少你不应该。如果你撞坏了邻居的车，你可能会有一个不快乐的邻居，当然还有一些法律问题:) 区分你的车和邻居的车的最明显的地方是车牌。 事实上， JavaScript objects的内置了这种“牌照”，每个object的独特特性称为reference（引用）。当你在js中比较object时，它们通过reference比较 object == object2; object === object2; 问题：object和object2是相等吗？实际上你分配变量的时候，也分配了reference。你可以很容易的检查这个： object = object2; object == object2; // true object === object2; // true 也会有一些有趣的结果，代码如下： object = object2; object.x = 12; object.x; // 12 object2.x; // 12 在这个例子中，你做了一次将x这个key分配给object这个对象。object和object2指向相同的引用，所以只要一个变量更改，另一个变量也会更改。 JavaScript中的复杂的数据结构都遵循reference equality的原则，这包括arrays和objetcs，实际上通过typeof查看array的类型，得到的结果也是object。 还有一些值像：numbers, strings, booleans or null / undefined，它们都遵循一种相等：value equality。 value equality像前面说的，reference equality回答的是object1和object2是否一样？这种检查很简单，它们非常有效。 说到Javascript中的primitives（这个我也不知道怎么翻译，指的是上面的numbers等，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为shallow data structures（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。 但是什么是value equality？思考下面的代码： var x = 12, y = 12; 在相等方面，数字是最简单的。你可以清楚的说x变量的值等于y变量的值（12在数学中等于12）但是如果这些变量遵循reference equality，它们是不一样的，因为它们是在不同的地方创建的。所以它们的引用是不同的。x的12可能是和y的12是不一样的。这真是太乱了。 幸运的是，members在JavaScript中是primitives，primitives在javascri中使用的是value equality进行比较。所以看到这是不奇怪的： x == y; // true x === y; // true value equality回答的是这个疑问：一个事物是否意味着与另一个事物相同？ 嵌套的数据结构是的相等更加难以比较。Objects有任意的key和value，它可以包含其他的objects。为了比较两个objects的相等，你可能需要下面的算法： / Input: an object1 and object2 // Output: true if an object1 is equal in terms of values to object2 valueEqual(object1, object2): object1keys = &lt;list of keys of object1> object2keys = &lt;list of keys of object2> return false if length(object1keys) != length(object2keys) for each key in object1keys: return false if key not in object2keys return false if typeof(object1[key]) != typeof(object2[key]) if object1[key] is an object: keyEqual = valueEqual(object1[key], object2[key]) return false if keyEqual != false if object1[key] is a primitive: return false if object1[key] != object2[key] return true 呼，这里面有好多相等检查，这是一个递归算法。它在比较两个object是会执行上千次相等检查，这样的相等检查通常被称作 deep equality checks（深比较）。更糟糕的是，这个算法是不会完成的。这是因为你可能创建了循环的引用对象。 PS：参考链接]]></content>
@@ -53,6 +66,39 @@
       </categories>
       <tags>
         <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[stateless-component-vs-pure-component]]></title>
+    <url>%2F2018%2F09%2F13%2Fstateless-component-vs-pure-component%2F</url>
+    <content type="text"><![CDATA[介绍1. stateless componentstateless component声明为一个没有state的function const Article = (props) => { return ( &lt;div> // ... &lt;/div> ) } react的文档中这样说到： These components must not retain internal state, do not have backing instances, and do not have the component lifecycle methods. They are pure functional transforms of their input, with zero boilerplate. However, you may still specify .propTypes and .defaultProps by setting them as properties on the function, just as you would set them on an ES6 class. 2. pure componentpure component是最大的意义是优化React应用的性能。使用PureComponent可以大大的提高性能，因为它减少render的次数。 3. 对比两者的性能class Welcome extends React.PureComponent { render() { return &lt;h1>Welcome&lt;/h1> } } Hello = () => { return &lt;h1>Hello&lt;/h1>; } 以上例子是一个非常简单的Welcome(Pure Component)和Hello(Stateless Component)。当你在父组件中使用它们，你会发现当父组件re-render时，Hello就会re-render，但是Welcome就不会。 这是因为PureComponent改变了生命周期中的shouldComponentUpdate方法，并且添加了一些逻辑用来自动检查组件是否需要re-render。这允许PureComponent仅仅在检测到state或者props改变时，才会调用render方法。 使用1. 什么时候使用Pure Component假如你创建一个字典的页面，在该页面中显示所有以A开头的单词的含义。这个时候，你可以写一个接收props为heading和meaning并返回视图的组件。假如你使用分页每次只显示10个单词，当滚动时，再去请求另外10个单词并且在父组件中更新state。在这种情况下，应该使用Pure Component，它将会避免render之前请求到的所有单词。 此外，在你要使用Component的生命周期函数时，你必须使用Pure Components，因为stateless components没有生命周期函数。 2. 什么时候使用Stateless Component假如你想要创建一个漂亮UI的lable用来评估个人资料的可信度，例如初学者，中级，高级。由于它是一个很小的组件，其重新渲染几乎没有任何区别，并为这种small case创建一个新的组件将是耗时的。如果你继续为很小很小的view创建组件，很快，你将会遇到更多的组件，在一个大型项目中，它们会变得很难管理。同时应该牢记Pure Component具有shallowEqual（浅比较）的特性。 3. 结论Pure Components会使性能大幅提升，因为它减少了应用中render的次数。这对于一份复杂的UI是个巨大的胜利，因此建议尽可能的使用。此外还有一些情况需要使用生命周期函数，在这种情况下，我们不能使用stateless components。 Stateless Components可以简单而快速的实现。这对于一个re-render代价小的非常小的UI视图是很好的。它们提供更清晰的代码和更少的文件来处理。它最好的使用场景应该是在父组件为Pure Component或者HOC中使用。 后记项目中使用的Apollo，我尝试将stateless component改为pure component，但是组件还是会re-render。Apollo中数据是immutiable，并且每个item在list中都有key，但是不知道为什么还是会重新渲染，十分纳闷啊。我已经提了issue，期待有答复～如果找不到好的方法来解决，我只能为每个pure comoponent增加shouldComponentUpdate了… 参考链接]]></content>
+      <categories>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react-blog]]></title>
+    <url>%2F2018%2F09%2F08%2Freact-blog%2F</url>
+    <content type="text"><![CDATA[react的生命周期 问答 ajax为什么不在componentWillMount进行，而在componentDidMount中进行？ajax是一个异步操作，在render调用之前，不会在一步操作中返回数据，这意味着组件将使用default数据呈现至少一次；同时，在异步操作的callback中更新state不会触发re-render。另外，没有办法在等到返回数据后再去掉用render。react文档建议到：componentDidMount会在组件挂载后立即调用，需要dom节点的初始化应放在这里。如果你想远程获得数据，这是实例化网络请求的好地方。在这个方法中，调用setState这个方法会触发额外的render，它保证会在同一时间刷新，意为：即使你在这个情况下中调用render两次，用户不会看到中间的状态。 componentWillReceiveProps会执行一次还是多次？多次，所以你在这个使用这个方法时，需要比较current props和 next props。 setState是同步的还是异步的？异步。setState会触发re-render，如果是同步的话，可能会导致浏览器无反应。异步是为了获得更好的UI体验和性能。 Component和PureComponent的区别？PureComponent在shouldComponentUpdate中对props进行浅比较，而Component则进行深比较。 react的事件机制react中的事件在真实DOM中是全部挂在以事件代理的方式挂在document上面，事件代理的机制是事件冒泡。这是在react的事件中使用原生的阻止事件冒泡不起作用的原因。]]></content>
+      <categories>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[weapp-tip]]></title>
+    <url>%2F2018%2F09%2F01%2Fweapp-tip%2F</url>
+    <content type="text"><![CDATA[如果你使用了canvas 、map类的组件，因为小程序是使用原生控件，无论你是怎样调整z-index，都不可能覆盖到这类组件上。网传的z-index设置为1000以上，经过实践是不起作用的。请使用cover-view。但是cover-view无法增加shadow和border。border可以通过使用cover-view的背景色来代替。shadow可以使用cover-image来代替。 正确的选择scroll-view和page。两者都能实现下拉刷新，上拉加载。通过业务，选择最适合的方案。 自定义导航栏时，通过getSystemInfo得到statusBarHeight在页面上使用px定义，而不是rpx来定义。 自定义导航栏时，如果有监控page的滚动的需求，请选择scroll-view来实现。在使用onPageScroll时，在iphonex上会导致上方自定义的导航栏抖动。测试的时候，会看到页面滚动时，iphonex上方有1px的空隙…. 小程序在iphonex的下方的安全边距为68rpx ios上会有自带的橡皮筋效果，记得保证页面下部的颜色与page的背景色相同 如果想实现保存图片的功能，需要通过canvas去画出图片，canvas的高度需要按照实际的内容计算出来。 待续…]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
       </tags>
   </entry>
   <entry>
@@ -102,6 +148,17 @@
   <entry>
     <title><![CDATA[joker-xiaochengxu]]></title>
     <url>%2F2018%2F08%2F17%2Fjoker-weapp%2F</url>
+    <content type="text"><![CDATA[在这个可爱的节日里，让我来说说，写小程序的坑～ 对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑… textarea的padding问题为textarea设定了上下12rpx的内边距，在安卓机上十分完美，但是从测试那边反馈的结果是：框太高了…于是就去看看网上的讨论，在这吐槽一下，度娘真的是用中文都检索不出来结果…查了结果之后，发现textarea的内边距在安卓和iOS上的差别很大…我有以下方案： 不使用textarea的内边距，外面套一层view，为view添加内边距。实践的结果是：不行。看到有答案说：textarea使用的原生组件，任何padding、line-height都对此不起作用 为view设置box-sizing: border-box，这么一设置，textarea的auto-height都不起作用了，扎心… 没办法了，我只能去区别手机系统了：wx.getSystemInfo({ success: (res) => { if (res.model.match('iPhone X') !== null) { this.globalData.isIphoneX = true; } if (res.platform === 'ios') { this.globalData.isAndroid = false; } } }) view层通过判断getApp().globalData.isAndroid的值，如果为true，则加padding，否则，不加 padding。 iphone的橡皮筋效果如果你的页面有header、body、footer，header是白色，body是灰色，footer是白色，page本身是灰色，那么你在iphone上上拉页面，会看到灰中一块白，如何去调整，当然是遮盖再遮盖…这个效果，体验特别差… iphone X的安全边距找到的资料是安全边距是68rpx，这个时候，如果你有一个固定到下方的footer，和出现上面的问题，那么一定得好好想想如何去遮遮遮… input和textarea的选择textarea有一个auto-height的属性，可以自动根据内容去改变高度；但是input有手机键盘会有完成而不是回车的键，同时也会有一个点击完成键盘不收起的选项；总之你可以根据这两个特性去选择你需要的组件，加入需要input的属性，又需要textarea的属性，input是最好的选择…以我的经验来说 页面即有上拉加载又有下拉刷新一定要选用Page的特性，而不是scroll-view 打开键盘是否推起页面先考虑不推起页面，再考虑推起页面…因为推起页面显得特别不自然…. 得到globalData中的值如果你想以下面的格式来得到globalData的值，可能会出乎你的意料 Page({ data: { isIphoneX: app.globalData.isIphoneX, // 同步得到，可以得到正确的值 isLogin: app.globalData.isLogin, // 异步得到，得不到正确的值 }, }) 没办法，我只能在page的onload中再重新赋值一次…. 8-17，先写到这…]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[joker-xiaochengxu]]></title>
+    <url>%2F2018%2F08%2F17%2Fjoker-xiaochengxu%2F</url>
     <content type="text"><![CDATA[在这个可爱的节日里，让我来说说，写小程序的坑～ 对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑… textarea的padding问题为textarea设定了上下12rpx的内边距，在安卓机上十分完美，但是从测试那边反馈的结果是：框太高了…于是就去看看网上的讨论，在这吐槽一下，度娘真的是用中文都检索不出来结果…查了结果之后，发现textarea的内边距在安卓和iOS上的差别很大…我有以下方案： 不使用textarea的内边距，外面套一层view，为view添加内边距。实践的结果是：不行。看到有答案说：textarea使用的原生组件，任何padding、line-height都对此不起作用 为view设置box-sizing: border-box，这么一设置，textarea的auto-height都不起作用了，扎心… 没办法了，我只能去区别手机系统了：wx.getSystemInfo({ success: (res) => { if (res.model.match('iPhone X') !== null) { this.globalData.isIphoneX = true; } if (res.platform === 'ios') { this.globalData.isAndroid = false; } } }) view层通过判断getApp().globalData.isAndroid的值，如果为true，则加padding，否则，不加 padding。 iphone的橡皮筋效果如果你的页面有header、body、footer，header是白色，body是灰色，footer是白色，page本身是灰色，那么你在iphone上上拉页面，会看到灰中一块白，如何去调整，当然是遮盖再遮盖…这个效果，体验特别差… iphone X的安全边距找到的资料是安全边距是68rpx，这个时候，如果你有一个固定到下方的footer，和出现上面的问题，那么一定得好好想想如何去遮遮遮… input和textarea的选择textarea有一个auto-height的属性，可以自动根据内容去改变高度；但是input有手机键盘会有完成而不是回车的键，同时也会有一个点击完成键盘不收起的选项；总之你可以根据这两个特性去选择你需要的组件，加入需要input的属性，又需要textarea的属性，input是最好的选择…以我的经验来说 页面即有上拉加载又有下拉刷新一定要选用Page的特性，而不是scroll-view 打开键盘是否推起页面先考虑不推起页面，再考虑推起页面…因为推起页面显得特别不自然…. 得到globalData中的值如果你想以下面的格式来得到globalData的值，可能会出乎你的意料 Page({ data: { isIphoneX: app.globalData.isIphoneX, // 同步得到，可以得到正确的值 isLogin: app.globalData.isLogin, // 异步得到，得不到正确的值 }, }) 没办法，我只能在page的onload中再重新赋值一次…. 8-17，先写到这…]]></content>
       <categories>
         <category>小程序</category>
