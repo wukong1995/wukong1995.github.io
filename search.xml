@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[css-rem]]></title>
+    <url>%2F2018%2F10%2F25%2Fcss-rem%2F</url>
+    <content type="text"><![CDATA[今天在使用rem中发现了一个之前没注意的点 html { font-size: 10px; } .title { font-size: 1.6rem; } .container { width: 2.4rem; } 其中title的字体大小为16px，但是container的宽度却是28.8px，我算了一下28.8/2.4=1.2，想到浏览器的最小字体是12px，所以我想着可能和最小字体的大小有关系。 于是我尝试将chrome的最小字体设置为最小（比12px小），发现container的宽度是24px。 去查资料没有找到相应的资料，可以了解的是rem最好使用在font-size上，使用在margin和padding上也会出现和期望不同的值。]]></content>
+      <categories>
+        <category>css</category>
+      </categories>
+      <tags>
+        <tag>css</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[two-select-change-one]]></title>
     <url>%2F2018%2F10%2F22%2Ftwo-select-change-one%2F</url>
     <content type="text"><![CDATA[今天写了一个方法，被问到这两个查询能改成一个查询吗？ def get_producer_name str = producers.limit(3).map{ |producer| producer.name } str += '等' if producers.count > 3 end 在上面的代码中，producers.limit(3)和producer.count会进行两次查询，要变成一个查询，肿么办？ def get_producer_name pros = producers.limit(4) str = pros[0...2].map{ |producer| producer.name } str += '等' if pros.length > 3 end 一次性查出来前四条！这个方式真的很赞👍！是否给了你新的idea🤔️]]></content>
@@ -619,7 +630,7 @@
     <url>%2F2016%2F07%2F16%2Fcss-margin%2F</url>
     <content type="text"><![CDATA[今天在慕课上看了张大神又一力作，整理了一下margin的巧妙使用：1、margin实现自适应的宽高比为2：1的矩形 &lt;div id=&quot;container&quot;&gt; &lt;div class=&quot;box&quot;&gt; &lt;div&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;style type=&quot;text/css&quot;&gt; #container { width: 400px; height: 250px; } .box { background-color: olive; overflow: hidden; } .box &gt; div { margin: 50%; } &lt;/style&gt;]]></content>
       <categories>
-        <category>前端</category>
+        <category>css</category>
       </categories>
       <tags>
         <tag>css</tag>

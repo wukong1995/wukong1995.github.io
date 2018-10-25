@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/10/25/css-rem/</loc>
+        <lastmod>2018-10-25T11:35:00.062Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
+        <lastmod>2018-10-25T11:22:52.469Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/10/22/two-select-change-one/</loc>
         <lastmod>2018-10-22T11:36:27.795Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -433,14 +449,6 @@
     <url>
         <loc>https://wukong1995.github.io/2017/03/26/dataTable/</loc>
         <lastmod>2017-08-27T13:52:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
-        <lastmod>2017-08-27T13:51:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
