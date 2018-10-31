@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-10-25T11:35:00.062Z</updated>
+  <updated>2018-10-31T11:18:37.448Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>get-current-page-qrcode</title>
+    <link href="https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/"/>
+    <id>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</id>
+    <published>2018-10-31T11:03:08.000Z</published>
+    <updated>2018-10-31T11:18:37.448Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;小程序中，获得小程序中的某一篇文章的分享图片，识别图片中的小程序码进去当前文章的详情页， 问题是如何获得当前页面的小程序码呢？&lt;/p&gt;
+&lt;p&gt;微信给提供了三个接口：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接口 A: 适用于需要的码数量较少的业务场景&lt;br&gt; 生成小程序码，
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>canvas-in-weapp</title>
+    <link href="https://wukong1995.github.io/2018/10/29/canvas-in-weapp/"/>
+    <id>https://wukong1995.github.io/2018/10/29/canvas-in-weapp/</id>
+    <published>2018-10-29T12:00:34.000Z</published>
+    <updated>2018-10-31T11:02:31.950Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天的主要任务是画一个分享的海报，基于之前的一次经验，这次遇到的坑比较少，也更有耐心了🙂️&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;canvas中绘制网络图片&lt;br&gt;canvas中的drawImage中的第一个参数是图片的地址，但是不能是网络图片，解决的办法是：先下载下来，再去绘
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>css-rem</title>
     <link href="https://wukong1995.github.io/2018/10/25/css-rem/"/>
     <id>https://wukong1995.github.io/2018/10/25/css-rem/</id>
     <published>2018-10-25T11:22:18.000Z</published>
-    <updated>2018-10-25T11:35:00.062Z</updated>
+    <updated>2018-10-30T02:06:02.668Z</updated>
     
     <summary type="html">
     
@@ -315,10 +360,10 @@
   
   <entry>
     <title>joker-xiaochengxu</title>
-    <link href="https://wukong1995.github.io/2018/08/17/joker-weapp/"/>
-    <id>https://wukong1995.github.io/2018/08/17/joker-weapp/</id>
+    <link href="https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/"/>
+    <id>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</id>
     <published>2018-08-17T15:28:20.000Z</published>
-    <updated>2018-08-17T16:00:44.761Z</updated>
+    <updated>2018-08-17T16:00:44.000Z</updated>
     
     <summary type="html">
     
@@ -337,10 +382,10 @@
   
   <entry>
     <title>joker-xiaochengxu</title>
-    <link href="https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/"/>
-    <id>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</id>
+    <link href="https://wukong1995.github.io/2018/08/17/joker-weapp/"/>
+    <id>https://wukong1995.github.io/2018/08/17/joker-weapp/</id>
     <published>2018-08-17T15:28:20.000Z</published>
-    <updated>2018-08-17T16:00:44.000Z</updated>
+    <updated>2018-08-17T16:00:44.761Z</updated>
     
     <summary type="html">
     
@@ -389,48 +434,6 @@
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>translate-mindset-lessons-from-a-year-with-react</title>
-    <link href="https://wukong1995.github.io/2018/08/10/translate-mindset-lessons-from-a-year-with-react/"/>
-    <id>https://wukong1995.github.io/2018/08/10/translate-mindset-lessons-from-a-year-with-react/</id>
-    <published>2018-08-10T14:08:30.000Z</published>
-    <updated>2018-08-11T15:06:56.575Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前&quot;&gt;&lt;a href=&quot;#前&quot; class=&quot;headerlink&quot; title=&quot;前&quot;&gt;&lt;/a&gt;前&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://medium.freecodecamp.org/mindset-lessons-from-a-year-with-
-    
-    </summary>
-    
-      <category term="翻译" scheme="https://wukong1995.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
-    
-    
-      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
-    
-      <category term="翻译" scheme="https://wukong1995.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>bootstrap-modal</title>
-    <link href="https://wukong1995.github.io/2018/08/08/bootstrap-modal/"/>
-    <id>https://wukong1995.github.io/2018/08/08/bootstrap-modal/</id>
-    <published>2018-08-08T05:29:51.000Z</published>
-    <updated>2018-08-08T06:26:32.276Z</updated>
-    
-    <summary type="html">
-    
-      bootstarp中的modal打开时为神马动态为body增加padding-right
-    
-    </summary>
-    
-      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   

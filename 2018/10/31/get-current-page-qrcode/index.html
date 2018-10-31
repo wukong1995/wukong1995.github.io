@@ -12,7 +12,7 @@
     
     <title>
         
-            标签: pg | 
+            get-current-page-qrcode | 
         
         Wukong&#39;s Blog
     </title>
@@ -38,7 +38,7 @@
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Peipei Wong">
     <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog">
+    <meta name="keywords" content="blog,小程序">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;" />
@@ -67,15 +67,18 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: pg | Wukong&#39;s Blog">
+    <meta property="og:title" content="get-current-page-qrcode | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg" />
     <meta property="og:description" content="一只热爱编程的媛...">
-    
+    <meta property="og:article:tag" content="小程序"> 
 
+    
+        <meta property="article:published_time" content="10月 31, 2018" />
+        <meta property="article:modified_time" content="10月 31, 2018" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="标签: pg | Wukong&#39;s Blog">
+    <meta name="twitter:title" content="get-current-page-qrcode | Wukong&#39;s Blog">
     <meta name="twitter:description" content="一只热爱编程的媛...">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image" />
@@ -83,13 +86,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/tags/pg/index.html" />
+        <link rel="canonical" href="https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Peipei Wong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "get-current-page-qrcode",
+    "url": "https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/index.html",
+    "datePublished": "10月 31, 2018",
+    "dateModified": "10月 31, 2018",
+    "description": "一只热爱编程的媛...",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
 
 
     
@@ -280,97 +313,309 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#步骤"><span class="post-toc-number">1.</span> <span class="post-toc-text">步骤</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/10/22/two-select-change-one/">你能把这两个查询变成一个吗</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            今天写了一个方法，被问到这两个查询能改成一个查询吗？
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/10/22/two-select-change-one/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/favicon.jpg" width="44px" height="44px" alt="Peipei Wong's avatar">
-            </div>
-            <div>
-                <strong>Peipei Wong</strong>
-                <span>10月 22, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                <a class="post_category-link" href="/categories/数据库/">数据库</a>
-            </span>
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                获得当前页面的小程序码初探索
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Peipei Wong</strong>
+        <span>10月 31, 2018</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAACzUlEQVR42u3ay1LDMBAEwPz/T8OVKirJjNaAkdonCkzsFodhH4+PI68HNjY2NjY2NjY29i3Zj/gqHvDt/mef8PX7379Ofpq/MzY2Nvbe7Anj9etODiI5guKdsbGxsQ9gPwuANmby2Ht9T3KIyTtjY2NjY+fhMS9pXh8lNjY2NvZPsOcROG9FYWNjY2PnBUPxmCD22mLjz3pp2NjY2Ldn5yXEfb7+1fk2NjY29o3Z7ZWPB/KgShpVH+MLGxsbe1d2HgxrpUK7vpOHaDt+wMbGxt6bPQ+JNV7eNspD7mkDCxsbG/sAdhIS84ZUO0jIg2rUS8PGxsbeiN2uV7bNoHZUnN9/waAXGxsb+x+yk9fKm/trcTg5guTp2NjY2Huz5yPYOkheBttaW2px0IuNjY29EXttEJuHVvI581B888nY2NjYB7DbNZ08CNfibbJOhI2NjX0O+9rQWitCJm2jJLqwsbGxT2AXiy9xgZG0nPJDyZtK2NjY2Kex88KjXaP8zUhbrMCwsbGxt2a3wZY3hpLmfsKuCyFsbGzsrdl5sZE3d9r724Nol3iwsbGx92a34TQf0LYNo7bIwcbGxj6T3b5E2xLKS5d8RJG3t7CxsbF3ZV81fM1fcS2WLlgYwsbGxt6UPRn0tneuBVje8Hrzu9jY2NgHsNt/8fPfXfvkZIxxcS8NGxsb+9+y25Wa5JFz5PwPgI2NjX0aO2n9t2VD3opqB8xJaGFjY2NjtyF3bSmSX9FBY2NjY2/Kbq92BSf/aVLSTIINGxsbe1d2GxL5w/J78gHwWiMMGxsb+wR2u1LTFi2TgW4bb9jY2Ngns5NmzVrktCPhSVMJGxsbGzth54VHe2e7AJSPmbGxsbGx1x7frgGtLeiMli+xsbGxN2Lno9k8hNpAykOrbUJhY2Nj782eLziuBV57HPlaJzY2NvY57HMubGxsbGxsbGxs7Ntcnz8nchTexz5LAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/小程序/">小程序</a>
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=get-current-page-qrcode&url=https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=get-current-page-qrcode&url=https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/index.html&via=Peipei Wong" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>小程序中，获得小程序中的某一篇文章的分享图片，识别图片中的小程序码进去当前文章的详情页， 问题是如何获得当前页面的小程序码呢？</p>
+<p>微信给提供了三个接口：</p>
+<blockquote>
+<p>接口 A: 适用于需要的码数量较少的业务场景<br> 生成小程序码，可接受 path 参数较长，生成个数受限，数量限制见 注意事项，请谨慎使用。<br>接口 B：适用于需要的码数量极多的业务场景<br> 生成小程序码，可接受页面参数较短，生成个数不受限。<br>接口 C：适用于需要的码数量较少的业务场景<br> 生成二维码，可接受 path 参数较长，生成个数受限，数量限制见 注意事项。</p>
+</blockquote>
+<p>其中，第二个接口的中的其中参数最多接受32个字符。第一和第三的生成个数最多是十万张</p>
+<h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ol>
+<li>通过小程序的appid和密钥去获得access_token(有效期两个小时)</li>
+<li>通过access_token和相应的参数去获得图片的二进制流</li>
+<li>将图片的二进制流转换成base64就可以显示了</li>
+</ol>
+<p>因为需要canvas将小程序码画出来，调试工具上可以画出来base64的图片，但是在android和iPhone都显示不出来…所以前端去获得小程序是不能完成想要的功能的。和后端沟通的结果是：后端去获得图片返回给前端图片的临时地址…</p>
+<p>附上代码：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token function">request</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=appid&amp;secret=secret`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">request</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token punctuation">.</span>data<span class="token punctuation">.</span>access_token<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      page<span class="token punctuation">:</span> <span class="token string">'你的page'</span><span class="token punctuation">,</span>
+      scene<span class="token punctuation">:</span> <span class="token string">'id=2'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>res <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// arrayBufferToBase64</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    
+
     
 </div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+
+<div class="btn_click_load">
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2018/10/29/canvas-in-weapp/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     
@@ -572,6 +817,14 @@ It will not impact the appearance and can give developers a lot of support :)
 </aside>
 
                     
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
 
                     
 
