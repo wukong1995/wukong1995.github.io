@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</loc>
+        <lastmod>2018-11-05T11:41:49.288Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
+        <lastmod>2018-11-05T11:27:22.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</loc>
         <lastmod>2018-10-31T11:18:37.448Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -25,14 +41,6 @@
     <url>
         <loc>https://wukong1995.github.io/2018/10/25/css-rem/</loc>
         <lastmod>2018-10-30T02:06:02.668Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
-        <lastmod>2018-10-25T11:22:52.469Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

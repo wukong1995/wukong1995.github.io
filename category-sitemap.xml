@@ -140,13 +140,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/react/</loc>
-        <lastmod>2018-10-14T12:58:31.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/react/%E6%9D%82%E8%B0%88/</loc>
         <lastmod>2018-10-14T12:58:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -168,15 +161,29 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/css/</loc>
-        <lastmod>2018-10-30T02:06:02.668Z</lastmod>
+        <loc>https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
+        <lastmod>2018-10-31T11:18:37.448Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
-        <lastmod>2018-10-31T11:18:37.448Z</lastmod>
+        <loc>https://wukong1995.github.io/categories/css/</loc>
+        <lastmod>2018-11-05T11:27:22.628Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/react/</loc>
+        <lastmod>2018-11-05T11:41:49.288Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/react/js/</loc>
+        <lastmod>2018-11-05T11:41:49.288Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
