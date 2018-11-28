@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-11-05T11:41:49.288Z</updated>
+  <updated>2018-11-28T11:06:03.723Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ror-deploy-with-puma-and-nginx</title>
+    <link href="https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/"/>
+    <id>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</id>
+    <published>2018-11-28T06:23:56.000Z</published>
+    <updated>2018-11-28T11:06:03.723Z</updated>
+    
+    <summary type="html">
+    
+      ror+psql+puma+nginx部署项目
+    
+    </summary>
+    
+      <category term="rails" scheme="https://wukong1995.github.io/categories/rails/"/>
+    
+    
+      <category term="rails" scheme="https://wukong1995.github.io/tags/rails/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos-server-1</title>
+    <link href="https://wukong1995.github.io/2018/11/20/centos-server-1/"/>
+    <id>https://wukong1995.github.io/2018/11/20/centos-server-1/</id>
+    <published>2018-11-20T11:01:00.000Z</published>
+    <updated>2018-11-28T11:07:27.589Z</updated>
+    
+    <summary type="html">
+    
+      服务器-初探
+    
+    </summary>
+    
+      <category term="server" scheme="https://wukong1995.github.io/categories/server/"/>
+    
+    
+      <category term="linux" scheme="https://wukong1995.github.io/tags/linux/"/>
+    
+      <category term="centos" scheme="https://wukong1995.github.io/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pm2-second</title>
+    <link href="https://wukong1995.github.io/2018/11/10/pm2-second/"/>
+    <id>https://wukong1995.github.io/2018/11/10/pm2-second/</id>
+    <published>2018-11-10T11:40:00.000Z</published>
+    <updated>2018-11-20T11:00:27.689Z</updated>
+    
+    <summary type="html">
+    
+      pm2-自动化部署node项目
+    
+    </summary>
+    
+      <category term="Nodejs" scheme="https://wukong1995.github.io/categories/Nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title>refuse-to-overuse-react</title>
@@ -380,71 +442,6 @@
     
     
       <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>joker-xiaochengxu</title>
-    <link href="https://wukong1995.github.io/2018/08/17/joker-weapp/"/>
-    <id>https://wukong1995.github.io/2018/08/17/joker-weapp/</id>
-    <published>2018-08-17T15:28:20.000Z</published>
-    <updated>2018-08-17T16:00:44.761Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在这个可爱的节日里，让我来说说，写小程序的坑～&lt;/p&gt;
-&lt;p&gt;对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑…&lt;/p&gt;
-&lt;h4 id=&quot;textarea的padding问题&quot;&gt;&lt;a href=&quot;#textarea的padding问题&quot; cl
-    
-    </summary>
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>joker-xiaochengxu</title>
-    <link href="https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/"/>
-    <id>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</id>
-    <published>2018-08-17T15:28:20.000Z</published>
-    <updated>2018-08-17T16:00:44.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在这个可爱的节日里，让我来说说，写小程序的坑～&lt;/p&gt;
-&lt;p&gt;对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑…&lt;/p&gt;
-&lt;h4 id=&quot;textarea的padding问题&quot;&gt;&lt;a href=&quot;#textarea的padding问题&quot; cl
-    
-    </summary>
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>websocket-push</title>
-    <link href="https://wukong1995.github.io/2018/08/15/websocket-push/"/>
-    <id>https://wukong1995.github.io/2018/08/15/websocket-push/</id>
-    <published>2018-08-15T11:16:43.000Z</published>
-    <updated>2018-08-15T11:49:23.682Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;刚听到这个需求的时候，好慌…之前没做过，该怎么办？&lt;/p&gt;
-&lt;h3 id=&quot;plan-A&quot;&gt;&lt;a href=&quot;#plan-A&quot; class=&quot;headerlink&quot; title=&quot;plan A&quot;&gt;&lt;/a&gt;plan A&lt;/h3&gt;&lt;p&gt;我的大脑迅速闪过一个方案：收到信息就在右上
-    
-    </summary>
-    
-      <category term="react" scheme="https://wukong1995.github.io/categories/react/"/>
-    
-    
-      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
     
   </entry>
   

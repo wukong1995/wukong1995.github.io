@@ -3,6 +3,188 @@
   
     
     <entry>
+      <title><![CDATA[ror-deploy-with-puma-and-nginx]]></title>
+      <url>/2018/11/28/ror-deploy-with-puma-and-nginx/</url>
+      <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>这个过程基本上我花了三个星期，才弄好，其中的有些部署文件还是我直接从项目复制粘贴过来的。现在一整理，发现并没有那么难，那为什么会花费三个星期呢？大部分可能是因为我的无知和对centos的不了解。</p>
+<p>例如，我在启动数据库的时候，它告诉我不能以root身份启动，等我切换到普通账户，又告诉我，对文件夹没有写入权限，看得我真的很矛盾。</p>
+<p>例如，我在安装pg这个gem的时候，告诉我缺乏依赖，我找到答案<code>yum install libs-devel</code>，又告诉我ruby的版本太低了，很纳闷，我明明装的是最新的ruby版本，之后就一直在缺乏依赖着转圈，等到现在才知道是因为找不到<code>pg_config</code>， <code>pg_config</code>这个文件一般是在<code>/usr/bin</code>文件夹下，但是我安装完没有在这….</p>
+<h4 id="安装ruby"><a href="#安装ruby" class="headerlink" title="安装ruby"></a>安装ruby</h4><p>如果使用yum安装ruby，版本太低，为了管理ruby版本，我使用rbenv来管理<br><a href="https://linuxize.com/post/how-to-install-ruby-on-centos-7/" target="_blank" rel="noopener">安装参考链接</a></p>
+<h4 id="安装postgresql"><a href="#安装postgresql" class="headerlink" title="安装postgresql"></a>安装postgresql</h4><p>修改<code>/etc/yum.repos.d/CentOS-Base.repo</code>文件</p>
+<pre class="line-numbers language-js"><code class="language-js">sudo vi <span class="token regex">/etc/yum</span><span class="token punctuation">.</span>repos<span class="token punctuation">.</span>d<span class="token operator">/</span>CentOS<span class="token operator">-</span>Base<span class="token punctuation">.</span>repo
+exclude<span class="token operator">=</span>postgresql<span class="token operator">*</span>    <span class="token comment" spellcheck="true">// 在[base]和[updates]块中加上这一行</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>安装postgresql</p>
+<pre class="line-numbers language-js"><code class="language-js">sudo rpm <span class="token operator">-</span>Uvh http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>yum<span class="token punctuation">.</span>postgresql<span class="token punctuation">.</span>org<span class="token operator">/</span><span class="token number">9.5</span><span class="token operator">/</span>redhat<span class="token operator">/</span>rhel<span class="token number">-6</span><span class="token operator">-</span>x86_64<span class="token operator">/</span>pgdg<span class="token operator">-</span>centos95<span class="token number">-9.5</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">.</span>noarch<span class="token punctuation">.</span>rpm
+sudo yum install postgresql95 postgresql95<span class="token operator">-</span>devel postgresql95<span class="token operator">-</span>server postgresql95<span class="token operator">-</span>libs postgresql95<span class="token operator">-</span>contrib
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>初始化数据库<br>找到psql的安装目录(xxxx)的bin文件夹，</p>
+<pre class="line-numbers language-js"><code class="language-js">xxxx<span class="token operator">/</span>bin<span class="token operator">/</span>pg_ctl <span class="token operator">-</span>D xxxx<span class="token operator">/</span>data initdb <span class="token comment" spellcheck="true">//初始化数据库</span>
+xxxx<span class="token operator">/</span>bin<span class="token operator">/</span>pg_ctl <span class="token operator">-</span>D xxxx<span class="token operator">/</span>data start  <span class="token comment" spellcheck="true">// 启动数据库</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在initdb，可能会出现权限不够的情况，这个时候，查看一下<code>data</code>的权限，发现你应该将用户切换成<code>postgres</code></p>
+<pre class="line-numbers language-js"><code class="language-js">sudo su postgres
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这一步，会提示你输入密码，如果你不知道密码，就使用以下命令去修改密码</p>
+<pre class="line-numbers language-js"><code class="language-js">passwd postgres
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将用户切换成<code>postgres</code>就可以初始化和启动数据库，也可以使用以下命令</p>
+<pre class="line-numbers language-js"><code class="language-js">sudo service postgresql<span class="token number">-9.5</span> start               <span class="token comment" spellcheck="true">// 启动数据库</span>
+sudo chkconfig <span class="token operator">--</span>levels <span class="token number">235</span> postgresql<span class="token number">-9.5</span> on   <span class="token comment" spellcheck="true">// psql开机自启动</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>创建psql的链接用户名和密码</p>
+<pre class="line-numbers language-js"><code class="language-js">sudo su postgres
+psql
+alter user username <span class="token keyword">with</span> password <span class="token string">'password'</span><span class="token punctuation">;</span>
+create database testdb owner<span class="token operator">=</span>username<span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="为puma增加代理"><a href="#为puma增加代理" class="headerlink" title="为puma增加代理"></a>为puma增加代理</h4><pre class="line-numbers language-js"><code class="language-js">cap production puma<span class="token punctuation">:</span>restar
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>这个时候访问端口，发现无法访问，查一下puma的log，发现<code>puma</code>在<code>production</code>环境下是使用<code>socket</code>链接，只能使用nginx做代理了，编辑<code>/etc/nginx/conf.d/default.conf</code>文件，替换下面代码中的<code>username</code>和<code>deploy_path</code></p>
+<pre class="line-numbers language-js"><code class="language-js">upstream app <span class="token punctuation">{</span>
+    # Path to Puma SOCK file<span class="token punctuation">,</span> <span class="token keyword">as</span> defined previously
+    server unix<span class="token punctuation">:</span><span class="token operator">/</span><span class="token comment" spellcheck="true">//home/username/deploy_path/shared/sockets/puma.sock fail_timeout=0;</span>
+<span class="token punctuation">}</span>
+
+server <span class="token punctuation">{</span>
+    listen <span class="token number">80</span><span class="token punctuation">;</span>
+    server_name localhost<span class="token punctuation">;</span>
+
+    root <span class="token operator">/</span>home<span class="token operator">/</span>username<span class="token operator">/</span>deploy_path<span class="token operator">/</span>current<span class="token operator">/</span><span class="token keyword">public</span><span class="token punctuation">;</span>
+
+    try_files $uri<span class="token operator">/</span>index<span class="token punctuation">.</span>html $uri @app<span class="token punctuation">;</span>
+
+    location @app <span class="token punctuation">{</span>
+        proxy_pass http<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>app<span class="token punctuation">;</span>
+        proxy_set_header X<span class="token operator">-</span>Forwarded<span class="token operator">-</span>For $proxy_add_x_forwarded_for<span class="token punctuation">;</span>
+        proxy_set_header Host $http_host<span class="token punctuation">;</span>
+        proxy_redirect off<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    error_page <span class="token number">500</span> <span class="token number">502</span> <span class="token number">503</span> <span class="token number">504</span> <span class="token operator">/</span><span class="token number">500</span><span class="token punctuation">.</span>html<span class="token punctuation">;</span>
+    client_max_body_size 4G<span class="token punctuation">;</span>
+    keepalive_timeout <span class="token number">10</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于<code>puma</code>的<code>sock</code>的地址，你查一下<code>puma</code>的<code>log</code>确认一下</p>
+<h4 id="你可能遇到的问题"><a href="#你可能遇到的问题" class="headerlink" title="你可能遇到的问题"></a>你可能遇到的问题</h4><ol>
+<li><p>在安装pg这个gem的时候，可能会报缺少依赖，或者找不到pg_config文件<br>答：<code>gem install pg --with-pg-config=psql的安装目录/bin/pg_config</code></p>
+</li>
+<li><p>报错：ActiveRecord::StatementInvalid: PG::InsufficientPrivilege: 错误:  创建扩展 “uuid-ossp” 权限不够<br>答：需要为psql中的新建username设置super权限</p>
+</li>
+<li><p>即使你添加了nginx代理，你发现，网站还是无法访问<br>答：可以查一下<code>/var/log/nginx/nginx_error.log</code>，我遇到的原因是权限不够，修改<code>nginx</code>的config，将<code>user</code>由<code>nginx</code>改成<code>root</code></p>
+</li>
+</ol>
+<h4 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h4><p>如果遇到瓶颈，不要再继续下去，放下来，明天再来尝试….</p>
+]]></content>
+      
+        <categories>
+            
+            <category> rails </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> rails </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[centos-server-1]]></title>
+      <url>/2018/11/20/centos-server-1/</url>
+      <content type="html"><![CDATA[<h4 id="目前的想法"><a href="#目前的想法" class="headerlink" title="目前的想法"></a>目前的想法</h4><p>需要了解一下服务器的端的知识，才可以在使用过程中不崩溃。<br>使用中最让我崩溃的是，我在启动pg的时候，使用root身份启动，告诉我不可以使用root身份，使用普通用户启动，告诉我没有文件的读写权限😵</p>
+<p>虽然还是没有安装上pg这个gem</p>
+<h4 id="1-新建用户"><a href="#1-新建用户" class="headerlink" title="1. 新建用户"></a>1. 新建用户</h4><ol>
+<li>新建用户，创建密码<pre class="line-numbers language-js"><code class="language-js"># adduser tony
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>赋予root权限<br>找到三个方法：<br>2.1. 修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行</p>
+<pre class="line-numbers language-js"><code class="language-js">## Allow root to run any commands anywhere
+root    ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>     ALL
+tommy   ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>     ALL
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>2.2. 修改 /etc/sudoers 文件，找到下面一行，把前面的注释（#）去掉</p>
+<pre class="line-numbers language-js"><code class="language-js">## Allows people <span class="token keyword">in</span> group wheel to run all commands
+<span class="token operator">%</span>wheel    ALL<span class="token operator">=</span><span class="token punctuation">(</span>ALL<span class="token punctuation">)</span>    ALL
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>修改用户，使其属于root组:</p>
+<pre class="line-numbers language-js"><code class="language-js"># usermod <span class="token operator">-</span>g root tony
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>2.3. 修改 /etc/passwd 文件，找到如下行，把用户ID修改为 0</p>
+<pre class="line-numbers language-js"><code class="language-js">tony<span class="token punctuation">:</span>x<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">33</span><span class="token punctuation">:</span>tony<span class="token punctuation">:</span><span class="token operator">/</span>data<span class="token operator">/</span>webroot<span class="token punctuation">:</span><span class="token operator">/</span>bin<span class="token operator">/</span>bash
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+</li>
+<li><p>上传ssh-key，关闭密码登录</p>
+<pre class="line-numbers language-js"><code class="language-js"># ssh<span class="token operator">-</span>copy<span class="token operator">-</span>id tony@服务器ip
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>编辑/etc/ssh/sshd_config</p>
+<pre class="line-numbers language-js"><code class="language-js">#PasswordAuthentication yes 改为
+PasswordAuthentication no
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h4 id="2-安装软件"><a href="#2-安装软件" class="headerlink" title="2. 安装软件"></a>2. 安装软件</h4><p>不同系统管理软件的软件不同，对于这个我也是乱乱的，找了一圈，才发现是使用yum安装的….</p>
+<h4 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3. 启动服务"></a>3. 启动服务</h4><p>启动的服务的命令（是这样叫吗，或者启动服务的包）大部分在/etc/init.d/文件夹下….</p>
+]]></content>
+      
+        <categories>
+            
+            <category> server </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> centos </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[pm2-second]]></title>
+      <url>/2018/11/10/pm2-second/</url>
+      <content type="html"><![CDATA[<p>时间可以给人沉淀，现在再解决一年前的问题，比之前省力✌️。<br>之前尝试过<a href="https://wukong1995.github.io/2017/09/13/pm2/">pm2</a>，但是以失败告终。</p>
+<p>不知到之前为什么会报nvm的错误，这次使用yum安装node，还算顺利。</p>
+<pre class="line-numbers language-javascript"><code class="language-javascript"># yum install node
+
+# pm2 deploy ecosystem<span class="token punctuation">.</span>json production setup
+
+# pm2 deploy ecosystem<span class="token punctuation">.</span>json production
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>过程中，虽然start了，但是还是无法访问，这个时候，我尝试在服务器上使用node start,发现端口被占用，但是pm2显示还是启动了(因为项目是一年前写的，不知道是不是因为版本太低了还是什么原因)。。。更换端口，可以访问了….</p>
+<p>之前我是想使用ror，但是pg那个gem死活装不上，就还是转用node+mongodb</p>
+<h3 id="mongodb的安装"><a href="#mongodb的安装" class="headerlink" title="mongodb的安装"></a>mongodb的安装</h3><pre class="line-numbers language-javascript"><code class="language-javascript"># yum <span class="token operator">-</span>y install mongodb<span class="token operator">-</span>org
+# rpm <span class="token operator">-</span>qa <span class="token operator">|</span>grep mongodb              <span class="token comment" spellcheck="true">// 验证安装</span>
+# rpm <span class="token operator">-</span>ql mongodb<span class="token operator">-</span>org<span class="token operator">-</span>server         <span class="token comment" spellcheck="true">// 验证安装</span>
+# <span class="token operator">/</span>etc<span class="token operator">/</span>init<span class="token punctuation">.</span>d<span class="token operator">/</span>mongod start           <span class="token comment" spellcheck="true">// 启动服务</span>
+# netstat <span class="token operator">-</span>nltp<span class="token operator">|</span>grep mongo           <span class="token comment" spellcheck="true">// 查看占用端口</span>
+# mongo                              <span class="token comment" spellcheck="true">// 进入数据库</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      
+        <categories>
+            
+            <category> Nodejs </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[refuse-to-overuse-react]]></title>
       <url>/2018/11/05/refuse-to-overuse-react/</url>
       <content type="html"><![CDATA[<p>对于目前三大潮流框架，我先使用的是Angular，用它写了一个购物车，感觉非常好。工作之后，使用的react，用顺手之后，第一解决办法就是想到react，导致有很多过度使用的地方。</p>
@@ -919,7 +1101,7 @@ ctx<span class="token punctuation">.</span><span class="token function">fillText
     
     <entry>
       <title><![CDATA[joker-xiaochengxu]]></title>
-      <url>/2018/08/17/joker-weapp/</url>
+      <url>/2018/08/17/joker-xiaochengxu/</url>
       <content type="html"><![CDATA[<p>在这个可爱的节日里，让我来说说，写小程序的坑～</p>
 <p>对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑…</p>
 <h4 id="textarea的padding问题"><a href="#textarea的padding问题" class="headerlink" title="textarea的padding问题"></a>textarea的padding问题</h4><p>为<code>textarea</code>设定了上下12rpx的内边距，在安卓机上十分完美，但是从测试那边反馈的结果是：框太高了…于是就去看看网上的讨论，在这吐槽一下，度娘真的是用中文都检索不出来结果…查了结果之后，发现textarea的内边距在安卓和iOS上的差别很大…我有以下方案：</p>
@@ -973,7 +1155,7 @@ view层通过判断<code>getApp().globalData.isAndroid</code>的值，如果为<
     
     <entry>
       <title><![CDATA[joker-xiaochengxu]]></title>
-      <url>/2018/08/17/joker-xiaochengxu/</url>
+      <url>/2018/08/17/joker-weapp/</url>
       <content type="html"><![CDATA[<p>在这个可爱的节日里，让我来说说，写小程序的坑～</p>
 <p>对小程序的期待就像对vue的期待一样，看着文档就能写…可是，我踩了一个又一个的坑…</p>
 <h4 id="textarea的padding问题"><a href="#textarea的padding问题" class="headerlink" title="textarea的padding问题"></a>textarea的padding问题</h4><p>为<code>textarea</code>设定了上下12rpx的内边距，在安卓机上十分完美，但是从测试那边反馈的结果是：框太高了…于是就去看看网上的讨论，在这吐槽一下，度娘真的是用中文都检索不出来结果…查了结果之后，发现textarea的内边距在安卓和iOS上的差别很大…我有以下方案：</p>

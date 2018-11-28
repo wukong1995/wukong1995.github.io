@@ -63,13 +63,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/categories/Nodejs/</loc>
-        <lastmod>2018-04-16T12:06:41.266Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/categories/%E9%9A%8F%E7%AC%94/</loc>
         <lastmod>2018-06-23T06:15:41.654Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,13 +107,6 @@
     <url>
         <loc>https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2018-08-24T09:56:54.356Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/categories/rails/</loc>
-        <lastmod>2018-08-24T09:59:02.580Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -184,6 +170,27 @@
     <url>
         <loc>https://wukong1995.github.io/categories/react/js/</loc>
         <lastmod>2018-11-05T11:41:49.288Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/Nodejs/</loc>
+        <lastmod>2018-11-20T11:00:27.689Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/rails/</loc>
+        <lastmod>2018-11-28T11:06:03.723Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/categories/server/</loc>
+        <lastmod>2018-11-28T11:07:27.589Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

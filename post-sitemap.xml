@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>https://wukong1995.github.io/2018/11/20/centos-server-1/</loc>
+        <lastmod>2018-11-28T11:07:27.589Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</loc>
+        <lastmod>2018-11-28T11:06:03.723Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/11/10/pm2-second/</loc>
+        <lastmod>2018-11-20T11:00:27.689Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</loc>
         <lastmod>2018-11-05T11:41:49.288Z</lastmod>
         <changefreq>weekly</changefreq>

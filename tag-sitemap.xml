@@ -58,13 +58,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/linux/</loc>
-        <lastmod>2017-09-13T13:50:37.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/npm/</loc>
         <lastmod>2017-09-13T13:54:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -114,13 +107,6 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/tags/nodejs/</loc>
-        <lastmod>2018-04-16T12:06:41.266Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wukong1995.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
         <lastmod>2018-07-30T12:04:21.360Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -158,13 +144,6 @@
     <url>
         <loc>https://wukong1995.github.io/tags/history/</loc>
         <lastmod>2018-08-24T09:56:54.356Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/tags/rails/</loc>
-        <lastmod>2018-08-24T09:59:02.580Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -221,6 +200,34 @@
     <url>
         <loc>https://wukong1995.github.io/tags/js/</loc>
         <lastmod>2018-11-05T11:41:49.288Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/nodejs/</loc>
+        <lastmod>2018-11-20T11:00:27.689Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/rails/</loc>
+        <lastmod>2018-11-28T11:06:03.723Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/linux/</loc>
+        <lastmod>2018-11-28T11:07:27.589Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/tags/centos/</loc>
+        <lastmod>2018-11-28T11:07:27.589Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
