@@ -7,288 +7,8 @@
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/2018/11/20/centos-server-1/</loc>
-        <lastmod>2018-11-28T11:07:27.589Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</loc>
-        <lastmod>2018-11-28T11:06:03.723Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/11/10/pm2-second/</loc>
-        <lastmod>2018-11-20T11:00:27.689Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</loc>
-        <lastmod>2018-11-05T11:41:49.288Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
-        <lastmod>2018-11-05T11:27:22.628Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</loc>
-        <lastmod>2018-10-31T11:18:37.448Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/10/29/canvas-in-weapp/</loc>
-        <lastmod>2018-10-31T11:02:31.950Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/10/25/css-rem/</loc>
-        <lastmod>2018-10-30T02:06:02.668Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/10/22/two-select-change-one/</loc>
-        <lastmod>2018-10-22T11:36:27.795Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/10/22/stimulus-begin/</loc>
-        <lastmod>2018-10-22T11:29:27.035Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/10/14/whether-to-use-react/</loc>
-        <lastmod>2018-10-14T12:58:31.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</loc>
-        <lastmod>2018-09-27T11:29:38.816Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/09/25/immutable-data/</loc>
-        <lastmod>2018-09-25T11:46:59.671Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/</loc>
-        <lastmod>2018-09-20T11:35:50.580Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/09/13/stateless-component-vs-pure-component/</loc>
-        <lastmod>2018-09-13T15:46:58.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/09/08/react-blog/</loc>
-        <lastmod>2018-09-08T15:41:16.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/09/01/weapp-tip/</loc>
-        <lastmod>2018-09-01T02:33:25.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/28/joker-weapp-4/</loc>
-        <lastmod>2018-08-29T01:57:58.746Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/24/joker-weapp-2/</loc>
-        <lastmod>2018-08-27T10:58:17.033Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/26/mixed-talk-1/</loc>
-        <lastmod>2018-08-25T17:21:04.526Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/24/joker-weapp-3/</loc>
-        <lastmod>2018-08-24T14:56:47.931Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/07/06/rails-access-origin/</loc>
-        <lastmod>2018-08-24T09:59:02.580Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/07/13/history-push-state/</loc>
-        <lastmod>2018-08-24T09:56:54.356Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/17/joker-weapp/</loc>
-        <lastmod>2018-08-17T16:00:44.761Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</loc>
-        <lastmod>2018-08-17T16:00:44.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/15/websocket-push/</loc>
-        <lastmod>2018-08-15T11:49:23.682Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/13/angular-1-source-code/</loc>
-        <lastmod>2018-08-13T09:00:39.203Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/05/data-flow/</loc>
-        <lastmod>2018-08-11T15:12:38.203Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/10/translate-mindset-lessons-from-a-year-with-react/</loc>
-        <lastmod>2018-08-11T15:06:56.575Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/08/bootstrap-modal/</loc>
-        <lastmod>2018-08-08T06:26:32.276Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/08/03/code-optimization/</loc>
-        <lastmod>2018-08-03T16:03:58.845Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/07/05/bad-code-2/</loc>
-        <lastmod>2018-08-03T15:12:03.429Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/07/02/bad-code/</loc>
-        <lastmod>2018-08-03T15:11:58.292Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/07/25/prime-number/</loc>
-        <lastmod>2018-07-30T12:04:21.360Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/07/14/summary-work/</loc>
-        <lastmod>2018-07-14T04:25:25.922Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2018/06/23/refactor/</loc>
-        <lastmod>2018-06-23T06:15:41.654Z</lastmod>
+        <loc>https://wukong1995.github.io/2017/08/17/npm-package/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -296,55 +16,15 @@
 
     <url>
         <loc>https://wukong1995.github.io/2018/04/08/pdf/</loc>
-        <lastmod>2018-04-16T12:06:41.266Z</lastmod>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/2018/03/13/jquery-plugin/</loc>
-        <lastmod>2018-03-14T02:32:24.915Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/07/22/git/</loc>
-        <lastmod>2018-03-13T11:13:20.615Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/11/15/get-module/</loc>
-        <lastmod>2018-03-13T06:52:09.939Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/11/06/project/</loc>
-        <lastmod>2017-11-06T02:47:24.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/08/02/douban/</loc>
-        <lastmod>2017-09-13T13:54:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/08/17/npm-package/</loc>
-        <lastmod>2017-09-13T13:54:22.000Z</lastmod>
+        <loc>https://wukong1995.github.io/2018/11/10/pm2-second/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -352,103 +32,39 @@
 
     <url>
         <loc>https://wukong1995.github.io/2017/09/13/pm2/</loc>
-        <lastmod>2017-09-13T13:53:34.000Z</lastmod>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/2017/09/13/linux-first/</loc>
-        <lastmod>2017-09-13T13:50:37.000Z</lastmod>
+        <loc>https://wukong1995.github.io/2018/07/25/prime-number/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/2017/08/26/coursera-2/</loc>
-        <lastmod>2017-09-03T13:59:39.000Z</lastmod>
+        <loc>https://wukong1995.github.io/2017/11/06/project/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/2017/09/03/week6/</loc>
-        <lastmod>2017-09-03T03:17:57.000Z</lastmod>
+        <loc>https://wukong1995.github.io/2018/07/06/rails-access-origin/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://wukong1995.github.io/2017/08/26/week5/</loc>
-        <lastmod>2017-09-03T01:07:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/09/03/coursera-3/</loc>
-        <lastmod>2017-09-02T16:49:38.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/08/20/week4/</loc>
-        <lastmod>2017-08-27T13:54:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/08/13/week3/</loc>
-        <lastmod>2017-08-27T13:54:36.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/08/05/week2/</loc>
-        <lastmod>2017-08-27T13:54:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/07/28/week1/</loc>
-        <lastmod>2017-08-27T13:54:23.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/03/29/wechatPHP/</loc>
-        <lastmod>2017-08-27T13:54:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/12/11/useMongoDB/</loc>
-        <lastmod>2017-08-27T13:53:58.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/07/23/relay-apollo/</loc>
-        <lastmod>2017-08-27T13:53:52.000Z</lastmod>
+        <loc>https://wukong1995.github.io/2018/09/08/react-blog/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -456,47 +72,7 @@
 
     <url>
         <loc>https://wukong1995.github.io/2017/07/22/react-relay/</loc>
-        <lastmod>2017-08-27T13:53:45.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/09/17/ngInterpolate/</loc>
-        <lastmod>2017-08-27T13:53:31.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/12/11/moment/</loc>
-        <lastmod>2017-08-27T13:53:24.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2016/07/20/java1/</loc>
-        <lastmod>2017-08-27T13:53:17.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/08/13/ES7-decorator/</loc>
-        <lastmod>2017-08-27T13:53:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://wukong1995.github.io/2017/03/26/dataTable/</loc>
-        <lastmod>2017-08-27T13:52:41.000Z</lastmod>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -504,7 +80,431 @@
 
     <url>
         <loc>https://wukong1995.github.io/2017/07/28/reduce/</loc>
-        <lastmod>2017-08-27T12:57:52.000Z</lastmod>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/06/23/refactor/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/07/23/relay-apollo/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/13/stateless-component-vs-pure-component/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/22/stimulus-begin/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/07/14/summary-work/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/22/two-select-change-one/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/12/11/useMongoDB/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/01/weapp-tip/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/15/websocket-push/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/03/29/wechatPHP/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/07/28/week1/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/05/week2/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/13/week3/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/20/week4/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/26/week5/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/09/03/week6/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/14/whether-to-use-react/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/10/translate-mindset-lessons-from-a-year-with-react/</loc>
+        <lastmod>2018-11-29T03:30:42.217Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/13/ES7-decorator/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/13/angular-1-source-code/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/07/05/bad-code-2/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/07/02/bad-code/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/08/bootstrap-modal/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/29/canvas-in-weapp/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/11/20/centos-server-1/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/03/code-optimization/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/26/coursera-2/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/09/03/coursera-3/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/07/16/css-margin/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/25/css-rem/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/05/data-flow/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/03/26/dataTable/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/08/02/douban/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/11/15/get-module/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/07/22/git/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/07/13/history-push-state/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/09/25/immutable-data/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/07/20/java1/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/24/joker-weapp-2/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/24/joker-weapp-3/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/28/joker-weapp-4/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/17/joker-weapp/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/17/joker-xiaochengxu/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/03/13/jquery-plugin/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2017/09/13/linux-first/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2018/08/26/mixed-talk-1/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/12/11/moment/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://wukong1995.github.io/2016/09/17/ngInterpolate/</loc>
+        <lastmod>2018-11-29T03:30:42.213Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
