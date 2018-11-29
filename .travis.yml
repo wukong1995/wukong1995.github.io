@@ -1,0 +1,48 @@
+language: node_js
+
+node_js: stable
+
+cache:
+  apt: true
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    recipients:
+      - wangpp1995@gmail.com
+    on_success: change
+    on_failure: always
+
+before_install:
+  - export TZ='Asia/Shanghai'
+  - npm install hexo-cli -g
+
+install:
+  - npm install
+
+script:
+  - hexo clean
+  - hexo g
+
+after_script:
+  - git clone https://${GH_REF} .deploy_git
+  - cd .deploy_git
+  - git checkout master
+  - cd ../
+  - mv .deploy_git/.git/ ./public/
+  - cd ./public
+  - git config user.name "PeiPei Wong"
+  - git config user.email "wangpp1995@gmail.com"
+
+  - git add .
+  - git commit -m "Travis CI Auto Builder at `date +"%Y-%m-%d %H:%M"`"
+  - git push --force --quiet "https://${Github_token}@${GH_REF}" master:master
+
+branches:
+  only:
+    - hexo
+
+env:
+  global:
+    - GH_REF: github.com/wukong1995/wukong1995.github.io.git
