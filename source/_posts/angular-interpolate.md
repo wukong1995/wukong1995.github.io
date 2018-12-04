@@ -1,6 +1,6 @@
 ---
   title: angular-interpolate
-  date: 2016-09-17- 10:13:00
+  date: 2016-09-17 10:13:00
   articleTitle: angularjs中的$interpolate服务
   tags: ['angular']
   categories: ['前端']

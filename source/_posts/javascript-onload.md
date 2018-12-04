@@ -1,6 +1,6 @@
 ---
   title: javascript-onload
-  date: 2016-06-08- 17:06:37
+  date: 2016-06-08 17:06:37
   articleTitle: window.onload，body onload，document.onreadystatechange
   tags: ['javascript']
   categories: ['javascript', '前端']

@@ -1,5 +1,5 @@
 ---
-  title: title
+  title: canvas+js-3
   date: 2016-06-23 14:29:25
   articleTitle: 利用Canvas+js实现贪吃蛇(3)
   tags: ['javascript', 'demo']

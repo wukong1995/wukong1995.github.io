@@ -1,6 +1,6 @@
 ---
   title: mongodb-use-in-node
-  date: 2016-12-11- 13:10:59
+  date: 2016-12-11 13:10:59
   articleTitle: nodejs中使用mongoose保存数据
   tags: ['mongoDB', 'nodejs']
   categories: ['mongoDB', '数据库', 'nodejs']
