@@ -1,8 +1,8 @@
 ---
 date: 2018-10-22 18:32:13
 title: stimulus初体验
-tags: ['typescript']
-categories: ['typescript']
+tags: [typescript]
+categories: [typescript]
 description: stimulus初体验
 ---
 

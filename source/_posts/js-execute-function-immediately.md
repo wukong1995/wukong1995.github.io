@@ -1,8 +1,8 @@
 ---
   title: javascript中的立即执行函数
   date: 2016-05-29 18:38:01
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

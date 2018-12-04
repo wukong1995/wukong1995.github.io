@@ -1,8 +1,8 @@
 ---
   title: document的createDocumentFragment()方法
   date: 2016-05-29 18:55:09
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

@@ -1,8 +1,8 @@
 ---
   title: js点击列表的第一个元素，不起作用，最后一个元素起作用(闭包)
   date: 2016-06-06 20:46:28
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

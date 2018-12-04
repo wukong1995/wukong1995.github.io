@@ -1,8 +1,8 @@
 ---
 date: 2018-09-01 09:48:48
 title: 小程序总结
-tags: ['小程序']
-categories: ['小程序']
+tags: [小程序]
+categories: [小程序]
 ---
 
 

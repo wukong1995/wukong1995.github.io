@@ -1,8 +1,8 @@
 ---
 title: react-relay的探索历程
 date: 2017-07-22 22:19:06
-tags: ['graphql', 'react']
-categories: ['graphql']
+tags: [graphql, react]
+categories: [graphql]
 description: 这个主要是叙述学习relay的探索过程
 ---
 上次写感想还是2014的时候，那个时候是老师布置的作业（尴尬)

@@ -1,8 +1,8 @@
 ---
 date: 2017-08-13 10:50:14
 title: 本周总结
-tags: ['总结']
-categories: ['随笔']
+tags: [总结]
+categories: [随笔]
 description: ruby & 装饰器 & css
 ---
 

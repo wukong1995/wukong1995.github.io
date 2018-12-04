@@ -1,8 +1,8 @@
 ---
 title: Array的reduce方法
 date: 2017-07-28 22:21:28
-tags: ['javascript']
-categories: ['javascript']
+tags: [javascript]
+categories: [前端, javascript]
 description: reduce是一个很优雅的方法
 ---
 
@@ -14,7 +14,7 @@ description: reduce是一个很优雅的方法
 ```javascript
 // 封装一个函数reg，参数为belongto，传递的参数分别是：['user'] [] [categories]
 // 函数内部的主要代码是
-return belongto.reduce((p,c) => p['c'], data).article
+return belongto.reduce((p,c) => p[c], data).article
 ```
 
 ### reduce文档

@@ -1,8 +1,8 @@
 ---
 title: 使用node自动发送邮件
 date: 2017-11-15 16:08:22
-tags: ['nodejs']
-categories: ['nodejs']
+tags: [nodejs]
+categories: [nodejs]
 description: 自动发送邮件：nodemailer
 ---
 

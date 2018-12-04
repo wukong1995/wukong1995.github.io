@@ -1,8 +1,10 @@
 ---
   title: html5新内容
   date: 2016-04-17 19:56:24
-  tags: ['html']
-  categories: ['html', '前端']
+  tags: [html]
+  categories:
+    - [html]
+    - [前端]
   description:
 ---
 

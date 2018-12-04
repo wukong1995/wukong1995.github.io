@@ -1,8 +1,8 @@
 ---
   title: 利用视觉差实现图片滑动
   date: 2016-05-07 18:14:25
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

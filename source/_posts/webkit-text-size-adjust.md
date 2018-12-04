@@ -1,8 +1,8 @@
 ---
   date: 2016-06-08 20:02:41
   title: css3中-webkit-text-size-adjust
-  tags: ['css']
-  categories: ['前端', 'css']
+  tags: [css]
+  categories: [前端, css]
   description:
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: HOC在react中的调用顺序
 date: 2018-09-20 19:17:42
-tags: ['react']
-categories: ['react']
+tags: [react]
+categories: [react]
 ---
 
 #### question

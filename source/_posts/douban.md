@@ -1,9 +1,9 @@
 ---
 title: 豆瓣评分前250部电影数据爬取
 date: 2017-08-02 21:32:58
-tags: ['nodejs','爬虫']
+tags: [nodejs,爬虫]
 description: 使用nodejs爬取数据
-categories: ['代码']
+categories: [nodejs]
 ---
 ### 在千里码刷题的时候看到了这个题目
 题目要求是爬取豆瓣评分最高的250部电影的总分...

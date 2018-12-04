@@ -1,7 +1,7 @@
 ---
 date: 2017-07-23 20:40:35
-tags: ['angularjs', 'react', 'graphql']
-categories: ['graphql']
+tags: [angularjs, react, graphql]
+categories: [graphql]
 title: 使用relay和apollo的感觉
 description: 这个主要是叙述relay和Apollo
 ---

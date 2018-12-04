@@ -1,8 +1,8 @@
 ---
 title: 要说了...
 date: 2017-11-06 10:19:58
-tags: ['总结']
-categories: ['随笔']
+tags: [总结]
+categories: [随笔]
 description: 好久没有写了
 ---
 

@@ -1,8 +1,10 @@
 ---
   title: CSS3实现立体菜单
   date: 2016-05-31 19:55:15
-  tags: ['css']
-  categories: ['前端', 'css']
+  tags: [css]
+  categories:
+    - [css]
+    - [前端]
   description:
 ---
 

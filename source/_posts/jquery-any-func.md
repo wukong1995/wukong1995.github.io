@@ -1,8 +1,8 @@
 ---
   title: jQuery部分内容
   date: 2016-04-17 19:54:29
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

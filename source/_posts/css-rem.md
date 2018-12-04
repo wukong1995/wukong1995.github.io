@@ -1,8 +1,10 @@
 ---
-title: css中rem的注意点
-date: 2018-10-25 19:22:18
-tags: ['css']
-categories: ['css']
+  title: css中rem的注意点
+  date: 2018-10-25 19:22:18
+  tags: [css]
+  categories:
+    - [css]
+    - [前端]
 ---
 
 今天在使用rem中发现了一个之前没注意的点

@@ -1,8 +1,8 @@
 ---
 date: 2018-11-29 19:25:26
 title: 翻译：javascript中方的所有事物并不都是对象
-tags: ['翻译', 'javascript']
-categories: ['翻译']
+tags: [翻译, javascript]
+categories: [翻译]
 ---
 
 [文章出处](http://blog.brew.com.hk/not-everything-in-javascript-is-an-object/)

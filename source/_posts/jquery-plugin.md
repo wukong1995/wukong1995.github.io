@@ -1,9 +1,9 @@
 ---
 title: 在webpack环境下，安装jquery插件不能使用
 date: 2018-03-13 19:11:53
-tags: ['jquery', 'webpack']
+tags: [jquery, webpack]
 description: 在webpack环境下，安装jquery插件不能使用，假如安装了jquery-form插件，使用ajaxform方法，提示jquery对象没有这个方法
-categories: ['jquery']
+categories: [前端, jquery]
 ---
 
 ### 使用插件

@@ -1,8 +1,8 @@
 ---
 date: 2016-12-11 18:27:31
 title: nodejs中使用mongoose保存数据
-tags: ['nodejs', 'MongoDB']
-categories: ['数据库']
+tags: [nodejs, mongoDB]
+categories: [数据库]
 ---
 最近在学习mongdb
 

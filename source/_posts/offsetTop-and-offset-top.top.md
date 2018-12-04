@@ -1,8 +1,8 @@
 ---
   date: 2016-06-01 16:34:09
   title: offsetTop和offset().top
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

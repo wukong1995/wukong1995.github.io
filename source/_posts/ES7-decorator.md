@@ -2,7 +2,7 @@
 title: ES7-decorator
 date: 2017-08-13 12:09:44
 tags: ['es7']
-categories: ['javascript']
+categories: [前端, javascript]
 description: es7中的装饰器呀
 ---
 

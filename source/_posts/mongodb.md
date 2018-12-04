@@ -1,8 +1,10 @@
 ---
   date: 2016-05-28 15:23:43
   title: mongoDb的基本使用
-  tags: ['mongoDB']
-  categories: ['mongoDB', '数据库']
+  tags: [mongoDB]
+  categories:
+    - [数据库, mongoDB]
+    - [nodejs]
   description:
 ---
 

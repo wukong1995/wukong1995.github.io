@@ -1,8 +1,8 @@
 ---
 date: 2018-09-08 22:51:13
 title: 多瞅了几眼react blog
-tags: ['react']
-categories: ['react']
+tags: [react]
+categories: [react]
 description: 学习react忽略的东西
 ---
 

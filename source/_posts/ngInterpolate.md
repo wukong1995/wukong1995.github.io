@@ -1,8 +1,8 @@
 ---
 date: 2016-09-17 18:34:31
 title: angularjs中的$interpolate服务
-tags: ['angularjs']
-categories: ['前端']
+tags: [angularjs]
+categories: [前端, angularjs]
 ---
 $interpolate服务返回一个函数，用来在特定的上下文中运算表达式。
 示例：

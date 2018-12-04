@@ -1,8 +1,8 @@
 ---
 date: 2018-08-15 19:16:43
 title: react和websocket的实现实时推送
-tags: ['react']
-categories: ['react']
+tags: [react]
+categories: [react]
 ---
 
 刚听到这个需求的时候，好慌...之前没做过，该怎么办？

@@ -1,8 +1,8 @@
 ---
 date: 2018-10-14 20:31:13
 title: 这一部分是否需要使用react
-tags: ['react', '杂谈']
-categories: ['react', '杂谈']
+tags: [react, 杂谈]
+categories: [react, 杂谈]
 ---
 
 

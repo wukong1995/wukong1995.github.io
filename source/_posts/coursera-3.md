@@ -1,8 +1,8 @@
 ---
 title: coursera第三周
 date: 2017-09-03 00:02:29
-tags: ['编程语言']
-categories: ['编程语言']
+tags: [编程语言]
+categories: [编程语言]
 ---
 
 ### 淡淡的忧伤

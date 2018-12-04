@@ -1,8 +1,8 @@
 ---
 title: coursera第二周
 date: 2017-08-26 16:29:03
-tags: ['编程语言']
-categories: ['编程语言']
+tags: [编程语言]
+categories: [编程语言]
 description: 编程语言
 ---
 

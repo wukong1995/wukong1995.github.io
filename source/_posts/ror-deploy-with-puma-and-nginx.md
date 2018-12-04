@@ -1,8 +1,8 @@
 ---
 date: 2018-11-28 14:23:56
 title: ror+psql+puma+nginx部署项目
-tags: ['rails']
-categories: ['rails']
+tags: [rails]
+categories: [rails]
 description: ror+psql+puma+nginx部署项目
 ---
 #### 前言

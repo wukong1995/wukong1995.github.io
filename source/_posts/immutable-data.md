@@ -1,8 +1,8 @@
 ---
 title: immutable-data
 date: 2018-09-25 19:02:43
-tags: ['react']
-categories: ['react']
+tags: [react]
+categories: [react]
 ---
 
 项目中的apollo主要是用的分页这个功能，但是我在check代码的时候，发现了每次我向列表中push了一个数据，整个列表是全部re-render!!!假如每个是十条数据，等我滑到第十页的时候，100个item是全部re-render的...我去查apollo fetch updata 没有找到结果，我向react-apollo提了issue，感谢G友captDaylight给我的回复。

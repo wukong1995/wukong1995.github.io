@@ -1,8 +1,8 @@
 ---
   date: 2016-05-30 20:41:35
   title: sublime 使用的快捷键以及小技巧
-  tags: ['sublime']
-  categories: ['编辑器']
+  tags: [sublime]
+  categories: [编辑器]
   description:
 ---
 

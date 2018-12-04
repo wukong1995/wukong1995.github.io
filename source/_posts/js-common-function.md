@@ -1,8 +1,8 @@
 ---
   title: javaScript封装的常用函数（持续更新中）
   date: 2016-04-24 11:43:10
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

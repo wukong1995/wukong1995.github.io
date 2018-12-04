@@ -1,9 +1,9 @@
 ---
 date: 2018-07-06 13:26:33
 title: set access-origin in rails
-tags: ['rails']
+tags: [rails]
 description: 在rails里面如何设置access-origin
-categories: ['rails']
+categories: [rails]
 ---
 
 

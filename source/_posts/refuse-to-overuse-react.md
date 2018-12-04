@@ -1,8 +1,10 @@
 ---
 date: 2018-11-05 19:09:38
 title: 拒绝过度使用react
-tags: ['react', 'javascript']
-categories: ['react', 'javascript']
+tags: [react, javascript]
+categories:
+  - [react]
+  - [前端, javascript]
 ---
 
 对于目前三大潮流框架，我先使用的是Angular，用它写了一个购物车，感觉非常好。工作之后，使用的react，用顺手之后，第一解决办法就是想到react，导致有很多过度使用的地方。

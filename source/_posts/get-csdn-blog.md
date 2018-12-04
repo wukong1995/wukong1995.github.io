@@ -1,8 +1,8 @@
 ---
-title: 迁移csdn博客
-date: 2018-12-04 17:24:47
-tags: ['javascript']
-categories: ['javascript', '前端']
+  title: 迁移csdn博客
+  date: 2018-12-04 17:24:47
+  tags: [javascript]
+  categories: [前端, javascript]
 ---
 
 一直想着吧csdn上的文章迁过来，但是一直没动手...这次终于动手了，先想一下我的思路：获取所有的文章链接 -> 获取文章的内容

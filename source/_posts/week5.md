@@ -1,8 +1,8 @@
 ---
 title: 本周总结
 date: 2017-08-26 17:27:09
-tags: ['总结']
-categories: ['随笔']
+tags: [总结]
+categories: [随笔]
 description: 代码中的bug
 ---
 

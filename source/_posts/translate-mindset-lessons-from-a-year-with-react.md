@@ -1,8 +1,8 @@
 ---
 date: 2018-08-10 22:08:30
 title: 翻译：在使用React工作一年后，我学到了最重要的经验教训
-tags: ['翻译', 'react']
-categories: ['翻译']
+tags: [翻译, react]
+categories: [翻译]
 ---
 
 ### 前

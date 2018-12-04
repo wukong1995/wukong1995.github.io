@@ -1,8 +1,8 @@
 ---
   title: window.onload，body onload，document.onreadystatechange
   date: 2016-06-08 17:06:37
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

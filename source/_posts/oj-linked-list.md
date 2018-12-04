@@ -1,8 +1,10 @@
 ---
   date: 2014-03-17 21:24:36
   title: oj链表第一题
-  tags: ['c']
-  categories: ['算法', 'c']
+  tags: [c]
+  categories:
+    - [算法]
+    - [c]
   description:
 ---
 

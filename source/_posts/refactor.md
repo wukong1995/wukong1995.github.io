@@ -1,7 +1,7 @@
 ---
 date: 2018-06-23 13:45:30
-tags: ['react', 'css']
-categories: ['随笔']
+tags: [react, css]
+categories: [随笔]
 title: 关于整理css和js
 description: 这次的整理可以称得上重构吗
 ---

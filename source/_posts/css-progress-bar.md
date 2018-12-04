@@ -1,8 +1,10 @@
 ---
   title: CSS3实现炫酷进度条
   date: 2016-06-10 13:32:28
-  tags: ['css']
-  categories: ['前端', 'css']
+  tags: [css]
+  categories:
+    - [css]
+    - [前端]
   description:
 ---
 

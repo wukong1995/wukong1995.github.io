@@ -1,8 +1,8 @@
 ---
 title: 在npm上发布自己的包
 date: 2017-08-17 21:29:49
-tags: ['npm', 'nodejs']
-categories: ['nodejs']
+tags: ['npm', nodejs]
+categories: [nodejs]
 description: 你也可以在npm上发布自己的包
 ---
 

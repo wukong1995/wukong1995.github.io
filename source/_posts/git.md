@@ -1,9 +1,9 @@
 ---
 title: 使用git的那些年
 date: 2017-07-22 22:38:02
-tags: ['Git']
+tags: [Git]
 description: 这个主要是分享使用git的那些事
-categories: ['Git']
+categories: [Git]
 ---
 
 ### 使用git想要去合并两个commit

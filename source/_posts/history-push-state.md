@@ -1,9 +1,9 @@
 ---
 title: SPA起点？
 date: 2018-07-13 18:48:07
-tags: ['javascript', history']
+tags: [javascript]
 description: use history
-categories: ['前端']
+categories: [前端, javascript]
 ---
 
 如何想要点击浏览器自带的前进 后退按钮 不刷新页面，可以通过改变history的state

@@ -1,8 +1,8 @@
 ---
 date: 2017-08-05 14:52:41
 title: 本周总结
-tags: ['总结']
-categories: ['随笔']
+tags: [总结]
+categories: [随笔]
 description: 看这个星期是不是收获多多
 ---
 

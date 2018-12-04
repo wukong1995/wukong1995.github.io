@@ -1,8 +1,10 @@
 ---
 title: 单双向数据流中的父子组件如何进行交流
 date: 2018-08-05 20:30:38
-tags: ['react', 'angularjs']
-categories: ['react', 'angularjs']
+tags: [react, angularjs]
+categories:
+  - [react]
+  - [前端, angularjs]
 description: 单双向数据流中的父子组件如何进行交流
 ---
 

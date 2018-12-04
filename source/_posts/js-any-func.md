@@ -1,8 +1,8 @@
 ---
   title: js部分整理
   date: 2016-04-17 19:55:34
-  tags: ['javascript']
-  categories: ['javascript', '前端']
+  tags: [javascript]
+  categories: [前端, javascript]
   description:
 ---
 

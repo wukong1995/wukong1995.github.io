@@ -1,7 +1,7 @@
 ---
 date: 2018-07-14 11:34:28
-tags: ['react']
-categories: ['总结']
+tags: [react]
+categories: [总结]
 title: 最近发现问题的汇总
 description: 化繁为简，什么才是简？
 ---

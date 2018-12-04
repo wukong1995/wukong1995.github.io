@@ -1,8 +1,8 @@
 ---
   title: 利用Canvas+js实现贪吃蛇(4)
   date: 2016-06-25 13:54:25
-  tags: ['javascript', 'demo']
-  categories: ['javascript', '前端']
+  tags: [javascript, demo]
+  categories: [前端, javascript]
   description:
 ---
 

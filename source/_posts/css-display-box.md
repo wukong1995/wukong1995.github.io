@@ -1,8 +1,10 @@
 ---
   title: CSS3中的display(box)
   date: 2016-06-08 17:22:48
-  tags: ['css']
-  categories: ['前端', 'css']
+  tags: [css]
+  categories:
+    - [css]
+    - [前端]
   description:
 ---
 

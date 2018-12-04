@@ -1,7 +1,7 @@
 ---
 date: 2018-09-26 19:50:06
-tags: ['javascript']
-categories: ['javascript']
+tags: [javascript]
+categories: [前端, javascript]
 title: reference equality and value equality
 description: 两种相等：值相等和引用相等
 ---

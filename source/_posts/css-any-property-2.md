@@ -1,8 +1,10 @@
 ---
   title: css3的部分属性
   date: 2016-04-17 19:53:10
-  tags: ['css']
-  categories: ['前端', 'css']
+  tags: [css]
+  categories:
+    - [css]
+    - [前端]
   description:
 ---
 
@@ -12,12 +14,12 @@
 正值表示在对象的底部，负值表示在对象的顶部。
 .boxshadow-outset{
     width:100px;height:100px;
-    box-shadow:4px 4px 6px blue,4px 4px 6px red inset; 
+    box-shadow:4px 4px 6px blue,4px 4px 6px red inset;
 }
 .boxshadow-inset{
     width:100px;
     height:100px;
-    box-shadow:4px 4px 6px #666 inset; 
+    box-shadow:4px 4px 6px #666 inset;
 }
 111、阴影模糊半径与阴影扩展半径的区别
 阴影模糊半径：此参数可选，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊；
@@ -36,9 +38,9 @@
 5、text-overflow 与 word-wrap
    text-overflow用来设置是否使用一个省略标记（...）标示对象内文本的溢出   属性clip（表示剪切）和ellipsis（表示显示省略标记）
    但是text-overflow只是用来说明文字溢出时用什么方式显示，要实现溢出时   产生省略号的效果，还须定义强制文本在一行内显示（white-space:nowrap）   及溢出内容为隐藏（overflow:hidden），只有这样才能实现溢出文本显示省   略号的效果，代码如下：
-text-overflow:ellipsis; 
-overflow:hidden; 
-white-space:nowrap; 
+text-overflow:ellipsis;
+overflow:hidden;
+white-space:nowrap;
 同时，word-wrap也可以用来设置文本行为，当前行超过指定容器的边界时是否断开转行。属性：normal（表示控制连续文本换行）和break-word（表示内容将在边界内换行）
 6、嵌入字体@font-face
 @font-face能够加载服务器端的字体文件，让浏览器端可以显示用户电脑里没有安装的字体。@font-face {
@@ -66,7 +68,7 @@ background ： [background-color] | [background-image] | [background-position][/
 <a href="xxx.pdf">我链接的是PDF文件</a>
 <a href="#" class="icon">我类名是icon</a>
 <a href="#" title="我的title是more">我的title是more</a>
-css代码  
+css代码
 a[class^=icon]{
   background: green;
   color:#fff;

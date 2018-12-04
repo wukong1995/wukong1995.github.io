@@ -1,8 +1,8 @@
 ---
 date: 2017-03-29 18:22:28
 title: 微信公众号搭建
-tags: ['微信公众号', 'php']
-categories: ['PHP']
+tags: [微信公众号, PHP]
+categories: [PHP]
 ---
 使用apache+php5.4n
 1、打开apache配置文件httpd.conf

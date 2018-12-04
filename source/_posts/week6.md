@@ -1,8 +1,8 @@
 ---
 date: 2017-09-03 09:05:56
 title: url上添加query
-tags: ['javascript']
-categories: ['javascript']
+tags: [javascript]
+categories: [前端, javascript]
 description: url上添加query-跳转页面和无需跳转页面
 ---
 

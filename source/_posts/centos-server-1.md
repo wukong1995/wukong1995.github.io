@@ -1,8 +1,8 @@
 ---
 title: 服务器-初探
 date: 2018-11-20 19:01:00
-tags: ['linux', 'centos']
-categories: ['server']
+tags: [linux, centos]
+categories: [server]
 description: 服务器-初探
 ---
 
