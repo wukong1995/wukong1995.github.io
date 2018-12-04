@@ -1,7 +1,7 @@
 ---
   title: css-display-box
   date: 2016-06-08 17:22:48
-  articleTitle: CSS3中的display: box
+  articleTitle: CSS3中的display(box)
   tags: ['css']
   categories: ['前端', 'css']
   description:
