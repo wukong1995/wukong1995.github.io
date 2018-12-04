@@ -1,7 +1,6 @@
 ---
-title: translate-not-everything-in-javascript-is-an-object
 date: 2018-11-29 19:25:26
-articleTitle: 翻译：javascript中方的所有事物并不都是对象
+title: 翻译：javascript中方的所有事物并不都是对象
 tags: ['翻译', 'javascript']
 categories: ['翻译']
 ---

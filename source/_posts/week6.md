@@ -1,7 +1,6 @@
 ---
-title: week6
 date: 2017-09-03 09:05:56
-articleTitle: url上添加query
+title: url上添加query
 tags: ['javascript']
 categories: ['javascript']
 description: url上添加query-跳转页面和无需跳转页面

@@ -1,7 +1,6 @@
 ---
-  title: lineheight-vertical-middle
   date: 2016-06-27 19:37:17
-  articleTitle: lineheight使图片多行文字垂直居中
+  title: lineheight使图片多行文字垂直居中
   tags: ['css']
   categories: ['css', '前端']
   description:

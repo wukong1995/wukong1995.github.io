@@ -1,7 +1,6 @@
 ---
-  title: css-progress-bar
+  title: CSS3实现炫酷进度条
   date: 2016-06-10 13:32:28
-  articleTitle: CSS3实现炫酷进度条
   tags: ['css']
   categories: ['前端', 'css']
   description:

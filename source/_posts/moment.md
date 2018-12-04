@@ -1,9 +1,8 @@
 ---
-title: moment
 date: 2016-12-11 18:30:42
-articleTitle: moment格式化时间
+title: moment格式化时间
 tags: ['nodejs']
-categories: ['Nodejs']
+categories: ['nodejs']
 ---
 首先，好久没有来多博客了
 

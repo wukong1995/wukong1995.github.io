@@ -1,7 +1,6 @@
 ---
-title: two-select-change-one
 date: 2018-10-22 19:30:25
-articleTitle: 你能把这两个查询变成一个吗
+title: 你能把这两个查询变成一个吗
 tags: ['pg']
 categories: ['数据库']
 ---

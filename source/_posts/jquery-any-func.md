@@ -1,7 +1,6 @@
 ---
-  title: jquery-any-func
+  title: jQuery部分内容
   date: 2016-04-17 19:54:29
-  articleTitle: jQuery部分内容
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

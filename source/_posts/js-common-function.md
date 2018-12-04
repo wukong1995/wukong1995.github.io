@@ -1,7 +1,6 @@
 ---
-  title: js-common-function
+  title: javaScript封装的常用函数（持续更新中）
   date: 2016-04-24 11:43:10
-  articleTitle: javaScript封装的常用函数（持续更新中）
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

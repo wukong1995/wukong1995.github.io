@@ -1,6 +1,5 @@
 ---
 title: ES7-decorator
-articleTitle: ES7 Decorator
 date: 2017-08-13 12:09:44
 tags: ['es7']
 categories: ['javascript']

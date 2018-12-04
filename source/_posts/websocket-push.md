@@ -1,7 +1,6 @@
 ---
-title: websocket-push
 date: 2018-08-15 19:16:43
-articleTitle: react和websocket的实现实时推送
+title: react和websocket的实现实时推送
 tags: ['react']
 categories: ['react']
 ---

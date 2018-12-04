@@ -1,7 +1,6 @@
 ---
-  title: php-pdo
   date: 2016-05-26 12:23:50
-  articleTitle: PHP中PDO的使用
+  title: PHP中PDO的使用
   tags: ['PHP', 'mysql']
   categories: ['PHP', '数据库']
   description:

@@ -33,8 +33,8 @@
 
         <!-- Post Excerpt -->
         <p class="post_entry-excerpt">
-            <%if(post.excerpt) {%>
-                <%- strip_html(post.excerpt) %>
+            <%if(post.description) {%>
+                <%- strip_html(post.description) %>
             <%}else{%>
                 <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
             <%}%>

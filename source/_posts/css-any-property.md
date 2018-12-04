@@ -1,7 +1,6 @@
 ---
-  title: css-any-property
+  title: css3中的部分属性
   date: 2016-05-30 20:42:12
-  articleTitle: css3中的部分属性
   tags: ['css']
   categories: ['前端', 'css']
   description:

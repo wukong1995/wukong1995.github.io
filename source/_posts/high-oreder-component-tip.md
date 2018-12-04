@@ -1,7 +1,6 @@
 ---
-title: high-oreder-component-tip
+title: HOC在react中的调用顺序
 date: 2018-09-20 19:17:42
-articleTitle: HOC在react中的调用顺序
 tags: ['react']
 categories: ['react']
 ---

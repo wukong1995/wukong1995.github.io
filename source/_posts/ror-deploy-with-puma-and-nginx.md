@@ -1,7 +1,6 @@
 ---
-title: ror-deploy-with-puma-and-nginx
 date: 2018-11-28 14:23:56
-articleTitle: ror+psql+puma+nginx部署项目
+title: ror+psql+puma+nginx部署项目
 tags: ['rails']
 categories: ['rails']
 description: ror+psql+puma+nginx部署项目

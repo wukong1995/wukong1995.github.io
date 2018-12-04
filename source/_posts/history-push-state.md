@@ -1,7 +1,6 @@
 ---
-title: history-push-state
+title: SPA起点？
 date: 2018-07-13 18:48:07
-articleTitle: SPA起点？
 tags: ['javascript', history']
 description: use history
 categories: ['前端']

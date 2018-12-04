@@ -1,7 +1,6 @@
 ---
-  title: transform-carousel
   date: 2016-04-24 11:38:20
-  articleTitle: CSS3 transform实现图片旋转木马3D浏览效果
+  title: CSS3 transform实现图片旋转木马3D浏览效果
   tags: ['css']
   categories: ['前端', 'css']
   description: CSS3 transform实现图片旋转木马3D浏览效果

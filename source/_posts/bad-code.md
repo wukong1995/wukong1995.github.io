@@ -1,7 +1,6 @@
 ---
-title: bad-code
+title: 如何写出烂代码
 date: 2018-07-02 20:08:19
-articleTitle: 如何写出烂代码
 tags: ['优化']
 categories: ['优化']
 description: 是的，你没看错，如何写出烂代码

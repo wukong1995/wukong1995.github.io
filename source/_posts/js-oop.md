@@ -1,7 +1,6 @@
 ---
-  title: js-oop
+  title: js面向对象
   date: 2016-06-25 10:37:11
-  articleTitle: js面向对象
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

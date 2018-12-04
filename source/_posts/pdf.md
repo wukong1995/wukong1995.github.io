@@ -1,9 +1,8 @@
 ---
-title: pdf
 date: 2018-04-08 21:29:01
-articleTitle: 使用pdf.js在页面中在线加载pdf文件
+title: 使用pdf.js在页面中在线加载pdf文件
 tags: ['nodejs']
-categories: ['Nodejs']
+categories: ['nodejs']
 description: 在webpack中集成pdf.js
 ---
 在网页中浏览pdf文件，最简单的办法当然是插入iframe了

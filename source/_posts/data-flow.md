@@ -1,7 +1,6 @@
 ---
-title: data-flow
+title: 单双向数据流中的父子组件如何进行交流
 date: 2018-08-05 20:30:38
-articleTitle: 单双向数据流中的父子组件如何进行交流
 tags: ['react', 'angularjs']
 categories: ['react', 'angularjs']
 description: 单双向数据流中的父子组件如何进行交流

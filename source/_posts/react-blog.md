@@ -1,7 +1,6 @@
 ---
-title: react-blog
 date: 2018-09-08 22:51:13
-articleTitle: 多瞅了几眼react blog
+title: 多瞅了几眼react blog
 tags: ['react']
 categories: ['react']
 description: 学习react忽略的东西

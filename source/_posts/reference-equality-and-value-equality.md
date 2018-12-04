@@ -1,9 +1,8 @@
 ---
-title: reference-equality-and-value-equality
 date: 2018-09-26 19:50:06
 tags: ['javascript']
 categories: ['javascript']
-articleTitle: reference equality and value equality
+title: reference equality and value equality
 description: 两种相等：值相等和引用相等
 ---
 

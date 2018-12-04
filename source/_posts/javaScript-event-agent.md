@@ -1,7 +1,6 @@
 ---
-  title: javaScript-event-agent
+  title: javaScript中的事件代理
   date: 2016-05-28 10:38:42
-  articleTitle: javaScript中的事件代理
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

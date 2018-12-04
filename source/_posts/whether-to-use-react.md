@@ -1,7 +1,6 @@
 ---
-title: whether-to-use-react
 date: 2018-10-14 20:31:13
-articleTitle: 这一部分是否需要使用react
+title: 这一部分是否需要使用react
 tags: ['react', '杂谈']
 categories: ['react', '杂谈']
 ---

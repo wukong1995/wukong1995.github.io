@@ -1,7 +1,6 @@
 ---
-  title: javaScript-set
+  title: javaScript文档中常用的集合
   date: 2016-06-02 15:07:49
-  articleTitle: javaScript文档中常用的集合
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

@@ -1,8 +1,7 @@
 ---
-  title: picture-reversal
   date: 2016-07-16 12:23:11
-  articleTitle: css+js实现图片反转效果
-  tags: ['css', 'js']
+  title: css+js实现图片反转效果
+  tags: ['css', 'javascript']
   categories: ['前端', 'javascript']
   description: css+js实现图片反转效果
 ---

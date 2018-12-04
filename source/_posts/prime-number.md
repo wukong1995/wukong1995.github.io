@@ -1,7 +1,6 @@
 ---
-title: prime-number
 date: 2018-07-25 18:51:40
-articleTitle: 查找素数：算法之美
+title: 查找素数：算法之美
 tags: ['算法']
 categories: ['算法']
 description: 查找n以内的素数

@@ -1,7 +1,6 @@
 ---
-  title: js-classification-column
+  title: 京东分类栏
   date: 2016-05-18 14:42:51
-  articleTitle: 京东分类栏
   tags: ['javascript', 'demo']
   categories: ['javascript', '前端']
   description:

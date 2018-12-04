@@ -1,7 +1,6 @@
 ---
-  title: js-any-func
+  title: js部分整理
   date: 2016-04-17 19:55:34
-  articleTitle: js部分整理
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

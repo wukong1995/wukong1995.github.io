@@ -1,9 +1,8 @@
 ---
-title: pm2-second
 date: 2018-11-10 19:40:00
-articleTitle: 再次尝试pm2-自动化部署
+title: 再次尝试pm2-自动化部署
 tags: ['nodejs']
-categories: ['Nodejs']
+categories: ['nodejs']
 description: pm2-自动化部署node项目
 ---
 

@@ -1,7 +1,6 @@
 ---
-  title: js-execute-function-immediately
+  title: javascript中的立即执行函数
   date: 2016-05-29 18:38:01
-  articleTitle: javascript中的立即执行函数
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

@@ -1,7 +1,6 @@
 ---
-  title: js-get-prev-ele
+  title: javaScript取得当前元素的下一个元素
   date: 2016-05-28 14:10:30
-  articleTitle: javaScript取得当前元素的下一个元素
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

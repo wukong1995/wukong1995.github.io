@@ -1,6 +1,5 @@
 ---
-title: work1
-articleTitle: 本周总结
+title: 本周总结
 date: 2017-07-28 22:56:52
 tags: ['总结']
 categories: ['随笔']

@@ -1,7 +1,6 @@
 ---
-  title: js-regular-expression
+  title: 正则表达式中的特殊字符
   date: 2016-05-04 09:56:51
-  articleTitle: 正则表达式中的特殊字符
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

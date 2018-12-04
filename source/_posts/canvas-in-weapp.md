@@ -1,7 +1,6 @@
 ---
-title: canvas-in-weapp
+title: 在小程序中画图的第二次体验
 date: 2018-10-29 20:00:34
-articleTitle: 在小程序中画图的第二次体验
 tags: ['小程序']
 categories: ['小程序']
 ---

@@ -1,7 +1,6 @@
 ---
 title: immutable-data
 date: 2018-09-25 19:02:43
-articleTitle: immutable data
 tags: ['react']
 categories: ['react']
 ---

@@ -1,7 +1,6 @@
 ---
-  title: java-poker
+  title: 用Java实现扑克牌洗牌
   date: 2016-07-20 16:45:38
-  articleTitle: 用Java实现扑克牌洗牌
   tags: ['java']
   categories: ['java']
   description:

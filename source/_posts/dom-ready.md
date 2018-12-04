@@ -1,7 +1,6 @@
 ---
-  title: dom-ready
+  title: DOMReady的实现
   date: 2016-05-29 19:56:13
-  articleTitle: DOMReady的实现
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

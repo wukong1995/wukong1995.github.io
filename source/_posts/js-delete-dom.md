@@ -1,7 +1,6 @@
 ---
-  title: js-delete-dom
+  title: javaScript删除元素
   date: 2016-06-03 11:15:46
-  articleTitle: javaScript删除元素
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

@@ -1,7 +1,6 @@
 ---
-title: useMongoDB
 date: 2016-12-11 18:27:31
-articleTitle: nodejs中使用mongoose保存数据
+title: nodejs中使用mongoose保存数据
 tags: ['nodejs', 'MongoDB']
 categories: ['数据库']
 ---

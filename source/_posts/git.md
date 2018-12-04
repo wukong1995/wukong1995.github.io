@@ -1,6 +1,5 @@
 ---
-title: git
-articleTitle: 使用git的那些年
+title: 使用git的那些年
 date: 2017-07-22 22:38:02
 tags: ['Git']
 description: 这个主要是分享使用git的那些事

@@ -1,7 +1,6 @@
 ---
-title: mixed-talk-1
 date: 2018-08-26 00:42:29
-articleTitle: 矛盾：技术与本质
+title: 矛盾：技术与本质
 tags: ['杂谈']
 categories: ['杂谈']
 ---

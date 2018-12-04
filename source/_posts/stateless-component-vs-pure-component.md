@@ -1,7 +1,6 @@
 ---
-title: stateless-component-vs-pure-component
 date: 2018-09-13 21:47:18
-articleTitle: Stateless component vs Pure component in react
+title: Stateless component vs Pure component in react
 tags: ['react']
 categories: ['react']
 description: stateless component vs pure component in react

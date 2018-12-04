@@ -1,7 +1,6 @@
 ---
-  title: js-oop-2
+  title: js面向对象与继承
   date: 2016-06-23 16:42:41
-  articleTitle: js面向对象与继承
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

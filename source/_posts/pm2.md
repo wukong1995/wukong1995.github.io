@@ -1,9 +1,8 @@
 ---
-title: pm2
 date: 2017-09-13 21:29:01
-articleTitle: node项目自动化部署
+title: node项目自动化部署
 tags: ['nodejs']
-categories: ['Nodejs']
+categories: ['nodejs']
 description: 自动化部署node项目
 ---
 

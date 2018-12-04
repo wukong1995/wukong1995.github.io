@@ -1,7 +1,6 @@
 ---
-title: bootstrap-modal
+title: bootstarp中的modal打开时为神马动态为body增加padding-right
 date: 2018-08-08 13:29:51
-articleTitle: bootstarp中的modal打开时为神马动态为body增加padding-right
 tags: ['前端']
 categories: ['前端']
 description: bootstarp中的modal打开时为神马动态为body增加padding-right

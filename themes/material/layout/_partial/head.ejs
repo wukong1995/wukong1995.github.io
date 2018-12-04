@@ -73,7 +73,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="<%= theme.uiux.android_chrome_color %>">
     <meta name="author" content="<%= config.author %>">
-    <meta name="description" itemprop="description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
+    <meta name="description" itemprop="description" content="<% if(page.description) { %><%= page.description %><% } else if(page.description){ %><%= strip_html(page.description).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
     <meta name="keywords" content="<%= theme.head.keywords %><% if(page.tags && page.tags.each) { page.tags.each(function(tag) { %><%- ',' + tag.name %><% })} %>">
 
     <!-- Site Verification -->
@@ -105,7 +105,7 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="<% if (title) { %><%= title %> | <% } %><%= config.title %>">
     <meta property="og:image" content="<%= theme.head.high_res_favicon %>" />
-    <meta property="og:description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
+    <meta property="og:description" content="<% if(page.description) { %><%= page.description %><% } else if(page.description){ %><%= strip_html(page.description).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
     <% if(page.tags && page.tags.each) { page.tags.each(function(tag){ %><meta property="og:article:tag" content="<%= tag.name %>"> <% })} %>
 
     <% if( (is_post()) ) { %>
@@ -115,7 +115,7 @@
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="<% if (title) { %><%= title %> | <% } %><%= config.title %>">
-    <meta name="twitter:description" content="<% if(page.description) { %><%= page.description %><% } else if(page.excerpt){ %><%= strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
+    <meta name="twitter:description" content="<% if(page.description) { %><%= page.description %><% } else if(page.description){ %><%= strip_html(page.description).replace(/^s*/, '').replace(/s*$/, '') %><% } else if (config.description){ %><%= config.description %><% } %>">
     <meta name="twitter:image" content="<%= theme.head.high_res_favicon %>">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="<%= config.url %>" />
@@ -169,7 +169,7 @@
         <%- partial('_partial/config_css') %>
         <%- jsLsload('js/jquery.min.js') %>
     <%}%>
-    
+
     <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
 
     <!-- Analytics -->

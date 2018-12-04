@@ -1,7 +1,6 @@
 ---
-title: get-current-page-qrcode
+title: 获得当前页面的小程序码初探索
 date: 2018-10-31 19:03:08
-articleTitle: 获得当前页面的小程序码初探索
 tags: ['小程序']
 categories: ['小程序']
 ---

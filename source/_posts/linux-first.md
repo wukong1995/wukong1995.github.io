@@ -1,7 +1,6 @@
 ---
-title: linux-first
 date: 2017-09-13 14:10:13
-articleTitle: 得到一个linux服务器要做的事情
+title: 得到一个linux服务器要做的事情
 tags: ['linux']
 categories: ['linux']
 description: 得到一个linux服务器首先要做的事

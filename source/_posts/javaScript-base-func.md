@@ -1,7 +1,6 @@
 ---
-  title: javaScript-base-func
+  title: javaScript基本用法
   date: 2016-04-23 19:43:01
-  articleTitle: javaScript基本用法
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

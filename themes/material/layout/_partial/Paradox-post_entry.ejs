@@ -14,13 +14,13 @@
     <% } %>
 
         <!-- Post Title -->
-        <p class="article-headline-p"><a href="<%= url_for(post.path) %>"><% if(pin) { %><span>[Top]</span><% } %><%= post.articleTitle %></a></p>
+        <p class="article-headline-p"><a href="<%= url_for(post.path) %>"><% if(pin) { %><span>[Top]</span><% } %><%= post.title %></a></p>
     </div>
 
     <!-- Post Excerpt -->
     <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        <%if(post.excerpt) {%>
-            <%- strip_html(post.excerpt) %>
+        <%if(post.description) {%>
+            <%- strip_html(post.description) %>
         <%}else{%>
             <%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
         <%}%>

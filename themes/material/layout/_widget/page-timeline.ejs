@@ -47,7 +47,7 @@
 		text-align: right;
 	}
 	.md-timeline-excerpt {
-	    	clear: right; 
+	    	clear: right;
 	}
 	@media only screen and (min-width: 1170px) {
 		#md-timeline {
@@ -404,7 +404,7 @@
 					<div class="md-timeline-info">
 						<span class="md-timeline-info-span">Categories:
 							<%- list_categories(post.categories, {
-								show_count: false, 
+								show_count: false,
 								style: 'none'
 							}) %>
 						</span>
@@ -414,18 +414,18 @@
 								style: 'none'
 							}) %>
 						</span>
-						
+
 					</div>
 					<p class="md-timeline-excerpt">
-						<% if(post.excerpt) { %>
-							<%- strip_html(post.excerpt) %>
+						<% if(post.description) { %>
+							<%- strip_html(post.description) %>
 						<% }else{ %>
 							<%- strip_html(truncate(post.content,{length: theme.reading.entry_excerpt })) %>
 						<% } %>...
 					</p>
                     		</div>
-			</div>	
-   		<% }) %>	   	  		
+			</div>
+   		<% }) %>
    	<% } -%>
 </section>
 

@@ -1,7 +1,6 @@
 ---
-title: dataTable
+title: dataTable插件的使用
 date: 2017-03-26 18:24:25
-articleTitle: dataTable插件的使用
 tags: ['jQuery']
 categories: ['前端']
 ---

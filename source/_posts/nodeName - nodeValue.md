@@ -1,7 +1,6 @@
 ---
-  title: title
   date: 2016-05-29 19:18:15
-  articleTitle: nodeName - nodeValue
+  title: nodeName - nodeValue
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

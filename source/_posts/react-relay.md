@@ -1,6 +1,5 @@
 ---
-title: react-relay
-articleTitle: react-relay的探索历程
+title: react-relay的探索历程
 date: 2017-07-22 22:19:06
 tags: ['graphql', 'react']
 categories: ['graphql']

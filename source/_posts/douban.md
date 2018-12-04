@@ -1,7 +1,6 @@
 ---
-title: douban
+title: 豆瓣评分前250部电影数据爬取
 date: 2017-08-02 21:32:58
-articleTitle: 豆瓣评分前250部电影数据爬取
 tags: ['nodejs','爬虫']
 description: 使用nodejs爬取数据
 categories: ['代码']

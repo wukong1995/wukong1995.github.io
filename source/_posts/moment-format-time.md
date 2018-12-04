@@ -1,7 +1,6 @@
 ---
-  title: moment-format-time
   date: 2016-12-11 13:03:52
-  articleTitle: moment格式化时间
+  title: moment格式化时间
   tags: ['javascript']
   categories: ['javascript', '前端']
   description:

@@ -1,6 +1,5 @@
 ---
-title: week5
-articleTitle: 本周总结
+title: 本周总结
 date: 2017-08-26 17:27:09
 tags: ['总结']
 categories: ['随笔']
