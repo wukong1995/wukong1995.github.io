@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[js中的神奇的类型转换]]></title>
+    <url>%2F2018%2F12%2F07%2Fjs-type-coercion%2F</url>
+    <content type="text"><![CDATA[来源这边文章主要讲的是运算符中的隐式类型转换，我只摘了下面的例子 true + false // 1 12 / "6" // 2 "number" + 15 + 3 // 'number153' 15 + 3 + "number" // '18number' [1] > null // true "foo" + + "bar" // 'fooNaN' 'true' == true // false false == 'false' // false null == '' // false !!"false" == !!"true" // true ['x'] == 'x' // true [] + null + 1 // 'null1' [1,2,3] == [1,2,3] // false 0 || "0" &amp;&amp; {} // {} {}+[]+{}+[1] // '0[object Object]1' !+[]+[]+![] // 'truefalse' new Date(0) - 0 // 0 new Date(0) + 0 // 'Thu Jan 01 1970 02:00:00(EET)0' true + false加法运算符会触发数字转换 true + false ==> 1 + 0 ==> 1 12 / “6”除法运算符会触发字符串的数字转换 “number” + 15 + 3加法运算符是从左到右结合，所以先执行&quot;number&quot; + 15，因为第一个操作数是字符串，加法运算符对15进行字符串转换，第二步也是如此。 15 + 3 + “number”如同上一个一样，先执行15+3，因为都是数字，所以不需要进行类型转换。第二步中，因为一个操作数中有字符串，所以对数字进行字符串转换。 [1] &gt; null比较运算符会触发对操作数的数字转换 [1] > null ==> '1' > 0 ==> 1 > 0 ==> true “foo” + + “bar”右边运算符比左边运算符具有更高的优先级，因此+&#39;bar&#39;表达式先执行。一元加号运算符会触发对字符串进行数字类型转换，由于字符串转换之后是一个非法的数字，结果是NaN。第二步执行&#39;foo&#39; + NaN "foo" + + "bar" ==> "foo" + (+"bar") ==> "foo" + NaN ==> "fooNaN" ‘true’ == true and false == ‘false’==运算符会触发数字类型转换，字符串&#39;true&#39;被转换成NaN，布尔true被转换成1 null == ‘’==运算符通常会触发数字类型转换，但不是null的情况，null只能和null和undefined进行比较，不能和其他值进行比较。 !!”false” == !!”true”!!运算符将这两个字符串转换成布尔值true，因为他们不是空的字符串， ==不进行类型转换，只对布尔值的true进行比较 [‘x’] == ‘x’==运算符会触发对一个数组进行数组转换，数组的valueOf()方法会返回数组自己，但是因为数组不是原始类型，velueOf会被忽略。数组的toString()仅仅将[&#39;x&#39;]转换成字符串&#39;x&#39; [] + null + 1+会触发将[]进行数字类型转换，和上一个一样进行toString操作，会返回一个空的字符串，接下来就进行&#39;&#39; + null + 1 [1,2,3] == [1,2,3]两边有同样类型，不进行类型转换，由于==检查值相等而不是引用相等，两个数组是两个不同的实例，所以结果是false 0 || “0” &amp;&amp; {}逻辑运算符||、&amp;&amp;会进行布尔类型转换，但是会返回原始操作数。0是false，&#39;0&#39;是true，{}是true，最后返回{} {}+[]+{}+[1]所有的操作数都不是原始类型，所以+开始从左边的触发数字转换，数组和对象的valueOf方法被忽略。使用后备toString方法。这里有一个诀窍，第一个{}不被看作对象，而是被视为块声明语句，因此它被忽略。于是开始从后面的+[]开始进行评估，[]的toString返回一个空字符串，再对空字符串进行数字转换是0 {}+[]+{}+[1] ==> +[]+{}+[1] ==> 0 + {} + [1] ==> 0 + '[object Object]' + [1] ==> '0[object Object]' + [1] ==> '0[object Object]' + '1' ==> '0[object Object]1' !+[]+[]+![]这个可以根据运算符的优先级去解释 !+[]+[]+![] ==> (!+[]) + [] + (![]) ==> !0 + [] + false ==> true + [] + false ==> true + '' + false ==> 'truefalse' new Date(0) - 0减号运算符会进行数字转换。Date.valueOf()返回自Unix纪元以来的毫秒数 new Date(0) - 0 ==> 0 - 0 ==> 0 new Date(0) + 0加号运算符触发默认转换。 Date假定字符串转换为默认值，因此使用toString()方法，而不是valueOf()。]]></content>
+      <categories>
+        <category>前端</category>
+        <category>javascript</category>
+        <category>翻译</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[迁移csdn博客]]></title>
     <url>%2F2018%2F12%2F04%2Fget-csdn-blog%2F</url>
     <content type="text"><![CDATA[一直想着吧csdn上的文章迁过来，但是一直没动手…这次终于动手了，先想一下我的思路：获取所有的文章链接 -&gt; 获取文章的内容 我使用了： https（获取链接的dom） cheerio（解析dom） fs (向文件中写取内容) 获取页面的htmlfunction getUrlHtml(url, cb) { return new Promise(function(resolve, reject) { https .get(url, function(res) { let html = '' res .on('data', function(data) { html += data }) .on('end', function() { resolve(cb(html)) }) }) .on('error', function(err) { reject(err) }) }) } 解析html，并创建promise请求function getArticleUrl(html) { const $ = cheerio.load(html) const $articleList = $('.article-item-box.csdn-tracking-statistics h4 a') const articleUrlList = [] $articleList.each(function(index, item) { articleUrlList.push($(item).attr('href')) }) return articleUrlList } 执行所有的promise，这里我使用的是Promise.all写入文件fs.writeFile(`./post/${title}.md`, content, 'utf8', function (error, result) { if (error) { console.log(error) reject(error) } else { resolve(result) } }) ps在获取文章的html内容的时候，获得的是转义后的字符，想着有没有接口可以直接将html转成md？看了csdn上的代码的格式，不知道可不可以转义？]]></content>
