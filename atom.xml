@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-12-10T13:38:37.790Z</updated>
+  <updated>2018-12-16T11:11:27.643Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小程序二级地址选择器</title>
+    <link href="https://wukong1995.github.io/2018/12/11/weapp-address/"/>
+    <id>https://wukong1995.github.io/2018/12/11/weapp-address/</id>
+    <published>2018-12-11T12:50:15.000Z</published>
+    <updated>2018-12-16T11:11:27.643Z</updated>
+    
+    <summary type="html">
+    
+      打造属于自己的地址选择器
+    
+    </summary>
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+    
+      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>今日杂谈</title>
     <link href="https://wukong1995.github.io/2018/12/10/mixed-talk-2/"/>
     <id>https://wukong1995.github.io/2018/12/10/mixed-talk-2/</id>
     <published>2018-12-10T13:06:10.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -40,7 +60,7 @@
     <link href="https://wukong1995.github.io/2018/12/07/js-type-coercion/"/>
     <id>https://wukong1995.github.io/2018/12/07/js-type-coercion/</id>
     <published>2018-12-07T07:37:24.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -64,7 +84,7 @@
     <link href="https://wukong1995.github.io/2018/12/04/get-csdn-blog/"/>
     <id>https://wukong1995.github.io/2018/12/04/get-csdn-blog/</id>
     <published>2018-12-04T09:24:47.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -90,7 +110,7 @@
     <link href="https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/"/>
     <id>https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/</id>
     <published>2018-11-29T11:25:26.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -113,7 +133,7 @@
     <link href="https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/"/>
     <id>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</id>
     <published>2018-11-28T06:23:56.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -133,7 +153,7 @@
     <link href="https://wukong1995.github.io/2018/11/20/centos-server-1/"/>
     <id>https://wukong1995.github.io/2018/11/20/centos-server-1/</id>
     <published>2018-11-20T11:01:00.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.639Z</updated>
     
     <summary type="html">
     
@@ -155,7 +175,7 @@
     <link href="https://wukong1995.github.io/2018/11/10/pm2-second/"/>
     <id>https://wukong1995.github.io/2018/11/10/pm2-second/</id>
     <published>2018-11-10T11:40:00.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -177,7 +197,7 @@
     <link href="https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/"/>
     <id>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</id>
     <published>2018-11-05T11:09:38.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -204,7 +224,7 @@
     <link href="https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/"/>
     <id>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</id>
     <published>2018-10-31T11:03:08.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -227,7 +247,7 @@
     <link href="https://wukong1995.github.io/2018/10/29/canvas-in-weapp/"/>
     <id>https://wukong1995.github.io/2018/10/29/canvas-in-weapp/</id>
     <published>2018-10-29T12:00:34.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.639Z</updated>
     
     <summary type="html">
     
@@ -249,7 +269,7 @@
     <link href="https://wukong1995.github.io/2018/10/25/css-rem/"/>
     <id>https://wukong1995.github.io/2018/10/25/css-rem/</id>
     <published>2018-10-25T11:22:18.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.639Z</updated>
     
     <summary type="html">
     
@@ -272,7 +292,7 @@
     <link href="https://wukong1995.github.io/2018/10/22/two-select-change-one/"/>
     <id>https://wukong1995.github.io/2018/10/22/two-select-change-one/</id>
     <published>2018-10-22T11:30:25.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -293,7 +313,7 @@
     <link href="https://wukong1995.github.io/2018/10/22/stimulus-begin/"/>
     <id>https://wukong1995.github.io/2018/10/22/stimulus-begin/</id>
     <published>2018-10-22T10:32:13.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -313,7 +333,7 @@
     <link href="https://wukong1995.github.io/2018/10/14/whether-to-use-react/"/>
     <id>https://wukong1995.github.io/2018/10/14/whether-to-use-react/</id>
     <published>2018-10-14T12:31:13.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -338,7 +358,7 @@
     <link href="https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/"/>
     <id>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</id>
     <published>2018-09-26T11:50:06.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -360,7 +380,7 @@
     <link href="https://wukong1995.github.io/2018/09/25/immutable-data/"/>
     <id>https://wukong1995.github.io/2018/09/25/immutable-data/</id>
     <published>2018-09-25T11:02:43.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -380,7 +400,7 @@
     <link href="https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/"/>
     <id>https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/</id>
     <published>2018-09-20T11:17:42.000Z</published>
-    <updated>2018-12-10T13:38:37.790Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -400,7 +420,7 @@
     <link href="https://wukong1995.github.io/2018/09/13/stateless-component-vs-pure-component/"/>
     <id>https://wukong1995.github.io/2018/09/13/stateless-component-vs-pure-component/</id>
     <published>2018-09-13T13:47:18.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -420,7 +440,7 @@
     <link href="https://wukong1995.github.io/2018/09/08/react-blog/"/>
     <id>https://wukong1995.github.io/2018/09/08/react-blog/</id>
     <published>2018-09-08T14:51:13.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
+    <updated>2018-12-16T11:11:27.643Z</updated>
     
     <summary type="html">
     
@@ -432,27 +452,6 @@
     
     
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小程序总结</title>
-    <link href="https://wukong1995.github.io/2018/09/01/weapp-tip/"/>
-    <id>https://wukong1995.github.io/2018/09/01/weapp-tip/</id>
-    <published>2018-09-01T01:48:48.000Z</published>
-    <updated>2018-12-10T13:38:37.794Z</updated>
-    
-    <summary type="html">
-    
-      &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;如果你使用了&lt;code&gt;canvas&lt;/code&gt; 、&lt;code&gt;map&lt;/code&gt;类的组件，因为小程序是使用原生控件，无论你是怎样调整&lt;code&gt;z-index&lt;/code&gt;，都不可能覆盖到这类组件上。网传的&lt;code&gt;z-index&lt;/code&gt;设置
-    
-    </summary>
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
     
   </entry>
   
