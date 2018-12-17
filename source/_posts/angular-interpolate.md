@@ -1,9 +1,9 @@
 ---
-  title: angularjs中的$interpolate服务
-  date: 2016-09-17 10:13:00
-  tags: [angularjs]
-  categories: [前端, angularjs]
-  description:
+title: angularjs中的$interpolate服务
+date: 2016-09-17 10:13:00
+tags: [angularjs]
+categories: [前端, angularjs]
+description:
 ---
 
 `$interpolate`服务返回一个函数，用来在特定的上下文中运算表达式。

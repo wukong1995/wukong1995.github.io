@@ -1,11 +1,11 @@
 ---
-  date: 2016-05-26 12:23:50
-  title: PHP中PDO的使用
-  tags: [PHP, 'mysql']
-  categories:
-    - [PHP]
-    - [数据库]
-  description:
+date: 2016-05-26 12:23:50
+title: PHP中PDO的使用
+tags: [PHP, 'mysql']
+categories:
+  - [PHP]
+  - [数据库]
+description:
 ---
 
 1.PDO连接MySQL数据库 

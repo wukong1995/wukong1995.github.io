@@ -1,9 +1,9 @@
 ---
-  title: javaScript删除元素
-  date: 2016-06-03 11:15:46
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: javaScript删除元素
+date: 2016-06-03 11:15:46
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 

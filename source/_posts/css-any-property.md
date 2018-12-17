@@ -1,11 +1,11 @@
 ---
-  title: css3中的部分属性
-  date: 2016-05-30 20:42:12
-  tags: [css]
-  categories:
-    - [css]
-    - [前端]
-  description:
+title: css3中的部分属性
+date: 2016-05-30 20:42:12
+tags: [css]
+categories:
+  - [css]
+  - [前端]
+description:
 ---
 
 #### box-shadow

@@ -1,9 +1,9 @@
 ---
-  title: 利用Canvas+js实现贪吃蛇(1)
-  date: 2016-06-12 21:04:29
-  tags: [javascript, demo]
-  categories: [前端, javascript]
-  description:
+title: 利用Canvas+js实现贪吃蛇(1)
+date: 2016-06-12 21:04:29
+tags: [javascript, demo]
+categories: [前端, javascript]
+description:
 ---
 
 今天想写一个贪吃蛇的页面，于是就选择了Canvs，不过只实现蛇身的长度是1的情况，对于蛇身大于2的情况，我还没想出来 如何绘制蛇，等查资料后，再来实现

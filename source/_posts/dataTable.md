@@ -1,10 +1,10 @@
 ---
-  title: dataTable插件的使用
-  date: 2017-03-26 18:24:25
-  tags: [jquery]
-  categories:
-    - [jquery]
-    - [前端]
+title: dataTable插件的使用
+date: 2017-03-26 18:24:25
+tags: [jquery]
+categories:
+  - [jquery]
+  - [前端]
 ---
 偶然发现一个叫 dataTable  的组件，觉得很好用，于是研究了一番，下面是代码
 

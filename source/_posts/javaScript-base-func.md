@@ -1,9 +1,9 @@
 ---
-  title: javaScript基本用法
-  date: 2016-04-23 19:43:01
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: javaScript基本用法
+date: 2016-04-23 19:43:01
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 1、document.write() 可用于直接向 HTML 输出流写内容。简单的说就是直接在网页中输出内容。

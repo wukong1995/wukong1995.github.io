@@ -1,9 +1,9 @@
 ---
-  date: 2016-05-30 20:41:35
-  title: sublime 使用的快捷键以及小技巧
-  tags: [sublime]
-  categories: [编辑器]
-  description:
+date: 2016-05-30 20:41:35
+title: sublime 使用的快捷键以及小技巧
+tags: [sublime]
+categories: [编辑器]
+description:
 ---
 
 Ctrl+D 选词 （反复按快捷键，即可继续向下同时选中下一个相同的文本进行同时编辑）

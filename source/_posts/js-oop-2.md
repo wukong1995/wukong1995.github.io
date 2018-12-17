@@ -1,9 +1,9 @@
 ---
-  title: js面向对象与继承
-  date: 2016-06-23 16:42:41
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: js面向对象与继承
+date: 2016-06-23 16:42:41
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 

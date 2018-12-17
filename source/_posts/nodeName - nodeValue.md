@@ -1,9 +1,9 @@
 ---
-  date: 2016-05-29 19:18:15
-  title: nodeName - nodeValue
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+date: 2016-05-29 19:18:15
+title: nodeName - nodeValue
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 

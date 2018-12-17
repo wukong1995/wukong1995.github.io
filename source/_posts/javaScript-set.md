@@ -1,9 +1,9 @@
 ---
-  title: javaScript文档中常用的集合
-  date: 2016-06-02 15:07:49
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: javaScript文档中常用的集合
+date: 2016-06-02 15:07:49
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 

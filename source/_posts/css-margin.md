@@ -1,10 +1,10 @@
 ---
-  title: css中margin的巧妙使用
-  date: 2016-07-16 18:40:38
-  tags: [css]
-  categories:
-    - [css]
-    - [前端]
+title: css中margin的巧妙使用
+date: 2016-07-16 18:40:38
+tags: [css]
+categories:
+  - [css]
+  - [前端]
 ---
 今天在慕课上看了张大神又一力作，整理了一下
 margin的巧妙使用：

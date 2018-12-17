@@ -1,9 +1,9 @@
 ---
-  title: 京东分类栏
-  date: 2016-05-18 14:42:51
-  tags: [javascript, demo]
-  categories: [前端, javascript]
-  description:
+title: 京东分类栏
+date: 2016-05-18 14:42:51
+tags: [javascript, demo]
+categories: [前端, javascript]
+description:
 ---
 
 

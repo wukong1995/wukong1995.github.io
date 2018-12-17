@@ -1,11 +1,11 @@
 ---
-  date: 2016-12-11 13:10:59
-  title: nodejs中使用mongoose保存数据
-  tags: [mongoDB, nodejs]
-  categories:
-    - [数据库, mongoDB]
-    - [nodejs]
-  description:
+date: 2016-12-11 13:10:59
+title: nodejs中使用mongoose保存数据
+tags: [mongoDB, nodejs]
+categories:
+  - [数据库, mongoDB]
+  - [nodejs]
+description:
 ---
 
 

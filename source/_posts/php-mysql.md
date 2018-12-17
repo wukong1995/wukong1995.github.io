@@ -1,11 +1,11 @@
 ---
-  date: 2016-05-05 17:14:31
-  title: PHP中操作MYSQL数据库常用函数
-  tags: [PHP, 'mysql']
-  categories:
-    - [PHP]
-    - [数据库]
-  description:
+date: 2016-05-05 17:14:31
+title: PHP中操作MYSQL数据库常用函数
+tags: [PHP, 'mysql']
+categories:
+  - [PHP]
+  - [数据库]
+description:
 ---
 
 

@@ -1,9 +1,9 @@
 ---
-  date: 2016-12-11 13:03:52
-  title: moment格式化时间
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+date: 2016-12-11 13:03:52
+title: moment格式化时间
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 

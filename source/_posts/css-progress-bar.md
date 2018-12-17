@@ -1,11 +1,11 @@
 ---
-  title: CSS3实现炫酷进度条
-  date: 2016-06-10 13:32:28
-  tags: [css]
-  categories:
-    - [css]
-    - [前端]
-  description:
+title: CSS3实现炫酷进度条
+date: 2016-06-10 13:32:28
+tags: [css]
+categories:
+  - [css]
+  - [前端]
+description:
 ---
 
 看了一个进度条很漂亮，所以自己试试看

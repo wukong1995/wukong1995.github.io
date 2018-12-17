@@ -1,9 +1,9 @@
 ---
-  title: js面向对象
-  date: 2016-06-25 10:37:11
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: js面向对象
+date: 2016-06-25 10:37:11
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 

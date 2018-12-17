@@ -1,9 +1,9 @@
 ---
-  title: 正则表达式中的特殊字符
-  date: 2016-05-04 09:56:51
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: 正则表达式中的特殊字符
+date: 2016-05-04 09:56:51
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 字符/

@@ -1,9 +1,9 @@
 ---
-  date: 2016-06-27 19:37:17
-  title: lineheight使图片多行文字垂直居中
-  tags: [css]
-  categories: [前端, css]
-  description:
+date: 2016-06-27 19:37:17
+title: lineheight使图片多行文字垂直居中
+tags: [css]
+categories: [前端, css]
+description:
 ---
 
 

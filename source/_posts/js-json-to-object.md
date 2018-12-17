@@ -1,9 +1,9 @@
 ---
-  title: 将json格式的字符串转化成object对象
-  date: 2016-05-06 13:45:23
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: 将json格式的字符串转化成object对象
+date: 2016-05-06 13:45:23
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 将一堆json数据的字符串，转换成js能认识的数据

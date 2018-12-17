@@ -1,9 +1,9 @@
 ---
-  title: javaScript取得当前元素的下一个元素
-  date: 2016-05-28 14:10:30
-  tags: [javascript]
-  categories: [前端, javascript]
-  description:
+title: javaScript取得当前元素的下一个元素
+date: 2016-05-28 14:10:30
+tags: [javascript]
+categories: [前端, javascript]
+description:
 ---
 
 
