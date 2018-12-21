@@ -1,9 +1,11 @@
 ---
 date: 2018-09-26 19:50:06
-tags: [javascript]
-categories: [前端, javascript]
-title: reference equality and value equality
-description: 两种相等：值相等和引用相等
+tags: [javascript, 翻译]
+categories:
+  - [前端, javascript]
+  - [翻译]
+title: 翻译：reference equality and value equality
+description: 翻译：两种相等--值相等和引用相等
 ---
 
 在编程语言世界中通常有两种类型的相等：
@@ -76,7 +78,8 @@ JavaScript中的复杂的数据结构都遵循`reference equality`的原则，�
 #### value equality
 像前面说的，reference equality回答的是object1和object2是否一样？这种检查很简单，它们非常有效。
 
-说到Javascript中的**primitives**（这个我也不知道怎么翻译，指的是上面的numbers等，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为**shallow data structures**（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。
+说到Javascript中的**primitives**（~~这个我也不知道怎么翻译~~18.12.21更新：上面的primitives指的是Primitive types（原始类型）, 指的是上面的numbers等)，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为**shallow data structures**（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。
+
 
 但是什么是value equality？思考下面的代码：
 ```javascript
