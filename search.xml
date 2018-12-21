@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[哇哇，我的第一个task]]></title>
+    <url>%2F2018%2F12%2F21%2Ffirst-task%2F</url>
+    <content type="text"><![CDATA[最近有一些数据迁移，心中已有蓝图，但是不知如何下手，请教了后端的小哥哥，写出了我的第一个task， namespace :migrate do desc 'migrate info to apply' task :to_apply => :environment do Membership.all.each do |membership| user = membership.user apply = Apply.new( user_id: user.id, # .... ); apply.save!(validate: false) end end end 本来是想写一个数据库的migrate，征求了后端的意见，选择了写一个task，migrate在被合并的时候，这次的数据迁移可能会被吃掉，于是写了一个task，一个简单的数据迁移…]]></content>
+      <categories>
+        <category>rails</category>
+      </categories>
+      <tags>
+        <tag>rails</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[小程序web-view的实践]]></title>
+    <url>%2F2018%2F12%2F21%2Fweapp-web-view%2F</url>
+    <content type="text"><![CDATA[因为小程序的标签有限，像iframe这样的标签不能在小程序里面很好的展示，于是只能选择使用web-view去展示小程序的内容，点击web-view中iframe期望跳到小程序中的某个页面。 根据小程序的文档来，小程序嵌入web-view是一个很简单的事情 &lt;web-view src="{{url}}">&lt;/web-view> 如何在页面中跳入小程序的页面，为了防止污染现有的页面，我选择新建一个页面，引入小程序的sdk， - if browser.wechat? = javascript_include_tag 'https://res.wx.qq.com/open/js/jweixin-1.3.2.js' // ..... wx.miniProgram.navigateTo({ url }) ok，成功！]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+      <tags>
+        <tag>小程序</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Boolean隐形类型转换]]></title>
     <url>%2F2018%2F12%2F17%2Fjs-boolean%2F</url>
     <content type="text"><![CDATA[在if类型中，为了使代码看起来好看一些，你往往会使用最简洁的判断，但是其中涉及的隐形类型转换，一不小心就出了bug。 if (count) { // .... } 在运行过程中，if代码块死活不执行，仔细想了想，count等于零的时候，是不执行的，这不是我的本意呀，我想着存在着这个值的时候，就执行，所以我应该这样写，才能达到我的目的。 if (count !== undefined) { // .... } 这里有一份列表，表中的值类型转换完一定为false undefined null false +0, -0, and NaN “” 不在上面列表中，一定为true。 思考一下： var a = new Boolean( false ); var b = new Number( 0 ); var c = new String( "" ); var d = Boolean( a &amp;&amp; b &amp;&amp; c ); d; // true 你会不会感到疑惑？看一下值时候在上面的列表中！记住只要不在列表中的值，类型转换之后，一定为true 这里补充一下+c的意思是将c转换成number类型，那么&quot;foo&quot;++&quot;5&quot;，就是先执行+&quot;5&quot;]]></content>
@@ -35,7 +57,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[js中的神奇的类型转换]]></title>
+    <title><![CDATA[翻译：js中的神奇的类型转换]]></title>
     <url>%2F2018%2F12%2F07%2Fjs-type-coercion%2F</url>
     <content type="text"><![CDATA[来源这边文章主要讲的是运算符中的隐式类型转换，我只摘了下面的例子 true + false // 1 12 / "6" // 2 "number" + 15 + 3 // 'number153' 15 + 3 + "number" // '18number' [1] > null // true "foo" + + "bar" // 'fooNaN' 'true' == true // false false == 'false' // false null == '' // false !!"false" == !!"true" // true ['x'] == 'x' // true [] + null + 1 // 'null1' [1,2,3] == [1,2,3] // false 0 || "0" &amp;&amp; {} // {} {}+[]+{}+[1] // '0[object Object]1' !+[]+[]+![] // 'truefalse' new Date(0) - 0 // 0 new Date(0) + 0 // 'Thu Jan 01 1970 02:00:00(EET)0' true + false加法运算符会触发数字转换 true + false ==> 1 + 0 ==> 1 12 / “6”除法运算符会触发字符串的数字转换 “number” + 15 + 3加法运算符是从左到右结合，所以先执行&quot;number&quot; + 15，因为第一个操作数是字符串，加法运算符对15进行字符串转换，第二步也是如此。 15 + 3 + “number”如同上一个一样，先执行15+3，因为都是数字，所以不需要进行类型转换。第二步中，因为一个操作数中有字符串，所以对数字进行字符串转换。 [1] &gt; null比较运算符会触发对操作数的数字转换 [1] > null ==> '1' > 0 ==> 1 > 0 ==> true “foo” + + “bar”右边运算符比左边运算符具有更高的优先级，因此+&#39;bar&#39;表达式先执行。一元加号运算符会触发对字符串进行数字类型转换，由于字符串转换之后是一个非法的数字，结果是NaN。第二步执行&#39;foo&#39; + NaN "foo" + + "bar" ==> "foo" + (+"bar") ==> "foo" + NaN ==> "fooNaN" ‘true’ == true and false == ‘false’==运算符会触发数字类型转换，字符串&#39;true&#39;被转换成NaN，布尔true被转换成1 null == ‘’==运算符通常会触发数字类型转换，但不是null的情况，null只能和null和undefined进行比较，不能和其他值进行比较。 !!”false” == !!”true”!!运算符将这两个字符串转换成布尔值true，因为他们不是空的字符串， ==不进行类型转换，只对布尔值的true进行比较 [‘x’] == ‘x’==运算符会触发对一个数组进行数组转换，数组的valueOf()方法会返回数组自己，但是因为数组不是原始类型，velueOf会被忽略。数组的toString()仅仅将[&#39;x&#39;]转换成字符串&#39;x&#39; [] + null + 1+会触发将[]进行数字类型转换，和上一个一样进行toString操作，会返回一个空的字符串，接下来就进行&#39;&#39; + null + 1 [1,2,3] == [1,2,3]两边有同样类型，不进行类型转换，由于==检查值相等而不是引用相等，两个数组是两个不同的实例，所以结果是false 0 || “0” &amp;&amp; {}逻辑运算符||、&amp;&amp;会进行布尔类型转换，但是会返回原始操作数。0是false，&#39;0&#39;是true，{}是true，最后返回{} {}+[]+{}+[1]所有的操作数都不是原始类型，所以+开始从左边的触发数字转换，数组和对象的valueOf方法被忽略。使用后备toString方法。这里有一个诀窍，第一个{}不被看作对象，而是被视为块声明语句，因此它被忽略。于是开始从后面的+[]开始进行评估，[]的toString返回一个空字符串，再对空字符串进行数字转换是0 {}+[]+{}+[1] ==> +[]+{}+[1] ==> 0 + {} + [1] ==> 0 + '[object Object]' + [1] ==> '0[object Object]' + [1] ==> '0[object Object]' + '1' ==> '0[object Object]1' !+[]+[]+![]这个可以根据运算符的优先级去解释 !+[]+[]+![] ==> (!+[]) + [] + (![]) ==> !0 + [] + false ==> true + [] + false ==> true + '' + false ==> 'truefalse' new Date(0) - 0减号运算符会进行数字转换。Date.valueOf()返回自Unix纪元以来的毫秒数 new Date(0) - 0 ==> 0 - 0 ==> 0 new Date(0) + 0加号运算符触发默认转换。 Date假定字符串转换为默认值，因此使用toString()方法，而不是valueOf()。]]></content>
       <categories>
@@ -190,15 +212,17 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[reference equality and value equality]]></title>
+    <title><![CDATA[翻译：reference equality and value equality]]></title>
     <url>%2F2018%2F09%2F26%2Freference-equality-and-value-equality%2F</url>
-    <content type="text"><![CDATA[在编程语言世界中通常有两种类型的相等： reference equality value equality 引入思考下面的代码： var x = 12, y = 12; var object = { x: 1, y: 2 }; var object2 = { x: 1, y: 2 }; 正如你看到的，object和object2有相同的值。如果你看一下object和object2中的每个键以及它们对应的值，它们是相同的。在object和object2中，x的值是1，y的值是2。 但是当你想要在你的程序中检查object和object2是否相等，你会发现：这两个对象是不一样的。 object == object2 // false object === object2 // false 这是为什么呢？ reference equalityObjects是灰常复杂的数据结构。它们可以有很多key，这些key可以执行不同的值。这些值也可以是objects，所以objects是可以嵌套的。 如果你考虑事物的相等行，事实上你需要考虑两件事情： 一个事物是否意味着与另一个事物相同？ 一个事物与其它东西完全一样？ 如果我从现实世界中举一个例子：想象一下你有一个红色的跑车，你的邻居也有和你的车一样的车，相同的颜色，相同的发动机，相同的牌子。如果陌生人经过你的家，他们会说：嘿，这些人有相同的车。 但是，你邻居的车不是你的。你不会坐上邻居车，认为这是你的，对吧，或者至少你不应该。如果你撞坏了邻居的车，你可能会有一个不快乐的邻居，当然还有一些法律问题:) 区分你的车和邻居的车的最明显的地方是车牌。 事实上， JavaScript objects的内置了这种“牌照”，每个object的独特特性称为reference（引用）。当你在js中比较object时，它们通过reference比较 object == object2; object === object2; 问题：object和object2是相等吗？实际上你分配变量的时候，也分配了reference。你可以很容易的检查这个： object = object2; object == object2; // true object === object2; // true 也会有一些有趣的结果，代码如下： object = object2; object.x = 12; object.x; // 12 object2.x; // 12 在这个例子中，你做了一次将x这个key分配给object这个对象。object和object2指向相同的引用，所以只要一个变量更改，另一个变量也会更改。 JavaScript中的复杂的数据结构都遵循reference equality的原则，这包括arrays和objetcs，实际上通过typeof查看array的类型，得到的结果也是object。 还有一些值像：numbers, strings, booleans or null / undefined，它们都遵循一种相等：value equality。 value equality像前面说的，reference equality回答的是object1和object2是否一样？这种检查很简单，它们非常有效。 说到Javascript中的primitives（这个我也不知道怎么翻译，指的是上面的numbers等，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为shallow data structures（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。 但是什么是value equality？思考下面的代码： var x = 12, y = 12; 在相等方面，数字是最简单的。你可以清楚的说x变量的值等于y变量的值（12在数学中等于12）但是如果这些变量遵循reference equality，它们是不一样的，因为它们是在不同的地方创建的。所以它们的引用是不同的。x的12可能是和y的12是不一样的。这真是太乱了。 幸运的是，members在JavaScript中是primitives，primitives在javascri中使用的是value equality进行比较。所以看到这是不奇怪的： x == y; // true x === y; // true value equality回答的是这个疑问：一个事物是否意味着与另一个事物相同？ 嵌套的数据结构是的相等更加难以比较。Objects有任意的key和value，它可以包含其他的objects。为了比较两个objects的相等，你可能需要下面的算法： / Input: an object1 and object2 // Output: true if an object1 is equal in terms of values to object2 valueEqual(object1, object2): object1keys = &lt;list of keys of object1> object2keys = &lt;list of keys of object2> return false if length(object1keys) != length(object2keys) for each key in object1keys: return false if key not in object2keys return false if typeof(object1[key]) != typeof(object2[key]) if object1[key] is an object: keyEqual = valueEqual(object1[key], object2[key]) return false if keyEqual != false if object1[key] is a primitive: return false if object1[key] != object2[key] return true 呼，这里面有好多相等检查，这是一个递归算法。它在比较两个object是会执行上千次相等检查，这样的相等检查通常被称作 deep equality checks（深比较）。更糟糕的是，这个算法是不会完成的。这是因为你可能创建了循环的引用对象。 PS：参考链接]]></content>
+    <content type="text"><![CDATA[在编程语言世界中通常有两种类型的相等： reference equality value equality 引入思考下面的代码： var x = 12, y = 12; var object = { x: 1, y: 2 }; var object2 = { x: 1, y: 2 }; 正如你看到的，object和object2有相同的值。如果你看一下object和object2中的每个键以及它们对应的值，它们是相同的。在object和object2中，x的值是1，y的值是2。 但是当你想要在你的程序中检查object和object2是否相等，你会发现：这两个对象是不一样的。 object == object2 // false object === object2 // false 这是为什么呢？ reference equalityObjects是灰常复杂的数据结构。它们可以有很多key，这些key可以执行不同的值。这些值也可以是objects，所以objects是可以嵌套的。 如果你考虑事物的相等行，事实上你需要考虑两件事情： 一个事物是否意味着与另一个事物相同？ 一个事物与其它东西完全一样？ 如果我从现实世界中举一个例子：想象一下你有一个红色的跑车，你的邻居也有和你的车一样的车，相同的颜色，相同的发动机，相同的牌子。如果陌生人经过你的家，他们会说：嘿，这些人有相同的车。 但是，你邻居的车不是你的。你不会坐上邻居车，认为这是你的，对吧，或者至少你不应该。如果你撞坏了邻居的车，你可能会有一个不快乐的邻居，当然还有一些法律问题:) 区分你的车和邻居的车的最明显的地方是车牌。 事实上， JavaScript objects的内置了这种“牌照”，每个object的独特特性称为reference（引用）。当你在js中比较object时，它们通过reference比较 object == object2; object === object2; 问题：object和object2是相等吗？实际上你分配变量的时候，也分配了reference。你可以很容易的检查这个： object = object2; object == object2; // true object === object2; // true 也会有一些有趣的结果，代码如下： object = object2; object.x = 12; object.x; // 12 object2.x; // 12 在这个例子中，你做了一次将x这个key分配给object这个对象。object和object2指向相同的引用，所以只要一个变量更改，另一个变量也会更改。 JavaScript中的复杂的数据结构都遵循reference equality的原则，这包括arrays和objetcs，实际上通过typeof查看array的类型，得到的结果也是object。 还有一些值像：numbers, strings, booleans or null / undefined，它们都遵循一种相等：value equality。 value equality像前面说的，reference equality回答的是object1和object2是否一样？这种检查很简单，它们非常有效。 说到Javascript中的primitives（这个我也不知道怎么翻译18.12.21更新：上面的primitives指的是Primitive types（原始类型）, 指的是上面的numbers等)，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为shallow data structures（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。 但是什么是value equality？思考下面的代码： var x = 12, y = 12; 在相等方面，数字是最简单的。你可以清楚的说x变量的值等于y变量的值（12在数学中等于12）但是如果这些变量遵循reference equality，它们是不一样的，因为它们是在不同的地方创建的。所以它们的引用是不同的。x的12可能是和y的12是不一样的。这真是太乱了。 幸运的是，members在JavaScript中是primitives，primitives在javascri中使用的是value equality进行比较。所以看到这是不奇怪的： x == y; // true x === y; // true value equality回答的是这个疑问：一个事物是否意味着与另一个事物相同？ 嵌套的数据结构是的相等更加难以比较。Objects有任意的key和value，它可以包含其他的objects。为了比较两个objects的相等，你可能需要下面的算法： / Input: an object1 and object2 // Output: true if an object1 is equal in terms of values to object2 valueEqual(object1, object2): object1keys = &lt;list of keys of object1> object2keys = &lt;list of keys of object2> return false if length(object1keys) != length(object2keys) for each key in object1keys: return false if key not in object2keys return false if typeof(object1[key]) != typeof(object2[key]) if object1[key] is an object: keyEqual = valueEqual(object1[key], object2[key]) return false if keyEqual != false if object1[key] is a primitive: return false if object1[key] != object2[key] return true 呼，这里面有好多相等检查，这是一个递归算法。它在比较两个object是会执行上千次相等检查，这样的相等检查通常被称作 deep equality checks（深比较）。更糟糕的是，这个算法是不会完成的。这是因为你可能创建了循环的引用对象。 PS：参考链接]]></content>
       <categories>
         <category>前端</category>
         <category>javascript</category>
+        <category>翻译</category>
       </categories>
       <tags>
         <tag>javascript</tag>
+        <tag>翻译</tag>
       </tags>
   </entry>
   <entry>
