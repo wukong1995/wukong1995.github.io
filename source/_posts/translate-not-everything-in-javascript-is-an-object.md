@@ -21,14 +21,14 @@ categories: [翻译]
 * string
 * symbol (new in ES6)
 
-除了这六种原始类型，ECMAScript标准也定义了一个`object`类型，它是一个键值对存储
+除了这六种基本类型，ECMAScript标准也定义了一个`object`类型，它是一个键值对存储
 ```js
 const object = {
   key: "value"
 }
 ```
 
-所以，简单来说，不是原始类型的是事物是一个`object`，并且包括`function`和`array`
+所以，简单来说，不是基本类型的是事物是一个`object`，并且包括`function`和`array`
 
 > 所有的函数都是object
 
@@ -45,19 +45,19 @@ const foo = function () {}
 foo instanceof Object; // true
 ```
 
-## 原始类型（Primitive types）
-原始类型没有挂载方法，所以你永远不会看见`undefined.toString()`。也是因为这个，原始类型是不可变的，因为没有附加方法能改变他。
+## 基本类型（Primitive types）
+基本类型没有挂载方法，所以你永远不会看见`undefined.toString()`。也是因为这个，基本类型是不可变的，因为没有附加方法能改变他。
 
-你可以为原始类型重新分配给变量，但它将会是一个新的值，不是原来的值，也不是改变。
+你可以为基本类型重新分配给变量，但它将会是一个新的值，不是原来的值，也不是改变。
 ```js
 const answer = 42
 answer.foo = "bar";
 answer.foo; // undefined
 ```
 
->原始类型是不可变的
+>基本类型是不可变的
 
-此外，原始类型作为本身的值存储，不像object作为引用存储。这会影响相等性检查。
+此外，基本类型作为本身的值存储，不像object作为引用存储。这会影响相等性检查。
 ```js
 "dog" === "dog"; // true
 14 === 14; // true
@@ -67,7 +67,7 @@ answer.foo; // undefined
 (function () {}) === (function () {}); // false
 ```
 
->原始类型作为值存储，object作为引用存储
+>基本类型作为值存储，object作为引用存储
 
 
 ## 函数（function）
@@ -130,7 +130,7 @@ const pet = new String("dog");
 ```
 
 ## 包装对象(wrapper object)
-由于函数如String，Number，Boolean，Function等而产生混淆，当使用new调用时，会为这些原始类型创建包装器对象。
+由于函数如String，Number，Boolean，Function等而产生混淆，当使用new调用时，会为这些基本类型创建包装器对象。
 
 String是一个全局函数，它在参数中传递时创建一个原始字符串;它会尝试将该参数转换为字符串。
 ```js
@@ -158,7 +158,7 @@ pet === "dog"; // false
 
 ### 自动装箱(Auto-Boxing)
 
-有趣的是，原始字符串和对象的构造函数都是String函数。 更有趣的是你可以在原始字符串上调用.constructor，当我们已经了解了原始类型不能有方法时！
+有趣的是，原始字符串和对象的构造函数都是String函数。 更有趣的是你可以在原始字符串上调用.constructor，当我们已经了解了基本类型不能有方法时！
 
 ```js
 const pet = new String("dog")
@@ -183,7 +183,7 @@ foo.bar = "baz"; // Assignment done on temporary wrapper object
 foo.bar; // undefined
 ```
 
-如果你尝试使用没有包装器对象的原始类型，例如undefined或null，它会报错。
+如果你尝试使用没有包装器对象的基本类型，例如undefined或null，它会报错。
 ```js
 const foo = null;
 foo.bar = "baz"; // Uncaught TypeError: Cannot set property 'bar' of null
@@ -191,12 +191,12 @@ foo.bar = "baz"; // Uncaught TypeError: Cannot set property 'bar' of null
 
 ## 总结
 1. 并非JavaScript中的所有内容都是对象
-2. JavaScript中有6种原始类型
-3. 所有不是原始类型的东西都是一个对象
+2. JavaScript中有6种基本类型
+3. 所有不是基本类型的东西都是一个对象
 4. 函数只是一种特殊类型的对象
 5. 函数可用于创建新对象
 6. 字符串，布尔值和数字可以表示为基本类型，但也可以表示为对象
-7. 某些原始类型（字符串，数字，布尔值）似乎表现得像对象，因为JavaScript特色称为自动装箱。
+7. 某些基本类型（字符串，数字，布尔值）似乎表现得像对象，因为JavaScript特色称为自动装箱。
 
 PS:我在评论区发现了一张很好的图片
 ![image](https://res.cloudinary.com/dwudaridr/image/upload/v1543729340/blog/acfab1be378bd89f96cab0b894e1ad7ee3cba7f98fa8ff19c96bd3e3027cb10e.png)
