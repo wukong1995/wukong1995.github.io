@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="9月 26, 2018">
-        <meta property="article:modified_time" content="12月 26, 2018">
+        <meta property="article:modified_time" content="12月 29, 2018">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "翻译：reference equality and value equality",
     "url": "https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/index.html",
     "datePublished": "9月 26, 2018",
-    "dateModified": "12月 26, 2018",
+    "dateModified": "12月 29, 2018",
     "description": "翻译：两种相等--值相等和引用相等",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -533,7 +533,7 @@ object2<span class="token punctuation">.</span>x<span class="token punctuation">
 <p>JavaScript中的复杂的数据结构都遵循<code>reference equality</code>的原则，这包括<strong>arrays</strong>和objetcs，实际上通过typeof查看array的类型，得到的结果也是object。</p>
 <p><strong>还有一些值像：numbers, strings, booleans or null / undefined，它们都遵循一种相等：value equality。</strong></p>
 <h4 id="value-equality"><a href="#value-equality" class="headerlink" title="value equality"></a>value equality</h4><p>像前面说的，reference equality回答的是object1和object2是否一样？这种检查很简单，它们非常有效。</p>
-<p>说到Javascript中的<strong>primitives</strong>（<del>这个我也不知道怎么翻译</del>18.12.21更新：上面的primitives指的是Primitive types（原始类型）, 指的是上面的numbers等)，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为<strong>shallow data structures</strong>（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。</p>
+<p>说到Javascript中的<strong>primitives</strong>（<del>这个我也不知道怎么翻译</del>18.12.21更新：上面的primitives指的是Primitive types（基本类型）, 指的是上面的numbers等)，它们是不可以嵌套的。这种不能嵌套其它结构的结构称为<strong>shallow data structures</strong>（浅数据结构）。在这样的结构中，你可以以有效的方式执行value equality。</p>
 <p>但是什么是value equality？思考下面的代码：</p>
 <pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> x <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">,</span>
     y <span class="token operator">=</span> <span class="token number">12</span><span class="token punctuation">;</span>
