@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2018-12-29T06:41:46.276Z</updated>
+  <updated>2019-01-02T10:52:57.312Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>重构那些事</title>
+    <link href="https://wukong1995.github.io/2019/01/02/mixed-talk-3/"/>
+    <id>https://wukong1995.github.io/2019/01/02/mixed-talk-3/</id>
+    <published>2019-01-02T10:29:35.000Z</published>
+    <updated>2019-01-02T10:52:57.312Z</updated>
+    
+    <summary type="html">
+    
+      重构那些事儿
+    
+    </summary>
+    
+      <category term="杂谈" scheme="https://wukong1995.github.io/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+      <category term="杂谈" scheme="https://wukong1995.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>翻译：理解javascript中的作用域</title>
     <link href="https://wukong1995.github.io/2018/12/24/translate-understanding-scope-in-javascript/"/>
     <id>https://wukong1995.github.io/2018/12/24/translate-understanding-scope-in-javascript/</id>
     <published>2018-12-24T10:24:29.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -45,7 +65,7 @@
     <link href="https://wukong1995.github.io/2018/12/21/first-task/"/>
     <id>https://wukong1995.github.io/2018/12/21/first-task/</id>
     <published>2018-12-21T15:00:43.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -65,7 +85,7 @@
     <link href="https://wukong1995.github.io/2018/12/21/weapp-web-view/"/>
     <id>https://wukong1995.github.io/2018/12/21/weapp-web-view/</id>
     <published>2018-12-21T14:48:04.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -85,7 +105,7 @@
     <link href="https://wukong1995.github.io/2018/12/17/js-boolean/"/>
     <id>https://wukong1995.github.io/2018/12/17/js-boolean/</id>
     <published>2018-12-17T11:06:45.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -107,7 +127,7 @@
     <link href="https://wukong1995.github.io/2018/12/11/weapp-address/"/>
     <id>https://wukong1995.github.io/2018/12/11/weapp-address/</id>
     <published>2018-12-11T12:50:15.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -127,7 +147,7 @@
     <link href="https://wukong1995.github.io/2018/12/10/mixed-talk-2/"/>
     <id>https://wukong1995.github.io/2018/12/10/mixed-talk-2/</id>
     <published>2018-12-10T13:06:10.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -147,7 +167,7 @@
     <link href="https://wukong1995.github.io/2018/12/07/js-type-coercion/"/>
     <id>https://wukong1995.github.io/2018/12/07/js-type-coercion/</id>
     <published>2018-12-07T07:37:24.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -171,7 +191,7 @@
     <link href="https://wukong1995.github.io/2018/12/04/get-csdn-blog/"/>
     <id>https://wukong1995.github.io/2018/12/04/get-csdn-blog/</id>
     <published>2018-12-04T09:24:47.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -197,7 +217,7 @@
     <link href="https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/"/>
     <id>https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/</id>
     <published>2018-11-29T11:25:26.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -220,7 +240,7 @@
     <link href="https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/"/>
     <id>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</id>
     <published>2018-11-28T06:23:56.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -240,7 +260,7 @@
     <link href="https://wukong1995.github.io/2018/11/20/centos-server-1/"/>
     <id>https://wukong1995.github.io/2018/11/20/centos-server-1/</id>
     <published>2018-11-20T11:01:00.000Z</published>
-    <updated>2018-12-29T06:41:46.272Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -262,7 +282,7 @@
     <link href="https://wukong1995.github.io/2018/11/10/pm2-second/"/>
     <id>https://wukong1995.github.io/2018/11/10/pm2-second/</id>
     <published>2018-11-10T11:40:00.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -284,7 +304,7 @@
     <link href="https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/"/>
     <id>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</id>
     <published>2018-11-05T11:09:38.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -311,7 +331,7 @@
     <link href="https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/"/>
     <id>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</id>
     <published>2018-10-31T11:03:08.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -334,7 +354,7 @@
     <link href="https://wukong1995.github.io/2018/10/29/canvas-in-weapp/"/>
     <id>https://wukong1995.github.io/2018/10/29/canvas-in-weapp/</id>
     <published>2018-10-29T12:00:34.000Z</published>
-    <updated>2018-12-29T06:41:46.272Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -356,7 +376,7 @@
     <link href="https://wukong1995.github.io/2018/10/25/css-rem/"/>
     <id>https://wukong1995.github.io/2018/10/25/css-rem/</id>
     <published>2018-10-25T11:22:18.000Z</published>
-    <updated>2018-12-29T06:41:46.272Z</updated>
+    <updated>2019-01-02T10:52:57.312Z</updated>
     
     <summary type="html">
     
@@ -379,7 +399,7 @@
     <link href="https://wukong1995.github.io/2018/10/22/two-select-change-one/"/>
     <id>https://wukong1995.github.io/2018/10/22/two-select-change-one/</id>
     <published>2018-10-22T11:30:25.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -400,7 +420,7 @@
     <link href="https://wukong1995.github.io/2018/10/22/stimulus-begin/"/>
     <id>https://wukong1995.github.io/2018/10/22/stimulus-begin/</id>
     <published>2018-10-22T10:32:13.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -420,7 +440,7 @@
     <link href="https://wukong1995.github.io/2018/10/14/whether-to-use-react/"/>
     <id>https://wukong1995.github.io/2018/10/14/whether-to-use-react/</id>
     <published>2018-10-14T12:31:13.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
+    <updated>2019-01-02T10:52:57.316Z</updated>
     
     <summary type="html">
     
@@ -437,32 +457,6 @@
       <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
     
       <category term="杂谈" scheme="https://wukong1995.github.io/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>翻译：reference equality and value equality</title>
-    <link href="https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/"/>
-    <id>https://wukong1995.github.io/2018/09/26/reference-equality-and-value-equality/</id>
-    <published>2018-09-26T11:50:06.000Z</published>
-    <updated>2018-12-29T06:41:46.276Z</updated>
-    
-    <summary type="html">
-    
-      翻译：两种相等--值相等和引用相等
-    
-    </summary>
-    
-      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="javascript" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
-    
-      <category term="翻译" scheme="https://wukong1995.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
-    
-    
-      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
-    
-      <category term="翻译" scheme="https://wukong1995.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
     
   </entry>
   
