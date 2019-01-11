@@ -12,7 +12,7 @@
     
     <title>
         
-            HOC在react中的调用顺序 | 
+            threejs初试 | 
         
         Wukong&#39;s Blog
     </title>
@@ -37,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Peipei Wong">
-    <meta name="description" itemprop="description" content="一只热爱编程的媛...">
-    <meta name="keywords" content="blog,react">
+    <meta name="description" itemprop="description" content="被threejs闪瞎了眼">
+    <meta name="keywords" content="blog,javascript">
 
     <!-- Site Verification -->
     <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;">
@@ -67,26 +67,26 @@
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://wukong1995.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="HOC在react中的调用顺序 | Wukong&#39;s Blog">
+    <meta property="og:title" content="threejs初试 | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg">
-    <meta property="og:description" content="一只热爱编程的媛...">
-    <meta property="og:article:tag" content="react"> 
+    <meta property="og:description" content="被threejs闪瞎了眼">
+    <meta property="og:article:tag" content="javascript"> 
 
     
-        <meta property="article:published_time" content="9月 20, 2018">
+        <meta property="article:published_time" content="1月 11, 2019">
         <meta property="article:modified_time" content="1月 11, 2019">
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="HOC在react中的调用顺序 | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="一只热爱编程的媛...">
+    <meta name="twitter:title" content="threejs初试 | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="被threejs闪瞎了眼">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://wukong1995.github.io">
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/index.html">
+        <link rel="canonical" href="https://wukong1995.github.io/2019/01/11/use-threejs/index.html">
     
 
     <!-- Structured-data for SEO -->
@@ -112,11 +112,11 @@
         },
         "description": "如切如磋，如琢如磨"
     },
-    "headline": "HOC在react中的调用顺序",
-    "url": "https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/index.html",
-    "datePublished": "9月 20, 2018",
+    "headline": "threejs初试",
+    "url": "https://wukong1995.github.io/2019/01/11/use-threejs/index.html",
+    "datePublished": "1月 11, 2019",
     "dateModified": "1月 11, 2019",
-    "description": "一只热爱编程的媛...",
+    "description": "被threejs闪瞎了眼",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://wukong1995.github.io"
@@ -339,7 +339,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#question"><span class="post-toc-number">1.</span> <span class="post-toc-text">question</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#debug"><span class="post-toc-number">2.</span> <span class="post-toc-text">debug</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#plan-B"><span class="post-toc-number">3.</span> <span class="post-toc-text">plan B</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#why"><span class="post-toc-number">4.</span> <span class="post-toc-text">why</span></a></li></ol>
+        
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -377,7 +377,7 @@
         
     
             <p class="article-headline-p">
-                HOC在react中的调用顺序
+                threejs初试
             </p>
         </div>
 
@@ -396,7 +396,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Peipei Wong</strong>
-        <span>9月 20, 2018</span>
+        <span>1月 11, 2019</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -418,7 +418,7 @@
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0klEQVR42u3aW24bQQwEQN3/0s4BDMnd5MaWZmu/AjmaZY0BE3w8vm75PLCxsbGxsbGxsbHfkv2In2ff+v756/O//89nP03eXsSMjY2NfTT7hz/9L8PNT3sWUH5Bs5ixsbGx78Oevbj9aX6t+flRzNjY2NjYQbgJctgSCsoYbGxsbOy8AbRpDOVtoNcnY2NjY2NvGjSvAW2Sa9v9f9BLw8bGxn579uyVf/vvX51vY2NjY78xe9/iace6M8wFMWNjY2Mfym6TR/5Jch2btc42EmxsbOxT2bOAZmPgGWPTwMLGxsa+JzsPui0V2rTXprdhUwkbGxv7CHayBHNVkrv2hCIFYmNjY9+AnQfXlhyzsfEsqjqBYWNjY384e1ZmbMa3s3PaAgYbGxv7Pux8VLAfA2wWffbvwsbGxj6VvVmUb0OcvatNZsWmEjY2NvYR7KT5Pmv6ty3+dmxQp0ZsbGzsQ9n7NZp9urpqXFGXItjY2NhHsNsW/6Y9NCtCkgSZLPRgY2Njn8pOyon2gtpwNwtDRYrFxsbGPpTdJrN9mykphGYtp7qXho2NjX0cuy0/kiDaFtV+PHBBBYaNjY39gey6QRMv0OxXcArY6ySHjY2NfSg7X3ncLOK0baw8KRYXjY2NjX0oe1YwtOXB/uS2+MHGxsa+Mztv97/G5Fc5W9nBxsbGxs5HrS21Hei2CXU4YMDGxsY+lN025fNWVN6Q2jeqIgs2Njb2oew2uP/ReJotcdZDaGxsbOxD2e3TjnLzi9sULaudU2xsbOwPZz/ipy1dNsVMftHY2NjY2L+zWDNbqWwHwD8osLGxsW/Azls8yXC3/W6SMmdDaGxsbGzsWfJIBgNtUkzefvFUBBsbG/s49lVpJjmhbTn9EBs2Njb2DdhXreO0vHZEcfGmEjY2NvYR7GtfmX+r/ST/JV0838bGxsZ+Y/Z9HmxsbGxsbGxsbOy3ef4BpnGv8mILqvYAAAAASUVORK5CYII=">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACWUlEQVR42u3aQXaDMAwFQO5/6XbbRZN+SbaheeNVXkLAwwIJSdfXR68LDw8PDw8PDw/vYbwrXr+cKD7+5zevjnz1r+re8PDw8M7w/njUxhfOAfkx5b3h4eHhHeRNtvX+nMnmloUTPDw8vEfykjNUGXh4eHifzUvCQ/W/eHh4eP+RV01834eESTJ9W60FDw8PL+blTabzn4/29/Dw8PACXnmkqVikyLe7ZegKDw8PbwNvcvl5CNlxO/Dw8PB288qv+m+bVfmvedusWvLAw8PD283rNaKSplQOnqTyUdzDw8PD28CrtqzyNlVvdKAaWvDw8PDO81ZtIikxJEWN/DzNlBoPDw9vwFtVjMi3Xr2V+ZgXHh4e3hler5w6uTXJOZMw0HxjwMPDw1vEm7f2qwWFeTttWZUaDw8Pr8ibFFsnQSIvXlSpeHh4eLt5hTHQODD0WlnLhhLw8PDwjvB6D+t562tS/C28MeDh4eEt5a3d7mRw6motPDw8vHt51YLshF1OlOMwg4eHh7eb1ytGTMZb87GA3gABHh4e3hneZDig1+BPxhR6oQgPDw/vLl65eDreaDXAjAIDHh4e3lJenkCvKu/mgwXJdfHw8PB283pN/bw9Nh/SKqfyeHh4eJt5kyZ970Yk162m0Xh4eHjneflGk9Z+/qAvjFLljTo8PDy8g7xe+z8h9UayeiEKDw8P75m8PKhUyxYLRrLw8PDwHsmrtqaq31SbXnh4eHh38fKCbH4LqqlzkpTj4eHhPYFXHXWap9GrCsF4eHh453mft/Dw8PDw8PDw8B6wvgF4jww3K7xhEQAAAABJRU5ErkJggg==">
     
 </ul>
     
@@ -431,7 +431,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/react/">react</a>
+        <a class="post_tag-link" href="/tags/javascript/">javascript</a>
     </li></ul>
     
 
@@ -447,7 +447,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=HOC在react中的调用顺序&url=https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/index.html&pic=&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=threejs初试&url=https://wukong1995.github.io/2019/01/11/use-threejs/index.html&pic=&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -456,7 +456,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=HOC在react中的调用顺序&url=https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/index.html&via=Peipei Wong" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=threejs初试&url=https://wukong1995.github.io/2019/01/11/use-threejs/index.html&via=Peipei Wong" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -486,69 +486,44 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="question"><a href="#question" class="headerlink" title="question"></a>question</h4><p>今天遇到了一个问题：写了一个高阶组件，使用的时候竟然告诉我props is required, but it is undefined???</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// FormWrapper.jsx</span>
-<span class="token keyword">const</span> FormWrapper <span class="token operator">=</span> initialState <span class="token operator">=</span><span class="token operator">></span> Component <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-  <span class="token keyword">class</span> <span class="token class-name">FormInnerWrapper</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-    state <span class="token operator">=</span> initialState
-
-    checkFeildValid <span class="token operator">=</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// ...</span>
-    <span class="token punctuation">}</span>
-
-    changeValue <span class="token operator">=</span> <span class="token punctuation">(</span>value<span class="token punctuation">,</span> type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// ...</span>
-    <span class="token punctuation">}</span>
-
-    isFormValidate <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">// ...</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token operator">&lt;</span>Component data<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">}</span> changeValue<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>changeValue<span class="token punctuation">}</span> isFormValidate<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>isFormValidate<span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">return</span> FormInnerWrapper<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-FormWrapper<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
-  initialState<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>object<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> FormWrapper<span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// MyForm.jsx</span>
-@<span class="token function">FormWrapper</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  xxx<span class="token punctuation">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span>
-  xxxx<span class="token punctuation">:</span> <span class="token string">'xxx'</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token keyword">class</span> <span class="token class-name">MyForm</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// ...</span>
+        <p>最近需要一个效果，去看了demo，发现是使用three.js做的。虽然是第二次看threejs的demo，但是被闪瞎了眼，真的是太酷了（我需要去补点图形学的知识）。</p>
+<p>api太长了，我准备先去找点demo的代码试一下，额，这代码看不懂啊，这是些什么？虽然不太清楚，先写出来能看的demo试试。找了好几圈，我不知道我想要的效果是使用什么api来解决。还是都看一下吧。。。</p>
+<p>第二天，我带着满肚子的疑问先看了文档，终于对前一天看到的api有了大致的认识。具体细节的参数，还是需要斟酌一下。</p>
+<p>我想要的是漫天繁星的效果，仔细想想的话，首先有两个重要的点：画星星、怎么让页面动起来（这个效果应该是像拿着望远镜一样看天空的感觉）</p>
+<ol>
+<li><p>画星星</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">300</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ <span class="token keyword">let</span> geometry <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>SphereBufferGeometry</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
+ <span class="token keyword">let</span> material <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>MeshBasicMaterial</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+   color<span class="token punctuation">:</span> <span class="token number">0x4F4F4F</span>
+ <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ <span class="token keyword">let</span> sphere <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">THREE<span class="token punctuation">.</span>Mesh</span><span class="token punctuation">(</span>geometry<span class="token punctuation">,</span> material<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ sphere<span class="token punctuation">.</span>position<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>
+   Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+   Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+   <span class="token operator">-</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">0.5</span>
+ <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">normalize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">multiplyScalar</span><span class="token punctuation">(</span><span class="token function">getRandomFloat</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ scene<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>sphere<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ stars<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>sphere<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>如何动起来<br>为页面增加鼠标移动监听事件，在事件函数中改变全局变量</p>
+</li>
+</ol>
+<pre class="line-numbers language-js"><code class="language-js">document<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'mousemove'</span><span class="token punctuation">,</span> onDocumentMouseMove<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-MyForm<span class="token punctuation">.</span>propTypes <span class="token operator">=</span> <span class="token punctuation">{</span>
-  isFormValidate<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-  data<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>object<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-  changeValue<span class="token punctuation">:</span> PropTypes<span class="token punctuation">.</span>func<span class="token punctuation">.</span>isRequired<span class="token punctuation">,</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> MyForm<span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>react给我三个warning：</p>
-<pre class="line-numbers language-js"><code class="language-js">The prop <span class="token template-string"><span class="token string">`data`</span></span> is marked <span class="token keyword">as</span> required <span class="token keyword">in</span> FormInnerWrapper<span class="token punctuation">,</span> but it is undefined<span class="token punctuation">.</span>
-The prop <span class="token template-string"><span class="token string">`isFormValidate`</span></span> is marked <span class="token keyword">as</span> required <span class="token keyword">in</span> FormInnerWrapper<span class="token punctuation">,</span> but it is undefined<span class="token punctuation">.</span>
-The prop <span class="token template-string"><span class="token string">`changeValue`</span></span> is marked <span class="token keyword">as</span> required <span class="token keyword">in</span> FormInnerWrapper<span class="token punctuation">,</span> but it is undefined<span class="token punctuation">.</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h4 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h4><p>我检查了代码，发现我没有对FormInnerWrapper定义propTypes， 我只对MyForm进行了propTypes定义。我尝试给MyForm加上defaultProps,其中data的default值为null，在调试的时候发现data的值永远为null, 不会去改变🤔️。发生了什么？</p>
-<h4 id="plan-B"><a href="#plan-B" class="headerlink" title="plan B"></a>plan B</h4><p>于是我尝试了下面的格式：</p>
-<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// MyForm.jsx</span>
-<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">FormWrapper</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-  xxx<span class="token punctuation">:</span> <span class="token string">'xxx'</span><span class="token punctuation">,</span>
-  xxxx<span class="token punctuation">:</span> <span class="token string">'xxx'</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span>MyForm<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>发现没有warning。</p>
-<h4 id="why"><a href="#why" class="headerlink" title="why"></a>why</h4><p>装饰器的写法是从左到右执行？？？<br>第二种写法比较符合正常的调用顺序？？<br>我需要再去查decorator与HOC的具体区别…<br>PS: 上次的immutable data疑问，在今天终于得到了解决，下一篇见～</p>
+<span class="token keyword">function</span> <span class="token function">onDocumentMouseMove</span><span class="token punctuation">(</span>event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  mousePosition<span class="token punctuation">.</span>x <span class="token operator">=</span> event<span class="token punctuation">.</span>clientX<span class="token punctuation">;</span>
+  mousePosition<span class="token punctuation">.</span>y <span class="token operator">=</span> event<span class="token punctuation">.</span>clientY<span class="token punctuation">;</span>
+  normalizedOrientation<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>
+    <span class="token operator">-</span><span class="token punctuation">(</span><span class="token punctuation">(</span>mousePosition<span class="token punctuation">.</span>x <span class="token operator">/</span> screenWidth<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">*</span> cameraAmpl<span class="token punctuation">.</span>x<span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token punctuation">(</span>mousePosition<span class="token punctuation">.</span>y <span class="token operator">/</span> screenHeight<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">0.5</span><span class="token punctuation">)</span> <span class="token operator">*</span> cameraAmpl<span class="token punctuation">.</span>y<span class="token punctuation">,</span>
+    <span class="token number">0.5</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><a href="https://medium.freecodecamp.org/javascript-objects-square-brackets-and-algorithms-e9a2916dc158" target="_blank" rel="noopener">代码戳这里</a></p>
 
     
 
@@ -601,8 +576,8 @@ The prop <span class="token template-string"><span class="token string">`changeV
 
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'https://wukong1995.github.io/2018/09/20/high-oreder-component-tip/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'https://wukong1995.github.io/2019/01/11/use-threejs/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2019/01/11/use-threejs/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 
@@ -635,21 +610,13 @@ The prop <span class="token template-string"><span class="token string">`changeV
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/09/25/immutable-data/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2018/09/13/stateless-component-vs-pure-component/" id="post_nav-older" class="next-content">
+        <a href="/2019/01/09/translate-javascript-objects-square-brackets-and-algorithms/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
