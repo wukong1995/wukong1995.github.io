@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2019-01-17T11:54:43.989Z</updated>
+  <updated>2019-01-21T10:55:07.221Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>翻译：保持你的代码洁净</title>
+    <link href="https://wukong1995.github.io/2019/01/18/translate-keeping-your-code-clean/"/>
+    <id>https://wukong1995.github.io/2019/01/18/translate-keeping-your-code-clean/</id>
+    <published>2019-01-18T10:38:57.000Z</published>
+    <updated>2019-01-21T10:55:07.221Z</updated>
+    
+    <summary type="html">
+    
+      keeping your code clean
+    
+    </summary>
+    
+      <category term="翻译" scheme="https://wukong1995.github.io/categories/%E7%BF%BB%E8%AF%91/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+      <category term="翻译" scheme="https://wukong1995.github.io/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>翻译：JavaScript中的组合函数</title>
     <link href="https://wukong1995.github.io/2019/01/17/translate-functional-composing-javascript/"/>
     <id>https://wukong1995.github.io/2019/01/17/translate-functional-composing-javascript/</id>
     <published>2019-01-17T10:35:09.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -42,7 +64,7 @@
     <link href="https://wukong1995.github.io/2019/01/13/summary-of-work/"/>
     <id>https://wukong1995.github.io/2019/01/13/summary-of-work/</id>
     <published>2019-01-13T12:52:39.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -62,7 +84,7 @@
     <link href="https://wukong1995.github.io/2019/01/11/use-threejs/"/>
     <id>https://wukong1995.github.io/2019/01/11/use-threejs/</id>
     <published>2019-01-11T14:02:01.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -84,7 +106,7 @@
     <link href="https://wukong1995.github.io/2019/01/09/translate-javascript-objects-square-brackets-and-algorithms/"/>
     <id>https://wukong1995.github.io/2019/01/09/translate-javascript-objects-square-brackets-and-algorithms/</id>
     <published>2019-01-09T10:28:15.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -106,7 +128,7 @@
     <link href="https://wukong1995.github.io/2019/01/02/mixed-talk-3/"/>
     <id>https://wukong1995.github.io/2019/01/02/mixed-talk-3/</id>
     <published>2019-01-02T10:29:35.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -126,7 +148,7 @@
     <link href="https://wukong1995.github.io/2018/12/24/translate-understanding-scope-in-javascript/"/>
     <id>https://wukong1995.github.io/2018/12/24/translate-understanding-scope-in-javascript/</id>
     <published>2018-12-24T10:24:29.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -151,7 +173,7 @@
     <link href="https://wukong1995.github.io/2018/12/21/first-task/"/>
     <id>https://wukong1995.github.io/2018/12/21/first-task/</id>
     <published>2018-12-21T15:00:43.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.217Z</updated>
     
     <summary type="html">
     
@@ -171,7 +193,7 @@
     <link href="https://wukong1995.github.io/2018/12/21/weapp-web-view/"/>
     <id>https://wukong1995.github.io/2018/12/21/weapp-web-view/</id>
     <published>2018-12-21T14:48:04.000Z</published>
-    <updated>2019-01-17T11:54:43.993Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -191,7 +213,7 @@
     <link href="https://wukong1995.github.io/2018/12/17/js-boolean/"/>
     <id>https://wukong1995.github.io/2018/12/17/js-boolean/</id>
     <published>2018-12-17T11:06:45.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.217Z</updated>
     
     <summary type="html">
     
@@ -213,7 +235,7 @@
     <link href="https://wukong1995.github.io/2018/12/11/weapp-address/"/>
     <id>https://wukong1995.github.io/2018/12/11/weapp-address/</id>
     <published>2018-12-11T12:50:15.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -233,7 +255,7 @@
     <link href="https://wukong1995.github.io/2018/12/10/mixed-talk-2/"/>
     <id>https://wukong1995.github.io/2018/12/10/mixed-talk-2/</id>
     <published>2018-12-10T13:06:10.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -253,7 +275,7 @@
     <link href="https://wukong1995.github.io/2018/12/07/js-type-coercion/"/>
     <id>https://wukong1995.github.io/2018/12/07/js-type-coercion/</id>
     <published>2018-12-07T07:37:24.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -277,7 +299,7 @@
     <link href="https://wukong1995.github.io/2018/12/04/get-csdn-blog/"/>
     <id>https://wukong1995.github.io/2018/12/04/get-csdn-blog/</id>
     <published>2018-12-04T09:24:47.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.217Z</updated>
     
     <summary type="html">
     
@@ -303,7 +325,7 @@
     <link href="https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/"/>
     <id>https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/</id>
     <published>2018-11-29T11:25:26.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -326,7 +348,7 @@
     <link href="https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/"/>
     <id>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</id>
     <published>2018-11-28T06:23:56.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -346,7 +368,7 @@
     <link href="https://wukong1995.github.io/2018/11/20/centos-server-1/"/>
     <id>https://wukong1995.github.io/2018/11/20/centos-server-1/</id>
     <published>2018-11-20T11:01:00.000Z</published>
-    <updated>2019-01-17T11:54:43.985Z</updated>
+    <updated>2019-01-21T10:55:07.217Z</updated>
     
     <summary type="html">
     
@@ -368,7 +390,7 @@
     <link href="https://wukong1995.github.io/2018/11/10/pm2-second/"/>
     <id>https://wukong1995.github.io/2018/11/10/pm2-second/</id>
     <published>2018-11-10T11:40:00.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -390,7 +412,7 @@
     <link href="https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/"/>
     <id>https://wukong1995.github.io/2018/11/05/refuse-to-overuse-react/</id>
     <published>2018-11-05T11:09:38.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.221Z</updated>
     
     <summary type="html">
     
@@ -417,7 +439,7 @@
     <link href="https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/"/>
     <id>https://wukong1995.github.io/2018/10/31/get-current-page-qrcode/</id>
     <published>2018-10-31T11:03:08.000Z</published>
-    <updated>2019-01-17T11:54:43.989Z</updated>
+    <updated>2019-01-21T10:55:07.217Z</updated>
     
     <summary type="html">
     
@@ -425,28 +447,6 @@
 &lt;p&gt;微信给提供了三个接口：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;接口 A: 适用于需要的码数量较少的业务场景&lt;br&gt; 生成小程序码，
-    
-    </summary>
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-    
-      <category term="小程序" scheme="https://wukong1995.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在小程序中画图的第二次体验</title>
-    <link href="https://wukong1995.github.io/2018/10/29/canvas-in-weapp/"/>
-    <id>https://wukong1995.github.io/2018/10/29/canvas-in-weapp/</id>
-    <published>2018-10-29T12:00:34.000Z</published>
-    <updated>2019-01-17T11:54:43.985Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天的主要任务是画一个分享的海报，基于之前的一次经验，这次遇到的坑比较少，也更有耐心了🙂️&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;canvas中绘制网络图片&lt;br&gt;canvas中的drawImage中的第一个参数是图片的地址，但是不能是网络图片，解决的办法是：先下载下来，再去绘
     
     </summary>
     
