@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2019-01-26T14:42:29.844Z</updated>
+  <updated>2019-02-20T10:01:30.173Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>新的一年的第一周get了</title>
+    <link href="https://wukong1995.github.io/2019/02/17/summary-work-3/"/>
+    <id>https://wukong1995.github.io/2019/02/17/summary-work-3/</id>
+    <published>2019-02-17T04:52:48.000Z</published>
+    <updated>2019-02-20T10:01:30.173Z</updated>
+    
+    <summary type="html">
+    
+      新的一年的第一周get到些什么
+    
+    </summary>
+    
+      <category term="总结" scheme="https://wukong1995.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>来写一个编辑器的plugin</title>
     <link href="https://wukong1995.github.io/2019/01/25/add-editor-plugin/"/>
     <id>https://wukong1995.github.io/2019/01/25/add-editor-plugin/</id>
     <published>2019-01-25T11:32:51.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -42,7 +62,7 @@
     <link href="https://wukong1995.github.io/2019/01/22/refactor-comment/"/>
     <id>https://wukong1995.github.io/2019/01/22/refactor-comment/</id>
     <published>2019-01-22T11:48:44.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -68,7 +88,7 @@
     <link href="https://wukong1995.github.io/2019/01/18/translate-keeping-your-code-clean/"/>
     <id>https://wukong1995.github.io/2019/01/18/translate-keeping-your-code-clean/</id>
     <published>2019-01-18T10:38:57.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -90,7 +110,7 @@
     <link href="https://wukong1995.github.io/2019/01/17/translate-functional-composing-javascript/"/>
     <id>https://wukong1995.github.io/2019/01/17/translate-functional-composing-javascript/</id>
     <published>2019-01-17T10:35:09.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -109,10 +129,10 @@
   
   <entry>
     <title>忽然想写一些总结</title>
-    <link href="https://wukong1995.github.io/2019/01/13/summary-of-work/"/>
-    <id>https://wukong1995.github.io/2019/01/13/summary-of-work/</id>
+    <link href="https://wukong1995.github.io/2019/01/13/summary-work-2/"/>
+    <id>https://wukong1995.github.io/2019/01/13/summary-work-2/</id>
     <published>2019-01-13T12:52:39.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -132,7 +152,7 @@
     <link href="https://wukong1995.github.io/2019/01/11/use-threejs/"/>
     <id>https://wukong1995.github.io/2019/01/11/use-threejs/</id>
     <published>2019-01-11T14:02:01.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -154,7 +174,7 @@
     <link href="https://wukong1995.github.io/2019/01/09/translate-javascript-objects-square-brackets-and-algorithms/"/>
     <id>https://wukong1995.github.io/2019/01/09/translate-javascript-objects-square-brackets-and-algorithms/</id>
     <published>2019-01-09T10:28:15.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -176,7 +196,7 @@
     <link href="https://wukong1995.github.io/2019/01/02/mixed-talk-3/"/>
     <id>https://wukong1995.github.io/2019/01/02/mixed-talk-3/</id>
     <published>2019-01-02T10:29:35.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -196,7 +216,7 @@
     <link href="https://wukong1995.github.io/2018/12/24/translate-understanding-scope-in-javascript/"/>
     <id>https://wukong1995.github.io/2018/12/24/translate-understanding-scope-in-javascript/</id>
     <published>2018-12-24T10:24:29.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -221,7 +241,7 @@
     <link href="https://wukong1995.github.io/2018/12/21/first-task/"/>
     <id>https://wukong1995.github.io/2018/12/21/first-task/</id>
     <published>2018-12-21T15:00:43.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -241,7 +261,7 @@
     <link href="https://wukong1995.github.io/2018/12/21/weapp-web-view/"/>
     <id>https://wukong1995.github.io/2018/12/21/weapp-web-view/</id>
     <published>2018-12-21T14:48:04.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -261,7 +281,7 @@
     <link href="https://wukong1995.github.io/2018/12/17/js-boolean/"/>
     <id>https://wukong1995.github.io/2018/12/17/js-boolean/</id>
     <published>2018-12-17T11:06:45.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -283,7 +303,7 @@
     <link href="https://wukong1995.github.io/2018/12/11/weapp-address/"/>
     <id>https://wukong1995.github.io/2018/12/11/weapp-address/</id>
     <published>2018-12-11T12:50:15.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -303,7 +323,7 @@
     <link href="https://wukong1995.github.io/2018/12/10/mixed-talk-2/"/>
     <id>https://wukong1995.github.io/2018/12/10/mixed-talk-2/</id>
     <published>2018-12-10T13:06:10.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -323,7 +343,7 @@
     <link href="https://wukong1995.github.io/2018/12/07/js-type-coercion/"/>
     <id>https://wukong1995.github.io/2018/12/07/js-type-coercion/</id>
     <published>2018-12-07T07:37:24.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -347,7 +367,7 @@
     <link href="https://wukong1995.github.io/2018/12/04/get-csdn-blog/"/>
     <id>https://wukong1995.github.io/2018/12/04/get-csdn-blog/</id>
     <published>2018-12-04T09:24:47.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -373,7 +393,7 @@
     <link href="https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/"/>
     <id>https://wukong1995.github.io/2018/11/29/translate-not-everything-in-javascript-is-an-object/</id>
     <published>2018-11-29T11:25:26.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -396,7 +416,7 @@
     <link href="https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/"/>
     <id>https://wukong1995.github.io/2018/11/28/ror-deploy-with-puma-and-nginx/</id>
     <published>2018-11-28T06:23:56.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
+    <updated>2019-02-20T10:01:30.173Z</updated>
     
     <summary type="html">
     
@@ -416,7 +436,7 @@
     <link href="https://wukong1995.github.io/2018/11/20/centos-server-1/"/>
     <id>https://wukong1995.github.io/2018/11/20/centos-server-1/</id>
     <published>2018-11-20T11:01:00.000Z</published>
-    <updated>2019-01-26T14:42:29.844Z</updated>
+    <updated>2019-02-20T10:01:30.169Z</updated>
     
     <summary type="html">
     
@@ -430,28 +450,6 @@
       <category term="linux" scheme="https://wukong1995.github.io/tags/linux/"/>
     
       <category term="centos" scheme="https://wukong1995.github.io/tags/centos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>再次尝试pm2-自动化部署</title>
-    <link href="https://wukong1995.github.io/2018/11/10/pm2-second/"/>
-    <id>https://wukong1995.github.io/2018/11/10/pm2-second/</id>
-    <published>2018-11-10T11:40:00.000Z</published>
-    <updated>2019-01-26T14:42:29.848Z</updated>
-    
-    <summary type="html">
-    
-      pm2-自动化部署node项目
-    
-    </summary>
-    
-      <category term="nodejs" scheme="https://wukong1995.github.io/categories/nodejs/"/>
-    
-      <category term="pm2" scheme="https://wukong1995.github.io/categories/nodejs/pm2/"/>
-    
-    
-      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
     
   </entry>
   
