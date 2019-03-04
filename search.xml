@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[刷leetcode带来了什么]]></title>
+    <url>%2F2019%2F03%2F04%2Fleetcode-and-algorithm%2F</url>
+    <content type="text"><![CDATA[序言最近开始尝试刷leetcode，最直观的感受是：你可以知道自己最擅长和最不擅长解决什么问题。我是擅长解决关于字符串的问题，最不擅长解决排列，回溯，搜索问题。 解决排列问题一个很常见的面试题：从一个数组中找出和为sum的全部排列。现在还能记得那时候的想法：加加加如果大于和了怎么办？要退回去呀…这个“退”让我想起了迷宫问题，于是就朝这方面想办法，but结果可以预想。一开始的错误会让你永远都找不到答案。 再次思考这个问题，我想：一个一个循环找答案吧。抱着这个想法去找还有没有更好的方法。得到的答案也是这样的，不过里面得到的一个很重要的point：“剪枝”。就像之前看到的找八皇后答案的过程一样：如果过程中遇到不满足结果的答案，及时剔除。 同时，提交的答案，也会把程序的速度和空间复杂度展示出来。印象很深刻的一个题目是排序列表，题目中给的tip是不要尝试交换值。不过只是我第一想法，于是我就这么做了，但是达到的复杂度真的是差强人意。于是我开始尝试改变next的指向来进行排序，效率真的大大提升。 测试驱动开发很喜欢“测试驱动开发”这个观点，我看到题目会先将测试用例加上，在尝试写code。但是通不过测试，到底是为什么？这个时候，开始打日志，看问题到底是出在哪？还记得之前看过的：如何调试自己的代码？首先是看。看到底是哪里出错了。打日志得到的错误区域可能会帮你定位bug。但是给我的感觉就是很乱，我只是着眼于这一处，改的时候也是只关注这一点，可能的后果是其他地方除了问题。看是第一选择，实在是看不出来，再尝试debug。 边界处理里面还有一个是边界值处理。跑过了测试用例，但是得到一个“wrong answer”的结果，定眼一看，原来是边界值的问题。等再次code，会有一个潜移默化的想法，想的全面。 待解决到现在，对于排列的问题，我可以尝试去下手写，去寻找解决办法。开动脑筋，去找answer。最近没有解决的问题是大数处理和位运算。]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[我的对scss的错误认知]]></title>
     <url>%2F2019%2F02%2F23%2Fscss%2F</url>
     <content type="text"><![CDATA[之前的post介绍的重构的评论组件，我的重构工作仅仅从coding的复杂度去考虑，却没有进行深入的研究，例如渲染原理等等。用react实现实际上是不是比重构后更快，毕竟算法的复杂度已经降到O(n)了。这是一个很大的失误。 继上面的错误之后，有犯了一个很粗鄙的错误。没有正确的认识到scss作为css的预处理的作用。目前项目中scss的作用只用到变量定义和嵌套的。在我查看bootstrap的源代码的时候，粗略的看了一下，嗯，感受到的是一种形散神不散的感觉，就像它是一张网，但是你只是将它们看成一条一条的线。这个时候赶忙去看scss的doc，才发现它既然是一种预处理的语言，相对于css，它必然包含更多更好的功能。 变量变量也可以进行计算哦。 $red: red; body { color: $color; } ` 嵌套.btn { color: #fff; &amp;.t-red { background: $red } } namespace.btn { font { size: 1.6rem; weight: normal; } } ` each and map这个功能真的很棒很棒，超级棒！棒到我都不想写之前的code。 $theme-colors: ( 'blue': $blue, 'pink': $pink, 'green': $green, 'yellow': $yellow, 'red': $red ); .badge { color: #fff; @each $color, $value in $theme-colors { &amp;.t-#{$color} { background-color: $value; } } } ` function看到设计图里面很多颜色都是带透明度的，但是场景是不需要用到rgba，于是写了一个将带有透明度的颜色转化成不带透明度的颜色，带透明的颜色实际上是和白色以透明度去混合得到。 @function rgba-to-rgb($rgba, $background: #fff) { @return mix(rgb(red($rgba), green($rgba), blue($rgba)), $background, alpha($rgba) * 100%); } ` 避免使用@extend之前看到的文章里面专门来讲这个事情，不要使用@extend而是使用@inlcude，举个栗子： h3 { font-size: 1.8rem; } .home h3 { font-size: 2rem; } .h3 { @extend h3; } ` 这时候得到的css是： h3, .h3 { font-size: 1.8rem; } .home h3, .home .h3 { font-size: 2rem; } ` 你仅仅想要继承的是1.8的这个样式，但同时也把2的样式给继承了。 还有更多更好的功能去探索。]]></content>
