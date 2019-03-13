@@ -1,11 +1,11 @@
 ---
 date: 2018-11-29 19:25:26
-title: 翻译：javascript中方的所有事物并不都是对象
+title: 翻译：javascript中所有事物并不都是对象
 tags: [翻译, javascript]
 categories: [翻译]
 ---
 
-[文章出处](http://blog.brew.com.hk/not-everything-in-javascript-is-an-object/)
+[原文链接](http://blog.brew.com.hk/not-everything-in-javascript-is-an-object/)
 
 关于javascript是面向对象编程（OOP）语言还是函数式语言，存在和很多混淆，其实，javascript都可以在两者中使用。
 这会导致人们问：在JavaScript中所有事物是对象吗？函数是什么？
