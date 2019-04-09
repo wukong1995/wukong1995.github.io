@@ -76,7 +76,7 @@ export default class extends Controller {
 }
 ```
 
-看起来非常good，于是开始运行，发现死循环了，检查了代码没发现错误，尝试debugger发现程序一直在执行set操作，很纳闷，没执行set呀。找机会问了哟哟，他告诉我，在set中尝试给this.item意味着你在set调用set本身，于是乎，死循环了...
+看起来非常good，于是开始运行，发现死循环了，检查了代码没发现错误，尝试debugger发现程序一直在执行set操作，很纳闷，没执行set呀。找机会问了哟哟，他告诉我，在set中尝试给this.item赋值意味着你在set调用set本身，于是乎，死循环了...
 
 ```js
 get items() {
@@ -94,7 +94,7 @@ get items() {
 1、如果以上面的方式进行，我觉得还不如做成面向对象中的set/get....这只是我个人的想法
 2. 将html写在js中一点都不优雅，我找到了一个[demo](https://github.com/stimulusjs/stimulus/issues/41)，它提供一个更好的方式。
 3. 使用stimulus，思维方式和传统的js相似
-4. 在stimulus中，数据和元素不是一一对应的，所以在deleteItem中直接删除元素并且改变items的方式会不会比通过数据去改变dom更好一点？虽然二随一变会容易出bug，但是考虑到列表可能会很多，删除一个元素比重新渲染整个列表代价小很多吧.....
+4. 在stimulus中，数据和元素不是一一对应的，所以在deleteItem中直接删除元素并且改变items的方式会不会比通过数据去改变dom更好一点？虽然二随一变会容易出bug，但是考虑到列表可能会很多，~~删除一个元素比重新渲染整个列表代价小很多吧~~（2019.4.9更新，不确定😂）.....
 
 
 
