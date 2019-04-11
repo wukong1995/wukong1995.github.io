@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[翻译：理解js中的event loop]]></title>
+    <url>%2F2019%2F04%2F11%2Ftranslate-javascript-event-loop-explained%2F</url>
+    <content type="text"><![CDATA[之前看的文，感觉不太完整，于是找了篇详细的文章。原文链接 Javascript是如何异步和单线程的？简短的回答是javascript语言是单线程的，异步行为不是它的一部分，相反，它是建立在浏览器（或编程环境）中的核心JavaScript语言之上，并通过浏览器API访问。 现在为了得到答案，让我写两个示例代码片段。 基本架构 堆：对象在堆中分配，表示大多数非结构化的内存区域。 栈：这表示JavaScript代码执行提供的单个线程，函数调用形成一个栈。 浏览器或Web API是内置在你的web浏览器中，能够暴露浏览器和周围的计算机环境中的数据，并使用它执行游泳的复杂操作。它们不是JavaScript语言的一部分，而是基于核心JavaScript语言构建，为你的JavaScript代码中提供额外的超能力。例如，Geolocation API提供了一些简单的JavaScript构造，用于检索数据，所以你可以说，在Google map上绘制你的位置。在后台，浏览器实际上使用一些复杂的低级代码（例如C++）与设备的GPS硬件（或者任何可用于确定位置数据的信息）进行通信，检索位置数据，并将其返回到浏览器环境用来使用在你的代码中。但同样，这种复杂性是由API抽象出来的。 代码片段1:迷惑心灵function main(){ console.log('A'); setTimeout( function display(){ console.log('B'); } ,0); console.log('C'); } main(); // Output // A // C // B 这里，我们有一个主函数，它有两个console.log：将A和C输入到控制台上。它们中间是一个在0ms后将B输出到控制台上的setTimeOut调用。 &gt; 调用主函数，首先将它推入到栈中。然后浏览器将主函数的第一个声明console.log(&#39;A&#39;)推入到栈中，执行此语句，并在完成后弹出，字母A显示在控制台上。 第二个声明setTimeout推入栈中并开始执行。setTimeout函数使用浏览器的API来延迟回调其中的函数。一旦交接给brower完成timer，这一帧就被推出。 当计时器在浏览器中运行来回调exec函数时，console.log(‘C’)被推入栈中。在这种特殊的情况下，由于提供的延迟是0ms，一旦浏览器接收到它（理想情况下），回调将被添加到消息队列中。 执行完主函数的最后一个语句，主函数从调用堆栈中弹出，从而堆栈为空。对于浏览器将任何消息从队列推送到调用堆栈中，调用堆栈必须为空。这就是为什么即使setTimeout中提供的延迟是0ms，exec的会带哦耶必须等到调用堆栈中的所有帧的执行完成。 现在exec的回调被推入调用栈，接着执行。字母C显示在控制台上。这就是JavaScript的事件循环。 因此setTimeout（function，delayTime）中的delay参数不代表执行函数之后的精确时间延迟。它代表最小等待时间，之后在某个时间点执行该功能。 代码片段2:深入理解function main(){ console.log('A'); setTimeout( function exec(){ console.log('B'); } , 0); runWhileLoopForNSeconds(3); console.log('C'); } main(); function runWhileLoopForNSeconds(sec){ let start = Date.now(), now = start; while (now - start &lt; (sec*1000)) { now = Date.now(); } } // Output // A // C // B 函数runWhileLoopF​​orNSeconds完全符合其名称所代表的含义，它会不断检查从调用时间开始经过的时间是否等于函数参数提供的秒数。要记住的要点是while循环（与许多其他循环一样）是一个阻塞语句，意味着它的执行发生在调用堆栈上，并且不使用浏览器API。因此它会阻止所有后续语句，知道它执行完成。 所以在上面的代码中，即使setTimeout的延迟为0ms且while循环运行3s，exec()回调也会卡在消息队列中。while循环继续在调用堆栈（单线程）上运行，直到3s已经过去。在调用堆栈变空之后，回调exec()被移动到调用堆栈并执行。 因此setTimeout()中的delay参数不保证在计时器完成延迟后开始执行。它是延迟部分的最短时间。]]></content>
+      <categories>
+        <category>翻译</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[在react中使用typescript]]></title>
     <url>%2F2019%2F04%2F09%2Fuse-typescript-in-react%2F</url>
     <content type="text"><![CDATA[安装yarn add typescript yarn add tslint tslint-config-prettier -dev 增加配置文件增加配置文件tsconfig.json tslint.json在webpack中增加loader module.exports = { test: /\.(ts|tsx)?$/, use: 'ts-loader' }; 改造 更改prototypes // 使用interface 代替 组件的proptypes interface ItemProps { path: string, title: string, description: string, published_at: string, remote: boolean, isHasFooterLeft: boolean, } class ArticleItem extends React.Component&lt;ItemProps> { private static defaultProps = { } } 我之前习惯于将proptypes和defaultProps写在组件的外面，更改了proptypes，那么defaultProps为了代码的清晰度，就移入了组件的内部. 更改state const initialState = { checkedTags: [] }; type State = Readonly&lt;typeof initialState>; class FilterWrappper extends React.Component&lt;IProps> { readonly state: State = initialState; // xxx } props中的类型使用ts定义的话，类型名需要改变，我在设置类型functuon的时候，找了好久才找到正确的名字。 组件中的函数使用private或者public需要再斟酌一下。目前生命周期函数使用public，自定义的函数使用private。 遇到的问题使用ts-loader，ts文件中不能解析webpacke中alias，需要将webpack中的alias复制到tsconcifg文件中，形如： "baseUrl": "./", "paths": { "@components/*": ["frontend/components/*"], } 是否有必要引入ts最想要的是类型检查，但是引入ts的成本很高，如果对现有项目进行全部的迁移，工作量是巨大的。ts开始支持jsdoc了，以注释的形式增加类型支持。 是否使用ts，根据实际情况进行选择。]]></content>
