@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[编程中的名词]]></title>
+    <url>%2F2019%2F04%2F19%2Fconcept-in-fe%2F</url>
+    <content type="text"><![CDATA[自省这个概念是学python同学遇到的一个概念。因为在python中一切皆对象，自省表示查看对象的一些特性，推断对象的结构和能力。 js中的伪数组伪数组是一个含有length属性的json对象。像函数中的arguments对象，还有getElementsByTagName,document.childNodes之类的返回NodeLists对象都是伪数组。 浏览器事件模型这个真的好久好久没见过，导致我忘的一干二净。事件发生定义成三个阶段：捕获阶段，目标阶段，冒泡阶段。 如何在箭头函数中得到argus箭头函数是不绑定arguments对象的，那么如何在函数内部获得呢？ // 1 var bar = (...arguments) => console.log(arguments); // 2 var fapply = (fun, args) => fun(...args);]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[http中的状态码和http缓存]]></title>
+    <url>%2F2019%2F04%2F18%2Fhttp-status-code-and-cache%2F</url>
+    <content type="text"><![CDATA[status code如果被问到http的状态码，我可以会说出来200，404，500，204。3开头的表示的是重定向，其他的可能就over了。思来想去，还是做一个总结，有的看。 http的状态码中，1xx表示消息，2xx表示成功，3xx表示重定向，4xx表达客户端错误，5xx表示服务器错误。选择几个常见的状态码如下： 2xx 码 含义 200 OK，成功处理，有返回内容 204 No Content，成功处理，没有返回内容 3xx 码 含义 302 Found，重定向 304 Not Modified，资源未修改，不用重新传输（和http cache有关） 4xx 码 含义 400 Bad Request，客户端中明显错误，可能的原因：语法错误、无效请求 401 Unauthorized，未认证，表示当前请求需要用户认证 403 Forbidden，服务器已经正确理解请求，但拒绝执行。返回信息中应该存在拒绝的原因。 403 Not Found，请求的资源服务器上找不到 5xx 码 含义 500 Internal Server Error，服务器错误 502 Bad Gateway，网关或者代理的服务器执行请求时，从上游的服务器收到无效请求。 参考链接 cache通常情况下请求一个资源，返回的header中可以设置“Cache-Control”来设置缓存策略，浏览器在再次请求时，会先计算当前缓存是否过期，如果过期则去重新请求，如果未过期，则使用现在的缓存。那么这样的方式会有一个问题：当遇到一个紧急修改，这个时候本地的缓存是一个废弃状态怎么办？那么，如何在客户端缓存和快速更新两者之间找一个平衡点？ 现在前端使用的自动化工具时webpack，可以去设置打包后的资源名后加上一串hash。服务器可以将缓存时间可以设置成一年甚至更多，当快速更新后，资源的hash改变之后，它对于客户端来说是一个全新的资源，客户端是去请求而不是使用之前的缓存。 参考链接]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[margin+flex=love]]></title>
     <url>%2F2019%2F04%2F16%2Fmargin-flex%2F</url>
     <content type="text"><![CDATA[原因在这里为什么要写这篇文章呢？之前在一个总结中说过这个问题，这次单拎出来的原因是：之前印象太浅了 margin和flex如果想要一个盒子居中显示，我可以加上margin: 0 auto;如果想要一个盒子居右显示，我可以加上margin-left: auto;那么我在flex中，对于flex-item使用margin会有什么效果呢？margin应用在flex-item上会覆盖它的主轴和纵轴的指定方式。 可以实现这样的布局]]></content>
