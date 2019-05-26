@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[这周也是元气满满的一周]]></title>
+    <url>%2F2019%2F05%2F25%2Fsummary-work-4%2F</url>
+    <content type="text"><![CDATA[PureComponent为什么不管用了首先这个问题可以追溯到我之前的issue，这次拿出来看的时候，终于是找到了清楚的答案。 使用PureComponent可以提高性能，因为react会在shouldeComponentUpdate中进行一个浅比较，注意是浅比较，所以当你的UI组件中一旦有嵌套的对象属性或者函数，其实这个时候即使用了PureComponent也不会有什么作用，这个时候就需要你在shouldeComponentUpdate去进行手动判断是否rerender。 参考链接：你真的了解浅比较么？ ssr当你访问一个spa时，第一次打开的速度很慢，白屏的时间也很长，打开控制台发现用了css in js导致html巨大，js文件也很巨大，这个时候最简单的是使用部分ssr，先显示一部分html在页面，然后等下载完js文件后执行即可。 项目里面用了css in js，想要把它干掉，不知道执行中会遇到什么问题，这是自己的一个挑战吧。 因为现在工作时间变长了，真的是很难调节自己的时间，每天回到家只想躺着，努力调整一下。]]></content>
+      <categories>
+        <category>前端</category>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[如何更改antd的样式]]></title>
     <url>%2F2019%2F05%2F19%2Fchange-antd-style%2F</url>
-    <content type="text"><![CDATA[新地方用的是antd组件，功能可以满足需求，但是样式需要调整一下，找到了两个方法：一个是粗犷的暴力覆盖样式，另一个是通过改变less里面的值进而达到更改样式 方法1: @import '~antd/lib/modal/style/index'; .ant-modal { &amp;-header { border-bottom: none; } &amp;-title { color: red; } } 方法2:因为之前使用的是sass预处理，变量支持default和import，但是less是不支持这个操作的，想要达到目标，我只能采取变量覆盖的方法，这就需要在引入定义变量的文件后面覆盖变量的值（和定义变量相同），这样就导致一个问题：我必须要了解组件style文件中的逻辑。这样一来，我的自定义组件中的样式架构就需要跟着antd的变化而改变。 @import '~antd/lib/style/themes/default'; @import '~antd/lib/style/mixins/index'; @border-width-base: 0; @heading-color: red; @import '~antd/lib/modal/style/modal'; @import '~antd/lib/modal/style/confirm'; 目前只想到这两个方法。 但是比较伤的是我发现项目中的antd版本不一样，那么就要意味着我写两个版本的组件样式库？？？]]></content>
+    <content type="text"><![CDATA[新地方用的是antd组件，功能可以满足需求，但是样式需要调整一下，找到了两个方法：一个是粗犷的暴力覆盖样式，另一个是通过改变less里面的值进而达到更改样式 方法1: @import '~antd/lib/modal/style/index'; .ant-modal { &amp;-header { border-bottom: none; } &amp;-title { color: red; } } 方法2:因为之前使用的是sass预处理，变量支持default和import，但是less是不支持这个操作的，想要达到目标，我只能采取变量覆盖的方法，这就需要在引入定义变量的文件后面覆盖变量的值（和定义变量相同），这样就导致一个问题：我必须要了解组件style文件中的逻辑。这样一来，我的自定义组件中的样式架构就需要跟着antd的变化而改变。 @import '~antd/lib/style/themes/default'; @import '~antd/lib/style/mixins/index'; @border-width-base: 0; @heading-color: red; @import '~antd/lib/modal/style/modal'; @import '~antd/lib/modal/style/confirm'; 目前只想到这两个方法。 但是比较伤的是我发现项目中的antd版本不一样，那么就要意味着我写两个版本的组件样式库？？？ PS: 今晚等雨的我，怕是等不到雨了…]]></content>
       <categories>
         <category>前端</category>
         <category>javascript</category>
