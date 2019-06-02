@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[migrate-flow-to-ts]]></title>
+    <url>%2F2019%2F06%2F02%2Fmigrate-flow-to-ts%2F</url>
+    <content type="text"><![CDATA[现在经常开发的两个项目，一个是用的ts，一个用的flow。ts是现在一个主流的技术，新同学进来需要学习flow的语法，在开发过程中，在flow项目中也经常会写ts的语法，但是在js文件里面写了ts也不会什么作用啊。 找了从flow迁移到ts的文章，跟着里面的步骤实践了一遍，过程繁琐了点，但结果还是令人欣喜的。大致的步骤是： 更改文件后缀名 移除所有flow的注释 移除flow的配置文件和package，增加ts配置文件 在webpack中增加ts-loader 修复type error 更改文件后缀名项目中所有的文件都是js文件，根据文件名可以选择后缀是tsx还是ts。使用fs为所有文件重命名。 const fs = require('fs'); const tsFileReg = /(style|styles|data|util|type|reducer|action|gql|index).js$/ const dfs = (path) => { fs.readdir(path, function (error, files) { if (error) { console.log(error); } else { files.forEach((filename) => { const currentPath = path + filename; const stats = fs.statSync(currentPath); if (stats.isDirectory()) { // 文件夹 dfs(currentPath + '/'); } else { // 文件重命名 let newSuffix = tsFileReg.test(filename) ? '.ts' : '.tsx' const newFileName = filename.replace(/\.js$/, newSuffix); fs.rename(currentPath, `${path}${newFileName}`, function (err) { if (err) throw err; console.log('renamed complete'); }); } }); } }); } dfs('./src/shared/'); 虽然在重命名的时候增加了规则，但是还是会出现错误的后缀名，原因是有一些文件命名不符合现在的命名规则。 移除所有flow的注释文件太多，我做不到一个一个删除了，于是选择了使用编辑器将// @flow变成// 移除flow的配置文件和package，增加ts配置文件 配置文件：删除.flowconfig和其余的flow文件，增加tsconfig.json package： 删除flow-remove-types、eslint-plugin-flowtype、flow-typed， 增加tslint tslint-immutable tslint-react typescript 在webpack中增加ts-loadermodule.exports = { test: /\.tsx?$/, use: 'ts-loader' }; 文件扩展名增加：ts, tsx 修复type error使用tslint -c tslint.json -p tsconfig.json -e \&quot;**/*.d.ts\&quot; \&quot;src/**/*.{ts,tsx}\&quot;去查找type error修复，这个虽然很简单，但是一个大工程…]]></content>
+      <categories>
+        <category>前端</category>
+        <category>typescript</category>
+      </categories>
+      <tags>
+        <tag>typescript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[这周也是元气满满的一周]]></title>
     <url>%2F2019%2F05%2F25%2Fsummary-work-4%2F</url>
     <content type="text"><![CDATA[PureComponent为什么不管用了首先这个问题可以追溯到我之前的issue，这次拿出来看的时候，终于是找到了清楚的答案。 使用PureComponent可以提高性能，因为react会在shouldeComponentUpdate中进行一个浅比较，注意是浅比较，所以当你的UI组件中一旦有嵌套的对象属性或者函数，其实这个时候即使用了PureComponent也不会有什么作用，这个时候就需要你在shouldeComponentUpdate去进行手动判断是否rerender。 参考链接：你真的了解浅比较么？ ssr当你访问一个spa时，第一次打开的速度很慢，白屏的时间也很长，打开控制台发现用了css in js导致html巨大，js文件也很巨大，这个时候最简单的是使用部分ssr，先显示一部分html在页面，然后等下载完js文件后执行即可。 项目里面用了css in js，想要把它干掉，不知道执行中会遇到什么问题，这是自己的一个挑战吧。 因为现在工作时间变长了，真的是很难调节自己的时间，每天回到家只想躺着，努力调整一下。]]></content>
