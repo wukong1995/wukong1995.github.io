@@ -1,5 +1,6 @@
 ---
 title: migrate-flow-to-ts
+date: 2019-06-01 16:35:51
 tags: [typescript]
 categories: [前端, typescript]
 description: 统一战线
