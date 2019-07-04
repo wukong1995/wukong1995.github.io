@@ -37,7 +37,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="Peipei Wong">
-    <meta name="description" itemprop="description" content="统一战线">
+    <meta name="description" itemprop="description" content="ts一统天下">
     <meta name="keywords" content="blog,typescript">
 
     <!-- Site Verification -->
@@ -69,17 +69,17 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="migrate-flow-to-ts | Wukong&#39;s Blog">
     <meta property="og:image" content="/img/favicon.jpg">
-    <meta property="og:description" content="统一战线">
+    <meta property="og:description" content="ts一统天下">
     <meta property="og:article:tag" content="typescript"> 
 
     
         <meta property="article:published_time" content="6月 01, 2019">
-        <meta property="article:modified_time" content="6月 16, 2019">
+        <meta property="article:modified_time" content="7月 04, 2019">
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="migrate-flow-to-ts | Wukong&#39;s Blog">
-    <meta name="twitter:description" content="统一战线">
+    <meta name="twitter:description" content="ts一统天下">
     <meta name="twitter:image" content="/img/favicon.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://wukong1995.github.io">
@@ -115,8 +115,8 @@
     "headline": "migrate-flow-to-ts",
     "url": "https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/index.html",
     "datePublished": "6月 01, 2019",
-    "dateModified": "6月 16, 2019",
-    "description": "统一战线",
+    "dateModified": "7月 04, 2019",
+    "description": "ts一统天下",
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://wukong1995.github.io"
@@ -339,7 +339,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#更改文件后缀名"><span class="post-toc-number">1.</span> <span class="post-toc-text">更改文件后缀名</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#移除所有flow的注释"><span class="post-toc-number">2.</span> <span class="post-toc-text">移除所有flow的注释</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#移除flow的配置文件和package，增加ts配置文件"><span class="post-toc-number">3.</span> <span class="post-toc-text">移除flow的配置文件和package，增加ts配置文件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在webpack中增加ts-loader"><span class="post-toc-number">4.</span> <span class="post-toc-text">在webpack中增加ts-loader</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#修复type-error"><span class="post-toc-number">5.</span> <span class="post-toc-text">修复type error</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-更改文件后缀名"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 更改文件后缀名</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-移除所有flow的注释"><span class="post-toc-number">2.</span> <span class="post-toc-text">2.移除所有flow的注释</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-移除flow的配置文件和package，增加ts配置文件"><span class="post-toc-number">3.</span> <span class="post-toc-text">3. 移除flow的配置文件和package，增加ts配置文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-Add-tslint-and-autofix-code-style"><span class="post-toc-number">4.</span> <span class="post-toc-text">4. Add tslint and autofix code style</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-Remove-type-identifier-in-import-interfaces"><span class="post-toc-number">5.</span> <span class="post-toc-text">5. Remove type identifier in import interfaces</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-Adjust-webpack-config"><span class="post-toc-number">6.</span> <span class="post-toc-text">6. Adjust webpack config</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-修复type-error和warning"><span class="post-toc-number">7.</span> <span class="post-toc-text">7. 修复type error和warning</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -495,7 +495,7 @@
 <li>在webpack中增加ts-loader</li>
 <li>修复type error</li>
 </ul>
-<h5 id="更改文件后缀名"><a href="#更改文件后缀名" class="headerlink" title="更改文件后缀名"></a>更改文件后缀名</h5><p>项目中所有的文件都是js文件，根据文件名可以选择后缀是tsx还是ts。使用fs为所有文件重命名。</p>
+<h4 id="1-更改文件后缀名"><a href="#1-更改文件后缀名" class="headerlink" title="1. 更改文件后缀名"></a>1. 更改文件后缀名</h4><p>项目中所有的文件都是js文件，根据文件名可以选择后缀是tsx还是ts。使用fs为所有文件重命名。（这就体现了文件命名约定的好处了）</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> fs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'fs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> tsFileReg <span class="token operator">=</span> <span class="token regex">/(style|styles|data|util|type|reducer|action|gql|index).js$/</span>
 
@@ -528,18 +528,25 @@
 <span class="token function">dfs</span><span class="token punctuation">(</span><span class="token string">'./src/shared/'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>虽然在重命名的时候增加了规则，但是还是会出现错误的后缀名，原因是有一些文件命名不符合现在的命名规则。</p>
-<h5 id="移除所有flow的注释"><a href="#移除所有flow的注释" class="headerlink" title="移除所有flow的注释"></a>移除所有flow的注释</h5><p>文件太多，我做不到一个一个删除了，于是选择了使用编辑器将<code>// @flow</code>变成<code>//</code></p>
-<h5 id="移除flow的配置文件和package，增加ts配置文件"><a href="#移除flow的配置文件和package，增加ts配置文件" class="headerlink" title="移除flow的配置文件和package，增加ts配置文件"></a>移除flow的配置文件和package，增加ts配置文件</h5><ol>
-<li>配置文件：删除.flowconfig和其余的flow文件，增加tsconfig.json</li>
-<li>package： 删除flow-remove-types、eslint-plugin-flowtype、flow-typed， 增加tslint tslint-immutable tslint-react typescript</li>
+<h4 id="2-移除所有flow的注释"><a href="#2-移除所有flow的注释" class="headerlink" title="2.移除所有flow的注释"></a>2.移除所有flow的注释</h4><p>文件太多，我做不到一个一个删除了，于是选择了使用编辑器将<code>// @flow</code>变成空</p>
+<h4 id="3-移除flow的配置文件和package，增加ts配置文件"><a href="#3-移除flow的配置文件和package，增加ts配置文件" class="headerlink" title="3. 移除flow的配置文件和package，增加ts配置文件"></a>3. 移除flow的配置文件和package，增加ts配置文件</h4><ol>
+<li>删除tools/scripts/flow.js和tools/scripts/removeTypes.js</li>
+<li>删除tools/flow/文件夹</li>
+<li>删除.flowconfig</li>
+<li>增加tsconfig.json</li>
+<li>增加依赖： @types/react、@types/react-dom、tslint、tslint-immutable、tslint-react、typescript、ts-loader</li>
+<li>删除依赖：eslint-plugin-flowtype、flow-typed</li>
 </ol>
-<h5 id="在webpack中增加ts-loader"><a href="#在webpack中增加ts-loader" class="headerlink" title="在webpack中增加ts-loader"></a>在webpack中增加ts-loader</h5><pre class="line-numbers language-js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+<h4 id="4-Add-tslint-and-autofix-code-style"><a href="#4-Add-tslint-and-autofix-code-style" class="headerlink" title="4. Add tslint and autofix code style"></a>4. Add tslint and autofix code style</h4><p>增加tslint.json</p>
+<h4 id="5-Remove-type-identifier-in-import-interfaces"><a href="#5-Remove-type-identifier-in-import-interfaces" class="headerlink" title="5. Remove type identifier in import interfaces"></a>5. Remove type identifier in import interfaces</h4><p>删除（import type { AppProps } from ‘../interfaces/app’）里面的type标示</p>
+<h4 id="6-Adjust-webpack-config"><a href="#6-Adjust-webpack-config" class="headerlink" title="6. Adjust webpack config"></a>6. Adjust webpack config</h4><pre class="line-numbers language-js"><code class="language-js">module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
   test<span class="token punctuation">:</span> <span class="token regex">/\.tsx?$/</span><span class="token punctuation">,</span>
   use<span class="token punctuation">:</span> <span class="token string">'ts-loader'</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>文件扩展名增加：<code>ts, tsx</code></p>
-<h5 id="修复type-error"><a href="#修复type-error" class="headerlink" title="修复type error"></a>修复type error</h5><p>使用<code>tslint -c tslint.json -p tsconfig.json -e \&quot;**/*.d.ts\&quot; \&quot;src/**/*.{ts,tsx}\&quot;</code>去查找type error修复，这个虽然很简单，但是一个大工程…</p>
+<h4 id="7-修复type-error和warning"><a href="#7-修复type-error和warning" class="headerlink" title="7. 修复type error和warning"></a>7. 修复type error和warning</h4><p>使用<code>tslint -c tslint.json -p tsconfig.json -e \&quot;**/*.d.ts\&quot; \&quot;src/**/*.{ts,tsx}\&quot;</code>去查找type error修复，这个虽然很简单，但是一个大工程…</p>
+<p>PS：2019/7/4号得知tslint被弃用了，现在用的是<code>typescript-eslint</code></p>
 
     
 
@@ -784,6 +791,16 @@
                     <i class="material-icons sidebar-material-icons">photo</i>
                 
                 图片
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
             </a>
         </li>
         
