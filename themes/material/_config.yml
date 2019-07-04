@@ -177,6 +177,11 @@ sidebar:
             title: ""
             icon: photo
             divider: false
+        友情链接: 
+            link: /links/
+            title: ""
+            icon: link
+            divider: false
         关于:
             link: "/about"
             title: ""
