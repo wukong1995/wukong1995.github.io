@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[优化项目中的包依赖]]></title>
+    <url>%2F2019%2F08%2F04%2Foptimization-package-dependencies%2F</url>
+    <content type="text"><![CDATA[跑了一下webpack analyse，发现项目中有两个moment版本，查了一下antd中依赖的moment版本和项目依赖的版本不同。 如何统一版本呢？ 第一个计划，开始时想着不在项目中引用moment，直接使用antd中的moment，但是想到新来的同学会不会有疑问，项目里面明明没有引入moment但是为什么能用？于是，这个想法被弃用了。 第二个计划，我本来想着直接将项目中的moment版本直接设置成2.x，但是和同事商量了一下，依赖项目的依赖的依赖这个事情不太靠谱，看了antd4的计划又可能会对moment下手，因为moment太大了，有人在issue上提了可不可以将moment换成dayjs。antd的计划是在秋天，哦，秋天已经不远了。 于是采用的方法是写一个脚本来判断项目中依赖和依赖的依赖的moment版本是否一致 const { readFileSync } = require('fs') const antdPath = 'node_modules/antd/package.json' const projectPath = 'package.json' try { const momentVersionInAntd = getMomentVersion(readFileSync(antdPath)); const momentVersionInProject = getMomentVersion(readFileSync(projectPath)); if (momentVersionInAntd === momentVersionInProject) { console.log(`moment的版本一致, 版本号是${momentVersionInAntd}`) } else { console.log(`版本不一致，antd的版本是${momentVersionInAntd}，项目中的版本是${momentVersionInProject}，请查看changelog以统一版本`) } } catch (err) { console.log('---出现错误,原因:', err) } function getMomentVersion(content) { return JSON.parse(content).dependencies.moment } 统一了版本后，打包后的文件就少出来一个moment… 在就是lodash的tree shake，选的方法是使用lodash-es来代替lodash，可以进一步缩小js文件的大小。 import { get } from 'lodash'; // 变成下面这样的引用 import get from 'lodash-es/get'; 我看现在好多实践中都是酱node_modules中的全部达成一个包，现在项目里面也是这样的，但是光node_modules里面的打出来压缩完就3.9M这个也太多了，于是我想直将引入两次及以上的打进去，其他的单独是一个chunk，这样的话能从3.9变成2，只是试了一下，但还没有完整的探索一下～下周再试试]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[启示录--笔记]]></title>
     <url>%2F2019%2F07%2F21%2Finspired-summary%2F</url>
     <content type="text"><![CDATA[之前是对产品这个职业产生了兴趣，去网上查了一下，说启示录是产品的入门手册，于是选择这本书。 没有开始职业生涯的时候，就听说产品和技术是天敌，工作之后，是发现更多的是不理解，产品为什么这个设计，如果可以说服我，我可能会很欣喜的做这个，说服不了，也得做。hhh 新瓶装老酒这本书印象最深刻的一个词是：新瓶装老酒。成功的产品往往不是什么新鲜事物，只是新瓶装旧酒，之所以成功，是因为这个“新瓶”做的更好、更方便、更便宜，改变了消费者对“老酒”的印象。这个是想我想起了抖音，记得刚开始的是一个叫做小咖秀的app很流行，但是等我反应过来，抖音已经火起来了，操作真的非常方便，类似的应用“快手”，操作起来就没有那么便捷，所以我还是转回到抖音。 关注点产品经理应该关注的是什么？答：关注失望、不满、愤怒等一切负面的情绪。抛开无关紧要的问题，一心一意的解决已知的愤怒和不满，这正是skype成功的原因。 可用性和美感以我个人的感觉，这个真的非常非常重要有的系统的特点就是能用，但是很难用。一个是不太好看，随着设计师的迭代，色彩主色调被更换，系统外观处在分裂状态，看起来真的不太好看，迫切的分离感。kkkk 可用性的话，因为是第一次经历快速迭代，快速迭代的缺点，我觉得就是因为时间的关系没有时间来得及重构，导致的是一个堆积型的开发，越来越多，越来越重… 原型测试这里提到的原型测试，可能这一块要求的是可操作的，现在有很多原型制作的方式，但要是很的做这个，这是不是会成为产品的一个负担？或者是我还没get到点？ 苹果公司的启示 硬件为软件服务 软件为用户体验服务 用户体验为情感服务 产品为真正的需求服务 提防有特殊要求的产品产品经理是满足大众的需求，这是产品公司和定制软件公司的区别。]]></content>
