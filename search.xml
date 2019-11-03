@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[微前端初探索]]></title>
+    <url>%2F2019%2F11%2F03%2Fmicro-frontend%2F</url>
+    <content type="text"><![CDATA[前几年的spa将前端推入热潮，但是当spa越来越大怎么办？整个团队都需要维护一个repo，碰上改文案的需求，整个项目需要全部更新，看起来真的好笨重。 现在项目的现状，是有两个项目的spa组合起来，虽然一定程度上减少了项目的耦合性，但是导致的问题就是，两个spa跳转时，整个页面刷新；两个项目中有一些重复的逻辑代码。因为页面是左右结构，左边是导航栏，我如果要改导航，我要改两个项目的代码，如果逻辑相同还好，逻辑不相同的话，就是double工作量。 微前端的概念提出来后，终于是有了解决方案的曙光。虽然还很年轻，但是值得探索。结合现在的项目，它能解决现在项目的痛点，真的非常适合。 现在的github上的解决方案很多。对于解决方案，我需要考虑些什么？ 如何匹配的路由一个容器中包含多个子项目，每个项目有对应的路由。访问不同路由时，容器如何分发？ 每个子项目在window上挂载对象，但这样做和按需加载时一个相悖的过程？ 那就写一个adapter收集每个项目中路由，如何收集路由？假如子项目使用的技术栈不同，难道容器要穷举每种技术栈吗？ 子项目主动在容器暴露的方法中挂载路由 匹配到路由后，执行相应的js，容器中需要存在一个路由指向状态，如果当前指向状态和需要跳转的状态相同，这个跳转就交给子项目的spa去做，不相同，就挂载并执行路由对应的js。 多个项目如何通信想把多个子项目用的的base数据放在容器中，问题是子项目如何从容易中拿数据？ 之前看的文章说避免因为数据导致项目的耦合，但如果不将相同的数据放在一起，子项目中还是会存在相同的代码。容器负责维护base数据。 又出了一个问题，容器维护base数据，子项目加入使用不同的技术栈的话，是不是考虑一种最兼容的方式去维护数据？ 打包时，如何将多个子项目相同包合并 打包的时候，容器遍历每个项目的package，抽出相同的，打包子项目的时候，不重复打包，但这个方法带来的问题是，我仅仅更新子项目的时候，如何知道哪些是重复的？这个pass 这个问题留给使用者，暴露接口让用户自行配置，打包的时候，还是照常打包package中的包。 另外可以出一个dev和pro的不同配置 // conf const devPackges = { key: value } const prodPackges = { key: value } // html Object.keys(devPackges/prodPackges).map(key => ( &lt;script src={packages[key]} /> )) 参考链接https://martinfowler.com/articles/micro-frontends.html]]></content>
+      <categories>
+        <category>前端</category>
+        <category>javascript</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[提高页面打开速度-优化打包]]></title>
     <url>%2F2019%2F09%2F01%2Fincrease-page-open-speed%2F</url>
     <content type="text"><![CDATA[cacheGroupswebpack4新有的一个cacheGroups， 现在我看大部分人都倾向于把node_modules里面的打成一个文件，像下面这样： vendor: { test: /[\\/]node_modules[\\/]/, name: 'vendor', chunks: 'all', minSize: 1, minChunks: 1, priority: 10, reuseExistingChunk: true } 但是比较尴尬的是，项目时使用spa写的，如果这样做的话，vendor文件会巨大无比，现在是打包压缩完是4M，非常庞大的文件。 仔细看了webpack的分析，类似echarts这样的大包也会打进去，但是echarts只在一个页面中使用了，如果一打开页面，就开始加载，太昂贵了。于是我调整了一下打包的策略，将“minChunks”改成2，最少两次引用的才会被打进vendor文件，这样导致的结果是有些页面的体验不是特别好，于是再为这些页面想想办法。 externals项目已经使用了http2，这样带来的好处是我可以使劲将文件切分，越小越好，像上面的问题，我只能在一打开页面的时候就去请求文件，这样的好处是等打开页面的时候，加载更快，体验更好。想了想，还是将文件放在cdn上，在webpack里面加入externals externals: { jsPlumb: 'jsPlumb' } 放在cdn上的好处是，只要用户访问过一次，就缓存了，即使经历迭代上线，也不会再去请求更新。 提取公共包？现在项目是有两个repo组成的，技术栈一模一样，上面的方法带来的启示是，我要不要将两个项目里面的包提取出来，放成一个cdn，这样既节省了打包速度，又减少了一次很大的包请求？ 引入iconfont项目现在还没有使用iconfont，全都是用的图片，真的是非常想用iconfont代替它，因为使用图片有太多的局限，使用起来也很麻烦，但是实在是没有想到一个好办法来解决这和事情，真的是好纠结。说到这又想起来一个问题，之前尝试将iconfont.css加入到项目，但是webpack打包老是不过，现在打包是这样设置的： { test: /\.css$/, include: /node_modules/, use: isClient ? [MiniCssPlugin.loader, 'css-loader'] : 'css-loader/locals' } 真的是很对不起自己，没有看过webpack的文档，于是代入式的认为include表示的意思是在开发目录的基础上在包括的意思。在多次尝试无果的基础上，我看一了webpack的文档，终于找到了原因，include是需要完全匹配的，所以我需要将include的value改成/node_modules|iconfont/，嗯，做事之前一定要先阅读好说明书！ 如何提高页面加载速度对于这个问题，项目依赖的东西是一定那么多的，如果是依靠文件什么的来提高加载速度，感觉不太现实，东西就那么多，只能这样那样拆来进行优化。 为了提高加载速度，项目也从http1换成了http2，看过这个概念，但是现在是想不起来了。 怎么说呢，提高加载速度有很多很多办法，但每种办法的收益不同，不要因为是做前端的而限制自己的视野。优化是一个持续的工作…]]></content>

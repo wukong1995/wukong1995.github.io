@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2019-09-08T01:55:19.365Z</updated>
+  <updated>2019-11-03T09:30:52.128Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>微前端初探索</title>
+    <link href="https://wukong1995.github.io/2019/11/03/micro-frontend/"/>
+    <id>https://wukong1995.github.io/2019/11/03/micro-frontend/</id>
+    <published>2019-11-03T01:59:48.000Z</published>
+    <updated>2019-11-03T09:30:52.128Z</updated>
+    
+    <summary type="html">
+    
+      前端微服务 = 微前端
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>提高页面打开速度-优化打包</title>
     <link href="https://wukong1995.github.io/2019/09/01/increase-page-open-speed/"/>
     <id>https://wukong1995.github.io/2019/09/01/increase-page-open-speed/</id>
     <published>2019-09-01T10:52:53.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -42,7 +64,7 @@
     <link href="https://wukong1995.github.io/2019/08/18/react-hoc-ref/"/>
     <id>https://wukong1995.github.io/2019/08/18/react-hoc-ref/</id>
     <published>2019-08-18T02:56:40.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -64,7 +86,7 @@
     <link href="https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/"/>
     <id>https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/</id>
     <published>2019-08-10T15:39:03.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -84,7 +106,7 @@
     <link href="https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/"/>
     <id>https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/</id>
     <published>2019-08-04T10:27:37.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -104,7 +126,7 @@
     <link href="https://wukong1995.github.io/2019/07/21/inspired-summary/"/>
     <id>https://wukong1995.github.io/2019/07/21/inspired-summary/</id>
     <published>2019-07-21T10:12:24.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -124,7 +146,7 @@
     <link href="https://wukong1995.github.io/2019/07/20/refactor-big-component/"/>
     <id>https://wukong1995.github.io/2019/07/20/refactor-big-component/</id>
     <published>2019-07-20T12:16:43.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -146,7 +168,7 @@
     <link href="https://wukong1995.github.io/2019/07/14/the-effective-executive/"/>
     <id>https://wukong1995.github.io/2019/07/14/the-effective-executive/</id>
     <published>2019-07-14T09:33:15.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -166,7 +188,7 @@
     <link href="https://wukong1995.github.io/2019/07/06/explore-form-in-antd/"/>
     <id>https://wukong1995.github.io/2019/07/06/explore-form-in-antd/</id>
     <published>2019-07-06T13:42:21.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -188,7 +210,7 @@
     <link href="https://wukong1995.github.io/2019/06/16/antd-custom/"/>
     <id>https://wukong1995.github.io/2019/06/16/antd-custom/</id>
     <published>2019-06-16T04:59:43.000Z</published>
-    <updated>2019-09-08T01:55:19.361Z</updated>
+    <updated>2019-11-03T09:30:52.124Z</updated>
     
     <summary type="html">
     
@@ -210,7 +232,7 @@
     <link href="https://wukong1995.github.io/2019/06/09/translate-stop-using-css-in-javascript-for-web-development/"/>
     <id>https://wukong1995.github.io/2019/06/09/translate-stop-using-css-in-javascript-for-web-development/</id>
     <published>2019-06-09T08:35:51.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -232,7 +254,7 @@
     <link href="https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/"/>
     <id>https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/</id>
     <published>2019-06-01T08:35:51.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -254,7 +276,7 @@
     <link href="https://wukong1995.github.io/2019/05/25/summary-work-4/"/>
     <id>https://wukong1995.github.io/2019/05/25/summary-work-4/</id>
     <published>2019-05-25T04:11:26.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -276,7 +298,7 @@
     <link href="https://wukong1995.github.io/2019/05/19/change-antd-style/"/>
     <id>https://wukong1995.github.io/2019/05/19/change-antd-style/</id>
     <published>2019-05-18T16:19:26.000Z</published>
-    <updated>2019-09-08T01:55:19.361Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -298,7 +320,7 @@
     <link href="https://wukong1995.github.io/2019/05/11/know-product-1-md/"/>
     <id>https://wukong1995.github.io/2019/05/11/know-product-1-md/</id>
     <published>2019-05-10T16:11:05.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -318,7 +340,7 @@
     <link href="https://wukong1995.github.io/2019/05/01/some-question-answer/"/>
     <id>https://wukong1995.github.io/2019/05/01/some-question-answer/</id>
     <published>2019-05-01T07:03:57.000Z</published>
-    <updated>2019-09-08T01:55:19.369Z</updated>
+    <updated>2019-11-03T09:30:52.132Z</updated>
     
     <summary type="html">
     
@@ -342,7 +364,7 @@
     <link href="https://wukong1995.github.io/2019/05/01/cross-domain/"/>
     <id>https://wukong1995.github.io/2019/05/01/cross-domain/</id>
     <published>2019-05-01T03:26:55.000Z</published>
-    <updated>2019-09-08T01:55:19.361Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -366,7 +388,7 @@
     <link href="https://wukong1995.github.io/2019/04/30/high-performance-browser-networking-summary/"/>
     <id>https://wukong1995.github.io/2019/04/30/high-performance-browser-networking-summary/</id>
     <published>2019-04-30T09:33:54.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -390,7 +412,7 @@
     <link href="https://wukong1995.github.io/2019/04/25/js-map/"/>
     <id>https://wukong1995.github.io/2019/04/25/js-map/</id>
     <published>2019-04-25T11:09:31.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -412,7 +434,7 @@
     <link href="https://wukong1995.github.io/2019/04/23/interview-summary/"/>
     <id>https://wukong1995.github.io/2019/04/23/interview-summary/</id>
     <published>2019-04-23T11:09:20.000Z</published>
-    <updated>2019-09-08T01:55:19.365Z</updated>
+    <updated>2019-11-03T09:30:52.128Z</updated>
     
     <summary type="html">
     
@@ -424,26 +446,6 @@
     
     
       <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>编程中的名词</title>
-    <link href="https://wukong1995.github.io/2019/04/19/concept-in-fe/"/>
-    <id>https://wukong1995.github.io/2019/04/19/concept-in-fe/</id>
-    <published>2019-04-19T12:17:18.000Z</published>
-    <updated>2019-09-08T01:55:19.361Z</updated>
-    
-    <summary type="html">
-    
-      summary
-    
-    </summary>
-    
-      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
