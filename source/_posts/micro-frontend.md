@@ -51,6 +51,9 @@ Object.keys(devPackges/prodPackges).map(key => (
 ))
 ```
 
+### 11.4 新增--根据路由执行对应js，会导致内存泄漏吗？
+忽然想到如果single-spa没做出来，做一个兜底方案。受turbolinks启发，拦截两个项目之间所有的跳转链接，将跳转页面的请求转换成ajax请求，收到返回后，替换html中的js和css，这样就实现了无感知跳转。但这样，每次js标签的替换，都会导致js运行一遍（这个暂时这么想，我需要验证一下），来回跳转十次，内存不就炸了吗？照这个套路想，现在项目的spa，每个页面都是一个chunk，但是是一个累加的过程，react是如何做到匹配的路由执行对应的js，这个“执行”，是匹配到路由后，就执行对应的chunk，重复执行50次相同的js，内存不就满了吗？react是如何处理这的呢？
+
 
 #### 参考链接
 https://martinfowler.com/articles/micro-frontends.html
