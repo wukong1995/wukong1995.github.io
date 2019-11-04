@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="11月 03, 2019">
-        <meta property="article:modified_time" content="11月 03, 2019">
+        <meta property="article:modified_time" content="11月 04, 2019">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "微前端初探索",
     "url": "https://wukong1995.github.io/2019/11/03/micro-frontend/index.html",
     "datePublished": "11月 03, 2019",
-    "dateModified": "11月 03, 2019",
+    "dateModified": "11月 04, 2019",
     "description": "前端微服务 = 微前端",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -339,13 +339,13 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何匹配的路由"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何匹配的路由</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多个项目如何通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个项目如何通信</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打包时，如何将多个子项目相同包合并"><span class="post-toc-number">3.</span> <span class="post-toc-text">打包时，如何将多个子项目相同包合并</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何匹配的路由"><span class="post-toc-number">1.</span> <span class="post-toc-text">如何匹配的路由</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多个项目如何通信"><span class="post-toc-number">2.</span> <span class="post-toc-text">多个项目如何通信</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#打包时，如何将多个子项目相同包合并"><span class="post-toc-number">3.</span> <span class="post-toc-text">打包时，如何将多个子项目相同包合并</span></a></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#11-4-新增–根据路由执行对应js，会导致内存泄漏吗？"><span class="post-toc-number"></span> <span class="post-toc-text">11.4 新增–根据路由执行对应js，会导致内存泄漏吗？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参考链接"><span class="post-toc-number">1.</span> <span class="post-toc-text">参考链接</span></a></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
         </li>
         -->
-    </ul>
+    </li></ul>
     
 
 
@@ -519,6 +519,7 @@ Object<span class="token punctuation">.</span><span class="token function">keys<
   <span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token punctuation">{</span>packages<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
 <span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="11-4-新增–根据路由执行对应js，会导致内存泄漏吗？"><a href="#11-4-新增–根据路由执行对应js，会导致内存泄漏吗？" class="headerlink" title="11.4 新增–根据路由执行对应js，会导致内存泄漏吗？"></a>11.4 新增–根据路由执行对应js，会导致内存泄漏吗？</h3><p>忽然想到如果single-spa没做出来，做一个兜底方案。受turbolinks启发，拦截两个项目之间所有的跳转链接，将跳转页面的请求转换成ajax请求，收到返回后，替换html中的js和css，这样就实现了无感知跳转。但这样，每次js标签的替换，都会导致js运行一遍（这个暂时这么想，我需要验证一下），来回跳转十次，内存不就炸了吗？照这个套路想，现在项目的spa，每个页面都是一个chunk，但是是一个累加的过程，react是如何做到匹配的路由执行对应的js，这个“执行”，是匹配到路由后，就执行对应的chunk，重复执行50次相同的js，内存不就满了吗？react是如何处理这的呢？</p>
 <h4 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h4><p><a href="https://martinfowler.com/articles/micro-frontends.html" target="_blank" rel="noopener">https://martinfowler.com/articles/micro-frontends.html</a></p>
 
     
