@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[webpack官网所有的plugin]]></title>
+    <url>%2F2019%2F11%2F24%2Fwebpack-plugins%2F</url>
+    <content type="text"><![CDATA[dllPlugin这个plugin，webpack说是提高build time，它会将noede_modules里面的文件先build出来一个文件，每次hot reload的时候，只需要重新编译业务代码即可。 当然也可以使用它来提取多个项目的公共包，prodution也可以用参考链接，相比external来说，唯一的缺点就是会比原来的包的体积稍大一些。 对于react这样的包，dev和prod使用的js是不一样的，你需要针对不同的环境打不同的包。 另外还以一个缺点就是，不能正确的找到babel target版本的文件。例如，你的target是es next，他不会找xxx.es.min.js，只会找xxx.min.js。这样的话，也会导致最后的包增大。 所以，可不可以在production环境使用dllpligin打包出来的js文件，看业务需求即可。 下面是所有plugin]]></content>
+      <categories>
+        <category>前端</category>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[微前端-single-spa探索]]></title>
     <url>%2F2019%2F11%2F16%2Fmicro-frontend-single-spa%2F</url>
     <content type="text"><![CDATA[这个星期看了single-spa的整体思路和demo，差不多能解答上篇blog的问题了。 1. 如何匹配的路由sigle-spa在这册子项目的时候，需要指定路由在何种情况下挂载项目，这是不是意味着最好以url的prefix来划分项目更好一些？ import {registerApplication, start} from 'single-spa' registerApplication( // Name of our single-spa application 'home', // Our loading function () => import('./src/home/home.app.js'), // Our activity function () => location.pathname === "" || location.pathname === "/" || location.pathname.startsWith('/home') ); start() 那么single-spa内部也是通过监听history的变化，进而判断如何挂载项目 // navigation/navigation-event // ... // We will trigger an app change for any routing events. window.addEventListener('hashchange', urlReroute); window.addEventListener('popstate', urlReroute); 另外single-spa为需要项目之间跳转的a标签，暴露了一个navigateToUrl的方法，我想了一下如果需要在js里面去进行项目之间的跳转，就是用最原始的方法： window.history.pushState(null, null, url); 2. 多个项目如何通信single-spa并不提供这个功能，但在github上看到了一个思路：(https://github.com/me-12/single-spa-portal-example)[https://github.com/me-12/single-spa-portal-example] 这个项目只要的思想是：在进行registerApplication的时候，主项目也会为每个子项目挂载一个store，并为每个子项目通过customProps将dispatch传递下去，那么dispatch主要做的就是将每个子项目的每次dispatch都会分发给每个子项目，子项目收到后，各自做自己的事情。 export class GlobalEventDistributor { constructor() { this.stores = []; } registerStore(store) { this.stores.push(store); } dispatch(event) { this.stores.forEach((s) => s.dispatch(event)); } } 3. 打包时，如何将多个子项目相同包合并这个是不正确的思路，如果每次打包的时候，都需要查找每个子项目的相同包，假如这个“相同”发生变化，那么就意味着主项目中打包出来的公共包需要改变，这是不正确的。微服务必须要尽可能的保持主项目即容器稳定，而不是每次迭代都有更改的可能。所以解决办法是公共包需要手动维护，并且更新的可能性最小。 对于打包这个功能，同样single-spa也不提供这个功能，但官网的文档上提供了三种解决方法：(https://single-spa.js.org/docs/separating-applications)[https://single-spa.js.org/docs/separating-applications] 比较靠谱的是第三个，为此，创建一个manifest文件，该文件在单Spa应用程序的部署过程中进行更新，该manifest控制“ SPA”哪些版本处于“活动”状态。然后根据manifest更改加载哪个javascript文件。 这个可以做到更新单个子项目，而不需要更新其他项目的目的。 暂未实施，这个做为下一步的重点关注。]]></content>
