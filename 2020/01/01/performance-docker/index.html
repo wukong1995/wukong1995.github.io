@@ -490,7 +490,7 @@
 <h3 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h3><ul>
 <li>增加docker文件<ol>
 <li>增加pm2, 在package.json中的scripts中增加<code>&quot;pm2&quot;: &quot;pm2 startOrReload --no-daemon pm2.json&quot;</code></li>
-<li>增加docker文件夹，内部创建Dockerfile、start.sh<br>```yml<h1 id="Dockerfile-文件"><a href="#Dockerfile-文件" class="headerlink" title="Dockerfile 文件"></a>Dockerfile 文件</h1>FROM xxx</li>
+<li>增加docker文件夹，内部创建Dockerfile、start.sh<br>```bash<h1 id="Dockerfile-文件"><a href="#Dockerfile-文件" class="headerlink" title="Dockerfile 文件"></a>Dockerfile 文件</h1>FROM xxx</li>
 </ol>
 </li>
 </ul>
@@ -510,7 +510,7 @@
 
 ### 开机启动
 * docker-compose.yml
-```yml
+```bash
 version: &#39;3&#39;
 services:
   services_name:
