@@ -515,12 +515,39 @@
 <li>做成一个webpack的plugin？</li>
 </ol>
 <h3 id="2020-02-06补充"><a href="#2020-02-06补充" class="headerlink" title="2020.02.06补充"></a>2020.02.06补充</h3><ol>
-<li>上传时指定Content-type<br>```js<br>// 设置参数<br>AWS.config.setPromisesDependency(Promise)<br>AWS.config.update({<br>region,<br>accessKeyId,<br>secretAccessKey,<br>endpoint,<br>httpOptions: {<br> timeout<br>}<br>})</li>
+<li>上传时指定Content-type</li>
 </ol>
-<p>// 实例化s3<br>const s3 = new AWS.S3({<br>  signatureVersion = ‘v4’,<br>  Bucket: bucket,<br>  s3ForcePathStyle<br>})</p>
-<p>// 上传文件<br>const result = yield s3<br>    .putObject({<br>      Key: fileName,<br>      Bucket: bucket,<br>      Body: fs.readFileSync(filePath),<br>      ContentType: mime.lookup(fileName)<br>    })<br>    .promise()<br>```</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 设置参数</span>
+AWS<span class="token punctuation">.</span>config<span class="token punctuation">.</span><span class="token function">setPromisesDependency</span><span class="token punctuation">(</span>Promise<span class="token punctuation">)</span>
+AWS<span class="token punctuation">.</span>config<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  region<span class="token punctuation">,</span>
+  accessKeyId<span class="token punctuation">,</span>
+  secretAccessKey<span class="token punctuation">,</span>
+  endpoint<span class="token punctuation">,</span>
+  httpOptions<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    timeout
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 实例化s3</span>
+<span class="token keyword">const</span> s3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AWS<span class="token punctuation">.</span>S3</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  signatureVersion <span class="token operator">=</span> <span class="token string">'v4'</span><span class="token punctuation">,</span>
+  Bucket<span class="token punctuation">:</span> bucket<span class="token punctuation">,</span>
+  s3ForcePathStyle
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">// 上传文件</span>
+<span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token keyword">yield</span> s3
+    <span class="token punctuation">.</span><span class="token function">putObject</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      Key<span class="token punctuation">:</span> fileName<span class="token punctuation">,</span>
+      Bucket<span class="token punctuation">:</span> bucket<span class="token punctuation">,</span>
+      Body<span class="token punctuation">:</span> fs<span class="token punctuation">.</span><span class="token function">readFileSync</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">,</span>
+      ContentType<span class="token punctuation">:</span> mime<span class="token punctuation">.</span><span class="token function">lookup</span><span class="token punctuation">(</span>fileName<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <ol>
-<li>参照<a href="https://github.com/gp5251/webpack-aliyun-oss，做出来一个webpack" target="_blank" rel="noopener">https://github.com/gp5251/webpack-aliyun-oss，做出来一个webpack</a> plugin.</li>
+<li>参照<a href="https://github.com/gp5251/webpack-aliyun-oss" target="_blank" rel="noopener">webpack-aliyun-oss</a>，做出来一个webpack plugin.</li>
 </ol>
 
     
