@@ -51,6 +51,7 @@ s3有好几种signatureVersion，本来想这个一个一个的尝试，试到v2
 
 ### 2020.02.06补充
 1. 上传时指定Content-type
+
 ```js
 // 设置参数
 AWS.config.setPromisesDependency(Promise)
@@ -82,8 +83,4 @@ const result = yield s3
     .promise()
 ```
 
-2. 参照https://github.com/gp5251/webpack-aliyun-oss，做出来一个webpack plugin.
-
-
-
-
+2. 参照[webpack-aliyun-oss](https://github.com/gp5251/webpack-aliyun-oss)，做出来一个webpack plugin.
