@@ -39,7 +39,6 @@ CMD ["/start.sh"]
 # 根据环境不同设置传入参数CONF_NAME
 # 启动pm2
 npm run pm2 --conf=/apps/conf/${CONF_NAME}
-
 ```
 
 * 打镜像，测试机，推tag

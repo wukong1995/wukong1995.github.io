@@ -49,5 +49,41 @@ s3有好几种signatureVersion，本来想这个一个一个的尝试，试到v2
 1. 使用s3协议上传的图片，复制链接在浏览器打开只能下载，不能预览，这个是否可以通过设置“Content-type”来解决？
 2. 做成一个webpack的plugin？
 
+### 2020.02.06补充
+1. 上传时指定Content-type
+```js
+// 设置参数
+AWS.config.setPromisesDependency(Promise)
+AWS.config.update({
+  region,
+  accessKeyId,
+  secretAccessKey,
+  endpoint,
+  httpOptions: {
+    timeout
+  }
+})
+
+// 实例化s3
+const s3 = new AWS.S3({
+  signatureVersion = 'v4',
+  Bucket: bucket,
+  s3ForcePathStyle
+})
+
+// 上传文件
+const result = yield s3
+    .putObject({
+      Key: fileName,
+      Bucket: bucket,
+      Body: fs.readFileSync(filePath),
+      ContentType: mime.lookup(fileName)
+    })
+    .promise()
+```
+
+2. 参照https://github.com/gp5251/webpack-aliyun-oss，做出来一个webpack plugin.
+
+
 
 
