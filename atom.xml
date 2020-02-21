@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2020-02-06T06:41:23.625Z</updated>
+  <updated>2020-02-21T12:36:20.008Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pm2在docker上以非root权限启动不了</title>
+    <link href="https://wukong1995.github.io/2020/02/20/docker-pm2-permission/"/>
+    <id>https://wukong1995.github.io/2020/02/20/docker-pm2-permission/</id>
+    <published>2020-02-20T05:36:47.000Z</published>
+    <updated>2020-02-21T12:36:20.008Z</updated>
+    
+    <summary type="html">
+    
+      不同机器上不一样的表现==
+    
+    </summary>
+    
+      <category term="docker" scheme="https://wukong1995.github.io/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://wukong1995.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
     <title>性能测试上docker</title>
     <link href="https://wukong1995.github.io/2020/01/01/performance-docker/"/>
     <id>https://wukong1995.github.io/2020/01/01/performance-docker/</id>
     <published>2020-01-01T04:08:22.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -42,7 +62,7 @@
     <link href="https://wukong1995.github.io/2019/11/24/webpack-plugins/"/>
     <id>https://wukong1995.github.io/2019/11/24/webpack-plugins/</id>
     <published>2019-11-24T08:32:04.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.016Z</updated>
     
     <summary type="html">
     
@@ -64,7 +84,7 @@
     <link href="https://wukong1995.github.io/2019/11/16/micro-frontend-single-spa/"/>
     <id>https://wukong1995.github.io/2019/11/16/micro-frontend-single-spa/</id>
     <published>2019-11-16T14:01:03.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -86,7 +106,7 @@
     <link href="https://wukong1995.github.io/2019/11/03/micro-frontend/"/>
     <id>https://wukong1995.github.io/2019/11/03/micro-frontend/</id>
     <published>2019-11-03T01:59:48.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -108,7 +128,7 @@
     <link href="https://wukong1995.github.io/2019/09/01/increase-page-open-speed/"/>
     <id>https://wukong1995.github.io/2019/09/01/increase-page-open-speed/</id>
     <published>2019-09-01T10:52:53.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -130,7 +150,7 @@
     <link href="https://wukong1995.github.io/2019/08/18/react-hoc-ref/"/>
     <id>https://wukong1995.github.io/2019/08/18/react-hoc-ref/</id>
     <published>2019-08-18T02:56:40.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -152,7 +172,7 @@
     <link href="https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/"/>
     <id>https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/</id>
     <published>2019-08-10T15:39:03.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -172,7 +192,7 @@
     <link href="https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/"/>
     <id>https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/</id>
     <published>2019-08-04T10:27:37.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -192,7 +212,7 @@
     <link href="https://wukong1995.github.io/2019/07/21/inspired-summary/"/>
     <id>https://wukong1995.github.io/2019/07/21/inspired-summary/</id>
     <published>2019-07-21T10:12:24.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -212,7 +232,7 @@
     <link href="https://wukong1995.github.io/2019/07/20/refactor-big-component/"/>
     <id>https://wukong1995.github.io/2019/07/20/refactor-big-component/</id>
     <published>2019-07-20T12:16:43.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -234,7 +254,7 @@
     <link href="https://wukong1995.github.io/2019/07/14/the-effective-executive/"/>
     <id>https://wukong1995.github.io/2019/07/14/the-effective-executive/</id>
     <published>2019-07-14T09:33:15.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -254,7 +274,7 @@
     <link href="https://wukong1995.github.io/2019/07/06/explore-form-in-antd/"/>
     <id>https://wukong1995.github.io/2019/07/06/explore-form-in-antd/</id>
     <published>2019-07-06T13:42:21.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.008Z</updated>
     
     <summary type="html">
     
@@ -276,7 +296,7 @@
     <link href="https://wukong1995.github.io/2019/06/16/antd-custom/"/>
     <id>https://wukong1995.github.io/2019/06/16/antd-custom/</id>
     <published>2019-06-16T04:59:43.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.008Z</updated>
     
     <summary type="html">
     
@@ -298,7 +318,7 @@
     <link href="https://wukong1995.github.io/2019/06/09/translate-stop-using-css-in-javascript-for-web-development/"/>
     <id>https://wukong1995.github.io/2019/06/09/translate-stop-using-css-in-javascript-for-web-development/</id>
     <published>2019-06-09T08:35:51.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -320,7 +340,7 @@
     <link href="https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/"/>
     <id>https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/</id>
     <published>2019-06-01T08:35:51.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -342,7 +362,7 @@
     <link href="https://wukong1995.github.io/2019/05/25/summary-work-4/"/>
     <id>https://wukong1995.github.io/2019/05/25/summary-work-4/</id>
     <published>2019-05-25T04:11:26.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -364,7 +384,7 @@
     <link href="https://wukong1995.github.io/2019/05/19/change-antd-style/"/>
     <id>https://wukong1995.github.io/2019/05/19/change-antd-style/</id>
     <published>2019-05-18T16:19:26.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.008Z</updated>
     
     <summary type="html">
     
@@ -386,7 +406,7 @@
     <link href="https://wukong1995.github.io/2019/05/11/know-product-1-md/"/>
     <id>https://wukong1995.github.io/2019/05/11/know-product-1-md/</id>
     <published>2019-05-10T16:11:05.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -406,7 +426,7 @@
     <link href="https://wukong1995.github.io/2019/05/01/some-question-answer/"/>
     <id>https://wukong1995.github.io/2019/05/01/some-question-answer/</id>
     <published>2019-05-01T07:03:57.000Z</published>
-    <updated>2020-02-06T06:41:23.629Z</updated>
+    <updated>2020-02-21T12:36:20.012Z</updated>
     
     <summary type="html">
     
@@ -422,30 +442,6 @@
       <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>跨域</title>
-    <link href="https://wukong1995.github.io/2019/05/01/cross-domain/"/>
-    <id>https://wukong1995.github.io/2019/05/01/cross-domain/</id>
-    <published>2019-05-01T03:26:55.000Z</published>
-    <updated>2020-02-06T06:41:23.625Z</updated>
-    
-    <summary type="html">
-    
-      你了解的跨域到底是是什么？
-    
-    </summary>
-    
-      <category term="总结" scheme="https://wukong1995.github.io/categories/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="http" scheme="https://wukong1995.github.io/categories/%E6%80%BB%E7%BB%93/http/"/>
-    
-    
-      <category term="总结" scheme="https://wukong1995.github.io/tags/%E6%80%BB%E7%BB%93/"/>
-    
-      <category term="http" scheme="https://wukong1995.github.io/tags/http/"/>
     
   </entry>
   
