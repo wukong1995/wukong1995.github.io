@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Wukong&#39;s Blog</title>
+  <subtitle>悟空的Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://wukong1995.github.io/"/>
+  <updated>2020-05-10T13:41:21.020Z</updated>
+  <id>https://wukong1995.github.io/</id>
+  
+  <author>
+    <name>Peipei Wong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>总结一下做性能平台的过程</title>
+    <link href="https://wukong1995.github.io/2020/05/10/saas-performance-scheduler/"/>
+    <id>https://wukong1995.github.io/2020/05/10/saas-performance-scheduler/</id>
+    <published>2020-05-10T12:23:13.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      哇咔咔，终于实战了一个真实的项目
+    
+    </summary>
+    
+      <category term="后端" scheme="https://wukong1995.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+      <category term="nodejs" scheme="https://wukong1995.github.io/categories/%E5%90%8E%E7%AB%AF/nodejs/"/>
+    
+    
+      <category term="nodejs" scheme="https://wukong1995.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>终于要使用css modules</title>
+    <link href="https://wukong1995.github.io/2020/04/19/css-modules/"/>
+    <id>https://wukong1995.github.io/2020/04/19/css-modules/</id>
+    <published>2020-04-19T08:33:09.000Z</published>
+    <updated>2020-05-10T13:41:21.016Z</updated>
+    
+    <summary type="html">
+    
+      这应该是一年前想做的最后一个todo了
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/css/"/>
+    
+    
+      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>现有项目接入single-spa，浏览器一直处于url重定向的状态==</title>
+    <link href="https://wukong1995.github.io/2020/03/25/single-spa-react-route-prevent-back/"/>
+    <id>https://wukong1995.github.io/2020/03/25/single-spa-react-route-prevent-back/</id>
+    <published>2020-03-25T07:58:27.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      死循环，浏览器挂掉，多整几次，电脑就死掉了😄
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pm2在docker上以非root权限启动不了</title>
+    <link href="https://wukong1995.github.io/2020/02/20/docker-pm2-permission/"/>
+    <id>https://wukong1995.github.io/2020/02/20/docker-pm2-permission/</id>
+    <published>2020-02-20T05:36:47.000Z</published>
+    <updated>2020-05-10T13:41:21.016Z</updated>
+    
+    <summary type="html">
+    
+      不同机器上不一样的表现==
+    
+    </summary>
+    
+      <category term="docker" scheme="https://wukong1995.github.io/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://wukong1995.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>性能测试上docker</title>
+    <link href="https://wukong1995.github.io/2020/01/01/performance-docker/"/>
+    <id>https://wukong1995.github.io/2020/01/01/performance-docker/</id>
+    <published>2020-01-01T04:08:22.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      没想到拖到现在才写
+    
+    </summary>
+    
+      <category term="nodejs" scheme="https://wukong1995.github.io/categories/nodejs/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+      <category term="docker" scheme="https://wukong1995.github.io/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>webpack官网所有的plugin</title>
+    <link href="https://wukong1995.github.io/2019/11/24/webpack-plugins/"/>
+    <id>https://wukong1995.github.io/2019/11/24/webpack-plugins/</id>
+    <published>2019-11-24T08:32:04.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      This makes webpack flexible.
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="webpack" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/webpack/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微前端-single-spa探索</title>
+    <link href="https://wukong1995.github.io/2019/11/16/micro-frontend-single-spa/"/>
+    <id>https://wukong1995.github.io/2019/11/16/micro-frontend-single-spa/</id>
+    <published>2019-11-16T14:01:03.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      前端微服务 = 微前端
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>微前端初探索</title>
+    <link href="https://wukong1995.github.io/2019/11/03/micro-frontend/"/>
+    <id>https://wukong1995.github.io/2019/11/03/micro-frontend/</id>
+    <published>2019-11-03T01:59:48.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      前端微服务 = 微前端
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>提高页面打开速度-优化打包</title>
+    <link href="https://wukong1995.github.io/2019/09/01/increase-page-open-speed/"/>
+    <id>https://wukong1995.github.io/2019/09/01/increase-page-open-speed/</id>
+    <published>2019-09-01T10:52:53.000Z</published>
+    <updated>2020-05-10T13:41:21.016Z</updated>
+    
+    <summary type="html">
+    
+      调整webpack的打包方式
+    
+    </summary>
+    
+      <category term="webpack" scheme="https://wukong1995.github.io/categories/webpack/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="webpack" scheme="https://wukong1995.github.io/tags/webpack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在高阶组件中传递ref</title>
+    <link href="https://wukong1995.github.io/2019/08/18/react-hoc-ref/"/>
+    <id>https://wukong1995.github.io/2019/08/18/react-hoc-ref/</id>
+    <published>2019-08-18T02:56:40.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      如何在高阶组件中传递ref
+    
+    </summary>
+    
+      <category term="react" scheme="https://wukong1995.github.io/categories/react/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用s3协议上传ali oss</title>
+    <link href="https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/"/>
+    <id>https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/</id>
+    <published>2019-08-10T15:39:03.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      simple storage service
+    
+    </summary>
+    
+      <category term="后端" scheme="https://wukong1995.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="后端" scheme="https://wukong1995.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>优化项目中的包依赖</title>
+    <link href="https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/"/>
+    <id>https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/</id>
+    <published>2019-08-04T10:27:37.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      如果可以的话，不要一个package存在多个版本
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>启示录--笔记</title>
+    <link href="https://wukong1995.github.io/2019/07/21/inspired-summary/"/>
+    <id>https://wukong1995.github.io/2019/07/21/inspired-summary/</id>
+    <published>2019-07-21T10:12:24.000Z</published>
+    <updated>2020-05-10T13:41:21.016Z</updated>
+    
+    <summary type="html">
+    
+      产品的入门手册
+    
+    </summary>
+    
+      <category term="读书笔记" scheme="https://wukong1995.github.io/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="读书笔记" scheme="https://wukong1995.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重构大组件的历程</title>
+    <link href="https://wukong1995.github.io/2019/07/20/refactor-big-component/"/>
+    <id>https://wukong1995.github.io/2019/07/20/refactor-big-component/</id>
+    <published>2019-07-20T12:16:43.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      一个字：心累
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>卓有成效的管理者--笔记</title>
+    <link href="https://wukong1995.github.io/2019/07/14/the-effective-executive/"/>
+    <id>https://wukong1995.github.io/2019/07/14/the-effective-executive/</id>
+    <published>2019-07-14T09:33:15.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      读书笔记之卓有成效的管理者
+    
+    </summary>
+    
+      <category term="笔记" scheme="https://wukong1995.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="笔记" scheme="https://wukong1995.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>提取公共组件-探索antd中的form</title>
+    <link href="https://wukong1995.github.io/2019/07/06/explore-form-in-antd/"/>
+    <id>https://wukong1995.github.io/2019/07/06/explore-form-in-antd/</id>
+    <published>2019-07-06T13:42:21.000Z</published>
+    <updated>2020-05-10T13:41:21.016Z</updated>
+    
+    <summary type="html">
+    
+      包装组件的时候遵循单向数据流
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何二次封装组件库</title>
+    <link href="https://wukong1995.github.io/2019/06/16/antd-custom/"/>
+    <id>https://wukong1995.github.io/2019/06/16/antd-custom/</id>
+    <published>2019-06-16T04:59:43.000Z</published>
+    <updated>2020-05-10T13:41:21.016Z</updated>
+    
+    <summary type="html">
+    
+      以antd为例
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>停止使用css in js进行web开发</title>
+    <link href="https://wukong1995.github.io/2019/06/09/translate-stop-using-css-in-javascript-for-web-development/"/>
+    <id>https://wukong1995.github.io/2019/06/09/translate-stop-using-css-in-javascript-for-web-development/</id>
+    <published>2019-06-09T08:35:51.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      Stop using CSS in JavaScript for web development
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="css" scheme="https://wukong1995.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>migrate-flow-to-ts</title>
+    <link href="https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/"/>
+    <id>https://wukong1995.github.io/2019/06/01/migrate-flow-to-ts/</id>
+    <published>2019-06-01T08:35:51.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      ts一统天下
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="typescript" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/typescript/"/>
+    
+    
+      <category term="typescript" scheme="https://wukong1995.github.io/tags/typescript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>这周也是元气满满的一周</title>
+    <link href="https://wukong1995.github.io/2019/05/25/summary-work-4/"/>
+    <id>https://wukong1995.github.io/2019/05/25/summary-work-4/</id>
+    <published>2019-05-25T04:11:26.000Z</published>
+    <updated>2020-05-10T13:41:21.020Z</updated>
+    
+    <summary type="html">
+    
+      适应了比之前疲劳的一周～
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/react/"/>
+    
+    
+      <category term="react" scheme="https://wukong1995.github.io/tags/react/"/>
+    
+  </entry>
+  
+</feed>
