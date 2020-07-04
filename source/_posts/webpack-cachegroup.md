@@ -1,9 +1,9 @@
 ---
-title: webpack中优先打包node_modules的style
+title: webpack中优先打包node_modules中的style
 date: 2020-07-04 06:32:03
 tags: [webpack]
 categories: [前端, webpack]
-description: 一把辛酸泪==，在webpack cache group中先打包node_modules的样式
+description: 一把辛酸泪==，在webpack cache group中先打包node_modules中的样式
 ---
 
 ## 第一次的解决
