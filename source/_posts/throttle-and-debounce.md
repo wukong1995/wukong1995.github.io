@@ -44,7 +44,7 @@ function throttle(fn, wait) {
   function throttled() {
     if (firstRun) {
       firstRun = false
-      fn(arguments).bind(this)
+      fn.apply(this, arguments)
     }
 
     if (timeout) {
