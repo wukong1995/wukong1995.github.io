@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="6月 27, 2020">
-        <meta property="article:modified_time" content="7月 04, 2020">
+        <meta property="article:modified_time" content="7月 05, 2020">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "聊一聊throttle and debounce",
     "url": "https://wukong1995.github.io/2020/06/27/throttle-and-debounce/index.html",
     "datePublished": "6月 27, 2020",
-    "dateModified": "7月 04, 2020",
+    "dateModified": "7月 05, 2020",
     "description": "throttle and debounce",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -514,7 +514,7 @@
   <span class="token keyword">function</span> <span class="token function">throttled</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>firstRun<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       firstRun <span class="token operator">=</span> <span class="token boolean">false</span>
-      <span class="token function">fn</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+      fn<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> arguments<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 
     <span class="token keyword">if</span> <span class="token punctuation">(</span>timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
