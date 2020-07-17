@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="7月 16, 2020">
-        <meta property="article:modified_time" content="7月 16, 2020">
+        <meta property="article:modified_time" content="7月 17, 2020">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "webpack的hash、chunkhash、contenthash",
     "url": "https://wukong1995.github.io/2020/07/16/webpack-hash/index.html",
     "datePublished": "7月 16, 2020",
-    "dateModified": "7月 16, 2020",
+    "dateModified": "7月 17, 2020",
     "description": "webpack的三个hash你了解吗？",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -565,6 +565,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
   chunkFilename<span class="token punctuation">:</span> <span class="token string">'[name].[contenthash:8].chunk.css'</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>将webpack中的全部hash都设置成contenthash的情况下，仅仅只修改css文件，不改js文件的情况下，css文件的hash串会变，js文件的不会变，这样能达到最小更新。</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2-changecss.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2-changejs.png" alt="image"></p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>我查了两个流行的脚手架：create-react-app和umi，发现它们的entry file的配置都是contenthash</p>
 <pre class="line-numbers language-js"><code class="language-js">output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     filename<span class="token punctuation">:</span> <span class="token string">'[name].[contenthash].js'</span><span class="token punctuation">,</span>
