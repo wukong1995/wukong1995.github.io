@@ -116,6 +116,13 @@ new MiniCssExtractPlugin({
 })
 ```
 
+将webpack中的全部hash都设置成contenthash的情况下，仅仅只修改css文件，不改js文件的情况下，css文件的hash串会变，js文件的不会变，这样能达到最小更新。
+
+![image](https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2.png)
+
+![image](https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2-changecss.png)
+
+![image](https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2-changejs.png)
 
 ### 其他
 我查了两个流行的脚手架：create-react-app和umi，发现它们的entry file的配置都是contenthash
