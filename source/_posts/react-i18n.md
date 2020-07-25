@@ -3,7 +3,7 @@ title: 使用react的context实现一个简单i18n
 date: 2020-07-25 13:50:42
 tags: [算法]
 categories: [算法]
-description: 这是leetcode的92题的解答
+description: 国际化
 ---
 
 受withApollo的启示，仔细研究了一下context的API，在开发中还没用过context，但是想antd中的form这种跨组件传递数据，那i18n正适合啊
@@ -164,7 +164,7 @@ const Descrption22 = withLanguage(Descrption2)
 
 走到这，一个简单的i18n就完成了。
 
-
+PS: 如果中文网站要做国际化的话，可能最快的方式还是开发一套英文网站，再它的基础上做国际化。中文转英文，长度是由短变长，排版上改的会让人崩溃。
 
 
 
