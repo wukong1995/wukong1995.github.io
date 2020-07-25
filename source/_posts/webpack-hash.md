@@ -29,7 +29,7 @@ console.log('file3')
 require('./file2')
 console.log('index')
 
-// file1.js
+// detail.js
 require('./file1')
 console.log('detail')
 
@@ -54,7 +54,7 @@ module.exports = {
 第一次变更：
 ```js
 // file2.js
-require('./file22')
+console.log('file22')
 ```
 
 第二次变更：
