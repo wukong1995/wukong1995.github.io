@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2020-07-25T06:50:05.533Z</updated>
+  <updated>2020-08-01T12:45:15.785Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>怎样做一个安全的token</title>
+    <link href="https://wukong1995.github.io/2020/08/01/csrf-token/"/>
+    <id>https://wukong1995.github.io/2020/08/01/csrf-token/</id>
+    <published>2020-08-01T05:42:48.000Z</published>
+    <updated>2020-08-01T12:45:15.785Z</updated>
+    
+    <summary type="html">
+    
+      原则：如果密钥泄漏了怎么办
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/react/"/>
+    
+    
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用react的context实现一个简单i18n</title>
     <link href="https://wukong1995.github.io/2020/07/25/react-i18n/"/>
     <id>https://wukong1995.github.io/2020/07/25/react-i18n/</id>
     <published>2020-07-25T05:50:42.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -28,10 +50,12 @@
     
     </summary>
     
-      <category term="算法" scheme="https://wukong1995.github.io/categories/%E7%AE%97%E6%B3%95/"/>
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="react" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/react/"/>
     
     
-      <category term="算法" scheme="https://wukong1995.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
@@ -40,7 +64,7 @@
     <link href="https://wukong1995.github.io/2020/07/19/http2-summary/"/>
     <id>https://wukong1995.github.io/2020/07/19/http2-summary/</id>
     <published>2020-07-19T04:45:52.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.785Z</updated>
     
     <summary type="html">
     
@@ -60,7 +84,7 @@
     <link href="https://wukong1995.github.io/2020/07/16/webpack-hash/"/>
     <id>https://wukong1995.github.io/2020/07/16/webpack-hash/</id>
     <published>2020-07-16T12:57:26.000Z</published>
-    <updated>2020-07-25T06:50:05.537Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -82,7 +106,7 @@
     <link href="https://wukong1995.github.io/2020/07/11/react-apollo-v2/"/>
     <id>https://wukong1995.github.io/2020/07/11/react-apollo-v2/</id>
     <published>2020-07-11T13:49:40.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -104,7 +128,7 @@
     <link href="https://wukong1995.github.io/2020/07/04/know-product-2/"/>
     <id>https://wukong1995.github.io/2020/07/04/know-product-2/</id>
     <published>2020-07-03T23:33:18.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.785Z</updated>
     
     <summary type="html">
     
@@ -124,7 +148,7 @@
     <link href="https://wukong1995.github.io/2020/07/04/webpack-cachegroup/"/>
     <id>https://wukong1995.github.io/2020/07/04/webpack-cachegroup/</id>
     <published>2020-07-03T22:32:03.000Z</published>
-    <updated>2020-07-25T06:50:05.537Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -146,7 +170,7 @@
     <link href="https://wukong1995.github.io/2020/06/27/throttle-and-debounce/"/>
     <id>https://wukong1995.github.io/2020/06/27/throttle-and-debounce/</id>
     <published>2020-06-27T05:37:23.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -168,7 +192,7 @@
     <link href="https://wukong1995.github.io/2020/06/15/redis-lock/"/>
     <id>https://wukong1995.github.io/2020/06/15/redis-lock/</id>
     <published>2020-06-15T06:21:34.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -190,7 +214,7 @@
     <link href="https://wukong1995.github.io/2020/05/10/saas-performance-scheduler/"/>
     <id>https://wukong1995.github.io/2020/05/10/saas-performance-scheduler/</id>
     <published>2020-05-10T12:23:13.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -212,7 +236,7 @@
     <link href="https://wukong1995.github.io/2020/04/19/css-modules/"/>
     <id>https://wukong1995.github.io/2020/04/19/css-modules/</id>
     <published>2020-04-19T08:33:09.000Z</published>
-    <updated>2020-07-25T06:50:05.529Z</updated>
+    <updated>2020-08-01T12:45:15.785Z</updated>
     
     <summary type="html">
     
@@ -234,7 +258,7 @@
     <link href="https://wukong1995.github.io/2020/03/25/single-spa-react-route-prevent-back/"/>
     <id>https://wukong1995.github.io/2020/03/25/single-spa-react-route-prevent-back/</id>
     <published>2020-03-25T07:58:27.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -254,7 +278,7 @@
     <link href="https://wukong1995.github.io/2020/02/20/docker-pm2-permission/"/>
     <id>https://wukong1995.github.io/2020/02/20/docker-pm2-permission/</id>
     <published>2020-02-20T05:36:47.000Z</published>
-    <updated>2020-07-25T06:50:05.529Z</updated>
+    <updated>2020-08-01T12:45:15.785Z</updated>
     
     <summary type="html">
     
@@ -274,7 +298,7 @@
     <link href="https://wukong1995.github.io/2020/01/01/performance-docker/"/>
     <id>https://wukong1995.github.io/2020/01/01/performance-docker/</id>
     <published>2020-01-01T04:08:22.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -296,7 +320,7 @@
     <link href="https://wukong1995.github.io/2019/11/24/webpack-plugins/"/>
     <id>https://wukong1995.github.io/2019/11/24/webpack-plugins/</id>
     <published>2019-11-24T08:32:04.000Z</published>
-    <updated>2020-07-25T06:50:05.537Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -318,7 +342,7 @@
     <link href="https://wukong1995.github.io/2019/11/16/micro-frontend-single-spa/"/>
     <id>https://wukong1995.github.io/2019/11/16/micro-frontend-single-spa/</id>
     <published>2019-11-16T14:01:03.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -340,7 +364,7 @@
     <link href="https://wukong1995.github.io/2019/11/03/micro-frontend/"/>
     <id>https://wukong1995.github.io/2019/11/03/micro-frontend/</id>
     <published>2019-11-03T01:59:48.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -362,7 +386,7 @@
     <link href="https://wukong1995.github.io/2019/09/01/increase-page-open-speed/"/>
     <id>https://wukong1995.github.io/2019/09/01/increase-page-open-speed/</id>
     <published>2019-09-01T10:52:53.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.785Z</updated>
     
     <summary type="html">
     
@@ -384,7 +408,7 @@
     <link href="https://wukong1995.github.io/2019/08/18/react-hoc-ref/"/>
     <id>https://wukong1995.github.io/2019/08/18/react-hoc-ref/</id>
     <published>2019-08-18T02:56:40.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -406,7 +430,7 @@
     <link href="https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/"/>
     <id>https://wukong1995.github.io/2019/08/10/s3-replace-ali-oss/</id>
     <published>2019-08-10T15:39:03.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
+    <updated>2020-08-01T12:45:15.789Z</updated>
     
     <summary type="html">
     
@@ -418,26 +442,6 @@
     
     
       <category term="后端" scheme="https://wukong1995.github.io/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>优化项目中的包依赖</title>
-    <link href="https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/"/>
-    <id>https://wukong1995.github.io/2019/08/04/optimization-package-dependencies/</id>
-    <published>2019-08-04T10:27:37.000Z</published>
-    <updated>2020-07-25T06:50:05.533Z</updated>
-    
-    <summary type="html">
-    
-      如果可以的话，不要一个package存在多个版本
-    
-    </summary>
-    
-      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
     
   </entry>
   
