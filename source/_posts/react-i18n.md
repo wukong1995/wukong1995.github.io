@@ -1,8 +1,8 @@
 ---
 title: 使用react的context实现一个简单i18n
 date: 2020-07-25 13:50:42
-tags: [算法]
-categories: [算法]
+tags: [前端]
+categories: [前端, react]
 description: 国际化
 ---
 
