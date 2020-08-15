@@ -93,16 +93,8 @@ public class Main {
 }
 ```
 
-参考链接：
+参考：
+* 松本行弘的程序世界
 * [https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B](https://zh.wikipedia.org/wiki/%E9%B8%AD%E5%AD%90%E7%B1%BB%E5%9E%8B)
 * [https://stackoverflow.com/questions/46270804/using-java-and-cs-generics-to-simulate-duck-typing](https://stackoverflow.com/questions/46270804/using-java-and-cs-generics-to-simulate-duck-typing)
-
-
-
-
-
-
-
-
-
 
