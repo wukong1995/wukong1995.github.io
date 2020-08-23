@@ -1,8 +1,8 @@
 ---
 title: 今天聊一聊duck-typing
 date: 2020-08-08 22:00:21
-tags: [编程]
-categories: [编程, 语言]
+tags: [编程语言]
+categories: [编程语言]
 description: If it walks like a duck and it quacks like a duck, then it must be a duck
 ---
 
