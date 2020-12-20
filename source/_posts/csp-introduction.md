@@ -78,6 +78,7 @@ CSP directives很多，重点只看下面几个（带删除线的都是一般情
 
 **4. 'unsafe-eval'**
 允许使用eval（）和类似方法从字符串创建代码。注意你一定要用单引号包起来
+2020-12-20补充：**`$('body').html('<script>alert(1)</script>')`这种也属于eval**，[点这里查看](https://stackoverflow.com/questions/37155270/content-security-policy-csp-safe-usage-of-unsafe-eval)，所以你的项目如果是spa一定要加上
 
 **5. 'unsafe-hashes'**
 允许启动特定的内联事件处理程序。如果你只需要允许内联事件处理程序，而不允许内联script元素或者`javascript: URL`，与unsafe-inline表达式相比，这是一种更安全的方法。
