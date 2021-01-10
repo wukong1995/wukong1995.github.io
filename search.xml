@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[一次乌龙的排查-webapck重复打印log]]></title>
+    <url>%2F2021%2F01%2F10%2Fwebpack-print-log-repeat%2F</url>
+    <content type="text"><![CDATA[之前写了一个webpack的plugin，用来上传静态资源到oss上，它经过三个项目的考验，还是很实用的。这次在另一个项目中，使用了它，我发现jk的log中，上传的log竟然出现了三次！！！刚开始我怀疑是jk的问题，但是我在本地进行了一次打包，凉凉，发现本地上传的log也是发生了三次，于是我就开始找到底是哪的问题 难道是webpack用的hook有问题上传的plugin用的是afterEmit这个hook，它的解释是： Called after emitting assets to output directory. 项目也用了别的plugin，例如copyPlugin、htmlPlugin，这两个也都会释放文件到ouputPath中，难道它们会多次触发afterEmit，于是拿着“webpack afterEmit call multi times”去搜，但是没有找到相关的问题，于是我开始模拟这种webpack的配置 // webpack.config.js // ... plugins: [ new MyPlugin(), new CopyWebpackPlugin( [ path.resolve(__dirname, "source") ], ) ], // my_plugin.js class MyPlugin { constructor() { } apply(compiler) { this.doWith(compiler) } doWith(compiler) { compiler.hooks.afterEmit.tapPromise('MyPlugin', () => { console.log('afterEmit run run!!!') return Promise.resolve() }) } } module.exports = MyPlugin 测试下来发现afterEmit只打印了一次。我开始想是不是想错了，顺着两个另外的plugin的代码，像htmlPlugin它用的是Compilation Hooks中的processAssets来生成html，确定了我的猜想是错误的，afetrEmit只会执行一次，除非你recomplie了。 难道是umi的问题现在的项目是使用umi2生成中，其中的配置完全是黑盒，难道它里面同时开了两个compile，抱着这样的猜想，去找了umi中的webpack配置，发现和平时没有什么不同，我看了package.json中的依赖，有一个webpackbar，它是来显示webpack打包的进度，我尝试把它禁用，然后再执行一次buid，发现log上只打印了一次！！！我尝试用“webpack print log duplicate”搜索没有收获，找webpackbar的issue也没什么收获。 最后的最后看了一下webpack的hooks，反正都是上传文件，done之后传也行，为了安心，于是增加了一个配置，使用done这个hook来执行上传动作。 又一次验证了一个道理：你的问题如果在issue和stackoverflow中找不到答案，那一定是你错了。]]></content>
+      <categories>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[css解决不了的，就用js解决]]></title>
     <url>%2F2020%2F12%2F20%2Fuse-js-relove-css-unresolve%2F</url>
     <content type="text"><![CDATA[对于展示上的问题，我一向是css能解决的就不要动用js。这个迭代中加了一个放大缩小的功能，放大的话势必要出现横向滚动条，但是在实际上还会有超宽的absolute元素，我写了一个简单的demo &lt;style> .container { width: 400px; height: 600px; border: 1px solid rgb(198, 198, 199); margin: 50px auto; overflow-y: scroll; overflow-x: auto; } .inner { position: relative; border: 1px solid blue; } .mark { position: absolute; left: 120px; top: 120px; width: 600px; height: 600px; border: 2px solid red; } img { width: 120%; } &lt;/style> &lt;div class="container"> &lt;div class="inner"> &lt;img src="https://aibici-test.oss-cn-beijing.aliyuncs.com/document-mining-backend/c9325f71bc7df09b10de105835314c2e.jpg" /> &lt;div class="mark">&lt;/div> &lt;/div> &lt;/div> mask超级宽，一旦它超出父元素的宽度是，势必会让父元素变宽。我想要的效果是mask不会影响父元素的宽度。于是我开始在这个基础上各种魔改，以达到我的效果。结果折腾了大半天也不可以。 最后是使用js会动态计算inner的宽高。同时我反思了一下这个css方案的失败。img的宽度使用百分比的时候，它依赖于inner的宽度，如果我需要hidden absolute元素的宽度，必须在inner上加overflow: hidden。这样一来，图片超出100%的时候，也是无法滚动的。hidde和scroll互相矛盾；如果给mark加一个父元素testtest来包裹，有一个问题是testtest使用absolute定位式，宽度是等于inner的宽度的，即是inneryou了scroll。 所以最后的方案是使用js去计算inner的宽度，img永远保持width为100%]]></content>
