@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.4.0 -->
+    <script>window.materialVersion = "1.4.0"</script>
+
+    <!-- Title -->
+    
+    <title>
+        
+            (译)深入了解React Fiber的内部 | 
+        
+        Wukong&#39;s Blog
+    </title>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    
+    
+    
+    
+    
+        <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    
+    
+    
+    
+    
+    
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Peipei Wong">
+    <meta name="description" itemprop="description" content="deep-dive-into-react-fiber-internals">
+    <meta name="keywords" content="blog,react,翻译">
+
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="0Vp-S2T3eaqWcjrahxuygHKUdnMIZXe5CO_92YOPgfQ&#34;">
+    
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.jpg">
+    <link rel="icon" sizes="192x192" href="/img/favicon.jpg">
+    <link rel="apple-touch-icon" href="/img/favicon.jpg">
+
+    <!--iOS -->
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Wukong&#39;s Blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://wukong1995.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="(译)深入了解React Fiber的内部 | Wukong&#39;s Blog">
+    <meta property="og:image" content="/img/favicon.jpg">
+    <meta property="og:description" content="deep-dive-into-react-fiber-internals">
+    <meta property="og:article:tag" content="react"> <meta property="og:article:tag" content="翻译"> 
+
+    
+        <meta property="article:published_time" content="1月 15, 2021">
+        <meta property="article:modified_time" content="1月 15, 2021">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:title" content="(译)深入了解React Fiber的内部 | Wukong&#39;s Blog">
+    <meta name="twitter:description" content="deep-dive-into-react-fiber-internals">
+    <meta name="twitter:image" content="/img/favicon.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://wukong1995.github.io">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/index.html">
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Wukong&#39;s Blog",
+        "logo": "/img/favicon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Peipei Wong",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/favicon.jpg"
+        },
+        "description": "如切如磋，如琢如磨"
+    },
+    "headline": "(译)深入了解React Fiber的内部",
+    "url": "https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/index.html",
+    "datePublished": "1月 15, 2021",
+    "dateModified": "1月 15, 2021",
+    "description": "deep-dive-into-react-fiber-internals",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://wukong1995.github.io"
+    }
+}
+</script>
+
+
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+materialVersion+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(data&&data.indexOf(versionString)===-1){lsloader.removeLS(key)}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload){cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload);return}code=code.split(versionString)[1];if(/\.js?.+$/.test(versionNumber)){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload)}};lsloader.requestResource=function(name,path,cssonload){var that=this;if(/\.js?.+$/.test(path)){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else if(/\.css?.+$/.test(path)){this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
+
+    <!-- Import CSS & jQuery -->
+    
+        <style id="css/material.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/material.min.css","/css/material.min.css?fJTiM/K1J3dWIruo3pxtAw==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        <style id="css/style.min.css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("css/style.min.css","/css/style.min.css?PNVt8PsYBc01GdhMnb0QlQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";})</script>
+        
+        
+            <style>
+    
+    
+    .footer-sns-twitter {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNiA3OGMtMjIuNCA1LjItNTUuOCA0MC4yLTYwLjYgNjMuNC0xLjQgNi40LTIgMTI5LjgtMS42IDM2Ny42LjYgMjk4LjYgMSAzNTguOCAzLjQgMzYzIDExIDIwLjIgMjEuNiAzMi40IDM3LjIgNDMgMTUgMTAuMiAxNy40IDExLjIgMzMgMTMgMTEuMiAxLjQgMTM2IDIgMzY1IDEuNiAzMTQtLjYgMzQ4LjYtMSAzNTUtMy44IDE1LjgtNy4yIDMzLjgtMjIgNDMuMi0zNS40IDUuMi03LjQgMTAuOC0xNi42IDEyLjYtMjAuNCAyLjgtNi40IDMuMi00MC44IDMuOC0zNTQgLjQtMjIzLS4yLTM1My40LTEuNC0zNjUtMi0xNy0yLjYtMTguNi0xMy0zNC04LjYtMTIuNi0xNC4yLTE4LjQtMjUuMi0yNS44LTcuOC01LjQtMTcuNC0xMS0yMS42LTEyLjQtNi0yLjItNzIuOC0yLjYtMzY1LjQtMi42LTE5Ni44LjItMzYxIC44LTM2NC40IDEuOHptNTMyLjggMjA1YzEwIDQgMjMgMTAuOCAyOC44IDE1LjIgMTIuNiA5LjIgMTYuNiAxMC42IDI5LjQgOS40IDYuNi0uNiAxMy0zLjIgMjAuNC04LjIgMTEuMi03LjYgMTkuNC05LjIgMjMuNi01IDMuNiAzLjYgMi44IDktMi44IDE4LjYtNy4yIDEyLjQtNiAxOC44IDQuMiAyNC4yIDQuNCAyLjIgOC4yIDUuNiA4LjYgNy40IDEgNC44LTEyLjYgMjQuMi0yMiAzMS44LTExLjggOS4yLTE3LjIgMjIuNi0xOS42IDQ3LjgtNC44IDUwLjQtNy44IDY2LjYtMTYuNCA4NS40LTMgNy03IDE3LjgtOC44IDI0LTEuOCA2LjQtNSAxNC42LTcuNCAxOC40LTIuMiAzLjgtNy40IDEzLTExLjQgMjAuNC0xNy4yIDMwLjgtNDMuNCA2MS40LTcxLjQgODMuOC0yNS42IDIwLjQtNDYgMzMuMi02NC4yIDQwLjItOC40IDMuMi0xOCA3LjYtMjEuNCA5LjYtNy40IDQuNi0yMi40IDguNi01Ny4yIDE1LTYyLjIgMTEuNi03OS4yIDExLjQtMTM1LjYtMS0zMi40LTctMzguNi05LTUyLTE2LjgtMjEuNC0xMi42LTI0LjItMTQuOC0yNC4yLTE5LjQgMC02LjIgMTAuMi05LjIgMzUtMTAuNCAyMi40LTEgMjguNi0yLjYgNTctMTQuMiAyMy44LTkuOCAyOS40LTEyLjggMzAuNC0xNi44IDIuMi04LjItMy0xMy4yLTI2LjgtMjUuNC0yNS44LTEzLjItMzIuMi0xOC40LTQzLjgtMzUuOC05LTEzLjYtMTAtMjEuMi0zLjYtMzMuNiA1LjQtMTAuOCAzLjYtMTUtMTEuOC0yNS40LTktNi0xNC0xMS42LTIwLjgtMjIuNi0yMy40LTM3LjgtMjUtNTAuOC03LjItNTkuOCA0LjgtMi40IDkuNC01LjQgMTAuMi02LjYgMi44LTQuMi0uNC0xNS42LTguNC0yOS0xMS42LTE5LjYtMTMuMi0yNS44LTEzLjItNTUuMiAwLTI4LjggMi42LTM3LjggMTItNDAuMiA5LTIuMiAxNC44IDEgMzUuNiAyMC4yIDI0LjggMjIuOCA0My42IDM2LjYgNjIuOCA0NS44IDggMy44IDE3LjggOS4yIDIyIDEyIDQuMiAyLjggMTQuOCA3IDIzLjQgOS4yIDguNiAyLjIgMjQuMiA2LjggMzQuOCAxMC4yIDEzLjQgNC40IDIzLjYgNi40IDMzIDYuNiAxMi44LjIgMTQuMi0uMiAxOC42LTUuNCA0LTQuOCA0LjgtNy44IDQuOC0xOS4yIDAtMTQuNCA1LjYtMzkuNiAxMS4yLTUwLjYgNC4yLTguNCAyOS4yLTM0LjIgMzkuOC00MS40IDcuOC01LjQgMzUuNi0xNiA1Mi0yMCAxNC4yLTMuNiAzMi42LTEuMiA1Mi40IDYuOHoiLz48L3N2Zz4=);
+    }
+    
+    
+    
+    
+    
+    
+    .footer-sns-github {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgY2xhc3M9Imljb24iIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiPjxwYXRoIGQ9Ik0xMzguNCA3OGMtNi40IDEuNC0yNi40IDE0LjItMzYgMjIuOC04IDcuMi0yMiAyOS44LTI0LjQgMzkuMi0xLjYgNi40LTIgMTEzLjItMS42IDM2OCAuNiAyOTkuNCAxIDM1OS44IDMuNCAzNjQgMTEgMjAuMiAyMS42IDMyLjQgMzcuMiA0MyAxNS42IDEwLjYgMTcuMiAxMS4yIDM0LjIgMTMuMiAxMC42IDEuMiA2My40IDEuNiAxMjcuNiAxLjRsMTA5LjYtLjYgNi02LjggNi4yLTYuOC0xLjItMjUuMmMtLjgtMTUuOC0uMi0zMy40IDEuNC00Ny4yIDMtMjUuNCAxLjQtMzYuMi02LTQzLjItNS00LjYtNi4yLTQuOC0zMC42LTQuMi0yNy42LjgtMjQgMS42LTY4LjgtMTYtOC42LTMuNC0yMi42LTE4LTI4LjQtMjkuOC0xMS40LTIyLjgtMjctNDUtMzkuMi01NS42LTE0LTEyLjItMTkuOC0yMC44LTE5LjgtMjguNiAwLTExLjYgMTMuNi0xMi42IDMzLjItMi40IDE2LjYgOC44IDIwLjggMTIuNCA0MC44IDM2LjIgMjQuMiAyOC42IDMxIDMzLjYgNTQgMzkuNiAxNS4yIDQgNDIuMiAzIDUxLjQtMS44IDktNC42IDE4LTE1LjIgMjQuNC0yOS4yIDExLjQtMjQuMiA3LjQtMzEuMi0yMC42LTM2LjgtOS44LTItMjkuMi04LTQzLjQtMTMuNC00MC40LTE1LjgtNjQuNi0zNy40LTg1LjQtNzYuMi0xMS42LTIxLjgtMTUuNC0zMy0xOC4yLTUzLjYtNC4yLTMyLjItNC44LTYwLjItMS40LTg0IDMuNC0yMy44IDYuOC0zMi44IDIwLjItNTQgNC02IDguOC0xNS42IDExLTIxLjQgMy44LTEwIDMuOC0xMS42IDEtMzAtNS4yLTM0LjItMy4yLTUyLjQgNy42LTcwLjIgNy4yLTEyLjIgMTUtMTcuMiAyNC4yLTE1LjggMTIuOCAyLjIgNTIgMTcuNCA2Ni44IDI2LjIgMjYgMTUgMjkgMTUuNCA4Mi40IDcuMiAyNC42LTMuOCAzMy44LTQuMiA2MC0zLjIgMTcgLjYgNDEuNCAzIDU0IDUuMiAzOC40IDYuNiA0OS42IDUuMiA3My0xMCA2LjYtNC4yIDE3LjQtOS40IDI0LTExLjYgNi42LTIuMiAxNi01LjggMjEtOC4yIDEzLTYgMjgtNS42IDM1LjYuOCAxMi40IDEwLjQgMTguNiA0MS40IDE0LjQgNzEuNi00LjQgMzAuNi0zIDM5LjQgOC40IDUzLjggMy40IDQuNCAxMS4yIDE5LjIgMTcuNCAzMy4yTDc3NSA0NDN2NzhsLTEwIDI4Yy0xNS4yIDQzLjItMzYuOCA3My4yLTY2LjIgOTIuOC0xMy40IDguOC01NyAyNS40LTc2LjggMjktMjguMiA1LjItMzMuMiAxMi42LTIyIDMyLjIgMTEuMiAxOS40IDEyLjQgMzIuOCAxMS42IDEyOS42bC0uNiA4NS44IDUuNCA0LjZjMy42IDMgOS4yIDUuMiAxNiA2IDUuOC44IDYwLjIgMSAxMjAuNi42IDEwOC40LS42IDExMC4yLS42IDExOS01IDI0LTExLjYgNDAtMjcuNCA1MS42LTUwLjZsNS40LTExIC42LTM0N2MuNC0yMjMtLjItMzUzLjQtMS40LTM2NS0yLTE3LTIuNi0xOC42LTEzLTM0LTEwLjYtMTUuNC0yMi44LTI2LjItNDMuMi0zNy4yLTQuMi0yLjQtNjQuNi0yLjgtMzY2LTMuMi0xOTguNiAwLTM2NCAuNC0zNjcuNiAxLjR6Ii8+PC9zdmc+);
+    }
+    
+    
+    
+    
+    
+</style>
+
+        
+        <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+        <script>lsloader.load("js/jquery.min.js","/js/jquery.min.js?qcusAULNeBksqffqUM2+Ig==")</script>
+    
+
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-103021762-1', 'auto');ga('send', 'pageview');
+</script>
+
+    <!-- Custom Head -->
+    
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn" class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Stack-reconciler"><span class="post-toc-number">1.</span> <span class="post-toc-text">Stack reconciler</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Recursion（递归）"><span class="post-toc-number">2.</span> <span class="post-toc-text">Recursion（递归）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#How-Fiber-works"><span class="post-toc-number">3.</span> <span class="post-toc-text">How Fiber works</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JavaScript-execution-stack"><span class="post-toc-number">4.</span> <span class="post-toc-text">JavaScript execution stack</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Singly-linked-list-of-fiber-nodes"><span class="post-toc-number">5.</span> <span class="post-toc-text">Singly linked list of fiber nodes</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Type"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">Type</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Key"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">Key</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Child"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">Child</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Sibling"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">Sibling</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Return"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">Return</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#pendingProps-and-memoizedProps"><span class="post-toc-number">5.6.</span> <span class="post-toc-text">pendingProps and memoizedProps</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#pendingWorkPriority"><span class="post-toc-number">5.7.</span> <span class="post-toc-text">pendingWorkPriority</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Alternate"><span class="post-toc-number">5.8.</span> <span class="post-toc-text">Alternate</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Output"><span class="post-toc-number">5.9.</span> <span class="post-toc-text">Output</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Render-phase"><span class="post-toc-number">6.</span> <span class="post-toc-text">Render phase</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Commit-phase"><span class="post-toc-number">7.</span> <span class="post-toc-text">Commit phase</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#总结"><span class="post-toc-number">8.</span> <span class="post-toc-text">总结</span></a></li></ol>
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+    
+
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                (译)深入了解React Fiber的内部
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/favicon.jpg" width="44px" height="44px" alt="Author Avatar">
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Peipei Wong</strong>
+        <span>1月 15, 2021</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADh0lEQVR42u3ayY7cMAwFwP7/n06uARp2P5Ki4QClU2PgRSofOFw+f6x/1gcBDhw4cODAgQMHDhwv5vjEK7nr+5rkLVfXX70x+UvhLDhw4MCBY4HjRyhqHfVq08nf7+nzfUZnwYEDBw4caxy9EJhsOg+K90+u7vP+Ghw4cODA8TaOXlCsPiEP4Thw4MCB43/n6EFU07z7fU7OggMHDhw4tjmSglpSpEuePAm3L6qV4sCBAweO8UDD+38/Ot+BAwcOHDi+OKprHuqSZlKeOs4XDhw4cOA4y5EHqkl61msXRQlYa/84cODAgeNJjvz1efhMWlPVQDtPO3HgwIEDxwZHctTe+FreBErem3zCXpqHAwcOHDjOcsxHnO/JJmE7uffAJ8GBAwcOHGscycHmxcRTaV5SQGwWB3HgwIEDx4Bjsunqc6opVpWs+alw4MCBA8cCRy905WW73qBDr9GVp5Q4cODAgWOPI094eqGu+pxee6k6nIEDBw4cOPY4JiHzQHluUGTMd4sDBw4cOJ7nyDfUS5zyRLGXRn7ihQMHDhw49jg+xVVtGlVTr2pKmXyYH/vEgQMHDhxHOSav7wXOKmuecFZTRxw4cODAscdRTdh6AwTV50/GtQtpJw4cOHDgWODoHSk/xmRMYf7xftyFAwcOHDge55iEvfze5jhCnM6NMlocOHDgwBFzVG+elP+S4YN54DzWhcOBAwcOHAOO5Hc+lNZrUFXD8LFQjQMHDhw4FjiigNRq/+RA1RRx8nlw4MCBA8ceR+/FSXnuVBJYTeTyD4wDBw4cOPY4ekW3anEwec7Z9lL0ZBw4cODAcZRjkkrloPn1vUbUaLc4cODAgeMRjsnIQq8plcP1yoWXwRgHDhw4cCxw5MnSJN2qBt3qsEJ1lAEHDhw4cDzDUQ1yk9GHKk0S1MvnwoEDBw4cyxxJMMuLdHnxcTIMl+8QBw4cOHBsc1RX3qDKi3rVwJm/MfnnAAcOHDhwnOXoBapq4peX7RK4ScOsMNCAAwcOHDjWioPVQbTJQMOpltIo0OLAgQMHjkMc1ZJfb2RhMjwxob98Iw4cOHDgeA1H7zB5I6oa8nsjFDhw4MCB4z0c1YZQr8g4H2JoznfgwIEDB44xRy/Rqhbj5ulir611uRMcOHDgwLHAUQ1a1WPnyVg1eOcNp5X5Dhw4cODA8cVh4cCBAwcOHDhw4MCB42XrL/hepU4y8sIEAAAAAElFTkSuQmCC">
+    
+</ul>
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/react/">react</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/翻译/">翻译</a>
+    </li></ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=(译)深入了解React Fiber的内部&url=https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=(译)深入了解React Fiber的内部&url=https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/index.html&via=Peipei Wong" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+
+    <!-- Share Google+ -->
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>原文链接：<a href="https://blog.logrocket.com/deep-dive-into-react-fiber-internals/" target="_blank" rel="noopener">A deep dive into React Fiber internals - LogRocket Blog</a></p>
+<p>有没有想过当你调用<code>ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))</code>发生了什么？</p>
+<p>我们知道ReactDom在后台构建DOM树，并将应用渲染到屏幕上。但是ReactDom是怎么构建DOm树的？当app的state改变时，它是如何更新树？</p>
+<p>在这篇文章中，我开始从React在15.0.0之前如何构建DOM树，这个模型的陷阱以及在16.0.0的新模型中如何解决这些问题。这篇文章会涵盖很多内部实现细节的概念，它对于使用React进行实际的开发不是必要的。</p>
+<h3 id="Stack-reconciler"><a href="#Stack-reconciler" class="headerlink" title="Stack reconciler"></a>Stack reconciler</h3><p>让我们从熟悉的<code>ReactDOM.render(&lt;App /&gt;, document.getElementById(&#39;root&#39;))</code>开始。</p>
+<p>ReactDOM模块将<code>&lt;App /&gt;</code>传给reconciler，这里有两个问题：</p>
+<ol>
+<li><code>&lt;App /&gt;</code>指的什么？</li>
+<li>reconciler是什么</li>
+</ol>
+<p>让我们解开这两个问题：<br><code>&lt;App /&gt;</code>是一个react元素，也是元素描述树(lements describe the tree)。</p>
+<blockquote>
+<p>元素是描述组件的实例或DOM节点及其所需属性的普通对象。 –React Blog</p>
+</blockquote>
+<p>换句话来说，元素不是真正的DOM节点或者组件实例。它们只是用来向React描述它们是什么元素类型，有什么属性，子节点是什么的一种方法。</p>
+<p>这就是React的真正力量所在。React消除了如何构建、渲染、管理真正DOM树的生命周期的复杂部分，简化开发人员的工作。要了解他们的真正含义，让我们看一下使用面向对象的概念。</p>
+<p>在典型的面向对象世界中，开发者需要实例化和管理每个DOM元素的生命周期。例如，你想要创建一个简单的表单和一个提交按钮，那么状态管理甚至是简单的操作都需要开发人员的努力。</p>
+<p>假设<code>Button</code>组件有一个状态变量<code>isSubmitted</code>，<code>Button</code>的生命周期类似于以下的流程图，其中的每个状态都需要app处理：</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690162/blog/fiber-button-component-lifecycle.png" alt="button的生命周期"></p>
+<p>流程图的大小和代码的行数随着状态变量的增加而呈指数级上升。</p>
+<p>React有精确解决此问题的元素，在React中，有两种类型的元素：</p>
+<ul>
+<li>DOM元素：当元素的类型是一个字符串的时候，例如：<code>&lt;button class=&quot;okButton&quot;&gt; OK &lt;/button&gt;</code></li>
+<li>Component元素：当类型是一个类或者函数的时候，例如<code>：&lt;Button className=&quot;okButton&quot;&gt; OK &lt;/Button&gt;</code>，这里<code>Button</code>是一个类组件或者函数组件，这是我们用的典型的React组件。</li>
+</ul>
+<p>理解两种类型（class or function）是一个简单的对象是非常重要的。它们仅仅描述在屏幕上需要渲染什么，在你创建或者实例化的时候不会导致任何渲染的发生。这对于React解析和遍历它们来构建DOM树是非常容易的。当遍历完成后才会发生实际的渲染。</p>
+<p>当React遇到一个class或者函数组件时，会根据组件的props去确定它需要渲染哪个元素。例如，如果<code>&lt;App /&gt;</code>如下：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token operator">&lt;</span>Form<span class="token operator">></span>
+  <span class="token operator">&lt;</span>Button<span class="token operator">></span>
+    Submit
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Button<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Form<span class="token operator">></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>React会根据相应的props确定<code>&lt;Form&gt;</code>和<code>&lt;Button&gt;</code>渲染内容。例如，Form组件是一个函数组件，看起来是这样：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> Form <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"form"</span><span class="token operator">></span>
+      <span class="token punctuation">{</span>props<span class="token punctuation">.</span>form<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>React会调用<code>render()</code>来确定它渲染的元素，并最终看到它渲染一个带有child的<code>&lt;div&gt;</code>。React将重复这个过程，直到确定页面上的每个组件的基础DOM标签元素。</p>
+<p>递归遍历一棵树来确定React应用程序组件树的底层DOM标签元素的过程称为reconciliation。在reconciliation结束后，React知道了DOM树的结果和像react-dom或react-native这样的渲染器更新DOM节点所需的最小变更集。</p>
+<p>这意味着当你调用<code>ReactDOM.render()</code>或者<code>setState</code>的时候，React将执行一个reconciliation。在<code>setState</code>的情况下，它执行遍历，并将新树和老树进行比较后找出变化。接着，它在现在的树上应用这些变化，从而更新成调用<code>setState</code>相应的状态。</p>
+<p>现在我们理解reconciliation是什么了，现在让我们看一下这个模型的陷阱。</p>
+<p>顺便说一句，为什么叫做the “stack” reconciler？</p>
+<p>这个名字来源于stack数据结构，它是后进先出的机制。stack和我们刚才看的有什么关系吗？好吧，事实证明，由于我们实际上做了递归，因此它和stack有关系。</p>
+<h3 id="Recursion（递归）"><a href="#Recursion（递归）" class="headerlink" title="Recursion（递归）"></a>Recursion（递归）</h3><p>要了解为什么会发生这个情况，让我们举一个简单的例子来看一下调用栈(call stack)发生了什么</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> n
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> fib <span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690161/blog/fiber-call-stack-diagram.png" alt="call_stack"></p>
+<p>正如我们看到的这样，调用栈会将每次<code>fib()</code>的调用push进栈中，直到弹出要返回的第一个函数调用<code>fib(1)</code>。然后它继续push递归调用，并在到达return语句的时候弹出。这样它有效的使用堆栈，直到<code>fib(3)</code>返回成为最后一个从栈中pop的最后一个元素。</p>
+<p>我们刚刚就看到的reconciliation算法是纯递归算法。子树的更新会立即重新渲染。虽然这很好用，但是有一些限制。正如Andrew Clark所说：</p>
+<ul>
+<li>在一个UI中，每次的更新立即应用是不必要的，事实上，这样做很浪费会导致帧下降，降低用户的体验。</li>
+<li>不同类型的更新有不同的优先级 - 一个动画的更新需要比数据更新更快的完成</li>
+</ul>
+<p>现在，我们说的掉帧是什么意思？为什么递归方法有问题？为了掌握这一点，让我从用户的体验角度简要说明什么是帧频（frame rate）以及它为什么这么重要。</p>
+<p>帧频是指连续图像显示在屏幕上的频率，我们在电脑屏幕上看到的一切是由在屏幕上以瞬时出现的速率播放的图像或帧组成。</p>
+<p>为了理解它，可以将电脑显示器想像成翻书，当你翻书时，将每一页视为一定速率播放的帧。换句话来说，电脑屏幕只是一本自动翻页的书，会一直播放屏幕的变化。如果还不能理解，请看下面的视频(这是xx的一个视频，下面用图片代替)。</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690161/blog/fiber-fps.png" alt="5dps"></p>
+<p>通常情况下，人眼看视频会感觉流畅的话，视频需要以每秒30帧（FPS）的速率播放。更高的速率会有更好的体验。这是为什么游戏玩家更喜欢第一人称精确射击游戏中更高帧频主要的原因。</p>
+<p>话说回来，现在的大多数设备刷新屏幕在60帧，或者换句话说，1/60=16.67ms，这意味着每16ms显示一个新的帧。这个数字是非常重要的，因为React在屏幕上渲染超过16ms的话，浏览器就会掉帧。</p>
+<p>事实上，浏览器还有一些基础工作要做，所以你的操作必须在10ms内完成。如果你没有办法满足这个要求，帧就会下降，屏幕上的内容会显得特别乱。这会对用户的体验产生了负面的影响。</p>
+<p>当然，这不是静态和文本内容引起注意的重要原因。但是在显示动画的情况下，这个数字至关重要。所以如果React的reconciliation算法每次遍历整个App树后，有更新就重新render。如果遍历超过16ms，就会导致掉帧。</p>
+<p>这是为什么最好按优先级对更新进行分类，而不是盲目地将传递给reconciliation的每个更新都应用的重要原因。还有一个好的特性是在下一帧中暂停和恢复。这样，React能使用16ms的预算更好的控制渲染。</p>
+<p>以上使React团队重写reconciliation算法，新算法叫做Fiber。我希望现在对于Fiber的为什么存在以及具有的意义有了进一步的认识。出现在让我们看一下Fiber是如何解决这个问题的。</p>
+<h3 id="How-Fiber-works"><a href="#How-Fiber-works" class="headerlink" title="How Fiber works"></a>How Fiber works</h3><p>现在我们知道了开发Fiber的动机，让我们总结一下它需要实现的功能。</p>
+<p>同样，我引用Andrew Clark的笔记：</p>
+<ul>
+<li>为不同类型分配不用的优先级</li>
+<li>暂停并稍后恢复它</li>
+<li>如果不需要的话，能终止</li>
+<li>复用之前完成的工作</li>
+</ul>
+<p>实现这样的事情的挑战之一是JavaScript引擎的工作方式，并且在js中某种程度上缺乏这样的线程。为了理解这个，让我们探索一下JS引擎是如何处理执行上下文。</p>
+<h3 id="JavaScript-execution-stack"><a href="#JavaScript-execution-stack" class="headerlink" title="JavaScript execution stack"></a>JavaScript execution stack</h3><p>每当你在js中写一个函数，当我们调用函数的时候，js引擎创建了执行上下文。每次js引擎开始，它会创建一个全局上下文，它包含全局对象，例如浏览器中的<code>window</code>对象、nodejs的<code>global</code>对象。在js中，这些上下文使用stack数据结构来处理。</p>
+<p>所以，当你写以下代码时：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"i am a"</span><span class="token punctuation">)</span>
+  <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"i am b"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token function">a</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>Js引擎首先创建一个全局上下文，并push进执行栈(the execution stack)中。接着它创建函数<code>a()</code>的函数执行上下文，因为<code>a()</code>中调用了<code>b()</code>，所以它将创建<code>b()</code>的函数执行上下文，并push进栈中。</p>
+<p>当函数<code>b()</code>返回时，引擎会销毁<code>b()</code>的上下文，当我们从<code>a()</code>中退出，<code>a()</code>的上下文被销毁。执行期间的栈看起来像这样：</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-execution-stack.png" alt="stack"></p>
+<p>但是当浏览器有了一个异步事件例如http request，会发生什么？js引擎是否会存进栈中来处理异步事件，等待事件的完成？</p>
+<p>JS引擎在这里做了不同的处理，在执行栈的最上面，js引擎还有一个queue的数据结构，也称为事件队列。事件队列处理异步事件的调用，例如浏览器中的http或者网络事件。</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-event-queue-diagram.png" alt="stack+queue"></p>
+<p>Js引擎处理队列的方式是等待执行栈为空。所以每次执行栈变空的时候，js引擎会查看事件队列，pop出里面的item，然后执行它。重要的是要注意：JS引擎仅仅当执行栈为空或者执行栈中只有全局执行上下文是去检查事件队列。</p>
+<p>尽管我们将它们称为异步事件，但这里有一个细微的区别：事件相对于何时进入队列是异步的，但相对于它们何时真正得到处理则并不是真正异步的。</p>
+<p>回到stack reconciler，React遍历树是在执行栈中做的。所以当计算更新完成后，它们会放到事件队列中。只有当执行栈为空的时候，更新才会被执行。这正是Fiber解决的问题，几乎要实现栈的暂停、恢复、停止的智能功能。</p>
+<p>再次引用 Andrew Clark的笔记：</p>
+<blockquote>
+<p>Fiber is reimplementation of the stack, specialized for React components. You can think of a single fiber as a virtual stack frame.</p>
+<p>The advantage of reimplementing the stack is that you can keep stack frames in memory and execute them however (and whenever) you want. This is crucial for accomplishing the goals we have for scheduling.</p>
+<p>Aside from scheduling, manually dealing with stack frames unlocks the potential for features such as concurrency and error boundaries. We will cover these topics in future sections.</p>
+</blockquote>
+<p>简单来说，Fiber是具有自己虚拟栈的工作单元。在之前实现的reconciliation短发中，React创造了一个不可变的树对象，然后递归的遍历它。</p>
+<p>在现在的实现中，React创建一个可修改的fiber节点树，fiber节点描述了组件的state、props以及需要渲染的底层DOM元素。</p>
+<p>而且由于fiber节点是能改变的，React不需要为更新再创建每一个节点，当有更新时，它可以简单的克隆和更新节点。另外，如果是fiber树，React不会做递归遍历，而是，它创建一个单链表做父亲优先、深度优先的遍历。</p>
+<h3 id="Singly-linked-list-of-fiber-nodes"><a href="#Singly-linked-list-of-fiber-nodes" class="headerlink" title="Singly linked list of fiber nodes"></a>Singly linked list of fiber nodes</h3><p>fiber节点代表栈中的帧（stack frame），也代表React组件的一个示例，一个fiber节点包含以下属性：</p>
+<h4 id="Type"><a href="#Type" class="headerlink" title="Type"></a>Type</h4><p>div，span等，例如基础组件（<a href="https://blog.atulr.com/react-custom-renderer-1/" target="_blank" rel="noopener">host components</a>）或者class、funciton的组合组件</p>
+<h4 id="Key"><a href="#Key" class="headerlink" title="Key"></a>Key</h4><p>与传递给React组件的key一样</p>
+<h4 id="Child"><a href="#Child" class="headerlink" title="Child"></a>Child</h4><p>当我们调用组件的render返回的元素， 例如：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> Name <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">"name"</span><span class="token operator">></span>
+      <span class="token punctuation">{</span>props<span class="token punctuation">.</span>name<span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这里<code>Name</code>的child是<code>div</code>，因为它返回的是一个<code>div</code>元素</p>
+<h4 id="Sibling"><a href="#Sibling" class="headerlink" title="Sibling"></a>Sibling</h4><p>表示render返回的元素列表情况</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> Name <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">&lt;</span>Customdiv1 <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Customdiv2 <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>在上面的例子中，<code>&lt;Customdiv1 /&gt;</code>和<code>&lt;Customdiv2 /&gt;</code>是<code>&lt;Name&gt;</code>的child。<code>&lt;Customdiv1 /&gt;</code>的Subling是<code>&lt;Customdiv2 /&gt;</code>，它们形成单链表。</p>
+<h4 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h4><p>表示返回的栈中的帧，从逻辑上讲，返回的是父fiber节点，因此它代表的是父亲。例如上面例子中<code>Customdiv1</code>的return指向<code>Name</code></p>
+<h4 id="pendingProps-and-memoizedProps"><a href="#pendingProps-and-memoizedProps" class="headerlink" title="pendingProps and memoizedProps"></a><code>pendingProps</code> and <code>memoizedProps</code></h4><p>备份（Memoization）意味着存储函数执行的结果以便后续的使用，从而避免重复计算。<code>pendingProps</code>代表传递给组件的props，<code>memoizedProps</code>在执行栈的末尾初始化，并存储该节点的props。</p>
+<p>当传入的<code>pendingProps</code>和<code>memoizedProps</code>相等时，代表fiber之前的输出可以被重用，避免不必要的工作。</p>
+<h4 id="pendingWorkPriority"><a href="#pendingWorkPriority" class="headerlink" title="pendingWorkPriority"></a><code>pendingWorkPriority</code></h4><p>表示Fiber代表的工作优先级的数字，ReactPriorityLevel模块列出了不同优先级以及它的含义。除NoWork为零外，数字越大表示优先级越低。</p>
+<p>例如，你可以使用以下函数来检查fiber的优先级是否至少与给定级别一样高。调度程序使用优先级字段来搜索要执行的下一个工作单元。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">matchesPriority</span><span class="token punctuation">(</span>fiber<span class="token punctuation">,</span> priority<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> fiber<span class="token punctuation">.</span>pendingWorkPriority <span class="token operator">!==</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span>
+         fiber<span class="token punctuation">.</span>pendingWorkPriority <span class="token operator">&lt;=</span> priority
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="Alternate"><a href="#Alternate" class="headerlink" title="Alternate"></a>Alternate</h4><p>在任何时候，一个组件的实例最多对应两个fiber：当前的fiber和进行中(in-progress)的fiber。当前节点的alternate是进行中的fiber，进行中的fiber的alternate对应的是当前的fiber。当前的fiber表示已经渲染的，进行的fiber表示还没有返回的栈中的帧。</p>
+<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><p>React的叶子节点。他们是渲染环境中普通的标签（例如浏览中，它们是<code>div</code>、<code>span</code>等），在jsx中，它们用小写的标签名字表示。</p>
+<p>从概念上讲，fiber的output就是函数的返回值。每个fiber最终都有输出，但是output仅通过基础组件创建叶子节点。然后将output挂载到树上。</p>
+<p>output的值提供给渲染器，以便可以刷新更改。例如，让我们来看一下面代码的fiber树：</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">const</span> Parent1 <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token operator">&lt;</span>Child11 <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token operator">&lt;</span>Child12 <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> Parent2 <span class="token operator">=</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>Child21 <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">Component</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span>
+      <span class="token operator">&lt;</span>Parent1 <span class="token operator">/</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>Parent2 <span class="token operator">/</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690987/blog/fiber-tree-diagram.png" alt="render"></p>
+<p>我们可以看到fiber树是由相互链接的子节点单链表和父子关系的链表组成。这种树可以使用深度优先搜索遍历。</p>
+<h3 id="Render-phase"><a href="#Render-phase" class="headerlink" title="Render phase"></a>Render phase</h3><p>为了理解React是如何构建这棵树，并在其上执行reconciliation算法，我决定在React源码中写一个单元测试，来debugger这个过程。</p>
+<p>如果你对这个过程很感兴趣，克隆React的源码，走到这个<a href="https://github.com/facebook/react/tree/769b1f270e1251d9dbdce0fcbd9e92e502d059b8/packages/react-dom/src/__tests__" target="_blank" rel="noopener">目录</a>，增加jest测试来debbuger。我写的测试很简单，是很基本的渲染：一个带有文字的按钮。当你点击按钮的时候，app会销毁这个按钮渲染一个带有不同文字的<code>div</code>，此处的text是一个状态变量。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token string">'use strict'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> React<span class="token punctuation">;</span>
+<span class="token keyword">let</span> ReactDOM<span class="token punctuation">;</span>
+
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'ReactUnderstanding'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token function">beforeEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    React <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'react'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ReactDOM <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'react-dom'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'works'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> instance<span class="token punctuation">;</span>
+
+    <span class="token keyword">class</span> <span class="token class-name">App</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span>
+      <span class="token function">constructor</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> <span class="token punctuation">{</span>
+          text<span class="token punctuation">:</span> <span class="token string">"hello"</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+
+      handleClick <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">logger</span><span class="token punctuation">(</span><span class="token string">'before-setState'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> text<span class="token punctuation">:</span> <span class="token string">"hi"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">logger</span><span class="token punctuation">(</span><span class="token string">'after-setState'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        instance <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span><span class="token function">logger</span><span class="token punctuation">(</span><span class="token string">'render'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text <span class="token operator">===</span> <span class="token string">"hello"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>
+          <span class="token operator">&lt;</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span>div<span class="token operator">></span>
+              <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>handleClick<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">></span>
+                <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>text<span class="token punctuation">}</span>
+              <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token punctuation">(</span>
+            <span class="token operator">&lt;</span>div<span class="token operator">></span>
+              hello
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+          <span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">const</span> container <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> logger <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App logger<span class="token operator">=</span><span class="token punctuation">{</span>logger<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> container<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"clicking"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    instance<span class="token punctuation">.</span><span class="token function">handleClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"clicked"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">expect</span><span class="token punctuation">(</span>container<span class="token punctuation">.</span>innerHTML<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span>
+      <span class="token string">'&lt;div>hello&lt;/div>'</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token function">expect</span><span class="token punctuation">(</span>logger<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toEqual</span><span class="token punctuation">(</span>
+      <span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">"render"</span><span class="token punctuation">,</span> <span class="token string">"hello"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">"before-setState"</span><span class="token punctuation">,</span> <span class="token string">"hello"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">"render"</span><span class="token punctuation">,</span> <span class="token string">"hi"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">[</span><span class="token string">"after-setState"</span><span class="token punctuation">,</span> <span class="token string">"hi"</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在初始渲染中，React创建了一个当前树，这是最开始要渲染的树。<br><code>createFiberFromTypeAndProps()</code>是一个根据React元素的数据创建每一个React fiber的函数。当我们跑测试时，在这个函数中加一个断点，就能看到调用栈，它看起来像这样：</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-function-call-stack-1.png" alt="call stack"></p>
+<p>正如我们看到的，调用栈从<code>render()</code>开始调用，最后到<code>createFiberFromTypeAndProps()</code>。这里还有一些我们非常感兴趣的函数：<code>workLoopSync()</code>, <code>performUnitOfWork()</code>, <code>beginWork()</code>。</p>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">workLoopSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// Already timed out, so perform work without checking if we need to yield.</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>workInProgress <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    workInProgress <span class="token operator">=</span> <span class="token function">performUnitOfWork</span><span class="token punctuation">(</span>workInProgress<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在<code>workLoopSync()</code>中，React从<code>&lt;App&gt;</code>节点开始构造树，并递归的移动到子节点<code>&lt;div&gt;</code>,<code>&lt;div&gt;</code>, <code>&lt;button&gt;</code>上。<code>workInProgress</code>保留接下来需要更新的fiber节点引用。</p>
+<p><code>performUnitOfWork()</code>将fiber节点当作输入参数，来得到节点的alternate，并调用<code>beginWork()</code>，这相当于在执行栈中开始执行一个函数上下文。</p>
+<p>当React构建树时，<code>beginWork()</code>只是简单的使用<code>createFiberFromTypeAndProps()</code>来创建fiber节点。React递归执行，最终<code>performUnitOfWork()</code>返回null，表示已经到了树的末尾。</p>
+<p>但我们做<code>instance.handleClick()</code>（点击button触发状态的更新）会发生什么？在这种情况下，React遍历fiber树，克隆每一个节点，并检查时是否需要更新每个节点，当我们看这种场景下的调用栈，它看起来像这样：</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-function-call-stack-2.png" alt="call stack2"></p>
+<p>尽管我们没有在第一个调用栈中看到<code>completeUnitOfWork()</code> 和<code>completeWork()</code>，但是我们在这个图里能看到。就像<code>performUnitOfWork()</code>和<code>beginWork()</code>，这两个函数执行当前运行的完成部分，这实际上意味着已经返回到堆栈。（ these two functions perform the completion part of the current execution which effectively means returning back to the stack.）</p>
+<p>正如我们看到的这样，这四个函数配合执行，并且还控制当前正在完成的工作，这正是stack reconciler缺少的。从下图可以看出，每个fiber节点都由四个阶段组成：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690987/blog/fiber-node-diagram.png" alt="four phases"></p>
+<p>记住每个节点直到子节点和兄弟节点执行<code>completeWork()</code>并返回之后才会执行<code>completeUnitOfWork()</code>是非常重要的。例如，对于<code>&lt;App&gt;</code>，它开始执行<code>performUnitOfWork()</code>和<code>beginWork()</code>，然后继续执行<code>Parant1</code>的<code>performUnitOfWork()</code>和<code>beginWork()</code>等等…一旦<code>&lt;App/&gt;</code>所有的子节点执行完<code>completeWork()</code>后，才会回到<code>&lt;App/&gt;</code>上执行。</p>
+<p>以上是React的渲染阶段。基于<code>click()</code>更新的构建的树叫做workInProgress树，它是等待渲染的草稿树。</p>
+<h3 id="Commit-phase"><a href="#Commit-phase" class="headerlink" title="Commit phase"></a>Commit phase</h3><p>一旦渲染阶段完成，React就到了提交阶段。在此阶段，它交换当前树和workInProgress树的根指针，从而完成当前树和基于<code>click()</code>更新的草稿树的替换。</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-commit-phase-diagram.png" alt="cimmit phases"></p>
+<p>不仅如此，React还会重用之前的节点。这个优化会使从先前状态到下一个状态的的变化是一个平滑的过渡。</p>
+<p>那16帧的时间呢？React对每个运行的工作单元有一个内部计数器，并在执行的时候不断监听时间的限制，时间一到，React就会暂停当前正在执行的工作单元，并将控制权交给主线程，让浏览器渲染。</p>
+<p>接着，在下一帧，React回从暂停的地方继续构建树。当有足够的时间，它就会提交workInProgress树来完成渲染。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>为此，我强烈推荐你看 Lin Clark 的这个视频，这里她用很好的动画来解释这个算法，看起来更容易理解。(这是xx的一个视频，下面用图片代替)</p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-Lin-Clark.png" alt="img"></p>
+<p>希望你喜欢阅读这篇文章。</p>
+<p>推荐：</p>
+<ul>
+<li><a href="https://blog.atulr.com/react-custom-renderer-1" target="_blank" rel="noopener">react-custom-renderer-1</a>，这里面有好多概念，可以看一下</li>
+<li><a href="https://indepth.dev/posts/1008/inside-fiber-in-depth-overview-of-the-new-reconciliation-algorithm-in-react" target="_blank" rel="noopener">inside fiber in depth overview of the new reconciliation algorithm in react</a></li>
+<li><a href="https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html" target="_blank" rel="noopener">React Components, Elements, and Instances</a></li>
+</ul>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #757575;
+            text-shadow: 0
+        }
+</style>
+
+<div class="btn_click_load">
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = 'https://wukong1995.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2021/01/10/webpack-print-log-repeat/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/favicon.jpg" alt="Peipei Wong's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        wangpp1995@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto: wangpp1995@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/01/">一月 2021<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/10/">十月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/09/">九月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/08/">八月 2020<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/07/">七月 2020<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/06/">六月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/05/">五月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/02/">二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/03/">三月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/01/">一月 2019<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/11/">十一月 2018<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/10/">十月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">11</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">8</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/03/">三月 2017<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/09/">九月 2016<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/07/">七月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/06/">六月 2016<span class="sidebar_archives-count">16</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/05/">五月 2016<span class="sidebar_archives-count">18</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/04/">四月 2016<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/archives/2014/03/">三月 2014<span class="sidebar_archives-count">9</span></a>
+            </li></ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Git/">Git<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/PHP/">PHP<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/c/">c<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/css/">css<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/docker/">docker<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/graphql/">graphql<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/html/">html<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/http/">http<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/java/">java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/javascript/">javascript<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/jquery/">jquery<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/linux/">linux<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/nodejs/">nodejs<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/nodejs/pm2/">pm2<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/rails/">rails<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/react/">react<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/react/杂谈/">杂谈<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/server/">server<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/typescript/">typescript<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/webpack/">webpack<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/windows/">windows<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/产品/">产品<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/优化/">优化<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/">前端<span class="sidebar_archives-count">84</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/angularjs/">angularjs<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/css/">css<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/graphql/">graphql<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/javascript/">javascript<span class="sidebar_archives-count">45</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/jquery/">jquery<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/react/">react<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/typescript/">typescript<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/前端/webpack/">webpack<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端/">后端<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端/nodejs/">nodejs<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/后端/redis/">redis<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/安全/">安全<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/小程序/">小程序<span class="sidebar_archives-count">10</span></a></li><li><a class="sidebar_archives-link" href="/categories/总结/">总结<span class="sidebar_archives-count">9</span></a></li><li><a class="sidebar_archives-link" href="/categories/总结/http/">http<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/总结/前端/">前端<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/">数据库<span class="sidebar_archives-count">6</span></a></li><li><a class="sidebar_archives-link" href="/categories/数据库/mongoDB/">mongoDB<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/杂谈/">杂谈<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/笔记/">笔记<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/算法/">算法<span class="sidebar_archives-count">13</span></a></li><li><a class="sidebar_archives-link" href="/categories/编程语言/">编程语言<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/categories/编辑器/">编辑器<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/网络/">网络<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/翻译/">翻译<span class="sidebar_archives-count">12</span></a></li><li><a class="sidebar_archives-link" href="/categories/读书笔记/">读书笔记<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/categories/随笔/">随笔<span class="sidebar_archives-count">7</span></a>
+            </li></ul>
+        </li>
+        
+            <li class="divider"></li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="标签">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                标签
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="时光轴">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                时光轴
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="图片">
+                
+                    <i class="material-icons sidebar-material-icons">photo</i>
+                
+                图片
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links/" title="友情链接">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                友情链接
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="关于">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                关于
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">201</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+        <a href="https://twitter.com/peipei__wang" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-twitter">
+                <span class="visuallyhidden">Twitter</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/wukong1995" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>Wukong's Blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+
+
+    <script>lsloader.load("js/lazyload.min.js","/js/lazyload.min.js?1BcfzuNXqV+ntF6gq+5X3Q==")</script>
+    <script>lsloader.load("js/js.min.js","/js/js.min.js?oAl/+lvaqTFV31JXTmbrNA==")</script>
+
+
+
+    <script>lsloader.load("js/nprogress.js","/js/nprogress.js?pl3Qhb9lvqR1FlyLUna1Yw==")</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+    
+        <script>lsloader.load("js/smoothscroll.js","/js/smoothscroll.js?lOy/ACj5suSNi7ZVFVbpFQ==")</script>
+    
+
+
+
+
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('<link rel="stylesheet" href="/css/uc.css">');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Window Load-->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Bing Background -->
+
+
+<script>
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.4.0 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
