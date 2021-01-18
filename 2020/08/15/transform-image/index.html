@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="8月 15, 2020">
-        <meta property="article:modified_time" content="1月 15, 2021">
+        <meta property="article:modified_time" content="1月 18, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "基于大旋转角度摆正图片的血泪汗",
     "url": "https://wukong1995.github.io/2020/08/15/transform-image/index.html",
     "datePublished": "8月 15, 2020",
-    "dateModified": "1月 15, 2021",
+    "dateModified": "1月 18, 2021",
     "description": "终于完成了",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -487,7 +487,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h3 id="效果示例"><a href="#效果示例" class="headerlink" title="效果示例"></a>效果示例</h3><ol>
-<li>原图<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1597467374/blog/transform-img-before.png" alt="image"><br>2.旋转后的图<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1597467374/blog/transform-img-after.png" alt="image"></li>
+<li>原图<br><img src="http://cdn.inmore.wang/blog/transform-img-before.png" alt="image"><br>2.旋转后的图<br><img src="http://cdn.inmore.wang/blog/transform-img-after.png" alt="image"></li>
 </ol>
 <p>我要做的是将有旋转角度的图片摆正，目前只涉及大角度（90 180 270）的摆正，对于180，只是反转一下，长和宽还是原来的，我不需要对它进行太多的处理。但是对于90和270，由于旋转后，长变成宽，宽变成长，还必须将图片放在可视区域内，所以就必须调整原图片的宽高，使旋转后正好在可视区域内。业务上还有图片内容的标示，即使旋转后，我还需要记住原坐标在显示图片上的对应关系。</p>
 <h3 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h3><p>刚开始的方案是，将图片直接按照图片原点旋转，原图假如是比较长的图片，旋转后，必定有一部分不在可视区域内，我需要再进行平移、调整宽高的操作，对于图片上的标示也同样进行一样的操作，实际做起来特别麻烦，于是在想有没有更好的办法</p>
