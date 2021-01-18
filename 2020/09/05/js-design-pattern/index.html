@@ -487,7 +487,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h3 id="反模式-anti-pattern"><a href="#反模式-anti-pattern" class="headerlink" title="反模式(anti pattern)"></a>反模式(anti pattern)</h3><p>针对一个问题的不良解决方案可能会导致糟糕的情况。在react blog中有一篇使用中的反模式，可以看一下<a href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html" target="_blank" rel="noopener">You Probably Don’t Need Derived State</a></p>
-<h3 id="Constructor-pattern"><a href="#Constructor-pattern" class="headerlink" title="Constructor pattern"></a>Constructor pattern</h3><p>在oop中，Constructor一种在内存已经分配该对象的情况下，用于初始化对象的特殊方法。但是js中，几乎所有东西都是对象，我们通常最感兴趣的是object constructors。<br><img src="http://cdn.inmore.wang/blog/httpatomoreillycomsourceoreillyimages1547797.png" alt="image"></p>
+<h3 id="Constructor-pattern"><a href="#Constructor-pattern" class="headerlink" title="Constructor pattern"></a>Constructor pattern</h3><p>在oop中，Constructor一种在内存已经分配该对象的情况下，用于初始化对象的特殊方法。但是js中，几乎所有东西都是对象，我们通常最感兴趣的是object constructors。<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1599292533/blog/httpatomoreillycomsourceoreillyimages1547797.png" alt="image"></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Car</span><span class="token punctuation">(</span> model<span class="token punctuation">,</span> year<span class="token punctuation">,</span> miles <span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
   <span class="token keyword">this</span><span class="token punctuation">.</span>model <span class="token operator">=</span> model<span class="token punctuation">;</span>
@@ -542,13 +542,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </a></li>
 </ul>
 <h3 id="Observer-pattern"><a href="#Observer-pattern" class="headerlink" title="Observer pattern"></a>Observer pattern</h3><p>一个对象维持一系列依赖它的对象，将有关任何变更自动通知给它们。<br>想想经常用的库，Rxjs中是不是有observer这个概念。</p>
-<p><img src="http://cdn.inmore.wang/blog/httpatomoreillycomsourceoreillyimages1547801.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1599292526/blog/httpatomoreillycomsourceoreillyimages1547801.png" alt="image"></p>
 <ul>
 <li><a href="https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s05.html" target="_blank" rel="noopener">The Observer Pattern</a></li>
 <li><a href="https://medium.com/better-programming/observer-vs-pub-sub-pattern-50d3b27f838c" target="_blank" rel="noopener">Observer vs Pub-Sub Pattern</a></li>
 </ul>
 <h3 id="Mediator-pattern"><a href="#Mediator-pattern" class="headerlink" title="Mediator pattern"></a>Mediator pattern</h3><p>中介者是一种行为设计模式，它允许我们公开一个统一的接口，系统的不同部分可以通过该接口通信。</p>
-<p><img src="http://cdn.inmore.wang/blog/httpatomoreillycomsourceoreillyimages1547805.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1599292795/blog/httpatomoreillycomsourceoreillyimages1547805.png" alt="image"></p>
 <p>对于DOM事件冒泡和事件委托，如果所有的事件处理在document上，不是在单个的node节点上，当前document就充当了一个中介者的角色。</p>
 <ul>
 <li><a href="https://stackoverflow.com/questions/12534338/is-the-use-of-the-mediator-pattern-recommend" target="_blank" rel="noopener">Is the use of the mediator pattern recommend?
@@ -557,7 +557,7 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </ul>
 <h3 id="Facade-pattern"><a href="#Facade-pattern" class="headerlink" title="Facade pattern"></a>Facade pattern</h3><p>外观模式为更大的代码体提供了一个方便的更高层次的接口，能够隐藏其底层的真实复杂性。</p>
 <p>最经常用jquery即是外观模式。</p>
-<p><img src="http://cdn.inmore.wang/blog/httpatomoreillycomsourceoreillyimages1547811.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1599297162/blog/httpatomoreillycomsourceoreillyimages1547811.png" alt="image"></p>
 <ul>
 <li><a href="https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s09.html" target="_blank" rel="noopener">The Facade Pattern</a></li>
 </ul>

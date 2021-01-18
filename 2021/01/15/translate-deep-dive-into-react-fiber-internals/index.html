@@ -504,7 +504,7 @@
 <p>这就是React的真正力量所在。React消除了如何构建、渲染、管理真正DOM树的生命周期的复杂部分，简化开发人员的工作。要了解他们的真正含义，让我们看一下使用面向对象的概念。</p>
 <p>在典型的面向对象世界中，开发者需要实例化和管理每个DOM元素的生命周期。例如，你想要创建一个简单的表单和一个提交按钮，那么状态管理甚至是简单的操作都需要开发人员的努力。</p>
 <p>假设<code>Button</code>组件有一个状态变量<code>isSubmitted</code>，<code>Button</code>的生命周期类似于以下的流程图，其中的每个状态都需要app处理：</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-button-component-lifecycle.png" alt="button的生命周期"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690162/blog/fiber-button-component-lifecycle.png" alt="button的生命周期"></p>
 <p>流程图的大小和代码的行数随着状态变量的增加而呈指数级上升。</p>
 <p>React有精确解决此问题的元素，在React中，有两种类型的元素：</p>
 <ul>
@@ -544,7 +544,7 @@
 
 <span class="token function">fib</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="http://cdn.inmore.wang/blog/fiber-call-stack-diagram.png" alt="call_stack"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690161/blog/fiber-call-stack-diagram.png" alt="call_stack"></p>
 <p>正如我们看到的这样，调用栈会将每次<code>fib()</code>的调用push进栈中，直到弹出要返回的第一个函数调用<code>fib(1)</code>。然后它继续push递归调用，并在到达return语句的时候弹出。这样它有效的使用堆栈，直到<code>fib(3)</code>返回成为最后一个从栈中pop的最后一个元素。</p>
 <p>我们刚刚就看到的reconciliation算法是纯递归算法。子树的更新会立即重新渲染。虽然这很好用，但是有一些限制。正如Andrew Clark所说：</p>
 <ul>
@@ -554,7 +554,7 @@
 <p>现在，我们说的掉帧是什么意思？为什么递归方法有问题？为了掌握这一点，让我从用户的体验角度简要说明什么是帧频（frame rate）以及它为什么这么重要。</p>
 <p>帧频是指连续图像显示在屏幕上的频率，我们在电脑屏幕上看到的一切是由在屏幕上以瞬时出现的速率播放的图像或帧组成。</p>
 <p>为了理解它，可以将电脑显示器想像成翻书，当你翻书时，将每一页视为一定速率播放的帧。换句话来说，电脑屏幕只是一本自动翻页的书，会一直播放屏幕的变化。如果还不能理解，请看下面的视频(这是xx的一个视频，下面用图片代替)。</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-fps.png" alt="5dps"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690161/blog/fiber-fps.png" alt="5dps"></p>
 <p>通常情况下，人眼看视频会感觉流畅的话，视频需要以每秒30帧（FPS）的速率播放。更高的速率会有更好的体验。这是为什么游戏玩家更喜欢第一人称精确射击游戏中更高帧频主要的原因。</p>
 <p>话说回来，现在的大多数设备刷新屏幕在60帧，或者换句话说，1/60=16.67ms，这意味着每16ms显示一个新的帧。这个数字是非常重要的，因为React在屏幕上渲染超过16ms的话，浏览器就会掉帧。</p>
 <p>事实上，浏览器还有一些基础工作要做，所以你的操作必须在10ms内完成。如果你没有办法满足这个要求，帧就会下降，屏幕上的内容会显得特别乱。这会对用户的体验产生了负面的影响。</p>
@@ -585,10 +585,10 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Js引擎首先创建一个全局上下文，并push进执行栈(the execution stack)中。接着它创建函数<code>a()</code>的函数执行上下文，因为<code>a()</code>中调用了<code>b()</code>，所以它将创建<code>b()</code>的函数执行上下文，并push进栈中。</p>
 <p>当函数<code>b()</code>返回时，引擎会销毁<code>b()</code>的上下文，当我们从<code>a()</code>中退出，<code>a()</code>的上下文被销毁。执行期间的栈看起来像这样：</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-execution-stack.png" alt="stack"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-execution-stack.png" alt="stack"></p>
 <p>但是当浏览器有了一个异步事件例如http request，会发生什么？js引擎是否会存进栈中来处理异步事件，等待事件的完成？</p>
 <p>JS引擎在这里做了不同的处理，在执行栈的最上面，js引擎还有一个queue的数据结构，也称为事件队列。事件队列处理异步事件的调用，例如浏览器中的http或者网络事件。</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-event-queue-diagram.png" alt="stack+queue"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-event-queue-diagram.png" alt="stack+queue"></p>
 <p>Js引擎处理队列的方式是等待执行栈为空。所以每次执行栈变空的时候，js引擎会查看事件队列，pop出里面的item，然后执行它。重要的是要注意：JS引擎仅仅当执行栈为空或者执行栈中只有全局执行上下文是去检查事件队列。</p>
 <p>尽管我们将它们称为异步事件，但这里有一个细微的区别：事件相对于何时进入队列是异步的，但相对于它们何时真正得到处理则并不是真正异步的。</p>
 <p>回到stack reconciler，React遍历树是在执行栈中做的。所以当计算更新完成后，它们会放到事件队列中。只有当执行栈为空的时候，更新才会被执行。这正是Fiber解决的问题，几乎要实现栈的暂停、恢复、停止的智能功能。</p>
@@ -656,7 +656,7 @@
 
 ReactDOM<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="http://cdn.inmore.wang/blog/fiber-tree-diagram.png" alt="render"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690987/blog/fiber-tree-diagram.png" alt="render"></p>
 <p>我们可以看到fiber树是由相互链接的子节点单链表和父子关系的链表组成。这种树可以使用深度优先搜索遍历。</p>
 <h3 id="Render-phase"><a href="#Render-phase" class="headerlink" title="Render phase"></a>Render phase</h3><p>为了理解React是如何构建这棵树，并在其上执行reconciliation算法，我决定在React源码中写一个单元测试，来debugger这个过程。</p>
 <p>如果你对这个过程很感兴趣，克隆React的源码，走到这个<a href="https://github.com/facebook/react/tree/769b1f270e1251d9dbdce0fcbd9e92e502d059b8/packages/react-dom/src/__tests__" target="_blank" rel="noopener">目录</a>，增加jest测试来debbuger。我写的测试很简单，是很基本的渲染：一个带有文字的按钮。当你点击按钮的时候，app会销毁这个按钮渲染一个带有不同文字的<code>div</code>，此处的text是一个状态变量。</p>
@@ -731,7 +731,7 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>在初始渲染中，React创建了一个当前树，这是最开始要渲染的树。<br><code>createFiberFromTypeAndProps()</code>是一个根据React元素的数据创建每一个React fiber的函数。当我们跑测试时，在这个函数中加一个断点，就能看到调用栈，它看起来像这样：</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-function-call-stack-1.png" alt="call stack"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-function-call-stack-1.png" alt="call stack"></p>
 <p>正如我们看到的，调用栈从<code>render()</code>开始调用，最后到<code>createFiberFromTypeAndProps()</code>。这里还有一些我们非常感兴趣的函数：<code>workLoopSync()</code>, <code>performUnitOfWork()</code>, <code>beginWork()</code>。</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">workLoopSync</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// Already timed out, so perform work without checking if we need to yield.</span>
@@ -744,18 +744,18 @@ ReactDOM<span class="token punctuation">.</span><span class="token function">ren
 <p><code>performUnitOfWork()</code>将fiber节点当作输入参数，来得到节点的alternate，并调用<code>beginWork()</code>，这相当于在执行栈中开始执行一个函数上下文。</p>
 <p>当React构建树时，<code>beginWork()</code>只是简单的使用<code>createFiberFromTypeAndProps()</code>来创建fiber节点。React递归执行，最终<code>performUnitOfWork()</code>返回null，表示已经到了树的末尾。</p>
 <p>但我们做<code>instance.handleClick()</code>（点击button触发状态的更新）会发生什么？在这种情况下，React遍历fiber树，克隆每一个节点，并检查时是否需要更新每个节点，当我们看这种场景下的调用栈，它看起来像这样：</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-function-call-stack-2.png" alt="call stack2"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-function-call-stack-2.png" alt="call stack2"></p>
 <p>尽管我们没有在第一个调用栈中看到<code>completeUnitOfWork()</code> 和<code>completeWork()</code>，但是我们在这个图里能看到。就像<code>performUnitOfWork()</code>和<code>beginWork()</code>，这两个函数执行当前运行的完成部分，这实际上意味着已经返回到堆栈。（ these two functions perform the completion part of the current execution which effectively means returning back to the stack.）</p>
-<p>正如我们看到的这样，这四个函数配合执行，并且还控制当前正在完成的工作，这正是stack reconciler缺少的。从下图可以看出，每个fiber节点都由四个阶段组成：<br><img src="http://cdn.inmore.wang/blog/fiber-node-diagram.png" alt="four phases"></p>
+<p>正如我们看到的这样，这四个函数配合执行，并且还控制当前正在完成的工作，这正是stack reconciler缺少的。从下图可以看出，每个fiber节点都由四个阶段组成：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690987/blog/fiber-node-diagram.png" alt="four phases"></p>
 <p>记住每个节点直到子节点和兄弟节点执行<code>completeWork()</code>并返回之后才会执行<code>completeUnitOfWork()</code>是非常重要的。例如，对于<code>&lt;App&gt;</code>，它开始执行<code>performUnitOfWork()</code>和<code>beginWork()</code>，然后继续执行<code>Parant1</code>的<code>performUnitOfWork()</code>和<code>beginWork()</code>等等…一旦<code>&lt;App/&gt;</code>所有的子节点执行完<code>completeWork()</code>后，才会回到<code>&lt;App/&gt;</code>上执行。</p>
 <p>以上是React的渲染阶段。基于<code>click()</code>更新的构建的树叫做workInProgress树，它是等待渲染的草稿树。</p>
 <h3 id="Commit-phase"><a href="#Commit-phase" class="headerlink" title="Commit phase"></a>Commit phase</h3><p>一旦渲染阶段完成，React就到了提交阶段。在此阶段，它交换当前树和workInProgress树的根指针，从而完成当前树和基于<code>click()</code>更新的草稿树的替换。</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-commit-phase-diagram.png" alt="cimmit phases"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-commit-phase-diagram.png" alt="cimmit phases"></p>
 <p>不仅如此，React还会重用之前的节点。这个优化会使从先前状态到下一个状态的的变化是一个平滑的过渡。</p>
 <p>那16帧的时间呢？React对每个运行的工作单元有一个内部计数器，并在执行的时候不断监听时间的限制，时间一到，React就会暂停当前正在执行的工作单元，并将控制权交给主线程，让浏览器渲染。</p>
 <p>接着，在下一帧，React回从暂停的地方继续构建树。当有足够的时间，它就会提交workInProgress树来完成渲染。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>为此，我强烈推荐你看 Lin Clark 的这个视频，这里她用很好的动画来解释这个算法，看起来更容易理解。(这是xx的一个视频，下面用图片代替)</p>
-<p><img src="http://cdn.inmore.wang/blog/fiber-Lin-Clark.png" alt="img"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1610690988/blog/fiber-Lin-Clark.png" alt="img"></p>
 <p>希望你喜欢阅读这篇文章。</p>
 <p>推荐：</p>
 <ul>

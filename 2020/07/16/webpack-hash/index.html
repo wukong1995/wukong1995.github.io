@@ -539,13 +539,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'index'</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>下面我会以我理解的顺序比较一下三个hash</p>
-<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><p>每次构建的生成唯一的一个hash，且所有的文件hash串是一样的。<br>源代码构建：<br><img src="http://cdn.inmore.wang/blog/hash.png" alt="image"></p>
-<p>第一次变更：<br><img src="http://cdn.inmore.wang/blog/hash-change.png" alt="image"></p>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><p>每次构建的生成唯一的一个hash，且所有的文件hash串是一样的。<br>源代码构建：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594809343/blog/hash.png" alt="image"></p>
+<p>第一次变更：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594809340/blog/hash-change.png" alt="image"></p>
 <p>是不是看到非预期的地方了？我只改了file2.js，index.js的hash串变了，但是为什么detail.js为什么也变了？这还怎么有缓存的作用！不行，升级！</p>
 <h3 id="chunkhash"><a href="#chunkhash" class="headerlink" title="chunkhash"></a>chunkhash</h3><p>每一个文件最后的hash根据它引入的chunk决定</p>
-<p>源代码构建：<br><img src="http://cdn.inmore.wang/blog/chunkhash.png" alt="image"></p>
-<p>第一次变更：<br><img src="http://cdn.inmore.wang/blog/chunkhash-change.png" alt="image"><br>这次文件的hash变化符合预期，index的变了，detail的没变</p>
-<p>第二次变更：<br><img src="http://cdn.inmore.wang/blog/chunkhash-change2-add-chunk.png" alt="image"><br>你会发现这次变更也是基于index的变更，但是实际上detail的文件内容没有变，那为什么它的hash也跟着变了？</p>
+<p>源代码构建：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594809339/blog/chunkhash.png" alt="image"></p>
+<p>第一次变更：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594809353/blog/chunkhash-change.png" alt="image"><br>这次文件的hash变化符合预期，index的变了，detail的没变</p>
+<p>第二次变更：<br><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594809340/blog/chunkhash-change2-add-chunk.png" alt="image"><br>你会发现这次变更也是基于index的变更，但是实际上detail的文件内容没有变，那为什么它的hash也跟着变了？</p>
 <blockquote>
 <p>原因是 module identifier，因为 index 新引入的模块改变了以后所有模块的 id 值，所以 detail 文件中引入的模块 id 值发生了改变，于是 detail 的 chunkhash 也随着发生改变。</p>
 </blockquote>
@@ -566,9 +566,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>将webpack中的全部hash都设置成contenthash的情况下，仅仅只修改css文件，不改js文件的情况下，css文件的hash串会变，js文件的不会变，这样能达到最小更新。</p>
-<p><img src="http://cdn.inmore.wang/blog/contenthash2.png" alt="image"></p>
-<p><img src="http://cdn.inmore.wang/blog/contenthash2-changecss.png" alt="image"></p>
-<p><img src="http://cdn.inmore.wang/blog/contenthash2-changejs.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2-changecss.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1594957667/blog/contenthash2-changejs.png" alt="image"></p>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>我查了两个流行的脚手架：create-react-app和umi，发现它们的entry file的配置都是contenthash</p>
 <pre class="line-numbers language-js"><code class="language-js">output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
     filename<span class="token punctuation">:</span> <span class="token string">'[name].[contenthash].js'</span><span class="token punctuation">,</span>

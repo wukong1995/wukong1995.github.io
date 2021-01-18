@@ -493,7 +493,7 @@
 <li><a href="https://medium.com/dailyjs/understanding-v8s-bytecode-317d46c94775" target="_blank" rel="noopener">understanding-v8s-bytecode</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/28590489" target="_blank" rel="noopener">上篇文章的翻译</a></li>
 </ul>
-<p><img src="http://cdn.inmore.wang/blog/v8s-bytecode.png" alt="image"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1602136975/blog/v8s-bytecode.png" alt="image"></p>
 <p>文章中最重要的是这张图片了，v8会先将javascript翻译成字节码，再将字节码翻译成机器语言，如何查看生成的字节码呢？使用<code>node --print-bytecode test.js</code>，只要再原来的基础上加上–print-bytecode就可以了。</p>
 <p>让我们写一个for循环</p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">for_loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>

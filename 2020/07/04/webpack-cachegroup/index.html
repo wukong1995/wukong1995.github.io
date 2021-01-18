@@ -606,7 +606,7 @@ styles<span class="token punctuation">:</span> <span class="token punctuation">{
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>可以了，但是matchResource、resource到底有什么区别呢？我用console.log打印了一下</p>
-<p><img src="http://cdn.inmore.wang/blog/webpack-cachegroup.png" alt="webpack-cachegroup"></p>
+<p><img src="https://res.cloudinary.com/dwudaridr/image/upload/v1593818216/blog/webpack-cachegroup.png" alt="webpack-cachegroup"></p>
 <p>可以看到有时候resource会是undefined的情况，内部的编译我也不清楚==。</p>
 <p>再说一下module.chunksIterable，这个数组真的非常大，但是没关系，webpack5已经去掉了，在代码里面看不见这个循环了，期待5的正式版本😄</p>
 <h3 id="项目修改"><a href="#项目修改" class="headerlink" title="项目修改"></a>项目修改</h3><pre class="line-numbers language-js"><code class="language-js"><span class="token punctuation">[</span><span class="token string">'import'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> libraryName<span class="token punctuation">:</span> <span class="token string">'laiye-antd'</span><span class="token punctuation">,</span> style<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">// css => true</span>
