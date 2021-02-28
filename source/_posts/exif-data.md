@@ -47,7 +47,7 @@ import { decode } from 'base64-arraybuffer'
 // 这里的imgSrc是图片的base64
 if (imageType.indexOf('jpeg') > -1 || imageType.indexOf('jpg') > -1) {
   const arraybuffer = decode(imgSrc.split(',')[1])
-  
+
   const exif = EXIF.readFromBinaryFile(arraybuffer)
   console.log(exif)
 }
