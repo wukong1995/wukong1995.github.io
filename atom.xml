@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wukong1995.github.io/"/>
-  <updated>2021-05-09T14:06:39.632Z</updated>
+  <updated>2021-06-06T02:40:15.571Z</updated>
   <id>https://wukong1995.github.io/</id>
   
   <author>
@@ -16,11 +16,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>单元测试我写的好烂</title>
+    <link href="https://wukong1995.github.io/2021/06/06/bad-jest/"/>
+    <id>https://wukong1995.github.io/2021/06/06/bad-jest/</id>
+    <published>2021-06-06T01:42:48.000Z</published>
+    <updated>2021-06-06T02:40:15.571Z</updated>
+    
+    <summary type="html">
+    
+      这是一个肯定句
+    
+    </summary>
+    
+      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://wukong1995.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>史蒂夫·乔布斯传： 星星的陨落</title>
     <link href="https://wukong1995.github.io/2021/03/26/steve-jobs/"/>
     <id>https://wukong1995.github.io/2021/03/26/steve-jobs/</id>
     <published>2021-03-26T12:41:36.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -40,7 +62,7 @@
     <link href="https://wukong1995.github.io/2021/02/28/draw-canvas/"/>
     <id>https://wukong1995.github.io/2021/02/28/draw-canvas/</id>
     <published>2021-02-28T06:05:39.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -60,7 +82,7 @@
     <link href="https://wukong1995.github.io/2021/01/23/exif-data/"/>
     <id>https://wukong1995.github.io/2021/01/23/exif-data/</id>
     <published>2021-01-23T13:13:23.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -80,7 +102,7 @@
     <link href="https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/"/>
     <id>https://wukong1995.github.io/2021/01/15/translate-deep-dive-into-react-fiber-internals/</id>
     <published>2021-01-15T14:54:31.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -102,7 +124,7 @@
     <link href="https://wukong1995.github.io/2021/01/10/webpack-print-log-repeat/"/>
     <id>https://wukong1995.github.io/2021/01/10/webpack-print-log-repeat/</id>
     <published>2021-01-10T05:31:23.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -122,7 +144,7 @@
     <link href="https://wukong1995.github.io/2020/12/20/use-js-relove-css-unresolve/"/>
     <id>https://wukong1995.github.io/2020/12/20/use-js-relove-css-unresolve/</id>
     <published>2020-12-20T08:31:48.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -144,7 +166,7 @@
     <link href="https://wukong1995.github.io/2020/12/11/xss-introduction-md/"/>
     <id>https://wukong1995.github.io/2020/12/11/xss-introduction-md/</id>
     <published>2020-12-11T08:36:36.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -164,7 +186,7 @@
     <link href="https://wukong1995.github.io/2020/11/23/network-knowledge-summary/"/>
     <id>https://wukong1995.github.io/2020/11/23/network-knowledge-summary/</id>
     <published>2020-11-23T12:07:20.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -184,7 +206,7 @@
     <link href="https://wukong1995.github.io/2020/11/23/csp-introduction/"/>
     <id>https://wukong1995.github.io/2020/11/23/csp-introduction/</id>
     <published>2020-11-23T12:03:24.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.571Z</updated>
     
     <summary type="html">
     
@@ -204,7 +226,7 @@
     <link href="https://wukong1995.github.io/2020/11/14/2020-q4-summary-1/"/>
     <id>https://wukong1995.github.io/2020/11/14/2020-q4-summary-1/</id>
     <published>2020-11-14T10:17:40.000Z</published>
-    <updated>2021-05-09T14:06:39.624Z</updated>
+    <updated>2021-06-06T02:40:15.571Z</updated>
     
     <summary type="html">
     
@@ -224,7 +246,7 @@
     <link href="https://wukong1995.github.io/2020/10/24/micro-service/"/>
     <id>https://wukong1995.github.io/2020/10/24/micro-service/</id>
     <published>2020-10-24T14:03:51.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -244,7 +266,7 @@
     <link href="https://wukong1995.github.io/2020/10/10/whether_to_press_enter/"/>
     <id>https://wukong1995.github.io/2020/10/10/whether_to_press_enter/</id>
     <published>2020-10-10T13:31:50.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -265,7 +287,7 @@
     <link href="https://wukong1995.github.io/2020/09/21/js-byte-code/"/>
     <id>https://wukong1995.github.io/2020/09/21/js-byte-code/</id>
     <published>2020-09-21T13:51:38.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -285,7 +307,7 @@
     <link href="https://wukong1995.github.io/2020/09/05/js-design-pattern/"/>
     <id>https://wukong1995.github.io/2020/09/05/js-design-pattern/</id>
     <published>2020-09-05T07:12:32.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -305,7 +327,7 @@
     <link href="https://wukong1995.github.io/2020/08/28/translate-componentdidmount-and-useeffect-are-not-the-same-heres-why/"/>
     <id>https://wukong1995.github.io/2020/08/28/translate-componentdidmount-and-useeffect-are-not-the-same-heres-why/</id>
     <published>2020-08-28T11:48:25.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -327,7 +349,7 @@
     <link href="https://wukong1995.github.io/2020/08/23/how-to-create-solution/"/>
     <id>https://wukong1995.github.io/2020/08/23/how-to-create-solution/</id>
     <published>2020-08-23T06:07:41.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -347,7 +369,7 @@
     <link href="https://wukong1995.github.io/2020/08/15/transform-image/"/>
     <id>https://wukong1995.github.io/2020/08/15/transform-image/</id>
     <published>2020-08-15T04:32:10.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
@@ -369,7 +391,7 @@
     <link href="https://wukong1995.github.io/2020/08/08/duck-typing/"/>
     <id>https://wukong1995.github.io/2020/08/08/duck-typing/</id>
     <published>2020-08-08T14:00:21.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
+    <updated>2021-06-06T02:40:15.575Z</updated>
     
     <summary type="html">
     
@@ -389,33 +411,11 @@
     <link href="https://wukong1995.github.io/2020/08/08/transfer-img/"/>
     <id>https://wukong1995.github.io/2020/08/08/transfer-img/</id>
     <published>2020-08-08T08:40:43.000Z</published>
-    <updated>2021-05-09T14:06:39.632Z</updated>
+    <updated>2021-06-06T02:40:15.579Z</updated>
     
     <summary type="html">
     
       pdf只显示第一页，tiff格式每个浏览器支持不一样
-    
-    </summary>
-    
-      <category term="前端" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-      <category term="react" scheme="https://wukong1995.github.io/categories/%E5%89%8D%E7%AB%AF/react/"/>
-    
-    
-      <category term="前端" scheme="https://wukong1995.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>怎样做一个安全的token</title>
-    <link href="https://wukong1995.github.io/2020/08/01/csrf-token/"/>
-    <id>https://wukong1995.github.io/2020/08/01/csrf-token/</id>
-    <published>2020-08-01T05:42:48.000Z</published>
-    <updated>2021-05-09T14:06:39.628Z</updated>
-    
-    <summary type="html">
-    
-      原则：如果密钥泄漏了怎么办
     
     </summary>
     
