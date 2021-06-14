@@ -74,7 +74,7 @@
 
     
         <meta property="article:published_time" content="6月 06, 2021">
-        <meta property="article:modified_time" content="6月 06, 2021">
+        <meta property="article:modified_time" content="6月 14, 2021">
     
 
     <!-- The Twitter Card protocol -->
@@ -115,7 +115,7 @@
     "headline": "单元测试我写的好烂",
     "url": "https://wukong1995.github.io/2021/06/06/bad-jest/index.html",
     "datePublished": "6月 06, 2021",
-    "dateModified": "6月 06, 2021",
+    "dateModified": "6月 14, 2021",
     "description": "这是一个肯定句",
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -339,7 +339,7 @@
 
     
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#之前的积累：可以说很少"><span class="post-toc-number">1.</span> <span class="post-toc-text">之前的积累：可以说很少</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用jest暴露的问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用jest暴露的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-异步函数：callback形式"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1. 异步函数：callback形式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-异步函数：promise"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2. 异步函数：promise</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-setTimeoue如何快速执行"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3. setTimeoue如何快速执行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-检查函数调用的参数"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">4. 检查函数调用的参数</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#之前的积累：可以说很少"><span class="post-toc-number">1.</span> <span class="post-toc-text">之前的积累：可以说很少</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用jest暴露的问题"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用jest暴露的问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-异步函数：callback形式"><span class="post-toc-number">2.0.1.</span> <span class="post-toc-text">1. 异步函数：callback形式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-异步函数：promise"><span class="post-toc-number">2.0.2.</span> <span class="post-toc-text">2. 异步函数：promise</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-setTimeoue如何快速执行"><span class="post-toc-number">2.0.3.</span> <span class="post-toc-text">3. setTimeoue如何快速执行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-检查函数调用的参数"><span class="post-toc-number">2.0.4.</span> <span class="post-toc-text">4. 检查函数调用的参数</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-window-addEventListen"><span class="post-toc-number">2.0.5.</span> <span class="post-toc-text">5. window.addEventListen</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-localStorage"><span class="post-toc-number">2.0.6.</span> <span class="post-toc-text">6. localStorage</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#7-new-Date"><span class="post-toc-number">2.0.7.</span> <span class="post-toc-text">7. new Date()</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#8-mock-window伤的对象"><span class="post-toc-number">2.0.8.</span> <span class="post-toc-text">8. mock window伤的对象</span></a></li></ol></li></ol>
         <!--
         <li class="mdl-menu__item">
             Some Action
@@ -571,7 +571,37 @@
     <span class="token function">expect</span><span class="token punctuation">(</span>message<span class="token punctuation">.</span>error<span class="token punctuation">.</span>mock<span class="token punctuation">.</span>calls<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toBe</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>以上就是这次写测试遇到的问题，以后遇到再补充</p>
+<h5 id="5-window-addEventListen"><a href="#5-window-addEventListen" class="headerlink" title="5. window.addEventListen"></a>5. window.addEventListen</h5><pre class="line-numbers language-js"><code class="language-js"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'case'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> map <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+    window<span class="token punctuation">.</span>addEventListen <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">,</span> func<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        map<span class="token punctuation">[</span>type<span class="token punctuation">]</span> <span class="token operator">=</span> func
+    <span class="token punctuation">}</span>
+
+    window<span class="token punctuation">.</span>removeEventListen <span class="token operator">=</span> <span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token keyword">delete</span> map<span class="token punctuation">[</span>type<span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    map<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">{</span>preventDefault<span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">// 参数为event对象</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="6-localStorage"><a href="#6-localStorage" class="headerlink" title="6. localStorage"></a>6. localStorage</h5><pre class="line-numbers language-js"><code class="language-js"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'case'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> spyGetItem <span class="token operator">=</span> jest<span class="token punctuation">.</span><span class="token function">spyOn</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>localStorage<span class="token punctuation">.</span>__proto__<span class="token punctuation">,</span> <span class="token string">'getItem'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h5 id="7-new-Date"><a href="#7-new-Date" class="headerlink" title="7. new Date()"></a>7. new Date()</h5><pre class="line-numbers language-js"><code class="language-js"><span class="token function">test</span><span class="token punctuation">(</span><span class="token string">'case'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// jest &lt; version 26</span>
+  <span class="token keyword">const</span> mockDate <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1466424490000</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> spy <span class="token operator">=</span> jest
+    <span class="token punctuation">.</span><span class="token function">spyOn</span><span class="token punctuation">(</span>global<span class="token punctuation">,</span> <span class="token string">'Date'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">mockImplementation</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> mockDate<span class="token punctuation">)</span>
+
+  spy<span class="token punctuation">.</span><span class="token function">mockRestore</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h5 id="8-mock-window伤的对象"><a href="#8-mock-window伤的对象" class="headerlink" title="8. mock window伤的对象"></a>8. mock window伤的对象</h5><pre class="line-numbers language-js"><code class="language-js">Object<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>document<span class="token punctuation">,</span> <span class="token string">'cookie'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token keyword">get</span><span class="token punctuation">:</span> jest<span class="token punctuation">.</span><span class="token function">fn</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
     
 
