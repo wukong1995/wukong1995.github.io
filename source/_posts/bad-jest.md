@@ -121,4 +121,48 @@ test('case', () => {
 })
 ```
 
-以上就是这次写测试遇到的问题，以后遇到再补充
+##### 5. window.addEventListen
+
+```js
+test('case', () => {
+    const map = {}
+    window.addEventListen = (type, func) => {
+        map[type] = func
+    }
+
+    window.removeEventListen = (type) => {
+        delete map[type]
+    }
+
+    map.error({preventDefault: () => {}})   // 参数为event对象
+})
+```
+
+##### 6. localStorage
+
+```js
+test('case', () => {
+    const spyGetItem = jest.spyOn(window.localStorage.__proto__, 'getItem')
+})
+```
+
+##### 7. new Date()
+```js
+test('case', () => {
+  // jest < version 26
+  const mockDate = new Date(1466424490000)
+  const spy = jest
+    .spyOn(global, 'Date')
+    .mockImplementation(() => mockDate)
+
+  spy.mockRestore()
+})
+```
+
+##### 8. mock window伤的对象
+```js
+Object.defineProperty(window.document, 'cookie', {
+    get: jest.fn(),
+});
+```
+
